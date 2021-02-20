@@ -24,7 +24,7 @@ return [
                 $builder->addTypePath(Path::get('./elements/*/element.json'));
             } else {
                 foreach ($app->config->get('~theme.hd.elements') as $key => $value) {
-                    if ($value === 1) {
+                    if ($value === true) {
                         $builder->addTypePath(Path::get('./elements/' . $key . '/element.json'));
                         if ($key === 'hd-timeline') {
                             $builder->addTypePath(Path::get('./elements/' . $key . '_item/element.json'));
