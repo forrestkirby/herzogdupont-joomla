@@ -1,0 +1,78 @@
+{
+    "name": "hd-timeline_item",
+    "title": "Item",
+    "width": 500,
+    "placeholder": {
+        "props": {
+            "title": "Title",
+            "meta": "",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            "image": "",
+            "icon": "",
+            "timeline_icon": ""
+        }
+    },
+    "templates": {
+        "render": "./templates/template.php",
+        "content": "./templates/content.php"
+    },
+    "fields": {
+        "title": {
+            "label": "Title",
+            "source": true
+        },
+        "meta": {
+            "label": "Meta",
+            "source": true
+        },
+        "content": {
+            "label": "Content",
+            "type": "editor",
+            "source": true
+        },
+        "image": "${builder.image}",
+        "image_alt": {
+            "label": "Image Alt",
+            "enable": "image",
+            "source": true
+        },
+        "icon": {
+            "label": "Icon",
+            "description": "Instead of using a custom image, you can click on the pencil to pick an icon from the icon library.",
+            "type": "icon",
+            "source": true,
+            "enable": "!image"
+        },
+        "timeline_icon": {
+            "label": "Timeline Icon",
+            "description": "Click on the pencil to pick an icon from the icon library.",
+            "type": "icon",
+            "source": true
+        },
+        "link": "${builder.link}",
+        "status": "${builder.statusItem}",
+        "source": "${builder.source}"
+
+    },
+    "fieldset": {
+        "default": {
+            "type": "tabs",
+            "fields": [
+                {
+                    "title": "Content",
+                    "fields": [
+                        "title",
+                        "meta",
+                        "content",
+                        "image",
+                        "image_alt",
+                        "icon",
+                        "timeline_icon",
+                        "link"
+                    ]
+                },
+                "${builder.advancedItem}"
+            ]
+        }
+    }
+}
