@@ -1,0 +1,7 @@
+.el-circle {
+	transform: rotate(-90deg);
+}
+
+.counter-value {
+	stroke-linecap: round;
+}

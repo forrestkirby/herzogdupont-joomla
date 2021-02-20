@@ -1,0 +1,60 @@
+.hd-image-comparison {
+	position: relative;
+	display: inline-flex;
+}
+
+.hd-image-comparison .hd-image-comparison-before {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+}
+
+.hd-image-comparison .hd-image-comparison-before img {
+	max-width: none;
+}
+
+.hd-image-comparison .hd-image-comparison-slider {
+	pointer-events: none;
+	padding: 10px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.hd-image-comparison .hd-image-comparison-slider svg {
+	pointer-events: none;
+	max-width: none;
+}
+
+.hd-image-comparison .hd-image-comparison-range {
+	-webkit-appearance: none;
+	position: absolute;
+	touch-action: auto;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	opacity: 0;
+}
+
+.hd-image-comparison .hd-image-comparison-range::-webkit-slider-thumb {
+ 	-webkit-appearance: none;
+ 	box-sizing: content-box;
+ 	height: 40px;
+ 	width: 40px;
+ 	padding: 10px;
+	border-radius: 50%;
+}
+
+.hd-image-comparison .hd-image-comparison-range::-moz-range-thumb {
+ 	height: 40px;
+ 	width: 40px;
+ 	padding: 10px;
+	border-radius: 50%;
+}

@@ -1,0 +1,107 @@
+/* 3D effect */
+.hd-flipcard-3d {
+	perspective: 1000px;
+}
+
+.hd-flipcard .hd-flipcard-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+}
+
+.hd-flipcard .el-card,
+ .hd-flipcard .el-card-back {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	width: 100%;
+}
+
+.hd-flipcard .el-card {
+	height: 100%;
+	/* Firefox */
+	transform-style: preserve-3d;
+}
+
+.hd-flipcard .el-card-back {
+	position: absolute;
+	top: 0;
+}
+
+.hd-flipcard .el-content.uk-panel,
+ .hd-flipcard .el-content-back.uk-panel {
+	position: static;
+}
+
+/* flip right */
+.hd-flipcard-right.hd-flipcard-hover .hd-flipcard-inner {
+	transform: rotateY(180deg);
+}
+
+.hd-flipcard-right .el-card-back {
+	transform: rotateY(180deg);
+}
+
+/* flip left */
+.hd-flipcard-left.hd-flipcard-hover .hd-flipcard-inner {
+	transform: rotateY(-180deg);
+}
+
+.hd-flipcard-left .el-card-back {
+	transform: rotateY(-180deg);
+}
+
+/* flip up */
+.hd-flipcard-up.hd-flipcard-hover .hd-flipcard-inner {
+	transform: rotateX(180deg);
+}
+
+.hd-flipcard-up .el-card-back {
+	transform: rotateX(180deg);
+}
+
+/* flip down */
+.hd-flipcard-down.hd-flipcard-hover .hd-flipcard-inner {
+	transform: rotateX(-180deg);
+}
+
+.hd-flipcard-down .el-card-back {
+	transform: rotateX(-180deg);
+}
+
+/* flip up right */
+.hd-flipcard-up-right.hd-flipcard-hover .hd-flipcard-inner {
+	transform: rotate3d(1, 1, 0, 180deg);
+}
+
+.hd-flipcard-up-right .el-card-back {
+	transform: rotate3d(1, 1, 0, 180deg);
+}
+
+/* flip up left */
+.hd-flipcard-up-left.hd-flipcard-hover .hd-flipcard-inner {
+	transform: rotate3d(1, -1, 0, 180deg);
+}
+
+.hd-flipcard-up-left .el-card-back {
+	transform: rotate3d(1, -1, 0, 180deg);
+}
+
+/* flip down right */
+.hd-flipcard-down-right.hd-flipcard-hover .hd-flipcard-inner {
+	transform: rotate3d(-1, 1, 0, 180deg);
+}
+
+.hd-flipcard-down-right .el-card-back {
+	transform: rotate3d(-1, 1, 0, 180deg);
+}
+
+/* flip down left */
+.hd-flipcard-down-left.hd-flipcard-hover .hd-flipcard-inner {
+	transform: rotate3d(1, 1, 0, -180deg);
+}
+
+.hd-flipcard-down-left .el-card-back {
+	transform: rotate3d(1, 1, 0, -180deg);
+}

@@ -1,0 +1,323 @@
+{
+	"@import": "./element.php",
+	"name": "hd-counter",
+	"title": "HD Counter",
+	"group": "herzog-dupont",
+	"icon": "${url:images/icon.svg}",
+	"iconSmall": "${url:images/iconSmall.svg}",
+	"element": true,
+	"container": true,
+	"width": 500,
+	"defaults":
+	{
+		"text": "",
+		"number": 1000,
+		"unit": "",
+		"text_size": "",
+		"text_color": "",
+		"number_size": "",
+		"number_color": "",
+		"unit_size": "number-size",
+		"separator_locale": "",
+		"show_circle": true,
+		"percentage": 62,
+		"circle_color": "#1e87f0",
+		"circle_radius": 90,
+		"circle_stroke_width": 9,
+		"duration": 2000,
+		"margin": "default",
+		"text_align": "center"
+	},
+	"templates":
+	{
+		"render": "./templates/template.php",
+		"content": "./templates/content.php"
+	},
+	"fields":
+	{
+		"text":
+		{
+			"label": "Text",
+			"description": "Text that will be displayed underneath the counter",
+			"type": "text",
+			"source": true
+		},
+		"number":
+		{
+			"label": "Number",
+			"description": "Set the number to which the counter should count up",
+			"type": "number",
+			"source": true
+		},
+		"unit":
+		{
+			"label": "Unit",
+			"description": "Text that will be displayed after the counter",
+			"type": "text",
+			"source": true
+		},
+		"text_size":
+		{
+			"label": "Text Size",
+			"description": "Select the text size",
+			"type": "select",
+			"options":
+			{
+				"Default": "",
+				"Text Small": "text-small",
+				"Text Large": "text-large",
+				"h1": "h1",
+				"h2": "h2",
+				"h3": "h3",
+				"h4": "h4",
+				"h5": "h5",
+				"h6": "h6",
+				"Heading Small": "heading-small",
+				"Heading Medium": "heading-medium",
+				"Heading Large": "heading-large",
+				"Heading XLarge": "heading-xlarge",
+				"Heading 2XLarge": "heading-2xlarge"
+			},
+			"enable": "text"
+		},
+		"text_color":
+		{
+			"label": "Text color",
+			"description": "Select the text color",
+			"type": "select",
+			"options":
+			{
+				"Default": "",
+				"Muted": "muted",
+				"Emphasis": "emphasis",
+				"Primary": "primary",
+				"Secondary": "secondary",
+				"Success": "success",
+				"Warning": "warning",
+				"Danger": "danger"
+			},
+			"enable": "text"
+		},
+		"number_size":
+		{
+			"label": "Number Size",
+			"description": "Select the number size",
+			"type": "select",
+			"options":
+			{
+				"Default": "",
+				"Text Small": "text-small",
+				"Text Large": "text-large",
+				"h1": "h1",
+				"h2": "h2",
+				"h3": "h3",
+				"h4": "h4",
+				"h5": "h5",
+				"h6": "h6",
+				"Heading Small": "heading-small",
+				"Heading Medium": "heading-medium",
+				"Heading Large": "heading-large",
+				"Heading XLarge": "heading-xlarge",
+				"Heading 2XLarge": "heading-2xlarge"
+			},
+			"enable": "number"
+		},
+		"number_color":
+		{
+			"label": "Number color",
+			"description": "Select the number color",
+			"type": "select",
+			"options":
+			{
+				"Default": "",
+				"Muted": "muted",
+				"Emphasis": "emphasis",
+				"Primary": "primary",
+				"Secondary": "secondary",
+				"Success": "success",
+				"Warning": "warning",
+				"Danger": "danger"
+			},
+			"enable": "number"
+		},
+		"unit_size":
+		{
+			"label": "Unit Size",
+			"description": "Select the unit size",
+			"type": "select",
+			"options":
+			{
+				"Same as number size": "number-size",
+				"Default": "",
+				"Text Small": "text-small",
+				"Text Large": "text-large",
+				"h1": "h1",
+				"h2": "h2",
+				"h3": "h3",
+				"h4": "h4",
+				"h5": "h5",
+				"h6": "h6",
+				"Heading Small": "heading-small",
+				"Heading Medium": "heading-medium",
+				"Heading Large": "heading-large",
+				"Heading XLarge": "heading-xlarge",
+				"Heading 2XLarge": "heading-2xlarge"
+			},
+			"enable": "unit"
+		},
+		"separator_locale":
+		{
+			"label": "Separator locale",
+			"description": "Choose a locale if you want the number to show a separator for thousands",
+			"type": "select",
+			"options":
+			{
+				"None": "",
+				"English (U.S.) – comma": "en-US",
+				"German (Germany) – full stop": "de-DE"
+			},
+			"enable": "number"
+		},
+		"show_circle":
+		{
+			"label": "Show circle",
+			"type": "checkbox",
+			"text": "Show an animated circle"
+		},
+		"percentage":
+		{
+			"label": "Percentage",
+			"description": "Set the percentage of the circle that should be filled when the animation is complete",
+			"type": "number",
+			"enable": "show_circle",
+			"source": true
+		},
+		"circle_color":
+		{
+			"label": "Circle color",
+			"description": "Set the color for the circle",
+			"type": "color",
+			"enable": "show_circle"
+		},
+		"circle_radius":
+		{
+			"label": "Circle radius",
+			"description": "Set the radius for the circle",
+			"type": "number",
+			"enable": "show_circle"
+		},
+		"circle_stroke_width":
+		{
+			"label": "Circle stroke width",
+			"description": "Set the stroke width for the circle",
+			"type": "number",
+			"enable": "show_circle"
+		},
+		"duration":
+		{
+			"label": "Duration",
+			"description": "Set the animation duration in ms.",
+			"type": "number",
+			"source": true
+		},
+		"position": "${builder.position}",
+		"position_left": "${builder.position_left}",
+		"position_right": "${builder.position_right}",
+		"position_top": "${builder.position_top}",
+		"position_bottom": "${builder.position_bottom}",
+		"position_z_index": "${builder.position_z_index}",
+		"margin": "${builder.margin}",
+		"margin_remove_top": "${builder.margin_remove_top}",
+		"margin_remove_bottom": "${builder.margin_remove_bottom}",
+		"maxwidth": "${builder.maxwidth}",
+		"maxwidth_breakpoint": "${builder.maxwidth_breakpoint}",
+		"block_align": "${builder.block_align}",
+		"block_align_breakpoint": "${builder.block_align_breakpoint}",
+		"block_align_fallback": "${builder.block_align_fallback}",
+		"text_align": "${builder.text_align_justify}",
+		"text_align_breakpoint": "${builder.text_align_breakpoint}",
+		"text_align_fallback": "${builder.text_align_justify_fallback}",
+		"animation": "${builder.animation}",
+		"_parallax_button": "${builder._parallax_button}",
+		"visibility": "${builder.visibility}",
+		"name": "${builder.name}",
+		"status": "${builder.status}",
+		"source": "${builder.source}",
+		"id": "${builder.id}",
+		"class": "${builder.cls}",
+		"attributes": "${builder.attrs}",
+		"css":
+		{
+			"label": "CSS",
+			"description": "Enter your own custom CSS. The following selectors will be prefixed automatically for this element: <code>.el-element</code>, <code>.el-number</code>, <code>.el-unit</code>, <code>.el-text</code>, <code>.el-circle</code>",
+			"type": "editor",
+			"editor": "code",
+			"mode": "css",
+			"attrs":
+			{
+				"debounce": 500
+			}
+		}
+	},
+	"fieldset":
+	{
+		"default":
+		{
+			"type": "tabs",
+			"fields": [
+				{
+					"title": "Content",
+					"fields": [
+						"text",
+						"number",
+						"unit"
+					]
+				},
+				{
+					"title": "Settings",
+					"fields": [
+						"text_size",
+						"text_color",
+						"number_size",
+						"number_color",
+						"unit_size",
+						"separator_locale",
+						"show_circle",
+						"percentage",
+						"circle_color",
+						"circle_radius",
+						"circle_stroke_width",
+						"duration",
+						{
+							"label": "General",
+							"type": "group",
+							"fields": [
+								"position",
+								"position_left",
+								"position_right",
+								"position_top",
+								"position_bottom",
+								"position_z_index",
+								"margin",
+								"margin_remove_top",
+								"margin_remove_bottom",
+								"maxwidth",
+								"maxwidth_breakpoint",
+								"block_align",
+								"block_align_breakpoint",
+								"block_align_fallback",
+								"text_align",
+								"text_align_breakpoint",
+								"text_align_fallback",
+								"animation",
+								"_parallax_button",
+								"visibility"
+							]
+						}
+					]
+				},
+				"${builder.advanced}"
+			]
+		}
+	}
+}
