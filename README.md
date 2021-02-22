@@ -1,4 +1,4 @@
-# Herzog Dupont for YOOtheme Pro (Joomla!)
+# Herzog Dupont Joomla! Plugin
 
 An extension for YOOtheme Pro which adds more elements to the page builder.
 
