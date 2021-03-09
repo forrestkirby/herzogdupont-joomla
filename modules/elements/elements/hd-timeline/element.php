@@ -21,7 +21,7 @@ return [
 
     'updates' => [
 
-        '2.1.0-beta.0.1' => function ($node, array $params) {
+        '2.1.0-beta.0.1' => function ($node) {
 
             if (@$node->props['item_maxwidth'] === 'xxlarge') {
                 $node->props['item_maxwidth'] = '2xlarge';

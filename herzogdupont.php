@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package   Herzog Dupont for YOOtheme Pro
+ * @package   Herzog Dupont
  * @author    Thomas Weidlich https://herzog-dupont.de
  * @copyright Copyright (C) Thomas Weidlich
  * @license   GNU General Public License version 3, see LICENSE.txt

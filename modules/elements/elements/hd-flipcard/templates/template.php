@@ -42,6 +42,7 @@ $front = $this->el('div', [
         'uk-card-hover {@!panel_style: |card-hover}',
         'uk-card-body {@panel_style} {@!has_panel_card_image}',
         'uk-margin-remove-first-child' => (!$props['panel_style'] && !$props['has_panel_content_padding']) || ($props['panel_style'] && !$props['has_panel_card_image']),
+        'uk-flex {@panel_style} {@has_panel_card_image} {@image_align: left|right}', // Let images cover the card height if the cards have different heights
     ],
 
 ]);
@@ -159,6 +160,7 @@ $back = $this->el($props['link_back'] && $props['panel_back_link'] ? 'a' : 'div'
         'uk-card-hover {@!panel_back_style: |card-hover} {@panel_back_link} {@link_back}',
         'uk-card-body {@panel_back_style} {@!has_panel_back_card_image}',
         'uk-margin-remove-first-child' => (!$props['panel_back_style'] && !$props['has_panel_back_content_padding']) || ($props['panel_back_style'] && !$props['has_panel_back_card_image']),
+        'uk-flex {@panel_back_style} {@has_panel_back_card_image} {@image_back_align: left|right}', // Let images cover the card height if the cards have different heights
         'uk-transition-toggle {@image_back} {@image_back_transition} {@panel_back_link}',
     ],
 

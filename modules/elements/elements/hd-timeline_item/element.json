@@ -33,8 +33,8 @@
         "image": "${builder.image}",
         "image_alt": {
             "label": "Image Alt",
-            "enable": "image",
-            "source": true
+            "source": true,
+            "enable": "image"
         },
         "icon": {
             "label": "Icon",
@@ -50,6 +50,18 @@
             "source": true
         },
         "link": "${builder.link}",
+        "panel_style": {
+            "label": "Style",
+            "description": "Select one of the boxed card styles.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Card Default": "card-default",
+                "Card Primary": "card-primary",
+                "Card Secondary": "card-secondary",
+                "Card Hover": "card-hover"
+            }
+        },
         "status": "${builder.statusItem}",
         "source": "${builder.source}"
 
@@ -69,6 +81,18 @@
                         "icon",
                         "timeline_icon",
                         "link"
+                    ]
+                },
+                {
+                    "title": "Settings",
+                    "fields": [
+                        {
+                            "label": "Panel",
+                            "type": "group",
+                            "fields": [
+                                "panel_style"
+                            ]
+                        }
                     ]
                 },
                 "${builder.advancedItem}"

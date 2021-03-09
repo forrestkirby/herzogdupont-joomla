@@ -30,7 +30,7 @@ If you want to report an issue, please use the [Github issue tool](../../issues)
 
 ## About
 
-Herzog Dupont for YOOtheme Pro is an extension for YOOtheme Pro developed by [YOOtheme](https://yootheme.com).
+Herzog Dupont is an extension for YOOtheme Pro developed by [YOOtheme](https://yootheme.com).
 
 ## Links
 

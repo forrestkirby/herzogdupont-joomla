@@ -225,8 +225,8 @@
             "type": "select",
             "options": {
                 "None": "",
-                "2Xlarge": "heading-2xlarge",
-                "XLarge": "heading-xlarge",
+                "2X-Large": "heading-2xlarge",
+                "X-Large": "heading-xlarge",
                 "Large": "heading-large",
                 "Medium": "heading-medium",
                 "Small": "heading-small",
@@ -389,8 +389,8 @@
             "options": {
                 "None": "",
                 "Meta": "meta",
-                "2Xlarge": "heading-2xlarge",
-                "XLarge": "heading-xlarge",
+                "2X-Large": "heading-2xlarge",
+                "X-Large": "heading-xlarge",
                 "Large": "heading-large",
                 "Medium": "heading-medium",
                 "Small": "heading-small",
@@ -798,8 +798,8 @@
             "type": "select",
             "options": {
                 "None": "",
-                "2Xlarge": "heading-2xlarge",
-                "XLarge": "heading-xlarge",
+                "2X-Large": "heading-2xlarge",
+                "X-Large": "heading-xlarge",
                 "Large": "heading-large",
                 "Medium": "heading-medium",
                 "Small": "heading-small",
@@ -980,8 +980,8 @@
             "options": {
                 "None": "",
                 "Meta": "meta",
-                "2Xlarge": "heading-2xlarge",
-                "XLarge": "heading-xlarge",
+                "2X-Large": "heading-2xlarge",
+                "X-Large": "heading-xlarge",
                 "Large": "heading-large",
                 "Medium": "heading-medium",
                 "Small": "heading-small",

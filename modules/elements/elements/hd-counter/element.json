@@ -189,8 +189,8 @@
 			"label": "Percentage",
 			"description": "Set the percentage of the circle that should be filled when the animation is complete",
 			"type": "number",
-			"enable": "show_circle",
-			"source": true
+			"source": true,
+			"enable": "show_circle"
 		},
 		"circle_color":
 		{

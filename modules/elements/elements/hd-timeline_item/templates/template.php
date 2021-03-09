@@ -10,6 +10,9 @@ if (!$element['show_image']) { $props['image'] = $props['icon'] = ''; }
 // Resets
 if ($props['icon'] && !$props['image']) { $element['panel_card_image'] = ''; }
 
+// Override default settings
+$element['panel_style'] = $props['panel_style'] ?: $element['panel_style'];
+
 // New logic shortcuts
 $element['has_panel_card_image'] = $props['image'] && $element['panel_card_image'] && $element['image_align'] != 'between';
 $element['has_content_padding'] = $props['image'] && $element['panel_content_padding'] && $element['image_align'] != 'between';
