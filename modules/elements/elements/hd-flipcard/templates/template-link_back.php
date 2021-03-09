@@ -11,7 +11,9 @@ if ($link_back && $props['panel_back_link']) {
     $back->attr($link_back->attrs + [
 
         'class' => [
-            'uk-display-block uk-link-toggle',
+            'uk-link-toggle',
+            // Only if `uk-flex` is not already set in `template.php` to let images cover the card height if the cards have different heights
+            'uk-display-block' => !($props['panel_back_style'] && $props['has_panel_back_card_image'] && in_array($props['image_back_align'], ['left', 'right'])),
         ],
 
     ]);

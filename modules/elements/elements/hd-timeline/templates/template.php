@@ -1,7 +1,6 @@
 <?php
 
 // Resets
-if ($props['panel_style'] || !$props['show_image']) { $props['image_box_shadow_bottom'] = ''; }
 if ($props['panel_link']) {
     $props['title_link'] = '';
     $props['image_link'] = '';

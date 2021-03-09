@@ -17,7 +17,19 @@ return [
             $metadata->set('script:builder-hd-flipcard', ['src' => Path::get('./js/hd-flipcard.js'), 'defer' => true]);
 
             // Don't render element if content fields are empty
-            return ($node->props['title'] || $node->props['meta'] || $node->props['content'] || $node->props['image'] || $node->props['icon']) && ($node->props['title_back'] || $node->props['meta_back'] || $node->props['content_back'] || $node->props['image_back'] || $node->props['icon_back']);
+            return (
+                Str::length($node->props['title'])
+                    || Str::length($node->props['meta'])
+                    || Str::length($node->props['content'])
+                    || $node->props['image']
+                    || $node->props['icon']
+            ) && (
+                Str::length($node->props['title_back'])
+                    || Str::length($node->props['meta_back'])
+                    || Str::length($node->props['content_back'])
+                    || $node->props['image_back']
+                    || $node->props['icon_back']
+            );
 
         },
 
@@ -25,7 +37,7 @@ return [
 
     'updates' => [
 
-        '2.1.0-beta.0.1' => function ($node, array $params) {
+        '2.1.0-beta.0.1' => function ($node) {
 
             if (@$node->props['title_grid_width'] === 'xxlarge') {
                 $node->props['title_grid_width'] = '2xlarge';

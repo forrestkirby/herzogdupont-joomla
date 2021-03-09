@@ -47,8 +47,8 @@
         "image_before_alt": {
             "label": "Before Image Alt",
             "description": "Enter the first image’s alt attribute.",
-            "enable": "image_before",
-            "source": true
+            "source": true,
+            "enable": "image_before"
         },
         "image_after": {
             "label": "After Image",
@@ -58,8 +58,8 @@
         "image_after_alt": {
             "label": "After Image Alt",
             "description": "Enter the second image’s alt attribute.",
-            "enable": "image_after",
-            "source": true
+            "source": true,
+            "enable": "image_after"
         },
         "icon": {
             "label": "Slider Icon",

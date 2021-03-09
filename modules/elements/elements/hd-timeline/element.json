@@ -931,8 +931,8 @@
                         "content",
                         "show_title",
                         "show_meta",
-                        "show_image",
                         "show_content",
+                        "show_image",
                         "show_link"
                     ]
                 },
