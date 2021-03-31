@@ -19,7 +19,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 ## Installation
 
-- [download](https://github.com/forrestkirby/herzogdupont/archive/main.zip) package
+- [download](https://github.com/forrestkirby/herzogdupont-joomla/archive/main.zip) package
 - install it via the Joomla! extensions manager
 - access the YOOtheme Pro Page Builder, the custom elements should now be available
 - you can select which elements should or should not be loaded in YOOtheme Pro at *Settings > Herzog Dupont*
@@ -34,9 +34,7 @@ Herzog Dupont is an extension for YOOtheme Pro developed by [YOOtheme](https://y
 
 ## Links
 
-- [YOOtheme Pro Documentation: Introduction](https://yootheme.com/support/yootheme-pro/joomla/introduction)
-- [YOOtheme Pro Documentation: Child Themes](https://yootheme.com/support/yootheme-pro/joomla/developers-child-themes)
-- [YOOtheme Pro Documentation: Custom Elements](https://yootheme.com/support/yootheme-pro/joomla/developers-elements)
+- [YOOtheme Pro Documentation](https://yootheme.com/support/yootheme-pro/joomla/introduction)
 - [YOOtheme Support](https://yootheme.com/support)
 
 ## Screenshots

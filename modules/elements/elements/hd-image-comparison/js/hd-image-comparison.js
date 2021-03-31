@@ -62,12 +62,18 @@ class hdImgComp {
 
 }
 
-UIkit.util.$$('.hd-image-comparison-before img').forEach(function(el) {
-	el.addEventListener('load', (e) => {
-		let x = new hdImgComp(e.target.closest('.hd-image-comparison'));
+UIkit.util.$$('.hd-image-comparison-before img').forEach((el) => {
+	if (!el.complete) {
+		el.addEventListener('load', (e) => {
+			let x = new hdImgComp(e.target.closest('.hd-image-comparison'));
+			if (x.afterimg)
+				x.init();
+		}, {
+			once: true
+		});
+	} else {
+		let x = new hdImgComp(el.closest('.hd-image-comparison'));
 		if (x.afterimg)
 			x.init();
-	}, {
-		once: true
-	});
+	}
 });
