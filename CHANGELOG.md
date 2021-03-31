@@ -1,6 +1,12 @@
 # Changelog
 
-## 1.1.0 (March 10, 2021)
+## 1.1.2 (March 31, 2021)
+
+### Fixed
+
+- initialization if lazy loading is disabled in image comparison element
+
+## 1.1.1 (March 10, 2021)
 
 ### Fixed
 
