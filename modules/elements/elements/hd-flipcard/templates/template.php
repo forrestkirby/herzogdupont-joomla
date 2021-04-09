@@ -229,6 +229,10 @@ $el = $this->el('div', [
         'hd-flipcard-3d {@3d_effect}',
     ],
 
+    'data-flipmode' => [
+        '{flip_mode}',
+    ],
+
 ]);
 
 // Inner

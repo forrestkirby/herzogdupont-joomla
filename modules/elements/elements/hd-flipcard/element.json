@@ -41,6 +41,7 @@
         "link_back_style": "default",
         "flip_animation": "right",
         "3d_effect": true,
+        "flip_mode": "hover",
         "margin": "default"
     },
     "placeholder": {
@@ -175,6 +176,17 @@
             "label": "3D Effect",
             "description": "Enable a 3D Effect for the flip animation.",
             "type": "checkbox"
+        },
+        "flip_mode": {
+            "label": "Flip Mode",
+            "description": "Choose the flip mode.",
+            "type": "select",
+            "default": "hover",
+            "options": {
+                "Hover": "hover",
+                "Click": "click",
+                "Hover and Click": "hover, click"
+            }
         },
         "panel_style": {
             "label": "Style",
@@ -1460,7 +1472,8 @@
                             "divider": true,
                             "fields": [
                                 "flip_animation",
-                                "3d_effect"
+                                "3d_effect",
+                                "flip_mode"
                             ]
                         },
                         {

@@ -4,7 +4,7 @@
   @package   Herzog Dupont
   @author    Thomas Weidlich https://herzog-dupont.de
   @copyright Copyright (C) Thomas Weidlich
-  @license   GNU General Public License version 3, see LICENSE.txt
+  @license   GNU General Public License version 3, see LICENSE
   -->
 
 <extension version="3.9.0" type="plugin" group="system" method="upgrade">
@@ -13,9 +13,9 @@
     <authorEmail>thomas@herzog-dupont.de</authorEmail>
     <authorUrl>https://herzog-dupont.de</authorUrl>
     <copyright>Copyright (C) Thomas Weidlich</copyright>
-    <license>GNU General Public License version 3, see LICENSE.txt</license>
+    <license>GNU General Public License version 3, see LICENSE</license>
     <creationDate>March 2021</creationDate>
-    <version>1.1.2</version>
+    <version>1.2.0</version>
     <description>PLG_SYSTEM_HERZOGDUPONT_XML_DESC</description>
     <scriptfile>script.php</scriptfile>
     <files>

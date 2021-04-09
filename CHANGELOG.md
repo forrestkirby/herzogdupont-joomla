@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0 (April 09, 2021)
+
+### Added
+
+- flip mode option to flipcard element
+
 ## 1.1.2 (March 31, 2021)
 
 ### Fixed

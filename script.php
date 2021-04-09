@@ -4,7 +4,7 @@
  * @package   Herzog Dupont
  * @author    Thomas Weidlich https://herzog-dupont.de
  * @copyright Copyright (C) Thomas Weidlich
- * @license   GNU General Public License version 3, see LICENSE.txt
+ * @license   GNU General Public License version 3, see LICENSE
  */
 
 // No direct access to this file
@@ -35,7 +35,7 @@ class plgSystemHerzogdupontInstallerScript
     public function preflight($type, $parent)
     {
         // Check the minimum PHP version
-        if (!version_compare(PHP_VERSION, $this->minimumPHPVersion, 'ge'))
+        if (!version_compare(PHP_VERSION, $this->minimumPHPVersion, '>='))
         {
             $msg = '<p>You need PHP ' . $this->minimumPHPVersion . ' or later to install this plugin.</p>';
             JLog::add($msg, JLog::WARNING, 'jerror');
@@ -44,7 +44,7 @@ class plgSystemHerzogdupontInstallerScript
         }
 
         // Check the minimum Joomla! version
-        if (!version_compare(JVERSION, $this->minimumJoomlaVersion, 'ge'))
+        if (!version_compare(JVERSION, $this->minimumJoomlaVersion, '>='))
         {
             $msg = '<p>You need Joomla! ' . $this->minimumJoomlaVersion . ' or later to install this plugin.</p>';
             JLog::add($msg, JLog::WARNING, 'jerror');
@@ -54,7 +54,7 @@ class plgSystemHerzogdupontInstallerScript
 
         // Check the minimum YOOtheme Pro version
         $yoothemeManifest = simplexml_load_file(JPATH_SITE . '/templates/yootheme/templateDetails.xml');
-        if (!$yoothemeManifest or !version_compare((string) $yoothemeManifest->version, $this->minimumYOOthemeVersion, 'ge'))
+        if (!$yoothemeManifest or !version_compare((string) $yoothemeManifest->version, $this->minimumYOOthemeVersion, '>='))
         {
             $msg = '<p>You need YOOtheme Pro ' . $this->minimumYOOthemeVersion . ' or later to install this plugin.</p>';
             JLog::add($msg, JLog::WARNING, 'jerror');

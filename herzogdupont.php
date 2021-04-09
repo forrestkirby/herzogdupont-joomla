@@ -4,7 +4,7 @@
  * @package   Herzog Dupont
  * @author    Thomas Weidlich https://herzog-dupont.de
  * @copyright Copyright (C) Thomas Weidlich
- * @license   GNU General Public License version 3, see LICENSE.txt
+ * @license   GNU General Public License version 3, see LICENSE
  */
 
 // No direct access to this file
@@ -22,7 +22,7 @@ class plgSystemHerzogdupont extends CMSPlugin
             return;
         }
 
-        // Load all modules from the same directory
+        // Load all modules
         $app = Application::getInstance();
         $app->load(__DIR__ . '/modules/*/bootstrap.php');
    }
