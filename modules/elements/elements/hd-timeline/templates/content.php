@@ -1,4 +1,8 @@
-<?php if (count($children) > 1) : ?>
+<?php
+
+/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
+
+if (count($children) > 1) : ?>
 <ul>
     <?php foreach ($children as $child) : ?>
     <li>

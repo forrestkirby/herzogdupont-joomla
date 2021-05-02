@@ -1,5 +1,7 @@
 <?php
 
+/* Herzog Dupont Copyright (C) 2019–2021 Thomas Weidlich GNU GPL v3 */
+
 $cx = $cy = $props['circle_radius'] * 1.1;
 $circleWidth = $circleHeight = $cx * 2;
 $viewBox = '0 0 ' . $circleWidth . ' ' . $circleWidth;

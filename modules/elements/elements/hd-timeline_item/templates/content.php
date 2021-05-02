@@ -1,4 +1,8 @@
-<?php if ($props['image']) : ?>
+<?php
+
+/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
+
+if ($props['image']) : ?>
 <img src="<?= $props['image'] ?>" alt="<?= $props['image_alt'] ?>">
 <?php endif ?>
 

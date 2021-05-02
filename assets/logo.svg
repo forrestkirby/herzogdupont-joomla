@@ -1,0 +1,9 @@
+<!-- Herzog Dupont Copyright (C) 2021 Thomas Weidlich -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="525" viewBox="0 0 1200 525">
+  <g>
+    <rect style="fill:#2c2929;stroke:none;stroke-width:0" width="1200" height="525" x="0" y="0" />
+    <text style="font-size:112px;font-family:Roboto;fill:#fff3e6;stroke:none;stroke-width:0;" x="67" y="304">
+      <tspan>HD Custom Elements</tspan>
+    </text>
+  </g>
+</svg>

@@ -1,3 +1,5 @@
+/* Herzog Dupont Copyright (C) 2018–2021 Thomas Weidlich GNU GPL v3 */
+
 UIkit.util.ready(function() {
 
 	UIkit.util.$$('.hd-progess progress').forEach(function(bar) {

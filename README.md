@@ -2,7 +2,7 @@
 
 Herzog Dupont is an extension which adds more elements to the YOOtheme Pro page builder developed by [YOOtheme](https://yootheme.com).
 
-Copyright (C) 2021 Thomas Weidlich https://herzog-dupont.de
+Copyright (C) 2021 Thomas Weidlich
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,9 +17,11 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
+The Timeline element is based on the Grid element, Copyright (C) 2016–2021 YOOtheme GmbH. The Flipcard element is based on the Panel element, Copyright (C) 2016–2021 YOOtheme GmbH.
+
 ## Description
 
-This plugin adds the following elements to the element library of the YOOtheme Pro page builder:
+This plugin adds more elements to the element library of the YOOtheme Pro page builder.
 
 - Toggle Element: Display a button to hide content, switch between content or change its appearance. It's based on the UIkit Toggle component with all its options.
 - Progress Element: Display your stats visually in an animated progress bar with a text label. It's based on the UIkit Progress component with all its options.
@@ -37,15 +39,12 @@ This plugin adds the following elements to the element library of the YOOtheme P
 
 ## Issues
 
-If you want to report an issue, please use the [Github issue tool](../../issues).
-
-## About
-
-Herzog Dupont is an extension for YOOtheme Pro developed by [YOOtheme](https://yootheme.com).
+If you want to report an issue, please use the [Github issue tool](https://github.com/forrestkirby/herzogdupont-joomla/issues).
 
 ## Links
 
 - [Demo](https://herzog-dupont.de/yootheme-pro-custom-elements)
+- [Herzog Dupont WordPress Plugin](https://github.com/forrestkirby/herzogdupont-wordpress)
 - [YOOtheme Pro Documentation](https://yootheme.com/support/yootheme-pro/joomla/introduction)
 - [YOOtheme Support](https://yootheme.com/support)
 

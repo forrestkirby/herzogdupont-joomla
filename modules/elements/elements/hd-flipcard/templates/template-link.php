@@ -1,5 +1,7 @@
 <?php
 
+/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
+
 $link = $props['link_text'] ? $this->el('p', [
     //
 ]) : null;

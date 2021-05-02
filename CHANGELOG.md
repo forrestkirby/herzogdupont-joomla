@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1 (April 24, 2021)
+
+### Added
+
+- JED compliance
+
 ## 1.2.0 (April 09, 2021)
 
 ### Added

@@ -1,3 +1,5 @@
+/* Herzog Dupont Copyright (C) 2019–2021 Thomas Weidlich GNU GPL v3 */
+
 function countUp(el, start, end, duration, separatorLocale) {
 
 	let range = end - start;
