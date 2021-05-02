@@ -1,6 +1,6 @@
 # Herzog Dupont Joomla! Plugin
 
-Herzog Dupont is an extension which adds more elements to the YOOtheme Pro page builder developed by [YOOtheme](https://yootheme.com).
+Herzog Dupont is an extension for YOOtheme Pro developed by [YOOtheme](https://yootheme.com) which adds more elements to the element library of the page builder.
 
 Copyright (C) 2021 Thomas Weidlich
 
