@@ -1,19 +1,19 @@
-/* Herzog Dupont Copyright (C) 2018â€“2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2018–2021 Thomas Weidlich GNU GPL v3 */
 
-UIkit.util.ready(function() {
+UIkit.util.ready(() => {
 
-	UIkit.util.$$('.hd-progess progress').forEach(function(bar) {
+	UIkit.util.$$('.hd-progess progress').forEach(bar => {
 
 		UIkit.scrollspy(bar, { hidden: false });
 
 		UIkit.util.on(bar, 'inview', function() {
 
 			let bar   = this,
-			    step  = parseInt(bar.getAttribute('data-step')),
 			    stop  = parseInt(bar.getAttribute('data-stop')),
+			    step  = parseInt(bar.getAttribute('data-step')),
 			    speed = parseInt(bar.getAttribute('data-speed'));
 
-			let animate = setInterval(function() {
+			let animate = setInterval(() => {
 
 				bar.value += step;
 

@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016â€“2021 YOOtheme GmbH, 2019â€“2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 // Title
 $title = $this->el($element['title_element'], [
@@ -134,8 +134,8 @@ $cell_content = $this->el('div', [
         <?= $meta($element, $props['meta']) ?>
         <?php endif ?>
 
-        <?php if ($props['link'] && $element['link_text']) : ?>
-        <?= $link_container($element, $link($element, $element['link_text'])) ?>
+        <?php if ($props['link'] && ($props['link_text'] || $element['link_text'])) : ?>
+        <?= $link_container($element, $link($element, $props['link_text'] ?: $element['link_text'])) ?>
         <?php endif ?>
 
 <?php if ($props['title'] && $element['title_align'] == 'left') : ?>

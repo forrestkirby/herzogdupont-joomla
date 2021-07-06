@@ -30,7 +30,7 @@ return [
                 foreach ($app->config->get('~theme.hd.elements') as $key => $value) {
                     if ($value === true) {
                         $builder->addTypePath(Path::get('./elements/' . $key . '/element.json'));
-                        if ($key === 'hd-timeline') {
+                        if ($key === 'hd-timeline' || $key === 'hd-slideshow-grid') {
                             $builder->addTypePath(Path::get('./elements/' . $key . '_item/element.json'));
                         }
                     }

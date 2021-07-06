@@ -12,7 +12,7 @@
 		"btn_label": "Toggle",
 		"content": "Lorem ipsum dolor sit amet",
 		"content2": "Hello, world!",
-		"btn_style": "uk-button-default",
+		"btn_style": "default",
 		"btn_size": "",
 		"icon_align": "left",
 		"mode": "click",
@@ -78,12 +78,14 @@
 			"type": "select",
 			"options":
 			{
-				"Default": "uk-button-default",
-				"Primary": "uk-button-primary",
-				"Secondary": "uk-button-secondary",
-				"Danger": "uk-button-danger",
-				"Text": "uk-button-text",
-				"Link": "uk-button-link"
+				"Button Default": "default",
+				"Button Primary": "primary",
+				"Button Secondary": "secondary",
+				"Button Danger": "danger",
+				"Button Text": "text",
+				"Link": "",
+				"Link Muted": "link-muted",
+				"Link Text": "link-text"
 			}
 		},
 		"btn_size":
@@ -94,9 +96,14 @@
 			"options":
 			{
 				"Default": "",
-				"Small": "uk-button-small",
-				"Large": "uk-button-large"
+				"Small": "small",
+				"Large": "large"
 			}
+		},
+		"btn_fullwidth": {
+			"type": "checkbox",
+			"text": "Full width button",
+			"enable": "btn_label && btn_style && btn_style != 'link-muted' && btn_style != 'link-text'"
 		},
 		"icon_align":
 		{
@@ -279,6 +286,7 @@
 					"fields": [
 						"btn_style",
 						"btn_size",
+						"btn_fullwidth",
 						"icon_align",
 						"mode",
 						"media",

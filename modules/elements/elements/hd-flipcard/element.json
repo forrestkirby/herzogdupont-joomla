@@ -295,7 +295,7 @@
         },
         "title_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -445,7 +445,7 @@
         },
         "meta_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -687,7 +687,7 @@
         },
         "image_svg_inline": {
             "label": "Inline SVG",
-            "description": "Inject SVG images into the page markup, so that they can easily be styled with CSS.",
+            "description": "Inject SVG images into the page markup so that they can easily be styled with CSS.",
             "type": "checkbox",
             "text": "Make SVG stylable with CSS",
             "enable": "image"
@@ -738,6 +738,11 @@
                 "Default": "",
                 "Large": "large"
             },
+            "enable": "link_text && link_style && link_style != 'link-muted' && link_style != 'link-text'"
+        },
+        "link_fullwidth": {
+            "type": "checkbox",
+            "text": "Full width button",
             "enable": "link_text && link_style && link_style != 'link-muted' && link_style != 'link-text'"
         },
         "link_margin": {
@@ -886,7 +891,7 @@
         },
         "title_back_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -1036,7 +1041,7 @@
         },
         "meta_back_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -1309,7 +1314,7 @@
         },
         "image_back_svg_inline": {
             "label": "Inline SVG",
-            "description": "Inject SVG images into the page markup, so that they can easily be styled with CSS.",
+            "description": "Inject SVG images into the page markup so that they can easily be styled with CSS.",
             "type": "checkbox",
             "text": "Make SVG stylable with CSS",
             "enable": "image_back"
@@ -1360,6 +1365,11 @@
                 "Default": "",
                 "Large": "large"
             },
+            "enable": "link_back && link_back_text && link_back_style && link_back_style != 'link-muted' && link_back_style != 'link-text'"
+        },
+        "link_back_fullwidth": {
+            "type": "checkbox",
+            "text": "Full width button",
             "enable": "link_back && link_back_text && link_back_style && link_back_style != 'link-muted' && link_back_style != 'link-text'"
         },
         "link_back_margin": {
@@ -1561,6 +1571,7 @@
                             "fields": [
                                 "link_style",
                                 "link_size",
+                                "link_fullwidth",
                                 "link_margin"
                             ]
                         },
@@ -1655,6 +1666,7 @@
                             "fields": [
                                 "link_back_style",
                                 "link_back_size",
+                                "link_back_fullwidth",
                                 "link_back_margin"
                             ]
                         },

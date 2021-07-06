@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2018â€“2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2018–2021 Thomas Weidlich GNU GPL v3 */
 
 namespace YOOtheme;
 
@@ -17,8 +17,8 @@ return [
 
 			$metadata->set('script:builder-hd-progress', ['src' => Path::get('./js/hd-progress.js'), 'defer' => true]);
 
-            // Don't render element if content fields are empty
-            return Str::length($node->props['content']) || ($node->props['max'] && $node->props['stop'] && $node->props['animation_step'] && $node->props['animation_speed']);
+			// Don't render element if content fields are empty
+			return Str::length($node->props['content']) || ($node->props['max'] && $node->props['stop'] && $node->props['animation_step'] && $node->props['animation_speed']);
 
 		},
 
@@ -26,7 +26,14 @@ return [
 
 	'updates' => [
 
-		//
+		'2.4.12' => function ($node) {
+
+			if (isset($node->props['value'])) {
+				$node->props['start'] = $node->props['value'];
+				unset($node->props['value']);
+			}
+
+		},
 
 	],
 

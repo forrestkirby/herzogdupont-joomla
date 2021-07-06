@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2019â€“2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 namespace YOOtheme;
 
@@ -23,17 +23,24 @@ return [
 
     'updates' => [
 
+        '2.4.14.2' => function ($node) {
+
+            $node->props['animation'] = Arr::get($node->props, 'item_animation');
+            $node->props['item_animation'] = true;
+
+        },
+
         '2.1.0-beta.0.1' => function ($node) {
 
-            if (@$node->props['item_maxwidth'] === 'xxlarge') {
+            if (Arr::get($node->props, 'item_maxwidth') === 'xxlarge') {
                 $node->props['item_maxwidth'] = '2xlarge';
             }
 
-            if (@$node->props['title_grid_width'] === 'xxlarge') {
+            if (Arr::get($node->props, 'title_grid_width') === 'xxlarge') {
                 $node->props['title_grid_width'] = '2xlarge';
             }
 
-            if (@$node->props['image_grid_width'] === 'xxlarge') {
+            if (Arr::get($node->props, 'image_grid_width') === 'xxlarge') {
                 $node->props['image_grid_width'] = '2xlarge';
             }
 
@@ -72,11 +79,11 @@ return [
 
         '2.0.0-beta.5.1' => function ($node) {
 
-            if (@$node->props['link_type'] === 'content') {
+            if (Arr::get($node->props, 'link_type') === 'content') {
                 $node->props['title_link'] = true;
                 $node->props['image_link'] = true;
                 $node->props['link_text'] = '';
-            } elseif (@$node->props['link_type'] === 'element') {
+            } elseif (Arr::get($node->props, 'link_type') === 'element') {
                 $node->props['panel_link'] = true;
                 $node->props['link_text'] = '';
             }

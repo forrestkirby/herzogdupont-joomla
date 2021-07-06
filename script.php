@@ -14,7 +14,7 @@ class plgSystemHerzogdupontInstallerScript
 {
     protected $minimumPHPVersion = '7.3.0';
     protected $minimumJoomlaVersion = '3.9.0';
-    protected $minimumYOOthemeVersion = '2.4.0';
+    protected $minimumYOOthemeVersion = '2.5.0';
 
     public function install($parent)
     {
@@ -75,11 +75,11 @@ class plgSystemHerzogdupontInstallerScript
         {
             $db    = JFactory::getDbo();
             $query = $db->getQuery(true)
-                        ->update('#__extensions')
+                        ->update($db->qn('#__extensions'))
                         ->set($db->qn('enabled') . ' = ' . $db->q(1))
-                        ->where('type = ' . $db->quote('plugin'))
-                        ->where('folder = ' . $db->quote('system'))
-                        ->where('element = ' . $db->quote('herzogdupont'));
+                        ->where('type = ' . $db->q('plugin'))
+                        ->where('folder = ' . $db->q('system'))
+                        ->where('element = ' . $db->q('herzogdupont'));
             $db->setQuery($query);
             $db->execute();
         }

@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016â€“2021 YOOtheme GmbH, 2019â€“2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 if ($props['image']) : ?>
 <img src="<?= $props['image'] ?>" alt="<?= $props['image_alt'] ?>">
@@ -19,5 +19,5 @@ if ($props['image']) : ?>
 <?php endif ?>
 
 <?php if ($props['link']) : ?>
-<p><a href="<?= $props['link'] ?>"><?= $element['link_text'] ?></a></p>
+<p><a href="<?= $props['link'] ?>"><?= $props['link_text'] ?: $element['link_text'] ?></a></p>
 <?php endif ?>

@@ -1,0 +1,1576 @@
+{
+    "@import": "./element.php",
+    "name": "hd-slideshow-grid",
+    "title": "HD Slideshow Grid",
+    "group": "herzog-dupont",
+    "icon": "${url:images/icon.svg}",
+    "iconSmall": "${url:images/iconSmall.svg}",
+    "element": true,
+    "container": true,
+    "width": 500,
+    "defaults": {
+        "show_title": true,
+        "show_meta": true,
+        "show_content": true,
+        "show_image": true,
+        "show_link": true,
+        "show_thumbnail": true,
+        "grid_default": "1",
+        "grid_medium": "3",
+        "filter_style": "tab",
+        "filter_all": true,
+        "filter_position": "top",
+        "filter_align": "left",
+        "filter_grid_width": "auto",
+        "filter_grid_breakpoint": "m",
+        "title_hover_style": "reset",
+        "title_element": "h3",
+        "title_align": "top",
+        "title_grid_width": "1-2",
+        "title_grid_breakpoint": "m",
+        "meta_style": "meta",
+        "meta_align": "below-title",
+        "meta_element": "div",
+        "content_column_breakpoint": "m",
+        "image_align": "top",
+        "image_grid_width": "1-2",
+        "image_grid_breakpoint": "m",
+        "slideshow_min_height": 300,
+        "slideshow_autoplay_pause": true,
+        "nav": "dotnav",
+        "nav_position": "bottom-center",
+        "nav_position_margin": "medium",
+        "nav_align": "center",
+        "nav_breakpoint": "s",
+        "thumbnav_width": "100",
+        "thumbnav_height": "75",
+        "thumbnav_svg_color": "emphasis",
+        "slidenav": "default",
+        "slidenav_margin": "medium",
+        "slidenav_breakpoint": "s",
+        "slidenav_outside_breakpoint": "xl",
+        "link_text": "Read more",
+        "link_style": "default",
+        "margin": "default",
+        "item_animation": true
+    },
+    "placeholder": {
+        "children": [
+            {"type": "hd-slideshow-grid_item", "props": {}},
+            {"type": "hd-slideshow-grid_item", "props": {}},
+            {"type": "hd-slideshow-grid_item", "props": {}}
+        ]
+    },
+    "templates": {
+        "render": "./templates/template.php",
+        "content": "./templates/content.php"
+    },
+    "fields": {
+        "content": {
+            "label": "Items",
+            "type": "content-items",
+            "item": "hd-slideshow-grid_item",
+            "media": {
+                "type": "image",
+                "item": {"title": "title", "image_1": "src"}
+            }
+        },
+        "show_title": {
+            "label": "Display",
+            "type": "checkbox",
+            "text": "Show the title"
+        },
+        "show_meta": {
+            "type": "checkbox",
+            "text": "Show the meta text"
+        },
+        "show_content": {
+            "type": "checkbox",
+            "text": "Show the content"
+        },
+        "show_image": {
+            "type": "checkbox",
+            "text": "Show the image"
+        },
+        "show_link": {
+            "description": "Show or hide content fields without the need to delete the content itself.",
+            "type": "checkbox",
+            "text": "Show the link"
+        },
+        "show_thumbnail": {
+            "description": "Show or hide content fields without the need to delete the content itself.",
+            "type": "checkbox",
+            "text": "Show the navigation thumbnail instead of the image"
+        },
+        "grid_masonry": {
+            "label": "Masonry",
+            "description": "Create a gap-free layout if grid items have different heights.",
+            "type": "checkbox",
+            "text": "Enable masonry layout"
+        },
+        "grid_parallax": {
+            "label": "Parallax",
+            "description": "The parallax effect moves single grid columns at different speeds while scrolling. Define the vertical parallax offset in pixels.",
+            "type": "range",
+            "attrs": {
+                "min": 0,
+                "max": 600,
+                "step": 10
+            }
+        },
+        "grid_column_gap": {
+            "label": "Column Gap",
+            "description": "Set the size of the gap between the grid columns.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Medium": "medium",
+                "Default": "",
+                "Large": "large",
+                "None": "collapse"
+            }
+        },
+        "grid_row_gap": {
+            "label": "Row Gap",
+            "description": "Set the size of the gap between the grid rows.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Medium": "medium",
+                "Default": "",
+                "Large": "large",
+                "None": "collapse"
+            }
+        },
+        "grid_divider": {
+            "label": "Divider",
+            "description": "Show a divider between grid columns.",
+            "type": "checkbox",
+            "text": "Show dividers",
+            "enable": "grid_column_gap != 'collapse' && grid_row_gap != 'collapse'"
+        },
+        "grid_column_align": {
+            "label": "Alignment",
+            "type": "checkbox",
+            "text": "Center columns"
+        },
+        "grid_row_align": {
+            "description": "Center grid columns horizontally and rows vertically.",
+            "type": "checkbox",
+            "text": "Center rows"
+        },
+        "grid_default": {
+            "label": "Phone Portrait",
+            "description": "Set the number of grid columns for each breakpoint. <i>Inherit</i> refers to the number of columns on the next smaller screen size.",
+            "type": "select",
+            "options": {
+                "1 Column": "1",
+                "2 Columns": "2",
+                "3 Columns": "3",
+                "4 Columns": "4",
+                "5 Columns": "5",
+                "6 Columns": "6",
+                "Auto": "auto"
+            }
+        },
+        "grid_small": {
+            "label": "Phone Landscape",
+            "description": "Set the number of grid columns for each breakpoint. <i>Inherit</i> refers to the number of columns on the next smaller screen size.",
+            "type": "select",
+            "options": {
+                "Inherit": "",
+                "1 Column": "1",
+                "2 Columns": "2",
+                "3 Columns": "3",
+                "4 Columns": "4",
+                "5 Columns": "5",
+                "6 Columns": "6",
+                "Auto": "auto"
+            }
+        },
+        "grid_medium": {
+            "label": "Tablet Landscape",
+            "description": "Set the number of grid columns for each breakpoint. <i>Inherit</i> refers to the number of columns on the next smaller screen size.",
+            "type": "select",
+            "options": {
+                "Inherit": "",
+                "1 Column": "1",
+                "2 Columns": "2",
+                "3 Columns": "3",
+                "4 Columns": "4",
+                "5 Columns": "5",
+                "6 Columns": "6",
+                "Auto": "auto"
+            }
+        },
+        "grid_large": {
+            "label": "Desktop",
+            "description": "Set the number of grid columns for each breakpoint. <i>Inherit</i> refers to the number of columns on the next smaller screen size.",
+            "type": "select",
+            "options": {
+                "Inherit": "",
+                "1 Column": "1",
+                "2 Columns": "2",
+                "3 Columns": "3",
+                "4 Columns": "4",
+                "5 Columns": "5",
+                "6 Columns": "6",
+                "Auto": "auto"
+            }
+        },
+        "grid_xlarge": {
+            "label": "Large Screens",
+            "description": "Set the number of grid columns for each breakpoint. <i>Inherit</i> refers to the number of columns on the next smaller screen size.",
+            "type": "select",
+            "options": {
+                "Inherit": "",
+                "1 Column": "1",
+                "2 Columns": "2",
+                "3 Columns": "3",
+                "4 Columns": "4",
+                "5 Columns": "5",
+                "6 Columns": "6",
+                "Auto": "auto"
+            }
+        },
+        "filter": {
+            "label": "Filter",
+            "type": "checkbox",
+            "text": "Enable filter navigation"
+        },
+        "filter_animation": {
+            "label": "Animation",
+            "description": "Select an animation that will be applied to the content items when filtering between them.",
+            "type": "select",
+            "options": {
+                "None": "false",
+                "Slide": "",
+                "Fade": "fade",
+                "Delayed Fade": "delayed-fade"
+            },
+            "enable": "filter"
+        },
+        "filter_reverse": {
+            "label": "Navigation",
+            "type": "checkbox",
+            "text": "Reverse order",
+            "enable": "filter"
+        },
+        "filter_style": {
+            "label": "Style",
+            "description": "Select the filter navigation style. The pill and divider styles are only available for horizontal Subnavs.",
+            "type": "select",
+            "options": {
+                "Tabs": "tab",
+                "Subnav (Nav)": "subnav",
+                "Subnav Divider (Nav)": "subnav-divider",
+                "Subnav Pill (Nav)": "subnav-pill"
+            },
+            "enable": "filter"
+        },
+        "filter_all": {
+            "label": "All Items",
+            "type": "checkbox",
+            "text": "Show filter control for all items",
+            "enable": "filter"
+        },
+        "filter_all_label": {
+            "attrs": {
+                "placeholder": "All"
+            },
+            "enable": "filter && filter_all"
+        },
+        "filter_position": {
+            "label": "Position",
+            "description": "Position the filter navigation at the top, left or right. A larger style can be applied to left and right navigation.",
+            "type": "select",
+            "options": {
+                "Top": "top",
+                "Left": "left",
+                "Right": "right"
+            },
+            "enable": "filter"
+        },
+        "filter_style_primary": {
+            "type": "checkbox",
+            "text": "Primary navigation",
+            "enable": "filter && (filter_position == 'left' || filter_position == 'right') && $match(filter_style, '(^subnav)')"
+        },
+        "filter_align": {
+            "label": "Alignment",
+            "description": "Align the filter controls.",
+            "type": "select",
+            "options": {
+                "Left": "left",
+                "Right": "right",
+                "Center": "center",
+                "Justify": "justify"
+            },
+            "enable": "filter && filter_position == 'top'"
+        },
+        "filter_margin": {
+            "label": "Margin",
+            "description": "Set the vertical margin.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Default": "",
+                "Medium": "medium",
+                "Large": "large",
+                "X-Large": "xlarge"
+            },
+            "enable": "filter && filter_position == 'top'"
+        },
+        "filter_grid_width": {
+            "label": "Grid Width",
+            "description": "Define the width of the filter navigation. Choose between percent and fixed widths or expand columns to the width of their content.",
+            "type": "select",
+            "options": {
+                "Auto": "auto",
+                "50%": "1-2",
+                "33%": "1-3",
+                "25%": "1-4",
+                "20%": "1-5",
+                "Small": "small",
+                "Medium": "medium",
+                "Large": "large"
+            },
+            "enable": "filter && (filter_position == 'left' || filter_position == 'right')"
+        },
+        "filter_grid_column_gap": {
+            "label": "Grid Column Gap",
+            "description": "Set the size of the gap between between the filter navigation and the content.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Medium": "medium",
+                "Default": "",
+                "Large": "large",
+                "None": "collapse"
+            },
+            "enable": "filter && (filter_position == 'left' || filter_position == 'right')"
+        },
+        "filter_grid_row_gap": {
+            "label": "Grid Row Gap",
+            "description": "Set the size of the gap if the grid items stack.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Medium": "medium",
+                "Default": "",
+                "Large": "large",
+                "None": "collapse"
+            },
+            "enable": "filter && (filter_position == 'left' || filter_position == 'right')"
+        },
+        "filter_grid_breakpoint": {
+            "label": "Grid Breakpoint",
+            "description": "Set the breakpoint from which grid items will stack.",
+            "type": "select",
+            "options": {
+                "Small (Phone Landscape)": "s",
+                "Medium (Tablet Landscape)": "m",
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
+            },
+            "enable": "filter && (filter_position == 'left' || filter_position == 'right')"
+        },
+        "panel_style": {
+            "label": "Style",
+            "description": "Select one of the boxed card styles or a blank panel.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Card Default": "card-default",
+                "Card Primary": "card-primary",
+                "Card Secondary": "card-secondary",
+                "Card Hover": "card-hover"
+            }
+        },
+        "panel_content_padding": {
+            "label": "Padding",
+            "description": "Add padding to the content if the image is top, left or right aligned.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Small": "small",
+                "Default": "default",
+                "Large": "large"
+            },
+            "show": "!panel_style",
+            "enable": "show_image && image_align != 'between'"
+        },
+        "panel_size": {
+            "label": "Padding",
+            "description": "Define the card's size by selecting the padding between the card and its content.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Default": "",
+                "Large": "large"
+            },
+            "show": "panel_style"
+        },
+        "panel_card_image": {
+            "description": "Top, left or right aligned images can be attached to the card's edge. If the image is aligned to the left or right, it will also extend to cover the whole space.",
+            "type": "checkbox",
+            "text": "Align image without padding",
+            "show": "panel_style",
+            "enable": "show_image && (image_align != 'left' || image_align != 'right' || image_align != 'between')"
+        },
+        "item_maxwidth": {
+            "type": "select",
+            "label": "Max Width",
+            "description": "Set the maximum width.",
+            "options": {
+                "None": "",
+                "Small": "small",
+                "Medium": "medium",
+                "Large": "large",
+                "X-Large": "xlarge",
+                "2X-Large": "2xlarge"
+            }
+        },
+        "panel_content_width": {
+            "label": "1 Column Content Width",
+            "description": "Set an optional content width which doesn't affect the image if there is just one column.",
+            "type": "select",
+            "options": {
+                "Auto": "",
+                "X-Small": "xsmall",
+                "Small": "small"
+            },
+            "show": "!panel_style",
+            "enable": "show_image && image_align == 'top' && !panel_content_padding && !item_maxwidth && (!grid_default || grid_default == '1') && (!grid_small || grid_small == '1') && (!grid_medium || grid_medium == '1') && (!grid_large || grid_large == '1') && (!grid_xlarge || grid_xlarge == '1')"
+        },
+        "title_style": {
+            "label": "Style",
+            "description": "Title styles differ in font-size but may also come with a predefined color, size and font.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "2X-Large": "heading-2xlarge",
+                "X-Large": "heading-xlarge",
+                "Large": "heading-large",
+                "Medium": "heading-medium",
+                "Small": "heading-small",
+                "H1": "h1",
+                "H2": "h2",
+                "H3": "h3",
+                "H4": "h4",
+                "H5": "h5",
+                "H6": "h6"
+            },
+            "enable": "show_title"
+        },
+        "title_link": {
+            "label": "Link",
+            "description": "Link the title if a link exists.",
+            "type": "checkbox",
+            "text": "Link title",
+            "enable": "show_title && show_link"
+        },
+        "title_hover_style": {
+            "label": "Hover Style",
+            "description": "Set the hover style for a linked title.",
+            "type": "select",
+            "options": {
+                "None": "reset",
+                "Heading Link": "heading",
+                "Default Link": ""
+            },
+            "enable": "show_title && show_link && title_link"
+        },
+        "title_decoration": {
+            "label": "Decoration",
+            "description": "Decorate the title with a divider, bullet or a line that is vertically centered to the heading.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Divider": "divider",
+                "Bullet": "bullet",
+                "Line": "line"
+            },
+            "enable": "show_title"
+        },
+        "title_font_family": {
+            "label": "Font Family",
+            "description": "Select an alternative font family.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Default": "default",
+                "Primary": "primary",
+                "Secondary": "secondary",
+                "Tertiary": "tertiary"
+            },
+            "enable": "show_title"
+        },
+        "title_color": {
+            "label": "Color",
+            "description": "Select the text color. If the Background option is selected, styles that don't apply a background image use the primary color instead.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Muted": "muted",
+                "Emphasis": "emphasis",
+                "Primary": "primary",
+                "Secondary": "secondary",
+                "Success": "success",
+                "Warning": "warning",
+                "Danger": "danger",
+                "Background": "background"
+            },
+            "enable": "show_title"
+        },
+        "title_element": {
+            "label": "HTML Element",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
+            "type": "select",
+            "options": {
+                "h1": "h1",
+                "h2": "h2",
+                "h3": "h3",
+                "h4": "h4",
+                "h5": "h5",
+                "h6": "h6",
+                "div": "div"
+            },
+            "enable": "show_title"
+        },
+        "title_align": {
+            "label": "Alignment",
+            "description": "Align the title to the top or left in regards to the content.",
+            "type": "select",
+            "options": {
+                "Top": "top",
+                "Left": "left"
+            },
+            "enable": "show_title"
+        },
+        "title_grid_width": {
+            "label": "Grid Width",
+            "description": "Define the width of the title within the grid. Choose between percent and fixed widths or expand columns to the width of their content.",
+            "type": "select",
+            "options": {
+                "Auto": "auto",
+                "80%": "4-5",
+                "75%": "3-4",
+                "66%": "2-3",
+                "60%": "3-5",
+                "50%": "1-2",
+                "40%": "2-5",
+                "33%": "1-3",
+                "25%": "1-4",
+                "20%": "1-5",
+                "Small": "small",
+                "Medium": "medium",
+                "Large": "large",
+                "X-Large": "xlarge",
+                "2X-Large": "2xlarge"
+            },
+            "enable": "show_title && title_align == 'left'"
+        },
+        "title_grid_column_gap": {
+            "label": "Grid Column Gap",
+            "description": "Set the size of the gap between the title and the content.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Medium": "medium",
+                "Default": "",
+                "Large": "large",
+                "None": "collapse"
+            },
+            "enable": "show_title && title_align == 'left'"
+        },
+        "title_grid_row_gap": {
+            "label": "Grid Row Gap",
+            "description": "Set the size of the gap if the grid items stack.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Medium": "medium",
+                "Default": "",
+                "Large": "large",
+                "None": "collapse"
+            },
+            "enable": "show_title && title_align == 'left'"
+        },
+        "title_grid_breakpoint": {
+            "label": "Grid Breakpoint",
+            "description": "Set the breakpoint from which grid items will stack.",
+            "type": "select",
+            "options": {
+                "Always": "",
+                "Small (Phone Landscape)": "s",
+                "Medium (Tablet Landscape)": "m",
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
+            },
+            "enable": "show_title && title_align == 'left'"
+        },
+        "title_margin": {
+            "label": "Margin Top",
+            "description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Default": "",
+                "Medium": "medium",
+                "Large": "large",
+                "X-Large": "xlarge",
+                "None": "remove"
+            },
+            "enable": "show_title"
+        },
+        "meta_style": {
+            "label": "Style",
+            "description": "Select a predefined meta text style, including color, size and font-family.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Meta": "meta",
+                "2X-Large": "heading-2xlarge",
+                "X-Large": "heading-xlarge",
+                "Large": "heading-large",
+                "Medium": "heading-medium",
+                "Small": "heading-small",
+                "H1": "h1",
+                "H2": "h2",
+                "H3": "h3",
+                "H4": "h4",
+                "H5": "h5",
+                "H6": "h6"
+            },
+            "enable": "show_meta"
+        },
+        "meta_color": {
+            "label": "Color",
+            "description": "Select the text color.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Muted": "muted",
+                "Emphasis": "emphasis",
+                "Primary": "primary",
+                "Secondary": "secondary",
+                "Success": "success",
+                "Warning": "warning",
+                "Danger": "danger"
+            },
+            "enable": "show_meta"
+        },
+        "meta_align": {
+            "label": "Alignment",
+            "description": "Align the meta text.",
+            "type": "select",
+            "options": {
+                "Above Title": "above-title",
+                "Below Title": "below-title",
+                "Above Content": "above-content",
+                "Below Content": "below-content"
+            },
+            "enable": "show_meta"
+        },
+        "meta_element": {
+            "label": "HTML Element",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
+            "type": "select",
+            "options": {
+                "h1": "h1",
+                "h2": "h2",
+                "h3": "h3",
+                "h4": "h4",
+                "h5": "h5",
+                "h6": "h6",
+                "div": "div"
+            },
+            "enable": "show_meta"
+        },
+        "meta_margin": {
+            "label": "Margin Top",
+            "description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Default": "",
+                "Medium": "medium",
+                "Large": "large",
+                "X-Large": "xlarge",
+                "None": "remove"
+            },
+            "enable": "show_meta"
+        },
+        "content_style": {
+            "label": "Style",
+            "description": "Select a predefined text style, including color, size and font-family.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Lead": "lead",
+                "Meta": "meta"
+            },
+            "enable": "show_content"
+        },
+        "content_align": {
+            "label": "Alignment",
+            "type": "checkbox",
+            "text": "Force left alignment",
+            "enable": "show_content"
+        },
+        "content_dropcap": {
+            "label": "Drop Cap",
+            "description": "Display the first letter of the paragraph as a large initial.",
+            "type": "checkbox",
+            "text": "Enable drop cap",
+            "enable": "show_content"
+        },
+        "content_column": {
+            "label": "Columns",
+            "description": "Set the number of text columns.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Halves": "1-2",
+                "Thirds": "1-3",
+                "Quarters": "1-4",
+                "Fifths": "1-5",
+                "Sixths": "1-6"
+            },
+            "enable": "show_content"
+        },
+        "content_column_divider": {
+            "description": "Show a divider between text columns.",
+            "type": "checkbox",
+            "text": "Show dividers",
+            "enable": "show_content && content_column"
+        },
+        "content_column_breakpoint": {
+            "label": "Columns Breakpoint",
+            "description": "Set the device width from which the text columns should apply.",
+            "type": "select",
+            "options": {
+                "Always": "",
+                "Small (Phone Landscape)": "s",
+                "Medium (Tablet Landscape)": "m",
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
+            },
+            "enable": "show_content && content_column"
+        },
+        "content_margin": {
+            "label": "Margin Top",
+            "description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Default": "",
+                "Medium": "medium",
+                "Large": "large",
+                "X-Large": "xlarge",
+                "None": "remove"
+            },
+            "enable": "show_content"
+        },
+        "image_width": {
+            "attrs": {
+                "placeholder": "auto"
+            },
+            "enable": "show_image"
+        },
+        "image_height": {
+            "attrs": {
+                "placeholder": "auto"
+            },
+            "enable": "show_image"
+        },
+        "image_box_shadow": {
+            "label": "Box Shadow",
+            "description": "Select the image's box shadow size.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Small": "small",
+                "Medium": "medium",
+                "Large": "large",
+                "X-Large": "xlarge"
+            },
+            "enable": "show_image && !panel_style"
+        },
+        "image_align": {
+            "label": "Alignment",
+            "description": "Align the image to the top, left, right or place it between the title and the content.",
+            "type": "select",
+            "options": {
+                "Top": "top",
+                "Bottom": "bottom",
+                "Left": "left",
+                "Right": "right",
+                "Between": "between"
+            },
+            "enable": "show_image"
+        },
+        "image_grid_width": {
+            "label": "Grid Width",
+            "description": "Define the width of the image within the grid. Choose between percent and fixed widths or expand columns to the width of their content.",
+            "type": "select",
+            "options": {
+                "Auto": "auto",
+                "80%": "4-5",
+                "75%": "3-4",
+                "66%": "2-3",
+                "60%": "3-5",
+                "50%": "1-2",
+                "40%": "2-5",
+                "33%": "1-3",
+                "25%": "1-4",
+                "20%": "1-5",
+                "Small": "small",
+                "Medium": "medium",
+                "Large": "large",
+                "X-Large": "xlarge",
+                "2X-Large": "2xlarge"
+            },
+            "enable": "show_image && (image_align == 'left' || image_align == 'right')"
+        },
+        "image_grid_column_gap": {
+            "label": "Grid Column Gap",
+            "description": "Set the size of the gap between the image and the content.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Medium": "medium",
+                "Default": "",
+                "Large": "large",
+                "None": "collapse"
+            },
+            "enable": "show_image && (image_align == 'left' || image_align == 'right') && !(panel_card_image && panel_style)"
+        },
+        "image_grid_row_gap": {
+            "label": "Grid Row Gap",
+            "description": "Set the size of the gap if the grid items stack.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Medium": "medium",
+                "Default": "",
+                "Large": "large",
+                "None": "collapse"
+            },
+            "enable": "show_image && (image_align == 'left' || image_align == 'right') && !(panel_card_image && panel_style)"
+        },
+        "image_grid_breakpoint": {
+            "label": "Grid Breakpoint",
+            "description": "Set the breakpoint from which grid items will stack.",
+            "type": "select",
+            "options": {
+                "Always": "",
+                "Small (Phone Landscape)": "s",
+                "Medium (Tablet Landscape)": "m",
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
+            },
+            "enable": "show_image && (image_align == 'left' || image_align == 'right')"
+        },
+        "image_vertical_align": {
+            "label": "Vertical Alignment",
+            "description": "Vertically center grid items.",
+            "type": "checkbox",
+            "text": "Center",
+            "enable": "show_image && (image_align == 'left' || image_align == 'right')"
+        },
+        "image_margin": {
+            "label": "Margin Top",
+            "description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Default": "",
+                "Medium": "medium",
+                "Large": "large",
+                "X-Large": "xlarge",
+                "None": "remove"
+            },
+            "enable": "show_image && (image_align == 'between' || (image_align == 'bottom' && !(panel_style && panel_card_image)))"
+        },
+        "slideshow_ratio": {
+            "label": "Ratio",
+            "description": "Set a ratio. It's recommended to use the same ratio of the background image. Just use its width and height, like <code>1600:900</code>.",
+            "attrs": {
+                "placeholder": "16:9"
+            }
+        },
+        "slideshow_min_height": {
+            "label": "Min Height",
+            "description": "Use an optional minimum height to prevent the slideshow from becoming smaller than its content on small devices.",
+            "type": "range",
+            "attrs": {
+                "min": 200,
+                "max": 800,
+                "step": 50
+            }
+        },
+        "slideshow_max_height": {
+            "label": "Max Height",
+            "description": "Set the maximum height.",
+            "type": "range",
+            "attrs": {
+                "min": 500,
+                "max": 1600,
+                "step": 50
+            }
+        },
+        "text_color": {
+            "label": "Text Color",
+            "description": "Set light or dark color mode for controls.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Light": "light",
+                "Dark": "dark"
+            }
+        },
+        "slideshow_animation": {
+            "label": "Transition",
+            "description": "Select the transition between two slides.",
+            "type": "select",
+            "options": {
+                "Slide": "",
+                "Pull": "pull",
+                "Push": "push",
+                "Fade": "fade",
+                "Scale": "scale"
+            }
+        },
+        "slideshow_velocity": {
+            "label": "Velocity",
+            "description": "Set the velocity in pixels per millisecond.",
+            "type": "range",
+            "attrs": {
+                "min": 0.2,
+                "max": 3,
+                "step": 0.1,
+                "placeholder": "1"
+            }
+        },
+        "slideshow_autoplay": {
+            "label": "Autoplay",
+            "type": "checkbox",
+            "text": "Enable autoplay"
+        },
+        "slideshow_autoplay_pause": {
+            "type": "checkbox",
+            "text": "Pause autoplay on hover",
+            "enable": "slideshow_autoplay"
+        },
+        "slideshow_autoplay_interval": {
+            "label": "Interval",
+            "description": "Set the autoplay interval in seconds.",
+            "type": "range",
+            "attrs": {
+                "min": 5,
+                "max": 15,
+                "step": 1,
+                "placeholder": "7"
+            },
+            "enable": "slideshow_autoplay"
+        },
+        "slideshow_kenburns": {
+            "label": "Ken Burns Effect",
+            "description": "Select the transformation origin for the Ken Burns animation.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Alternate": "alternate",
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "center-center",
+                "Center Right": "center-right",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            }
+        },
+        "slideshow_kenburns_duration": {
+            "label": "Duration",
+            "description": "Set the duration for the Ken Burns effect in seconds.",
+            "type": "range",
+            "attrs": {
+                "min": 10,
+                "max": 30,
+                "step": 1,
+                "placeholder": "15"
+            },
+            "enable": "slideshow_kenburns"
+        },
+        "nav": {
+            "label": "Navigation",
+            "description": "Select the navigation type.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Dotnav": "dotnav",
+                "Thumbnav": "thumbnav"
+            }
+        },
+        "nav_below": {
+            "type": "checkbox",
+            "text": "Show below slideshow",
+            "enable": "nav"
+        },
+        "nav_vertical": {
+            "type": "checkbox",
+            "text": "Vertical navigation",
+            "enable": "nav && !nav_below"
+        },
+        "nav_position": {
+            "label": "Position",
+            "description": "Select the position of the navigation.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Right": "center-right",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "show": "nav && !nav_below"
+        },
+        "nav_align": {
+            "label": "Position",
+            "description": "Align the navigation's items.",
+            "type": "select",
+            "options": {
+                "Left": "left",
+                "Center": "center",
+                "Right": "right"
+            },
+            "show": "nav && nav_below"
+        },
+        "nav_position_margin": {
+            "label": "Margin",
+            "description": "Apply a margin between the navigation and the slideshow container.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Small": "small",
+                "Medium": "medium",
+                "Large": "large"
+            },
+            "show": "nav && !nav_below"
+        },
+        "nav_margin": {
+            "label": "Margin",
+            "description": "Set the vertical margin.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Default": "",
+                "Medium": "medium"
+            },
+            "show": "nav && nav_below"
+        },
+        "nav_breakpoint": {
+            "label": "Breakpoint",
+            "description": "Display the navigation only on this device width and larger.",
+            "type": "select",
+            "options": {
+                "Always": "",
+                "Small (Phone Landscape)": "s",
+                "Medium (Tablet Landscape)": "m",
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
+            },
+            "enable": "nav"
+        },
+        "nav_color": {
+            "label": "Color",
+            "description": "Set light or dark color if the navigation is below the slideshow.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Light": "light",
+                "Dark": "dark"
+            },
+            "enable": "nav && nav_below"
+        },
+        "thumbnav_width": {
+            "attrs": {
+                "placeholder": "auto"
+            },
+            "enable": "nav == 'thumbnav' && show_thumbnail"
+        },
+        "thumbnav_height": {
+            "attrs": {
+                "placeholder": "auto"
+            },
+            "enable": "nav == 'thumbnav' && show_thumbnail"
+        },
+        "thumbnav_nowrap": {
+            "label": "Thumbnav Wrap",
+            "description": "Define whether thumbnails wrap into multiple lines if the container is too small.",
+            "type": "checkbox",
+            "text": "Don't wrap into multiple lines",
+            "enable": "nav == 'thumbnav' && show_thumbnail"
+        },
+        "thumbnav_svg_inline": {
+            "label": "Thumbnav Inline SVG",
+            "description": "Inject SVG images into the page markup so that they can easily be styled with CSS.",
+            "type": "checkbox",
+            "text": "Make SVG stylable with CSS",
+            "enable": "nav == 'thumbnav' && show_thumbnail"
+        },
+        "thumbnav_svg_color": {
+            "label": "Thumbnav SVG Color",
+            "description": "Select the SVG color. It will only apply to supported elements defined in the SVG.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Muted": "muted",
+                "Emphasis": "emphasis",
+                "Primary": "primary",
+                "Secondary": "secondary",
+                "Success": "success",
+                "Warning": "warning",
+                "Danger": "danger"
+            },
+            "enable": "nav == 'thumbnav' && show_thumbnail && thumbnav_svg_inline"
+        },
+        "slidenav": {
+            "label": "Position",
+            "description": "Select the position of the slidenav.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Default": "default",
+                "Outside": "outside",
+                "Top Left": "top-left",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Right": "center-right",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            }
+        },
+        "slidenav_hover": {
+            "type": "checkbox",
+            "text": "Show on hover only",
+            "enable": "slidenav"
+        },
+        "slidenav_large": {
+            "type": "checkbox",
+            "text": "Larger style",
+            "enable": "slidenav"
+        },
+        "slidenav_margin": {
+            "label": "Margin",
+            "description": "Apply a margin between the slidenav and the slideshow container.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Small": "small",
+                "Medium": "medium",
+                "Large": "large"
+            },
+            "enable": "slidenav"
+        },
+        "slidenav_breakpoint": {
+            "label": "Breakpoint",
+            "description": "Display the slidenav only on this device width and larger.",
+            "type": "select",
+            "options": {
+                "Always": "",
+                "Small (Phone Landscape)": "s",
+                "Medium (Tablet Landscape)": "m",
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
+            },
+            "enable": "slidenav"
+        },
+        "slidenav_outside_breakpoint": {
+            "label": "Outside Breakpoint",
+            "description": "Display the slidenav outside only on this device width and larger. Otherwise, display it inside.",
+            "type": "select",
+            "options": {
+                "Small (Phone Landscape)": "s",
+                "Medium (Tablet Landscape)": "m",
+                "Large (Desktop)": "l",
+                "X-Large (Large Screens)": "xl"
+            },
+            "enable": "slidenav == 'outside'"
+        },
+        "slidenav_outside_color": {
+            "label": "Outside Color",
+            "description": "Set light or dark color if the slidenav is outside of the slideshow.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Light": "light",
+                "Dark": "dark"
+            },
+            "enable": "slidenav == 'outside'"
+        },
+        "link_target": {
+            "label": "Target",
+            "type": "checkbox",
+            "text": "Open in a new window",
+            "enable": "show_link"
+        },
+        "link_text": {
+            "label": "Text",
+            "description": "Enter the text for the link.",
+            "enable": "show_link"
+        },
+        "link_style": {
+            "label": "Style",
+            "description": "Set the link style.",
+            "type": "select",
+            "options": {
+                "Button Default": "default",
+                "Button Primary": "primary",
+                "Button Secondary": "secondary",
+                "Button Danger": "danger",
+                "Button Text": "text",
+                "Link": "",
+                "Link Muted": "link-muted",
+                "Link Text": "link-text"
+            },
+            "enable": "show_link"
+        },
+        "link_size": {
+            "label": "Button Size",
+            "description": "Set the button size.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Default": "",
+                "Large": "large"
+            },
+            "enable": "show_link && link_style && link_style != 'link-muted' && link_style != 'link-text'"
+        },
+        "link_fullwidth": {
+            "type": "checkbox",
+            "text": "Full width button",
+            "enable": "show_link && link_style && link_style != 'link-muted' && link_style != 'link-text'"
+        },
+        "link_margin": {
+            "label": "Margin Top",
+            "description": "Set the top margin. Note that the margin will only apply if the content field immediately follows another content field.",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Default": "",
+                "Medium": "medium",
+                "Large": "large",
+                "X-Large": "xlarge",
+                "None": "remove"
+            },
+            "enable": "show_link"
+        },
+        "position": "${builder.position}",
+        "position_left": "${builder.position_left}",
+        "position_right": "${builder.position_right}",
+        "position_top": "${builder.position_top}",
+        "position_bottom": "${builder.position_bottom}",
+        "position_z_index": "${builder.position_z_index}",
+        "margin": "${builder.margin}",
+        "margin_remove_top": "${builder.margin_remove_top}",
+        "margin_remove_bottom": "${builder.margin_remove_bottom}",
+        "maxwidth": "${builder.maxwidth}",
+        "maxwidth_breakpoint": "${builder.maxwidth_breakpoint}",
+        "block_align": "${builder.block_align}",
+        "block_align_breakpoint": "${builder.block_align_breakpoint}",
+        "block_align_fallback": "${builder.block_align_fallback}",
+        "text_align": "${builder.text_align_justify}",
+        "text_align_breakpoint": "${builder.text_align_breakpoint}",
+        "text_align_fallback": "${builder.text_align_justify_fallback}",
+        "animation": "${builder.animation}",
+        "item_animation": "${builder.item_animation}",
+        "_parallax_button": "${builder._parallax_button}",
+        "visibility": "${builder.visibility}",
+        "name": "${builder.name}",
+        "status": "${builder.status}",
+        "id": "${builder.id}",
+        "class": "${builder.cls}",
+        "attributes": "${builder.attrs}",
+        "css": {
+            "label": "CSS",
+            "description": "Enter your own custom CSS. The following selectors will be prefixed automatically for this element: <code>.el-element</code>, <code>.el-item</code>, <code>.el-title</code>, <code>.el-meta</code>, <code>.el-content</code>, <code>.el-image</code>, <code>.el-link</code>",
+            "type": "editor",
+            "editor": "code",
+            "mode": "css",
+            "attrs": {
+                "debounce": 500
+            }
+        }
+    },
+    "fieldset": {
+        "default": {
+            "type": "tabs",
+            "fields": [
+                {
+                    "title": "Content",
+                    "fields": [
+                        "content",
+                        "show_title",
+                        "show_meta",
+                        "show_content",
+                        "show_image",
+                        "show_link"
+                    ]
+                },
+                {
+                    "title": "Settings",
+                    "fields": [
+                        {
+                            "label": "Grid",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "grid_masonry",
+                                "grid_parallax",
+                                "grid_column_gap",
+                                "grid_row_gap",
+                                "grid_divider",
+                                "grid_column_align",
+                                "grid_row_align"
+                            ]
+                        },
+                        {
+                            "label": "Columns",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "grid_default",
+                                "grid_small",
+                                "grid_medium",
+                                "grid_large",
+                                "grid_xlarge"
+                            ]
+                        },
+                        {
+                            "label": "Filter",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "filter",
+                                "filter_animation",
+                                "filter_reverse",
+                                "filter_style",
+                                "filter_all",
+                                "filter_all_label",
+                                "filter_position",
+                                "filter_style_primary",
+                                "filter_align",
+                                "filter_margin",
+                                "filter_grid_width",
+                                "filter_grid_column_gap",
+                                "filter_grid_row_gap",
+                                "filter_grid_breakpoint"
+                            ]
+                        },
+                        {
+                            "label": "Panel",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "panel_style",
+                                "panel_content_padding",
+                                "panel_size",
+                                "panel_card_image",
+                                "item_maxwidth",
+                                "panel_content_width"
+                            ]
+                        },
+                        {
+                            "label": "Title",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "title_style",
+                                "title_link",
+                                "title_hover_style",
+                                "title_decoration",
+                                "title_font_family",
+                                "title_color",
+                                "title_element",
+                                "title_align",
+                                "title_grid_width",
+                                "title_grid_column_gap",
+                                "title_grid_row_gap",
+                                "title_grid_breakpoint",
+                                "title_margin"
+                            ]
+                        },
+                        {
+                            "label": "Meta",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "meta_style",
+                                "meta_color",
+                                "meta_align",
+                                "meta_element",
+                                "meta_margin"
+                            ]
+                        },
+                        {
+                            "label": "Content",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "content_style",
+                                "content_align",
+                                "content_dropcap",
+                                "content_column",
+                                "content_column_divider",
+                                "content_column_breakpoint",
+                                "content_margin"
+                            ]
+                        },
+                        {
+                            "label": "Slideshow",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "slideshow_ratio",
+                                "slideshow_min_height",
+                                "slideshow_max_height",
+                                "text_color",
+                                "image_box_shadow",
+                                "image_align",
+                                "image_grid_width",
+                                "image_grid_column_gap",
+                                "image_grid_row_gap",
+                                "image_grid_breakpoint",
+                                "image_vertical_align",
+                                "image_margin"
+                            ]
+                        },
+                        {
+                            "label": "Animation",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "slideshow_animation",
+                                "slideshow_velocity",
+                                "slideshow_autoplay",
+                                "slideshow_autoplay_pause",
+                                "slideshow_autoplay_interval",
+                                "slideshow_kenburns",
+                                "slideshow_kenburns_duration"
+                            ]
+                        },
+                        {
+                            "label": "Navigation",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "nav",
+                                "nav_below",
+                                "nav_vertical",
+                                "nav_position",
+                                "nav_align",
+                                "nav_position_margin",
+                                "nav_margin",
+                                "nav_breakpoint",
+                                "nav_color",
+                                {
+                                    "label": "Thumbnail Width/Height",
+                                    "description": "Setting just one value preserves the original proportions. The image will be resized and cropped automatically, and where possible, high resolution images will be auto-generated.",
+                                    "type": "grid",
+                                    "width": "1-2",
+                                    "fields": [
+                                        "thumbnav_width",
+                                        "thumbnav_height"
+                                    ]
+                                },
+                                "thumbnav_nowrap",
+                                "thumbnav_svg_inline",
+                                "thumbnav_svg_color"
+                            ]
+                        },
+                        {
+                            "label": "Slidenav",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "slidenav",
+                                "slidenav_hover",
+                                "slidenav_large",
+                                "slidenav_margin",
+                                "slidenav_breakpoint",
+                                "slidenav_outside_breakpoint",
+                                "slidenav_outside_color"
+                            ]
+                        },
+                        {
+                            "label": "Image",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                {
+                                    "label": "Width/Height",
+                                    "description": "Setting just one value preserves the original proportions. The image will be resized and cropped automatically, and where possible, high resolution images will be auto-generated.",
+                                    "type": "grid",
+                                    "width": "1-2",
+                                    "fields": [
+                                        "image_width",
+                                        "image_height"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Link",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "link_target",
+                                "link_text",
+                                "link_style",
+                                "link_size",
+                                "link_fullwidth",
+                                "link_margin"
+                            ]
+                        },
+                        {
+                            "label": "General",
+                            "type": "group",
+                            "fields": [
+                                "position",
+                                "position_left",
+                                "position_right",
+                                "position_top",
+                                "position_bottom",
+                                "position_z_index",
+                                "margin",
+                                "margin_remove_top",
+                                "margin_remove_bottom",
+                                "maxwidth",
+                                "maxwidth_breakpoint",
+                                "block_align",
+                                "block_align_breakpoint",
+                                "block_align_fallback",
+                                "text_align",
+                                "text_align_breakpoint",
+                                "text_align_fallback",
+                                "animation",
+                                "item_animation",
+                                "_parallax_button",
+                                "visibility"
+                            ]
+                        }
+                    ]
+                },
+                "${builder.advanced}"
+            ]
+        }
+    }
+}

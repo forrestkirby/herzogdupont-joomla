@@ -14,8 +14,8 @@
     <authorUrl>https://herzog-dupont.de</authorUrl>
     <copyright>Copyright (C) 2021 Thomas Weidlich</copyright>
     <license>GNU General Public License version 3, see LICENSE</license>
-    <creationDate>April 2021</creationDate>
-    <version>1.2.1</version>
+    <creationDate>July 2021</creationDate>
+    <version>1.3.0</version>
     <description>PLG_SYSTEM_HERZOGDUPONT_XML_DESC</description>
     <scriptfile>script.php</scriptfile>
     <files>

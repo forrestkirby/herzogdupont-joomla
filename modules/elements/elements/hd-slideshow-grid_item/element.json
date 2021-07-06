@@ -1,0 +1,183 @@
+{
+    "@import": "./element.php",
+    "name": "hd-slideshow-grid_item",
+    "title": "Item",
+    "width": 500,
+    "placeholder": {
+        "props": {
+            "image_1": "${url:~yootheme/theme/assets/images/element-image-placeholder.png}",
+            "video_1": "",
+            "image_2": "${url:~yootheme/theme/assets/images/element-image-placeholder.png}",
+            "video_2": "",
+            "image_3": "${url:~yootheme/theme/assets/images/element-image-placeholder.png}",
+            "video_3": "",
+            "title": "Title",
+            "meta": "",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        }
+    },
+    "templates": {
+        "render": "./templates/template.php",
+        "content": "./templates/content.php"
+    },
+    "fields": {
+        "image_1": {
+            "label": "Image 1",
+            "type": "image",
+            "source": true,
+            "show": "!video_1",
+            "altRef": "%name%_alt"
+        },
+        "image_1_alt": {
+            "label": "Image 1 Alt",
+            "source": true,
+            "show": "image_1 && !video_1"
+        },
+        "video_1": {
+            "label": "Video 1",
+            "description": "Select a video file or enter a link from <a href=\"https://www.youtube.com\" target=\"_blank\">YouTube</a> or <a href=\"https://vimeo.com\" target=\"_blank\">Vimeo</a>.",
+            "type": "video",
+            "source": true,
+            "show": "!image_1"
+        },
+        "thumbnail_1": {
+            "label": "Navigation Thumbnail 1",
+            "description": "This option is only used if the thumbnail navigation is set.",
+            "type": "image",
+            "source": true
+        },
+        "image_2": {
+            "label": "Image 2",
+            "type": "image",
+            "source": true,
+            "show": "!video_2",
+            "altRef": "%name%_alt"
+        },
+        "image_2_alt": {
+            "label": "Image 2 Alt",
+            "source": true,
+            "show": "image_2 && !video_2"
+        },
+        "video_2": {
+            "label": "Video 2",
+            "description": "Select a video file or enter a link from <a href=\"https://www.youtube.com\" target=\"_blank\">YouTube</a> or <a href=\"https://vimeo.com\" target=\"_blank\">Vimeo</a>.",
+            "type": "video",
+            "source": true,
+            "show": "!image_2"
+        },
+        "thumbnail_2": {
+            "label": "Navigation Thumbnail 2",
+            "description": "This option is only used if the thumbnail navigation is set.",
+            "type": "image",
+            "source": true
+        },
+        "image_3": {
+            "label": "Image 3",
+            "type": "image",
+            "source": true,
+            "show": "!video_3",
+            "altRef": "%name%_alt"
+        },
+        "image_3_alt": {
+            "label": "Image 3 Alt",
+            "source": true,
+            "show": "image_3 && !video_3"
+        },
+        "video_3": {
+            "label": "Video 3",
+            "description": "Select a video file or enter a link from <a href=\"https://www.youtube.com\" target=\"_blank\">YouTube</a> or <a href=\"https://vimeo.com\" target=\"_blank\">Vimeo</a>.",
+            "type": "video",
+            "source": true,
+            "show": "!image_3"
+        },
+        "thumbnail_3": {
+            "label": "Navigation Thumbnail 3",
+            "description": "This option is only used if the thumbnail navigation is set.",
+            "type": "image",
+            "source": true
+        },
+        "title": {
+            "label": "Title",
+            "source": true
+        },
+        "meta": {
+            "label": "Meta",
+            "source": true
+        },
+        "content": {
+            "label": "Content",
+            "type": "editor",
+            "source": true
+        },
+        "link": "${builder.link}",
+        "link_text": {
+            "label": "Link Text",
+            "description": "Set a different link text for this item.",
+            "source": true,
+            "enable": "link"
+        },
+        "tags": {
+            "label": "Tags",
+            "description": "Enter a comma-separated list of tags, for example, <code>blue, white, black</code>.",
+            "source": true
+        },
+        "panel_style": {
+            "label": "Style",
+            "description": "Select one of the boxed card styles.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Card Default": "card-default",
+                "Card Primary": "card-primary",
+                "Card Secondary": "card-secondary",
+                "Card Hover": "card-hover"
+            }
+        },
+        "status": "${builder.statusItem}",
+        "source": "${builder.source}"
+
+    },
+    "fieldset": {
+        "default": {
+            "type": "tabs",
+            "fields": [
+                {
+                    "title": "Content",
+                    "fields": [
+                        "image_1",
+                        "image_1_alt",
+                        "video_1",
+                        "thumbnail_1",
+                        "image_2",
+                        "image_2_alt",
+                        "video_2",
+                        "thumbnail_2",
+                        "image_3",
+                        "image_3_alt",
+                        "video_3",
+                        "thumbnail_3",
+                        "title",
+                        "meta",
+                        "content",
+                        "link",
+                        "link_text",
+                        "tags"
+                    ]
+                },
+                {
+                    "title": "Settings",
+                    "fields": [
+                        {
+                            "label": "Panel",
+                            "type": "group",
+                            "fields": [
+                                "panel_style"
+                            ]
+                        }
+                    ]
+                },
+                "${builder.advancedItem}"
+            ]
+        }
+    }
+}

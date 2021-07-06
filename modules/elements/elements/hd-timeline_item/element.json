@@ -50,6 +50,12 @@
             "source": true
         },
         "link": "${builder.link}",
+        "link_text": {
+            "label": "Link Text",
+            "description": "Set a different link text for this item.",
+            "source": true,
+            "enable": "link"
+        },
         "panel_style": {
             "label": "Style",
             "description": "Select one of the boxed card styles.",
@@ -80,7 +86,8 @@
                         "image_alt",
                         "icon",
                         "timeline_icon",
-                        "link"
+                        "link",
+                        "link_text"
                     ]
                 },
                 {

@@ -27,7 +27,6 @@
         "content_column_breakpoint": "m",
         "icon_width": 80,
         "timeline_icon_width": 40,
-        "image_thumbnail": false,
         "image_align": "top",
         "image_grid_width": "1-2",
         "image_grid_breakpoint": "m",
@@ -35,7 +34,7 @@
         "link_text": "Read more",
         "link_style": "default",
         "margin": "default",
-        "item_animation": ""
+        "item_animation": true
     },
     "placeholder": {
         "children": [
@@ -67,13 +66,13 @@
             "type": "checkbox",
             "text": "Show the meta text"
         },
-        "show_image": {
-            "type": "checkbox",
-            "text": "Show the image"
-        },
         "show_content": {
             "type": "checkbox",
             "text": "Show the content"
+        },
+        "show_image": {
+            "type": "checkbox",
+            "text": "Show the image"
         },
         "show_link": {
             "description": "Show or hide content fields without the need to delete the content itself.",
@@ -265,7 +264,7 @@
             "type": "select",
             "options": {
                 "Auto": "",
-                "XSmall": "xsmall",
+                "X-Small": "xsmall",
                 "Small": "small"
             },
             "show": "!panel_style",
@@ -277,8 +276,8 @@
             "type": "select",
             "options": {
                 "None": "",
-                "2Xlarge": "heading-2xlarge",
-                "XLarge": "heading-xlarge",
+                "2X-Large": "heading-2xlarge",
+                "X-Large": "heading-xlarge",
                 "Large": "heading-large",
                 "Medium": "heading-medium",
                 "Small": "heading-small",
@@ -353,7 +352,7 @@
         },
         "title_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -459,8 +458,8 @@
             "options": {
                 "None": "",
                 "Meta": "meta",
-                "2Xlarge": "heading-2xlarge",
-                "XLarge": "heading-xlarge",
+                "2X-Large": "heading-2xlarge",
+                "X-Large": "heading-xlarge",
                 "Large": "heading-large",
                 "Medium": "heading-medium",
                 "Small": "heading-small",
@@ -503,7 +502,7 @@
         },
         "meta_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit your semantic structure.",
+            "description": "Choose one of the HTML elements to fit the semantic structure.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -807,7 +806,7 @@
         },
         "image_svg_inline": {
             "label": "Inline SVG",
-            "description": "Inject SVG images into the page markup, so that they can easily be styled with CSS.",
+            "description": "Inject SVG images into the page markup so that they can easily be styled with CSS.",
             "type": "checkbox",
             "text": "Make SVG stylable with CSS",
             "enable": "show_image"
@@ -858,7 +857,7 @@
                 "Link Muted": "link-muted",
                 "Link Text": "link-text"
             },
-            "enable": "show_link && link_text"
+            "enable": "show_link"
         },
         "link_size": {
             "label": "Button Size",
@@ -869,7 +868,12 @@
                 "Default": "",
                 "Large": "large"
             },
-            "enable": "show_link && link_text && link_style && link_style != 'link-muted' && link_style != 'link-text'"
+            "enable": "show_link && link_style && link_style != 'link-muted' && link_style != 'link-text'"
+        },
+        "link_fullwidth": {
+            "type": "checkbox",
+            "text": "Full width button",
+            "enable": "show_link && link_style && link_style != 'link-muted' && link_style != 'link-text'"
         },
         "link_margin": {
             "label": "Margin Top",
@@ -883,7 +887,7 @@
                 "X-Large": "xlarge",
                 "None": "remove"
             },
-            "enable": "show_link && link_text"
+            "enable": "show_link"
         },
         "position": "${builder.position}",
         "position_left": "${builder.position_left}",
@@ -902,7 +906,8 @@
         "text_align": "${builder.text_align_justify}",
         "text_align_breakpoint": "${builder.text_align_breakpoint}",
         "text_align_fallback": "${builder.text_align_justify_fallback}",
-        "item_animation": "${builder.animation}",
+        "animation": "${builder.animation}",
+        "item_animation": "${builder.item_animation}",
         "_parallax_button": "${builder._parallax_button}",
         "visibility": "${builder.visibility}",
         "name": "${builder.name}",
@@ -1069,6 +1074,7 @@
                                 "link_text",
                                 "link_style",
                                 "link_size",
+                                "link_fullwidth",
                                 "link_margin"
                             ]
                         },
@@ -1093,6 +1099,7 @@
                                 "text_align",
                                 "text_align_breakpoint",
                                 "text_align_fallback",
+                                "animation",
                                 "item_animation",
                                 "_parallax_button",
                                 "visibility"

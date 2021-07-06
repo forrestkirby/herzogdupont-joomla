@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2019â€“2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 namespace YOOtheme;
 
@@ -41,11 +41,11 @@ return [
 
         '2.1.0-beta.0.1' => function ($node) {
 
-            if (@$node->props['title_grid_width'] === 'xxlarge') {
+            if (Arr::get($node->props, 'title_grid_width') === 'xxlarge') {
                 $node->props['title_grid_width'] = '2xlarge';
             }
 
-            if (@$node->props['image_grid_width'] === 'xxlarge') {
+            if (Arr::get($node->props, 'image_grid_width') === 'xxlarge') {
                 $node->props['image_grid_width'] = '2xlarge';
             }
 
@@ -54,11 +54,11 @@ return [
                 unset($node->props['icon_ratio']);
             }
 
-            if (@$node->props['title_back_grid_width'] === 'xxlarge') {
+            if (Arr::get($node->props, 'title_back_grid_width') === 'xxlarge') {
                 $node->props['title_back_grid_width'] = '2xlarge';
             }
 
-            if (@$node->props['image_back_grid_width'] === 'xxlarge') {
+            if (Arr::get($node->props, 'image_back_grid_width') === 'xxlarge') {
                 $node->props['image_back_grid_width'] = '2xlarge';
             }
 
@@ -71,11 +71,11 @@ return [
 
         '2.0.0-beta.5.1' => function ($node) {
 
-            if (@$node->props['link_back_type'] === 'content') {
+            if (Arr::get($node->props, 'link_back_type') === 'content') {
                 $node->props['title_back_link'] = true;
                 $node->props['image_back_link'] = true;
                 $node->props['link_back_text'] = '';
-            } elseif (@$node->props['link_back_type'] === 'element') {
+            } elseif (Arr::get($node->props, 'link_back_type') === 'element') {
                 $node->props['panel_back_link'] = true;
                 $node->props['link_back_text'] = '';
             }

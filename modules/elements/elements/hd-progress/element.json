@@ -11,7 +11,7 @@
 	"defaults":
 	{
 		"content": "Lorem ipsum dolor sit amet",
-		"value": 0,
+		"start": 0,
 		"max": 100,
 		"stop": 70,
 		"animation_step": 1,
@@ -37,24 +37,24 @@
 				"placeholder": "Enter text..."
 			}
 		},
-		"value":
+		"start":
 		{
-			"label": "Value",
+			"label": "Start Value",
 			"description": "Set the initial value of the progress bar",
-			"type": "number",
-			"source": true
-		},
-		"max":
-		{
-			"label": "Max",
-			"description": "Set the maximum value of the progress bar",
 			"type": "number",
 			"source": true
 		},
 		"stop":
 		{
-			"label": "Stop",
-			"description": "Set the value where the animation should stop",
+			"label": "Stop Value",
+			"description": "Set the value at which the animation should stop",
+			"type": "number",
+			"source": true
+		},
+		"max":
+		{
+			"label": "Max Value",
+			"description": "Set the maximum value of the progress bar",
 			"type": "number",
 			"source": true
 		},
@@ -71,6 +71,18 @@
 			"description": "Set the animation speed in ms",
 			"type": "number",
 			"source": true
+		},
+		"progress_value_color":
+		{
+			"label": "Progress Value Color",
+			"description": "Set the value for the progress bar",
+			"type": "color"
+		},
+		"progress_background_color":
+		{
+			"label": "Progress Background Color",
+			"description": "Set the background color for the progress bar",
+			"type": "color"
 		},
 		"position": "${builder.position}",
 		"position_left": "${builder.position_left}",
@@ -120,17 +132,19 @@
 				{
 					"title": "Content",
 					"fields": [
-						"content"
+						"content",
+						"start",
+						"stop",
+						"max"
 					]
 				},
 				{
 					"title": "Settings",
 					"fields": [
-						"value",
-						"max",
-						"stop",
 						"animation_step",
 						"animation_speed",
+						"progress_value_color",
+						"progress_background_color",
 						{
 							"label": "General",
 							"type": "group",

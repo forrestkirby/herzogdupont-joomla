@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016â€“2021 YOOtheme GmbH, 2019â€“2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 // Front
 // Resets
@@ -97,10 +97,18 @@ $link = include "{$__dir}/template-link.php";
 
 // Card media
 if ($props['panel_style'] && $props['has_panel_card_image']) {
-    $props['image'] = $this->el('div', ['class' => [
-        'uk-card-media-{image_align}',
-        'uk-cover-container{@image_align: left|right}',
-    ]], $props['image'])->render($props);
+    $props['image'] = $this->el('div', [
+        
+        'class' => [
+            'uk-card-media-{image_align}',
+            'uk-cover-container{@image_align: left|right}',
+        ],
+
+        'uk-toggle' => [
+            'cls: uk-card-media-{image_align} uk-card-media-top; mode: media; media: @{image_grid_breakpoint} {@image_align: left|right}',
+        ],
+
+    ], $props['image'])->render($props);
 }
 
 // Back
@@ -216,10 +224,18 @@ $link_back = include "{$__dir}/template-link_back.php";
 
 // Card media
 if ($props['panel_back_style'] && $props['has_panel_back_card_image']) {
-    $props['image_back'] = $this->el('div', ['class' => [
-        'uk-card-media-{image_back_align}',
-        'uk-cover-container{@image_back_align: left|right}',
-    ]], $props['image_back'])->render($props);
+    $props['image_back'] = $this->el('div', [
+        
+        'class' => [
+        	'uk-card-media-{image_back_align}',
+        	'uk-cover-container{@image_back_align: left|right}',
+        ],
+
+        'uk-toggle' => [
+            'cls: uk-card-media-{image_back_align} uk-card-media-top; mode: media; media: @{image_back_grid_breakpoint} {@image_back_align: left|right}',
+        ],
+
+    ], $props['image_back'])->render($props);
 }
 
 // Container

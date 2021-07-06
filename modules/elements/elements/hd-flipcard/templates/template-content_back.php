@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016â€“2021 YOOtheme GmbH, 2019â€“2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 // Title
 $title_back = $this->el($props['title_back_element'], [

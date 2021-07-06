@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2020â€“2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2020–2021 Thomas Weidlich GNU GPL v3 */
 
 $uniqid = uniqid('hd-');
 

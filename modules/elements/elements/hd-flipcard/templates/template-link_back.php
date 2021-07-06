@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016â€“2021 YOOtheme GmbH, 2019â€“2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 $link_back = $props['link_back'] ? $this->el('a', [
     'href' => ['{link_back}'],
@@ -66,7 +66,10 @@ if ($link_back && $props['link_back_text']) {
         'class' => [
             'el-link-back',
             'uk-{link_back_style: link-(muted|text)}',
-            'uk-button uk-button-{!link_back_style: |link-muted|link-text} [uk-button-{link_back_size}]',
+            'uk-button uk-button-{!link_back_style: |link-muted|link-text} [uk-button-{link_back_size}] [uk-width-1-1 {@link_back_fullwidth}]',
+            // Keep link style if panel link
+            'uk-link {@link_back_style:} {@panel_back_link}',
+            'uk-text-muted {@link_back_style: link-muted} {@panel_back_link}',
         ],
 
     ]);

@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016â€“2021 YOOtheme GmbH, 2019â€“2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 // Display
 foreach (['title', 'meta', 'content', 'link'] as $key) {
@@ -37,7 +37,7 @@ if ($element['image_transition']) {
 
 }
 
-if ($element['image_box_decoration']) {
+if ($props['image'] && $element['image_box_decoration']) {
 
     $decoration = $this->el('div', [
 
@@ -117,7 +117,6 @@ $cell_content = $this->el('div', [
 
     'class' => [
         'uk-margin-remove-first-child' => (!$element['panel_style'] && !$element['has_content_padding']) || ($element['panel_style'] && !$element['has_panel_card_image']),
-
     ],
 
 ]);
@@ -127,10 +126,18 @@ $link = include "{$__dir}/template-link.php";
 
 // Card media
 if ($element['panel_style'] && $element['has_panel_card_image']) {
-    $props['image'] = $this->el('div', ['class' => [
-        'uk-card-media-{image_align}',
-        'uk-cover-container{@image_align: left|right}',
-    ]], $props['image'])->render($element);
+    $props['image'] = $this->el('div', [
+        
+        'class' => [
+            'uk-card-media-{image_align}',
+            'uk-cover-container{@image_align: left|right}',
+        ],
+
+        'uk-toggle' => [
+            'cls: uk-card-media-{image_align} uk-card-media-top; mode: media; media: @{image_grid_breakpoint} {@image_align: left|right}',
+        ],
+
+    ], $props['image'])->render($element);
 }
 
 ?>

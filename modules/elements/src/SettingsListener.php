@@ -28,6 +28,12 @@ class SettingsListener
                     'default' => true,
                     'text' => 'Add to the element library',
                 ],
+                'hd.elements.hd-slideshow-grid' => [
+                    'type' => 'checkbox',
+                    'label' => 'Slideshow Grid element',
+                    'default' => true,
+                    'text' => 'Add to the element library',
+                ],
                 'hd.elements.hd-image-comparison' => [
                     'type' => 'checkbox',
                     'label' => 'Image Comparison element',
