@@ -45,7 +45,7 @@ If you want to report an issue, please use the [Github issue tool](https://githu
 ## Links
 
 - [Demo](https://herzog-dupont.de/yootheme-pro-custom-elements)
-- [Herzog Dupont WordPress Plugin](https://github.com/forrestkirby/herzogdupont-wordpress)
+- [Herzog Dupont WordPress Plugin](https://wordpress.org/plugins/herzog-dupont)
 - [YOOtheme Pro Documentation](https://yootheme.com/support/yootheme-pro/joomla/introduction)
 - [YOOtheme Support](https://yootheme.com/support)
 

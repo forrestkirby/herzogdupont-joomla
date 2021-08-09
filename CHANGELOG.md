@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.1 (August 09, 2021)
+
+### Fixed
+
+- initialization in throttled networks and Safari in image comparison element
+
 ## 1.3.0 (July 06, 2021)
 
 ### Added

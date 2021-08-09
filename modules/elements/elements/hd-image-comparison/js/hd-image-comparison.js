@@ -38,12 +38,10 @@ class hdImgComp {
 		// reset width of element container
 		this.element.style.width = 'auto';
 		// set size of before image container
-		this.before.style.height = `${this.afterimg.offsetHeight}px`;
+		this.before.style.height = `${this.afterimg.clientHeight}px`;
 		this.before.style.width = `${this.range.value}%`;
-		// set width of element container
-		this.element.style.width = `${this.afterimg.offsetWidth}px`;
 		// set width of before image
-		this.beforeimg.style.width = `${this.afterimg.offsetWidth}px`;
+		this.beforeimg.style.width = `${this.afterimg.clientWidth}px`;
 		// set position of slider
 		this.slider.style.left = `${this.range.value}%`;
 	}
@@ -64,18 +62,13 @@ class hdImgComp {
 
 }
 
-UIkit.util.$$('.hd-image-comparison-before img').forEach((el) => {
-	if (!el.complete) {
-		el.addEventListener('load', (e) => {
-			let x = new hdImgComp(e.target.closest('.hd-image-comparison'));
-			if (x.afterimg)
-				x.init();
-		}, {
-			once: true
-		});
-	} else {
-		let x = new hdImgComp(el.closest('.hd-image-comparison'));
-		if (x.afterimg)
-			x.init();
-	}
+UIkit.util.$$('.hd-image-comparison').forEach(el => {
+
+	let x = new hdImgComp(el);
+
+	if (x.afterimg.complete && x.beforeimg.complete && x.afterimg.clientHeight > 1)
+		x.init()
+	else
+		UIkit.util.on(x.afterimg, 'load', () => { x.init() });
+
 });
