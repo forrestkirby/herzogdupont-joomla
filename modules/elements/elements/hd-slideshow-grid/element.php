@@ -43,4 +43,27 @@ return [
 
     ],
 
+    'updates' => [
+
+        '2.5.10' => function ($node) {
+
+            if (!empty($node->props['panel_padding'])) {
+                $node->props['panel_padding'] = $node->props['panel_padding'];
+                unset($node->props['panel_padding']);
+            }
+
+            if (!empty($node->props['panel_card_size'])) {
+                $node->props['panel_card_size'] = $node->props['panel_card_size'];
+                unset($node->props['panel_card_size']);
+            }
+
+            if (!empty($node->props['panel_image_no_padding'])) {
+                $node->props['panel_image_no_padding'] = $node->props['panel_image_no_padding'];
+                unset($node->props['panel_image_no_padding']);
+            }
+
+        },
+
+    ],
+
 ];
