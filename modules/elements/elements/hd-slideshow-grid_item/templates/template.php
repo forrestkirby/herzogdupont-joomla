@@ -94,7 +94,7 @@ if ($element['panel_style'] && $element['has_panel_image_no_padding']) {
         ],
 
         'uk-toggle' => [
-            'cls: uk-card-media-{image_align} uk-card-media-top; mode: media; media: @{image_grid_breakpoint} {@image_align: left|right} {panel_style: card-.*}',
+            'cls: uk-card-media-{image_align} uk-card-media-top; mode: media; media: @{image_grid_breakpoint} {@image_align: left|right} {@panel_style: card-.*}',
         ],
 
     ], $image)->render($element);
