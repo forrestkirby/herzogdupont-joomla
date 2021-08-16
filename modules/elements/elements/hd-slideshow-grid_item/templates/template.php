@@ -65,7 +65,7 @@ $cell_image = $this->el('div', [
 $content = $this->el('div', [
 
     'class' => [
-        'uk-card-body uk-margin-remove-first-child {panel_style: card-.*} {@has_panel_image_no_padding}',
+        'uk-card-body uk-margin-remove-first-child {@panel_style: card-.*} {@has_panel_image_no_padding}',
         'uk-padding[-{!panel_padding: |default}] uk-margin-remove-first-child {@has_panel_padding} {@has_panel_image_no_padding}',
         // 1 Column Content Width
         'uk-container uk-container-{panel_content_width}' => $element['has_image'] && $element['image_align'] == 'top' && !$element['panel_style'] && !$element['panel_padding'] && !$element['item_maxwidth'] && (!$element['grid_default'] || $element['grid_default'] == '1') && (!$element['grid_small'] || $element['grid_small'] == '1') && (!$element['grid_medium'] || $element['grid_medium'] == '1') && (!$element['grid_large'] || $element['grid_large'] == '1') && (!$element['grid_xlarge'] || $element['grid_xlarge'] == '1'),
@@ -90,7 +90,7 @@ if ($element['panel_style'] && $element['has_panel_image_no_padding']) {
     $image = $this->el('div', [
         
         'class' => [
-            'uk-card-media-{image_align} {panel_style: card-.*}',
+            'uk-card-media-{image_align} {@panel_style: card-.*}',
         ],
 
         'uk-toggle' => [
