@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2016â€“2021 YOOtheme GmbH, 2021 Thomas Weidlich GNU GPL v3 */
 
 // Title
 $title = $this->el($props['title_element'], [
@@ -24,10 +24,10 @@ $meta = $this->el($props['meta_element'], [
 
     'class' => [
         'el-meta',
-        'uk-[text-{@meta_style: meta}]{meta_style}',
+        'uk-[text-{@meta_style: meta|lead}]{meta_style}',
         'uk-text-{meta_color}',
         'uk-margin[-{meta_margin}]-top {@!meta_margin: remove}',
-        'uk-margin-remove-bottom [uk-margin-{meta_margin: remove}-top]' => !in_array($props['meta_style'], ['', 'meta']) || $props['meta_element'] != 'div',
+        'uk-margin-remove-bottom [uk-margin-{meta_margin: remove}-top]' => !in_array($props['meta_style'], ['', 'meta', 'lead']) || $props['meta_element'] != 'div',
     ],
 
 ]);
@@ -37,12 +37,13 @@ $content = $this->el('div', [
 
     'class' => [
         'el-content uk-panel',
-        'uk-text-{content_style}',
+        'uk-[text-{@content_style: meta|lead}]{content_style}',
         '[uk-text-left{@content_align}]',
         'uk-dropcap {@content_dropcap}',
         'uk-column-{content_column}[@{content_column_breakpoint}]',
         'uk-column-divider {@content_column} {@content_column_divider}',
         'uk-margin[-{content_margin}]-top {@!content_margin: remove}',
+        'uk-margin-remove-bottom [uk-margin-{content_margin: remove}-top]' => !in_array($props['content_style'], ['', 'meta', 'lead']),
     ],
 
 ]);

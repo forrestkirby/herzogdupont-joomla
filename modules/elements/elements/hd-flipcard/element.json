@@ -401,6 +401,7 @@
             "options": {
                 "None": "",
                 "Meta": "meta",
+                "Lead": "lead",
                 "2X-Large": "heading-2xlarge",
                 "X-Large": "heading-xlarge",
                 "Large": "heading-large",
@@ -479,7 +480,18 @@
             "options": {
                 "None": "",
                 "Lead": "lead",
-                "Meta": "meta"
+                "Meta": "meta",
+                "2X-Large": "heading-2xlarge",
+                "X-Large": "heading-xlarge",
+                "Large": "heading-large",
+                "Medium": "heading-medium",
+                "Small": "heading-small",
+                "H1": "h1",
+                "H2": "h2",
+                "H3": "h3",
+                "H4": "h4",
+                "H5": "h5",
+                "H6": "h6"
             },
             "enable": "content"
         },
