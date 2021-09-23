@@ -45,21 +45,21 @@ return [
 
     'updates' => [
 
-        '2.5.10' => function ($node) {
+        '2.7.0' => function ($node) {
 
-            if (!empty($node->props['panel_padding'])) {
-                $node->props['panel_padding'] = $node->props['panel_padding'];
-                unset($node->props['panel_padding']);
+            if (!empty($node->props['panel_content_padding'])) {
+                $node->props['panel_padding'] = $node->props['panel_content_padding'];
+                unset($node->props['panel_content_padding']);
             }
 
-            if (!empty($node->props['panel_card_size'])) {
-                $node->props['panel_card_size'] = $node->props['panel_card_size'];
-                unset($node->props['panel_card_size']);
+            if (!empty($node->props['panel_size'])) {
+                $node->props['panel_card_size'] = $node->props['panel_size'];
+                unset($node->props['panel_size']);
             }
 
-            if (!empty($node->props['panel_image_no_padding'])) {
-                $node->props['panel_image_no_padding'] = $node->props['panel_image_no_padding'];
-                unset($node->props['panel_image_no_padding']);
+            if (!empty($node->props['panel_card_image'])) {
+                $node->props['panel_image_no_padding'] = $node->props['panel_card_image'];
+                unset($node->props['panel_card_image']);
             }
 
         },
