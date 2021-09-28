@@ -14,7 +14,7 @@ $element['panel_style'] = $props['panel_style'] ?: $element['panel_style'];
 
 // New logic shortcuts
 $element['has_image'] = $props['image_1'] || $props['image_2'] || $props['image_3'] || $props['video_1'] || $props['video_2'] || $props['video_3'];
-$element['has_panel_image_no_padding'] = $element['has_image'] && $element['panel_image_no_padding'] && ($element['image_align'] != 'left' || $element['image_align'] != 'right' || $element['image_align'] != 'between');
+$element['has_panel_image_no_padding'] = $element['has_image'] && (!$element['panel_style'] || $element['panel_image_no_padding']) && ($element['image_align'] != 'left' || $element['image_align'] != 'right' || $element['image_align'] != 'between');
 $element['has_panel_padding'] = ((!$element['panel_style'] && $element['has_image']) || preg_match('/^tile-/', $element['panel_style'])) && $element['panel_padding'] && $element['image_align'] != 'between';
 
 // Image
