@@ -78,6 +78,7 @@ $cell_content = $this->el('div', [
     'class' => [
         'uk-margin-remove-first-child {@panel_style: |tile-.*} {@!has_panel_padding}',
         'uk-margin-remove-first-child {@panel_style: card-.*} {@!has_panel_image_no_padding}',
+        'uk-flex uk-flex-middle {@image_vertical_align}' => $element['panel_style'] && $element['panel_image_no_padding'],
     ],
 
 ]);
