@@ -12,13 +12,12 @@ if (!$element['show_image']) { $props['image_1'] = $props['image_2'] = $props['i
 // Override default settings
 $element['panel_style'] = $props['panel_style'] ?: $element['panel_style'];
 
-// New logic shortcuts
-$element['has_image'] = $props['image_1'] || $props['image_2'] || $props['image_3'] || $props['video_1'] || $props['video_2'] || $props['video_3'];
-$element['has_panel_image_no_padding'] = $element['has_image'] && (!$element['panel_style'] || $element['panel_image_no_padding']) && !in_array($element['image_align'], ['left', 'right', 'between']);
-$element['has_no_padding'] = !$element['panel_style'] && (!$element['has_image'] || $element['has_image'] && in_array($element['image_align'], ['left', 'right', 'between']));
-
 // Image
-$image = $this->render("{$__dir}/template-slideshow", compact('props'));
+$image = trim($this->render("{$__dir}/template-slideshow", compact('props')));
+
+// New logic shortcuts
+$element['has_panel_image_no_padding'] = $image && (!$element['panel_style'] || $element['panel_image_no_padding']) && !in_array($element['image_align'], ['left', 'right', 'between']);
+$element['has_no_padding'] = !$element['panel_style'] && (!$image || $image && in_array($element['image_align'], ['left', 'right', 'between']));
 
 // Panel/Card/Tile
 $el = $this->el('div', [
@@ -68,7 +67,7 @@ $content = $this->el('div', [
         'uk-card-body {@panel_style: card-.*} {@panel_padding} {@has_panel_image_no_padding}',
         'uk-margin-remove-first-child {@panel_padding} {@has_panel_image_no_padding}',
         // 1 Column Content Width
-        'uk-container uk-container-{panel_content_width}' => $element['has_image'] && $element['image_align'] == 'top' && !$element['panel_style'] && !$element['panel_padding'] && !$element['item_maxwidth'] && (!$element['grid_default'] || $element['grid_default'] == '1') && (!$element['grid_small'] || $element['grid_small'] == '1') && (!$element['grid_medium'] || $element['grid_medium'] == '1') && (!$element['grid_large'] || $element['grid_large'] == '1') && (!$element['grid_xlarge'] || $element['grid_xlarge'] == '1'),
+        'uk-container uk-container-{panel_content_width}' => $image && $element['image_align'] == 'top' && !$element['panel_style'] && !$element['panel_padding'] && !$element['item_maxwidth'] && (!$element['grid_default'] || $element['grid_default'] == '1') && (!$element['grid_small'] || $element['grid_small'] == '1') && (!$element['grid_medium'] || $element['grid_medium'] == '1') && (!$element['grid_large'] || $element['grid_large'] == '1') && (!$element['grid_xlarge'] || $element['grid_xlarge'] == '1'),
     ],
 
 ]);
@@ -104,7 +103,7 @@ if ($element['panel_style'] && $element['has_panel_image_no_padding']) {
 
 <?= $el($element, $attrs) ?>
 
-    <?php if ($element['has_image'] && in_array($element['image_align'], ['left', 'right'])) : ?>
+    <?php if ($image && in_array($element['image_align'], ['left', 'right'])) : ?>
 
         <?= $grid($element) ?>
             <?= $cell_image($element, $image) ?>
