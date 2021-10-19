@@ -14,8 +14,8 @@ $element['panel_style'] = $props['panel_style'] ?: $element['panel_style'];
 
 // New logic shortcuts
 $element['has_image'] = $props['image_1'] || $props['image_2'] || $props['image_3'] || $props['video_1'] || $props['video_2'] || $props['video_3'];
-$element['has_panel_image_no_padding'] = $element['has_image'] && (!$element['panel_style'] || $element['panel_image_no_padding']) && ($element['image_align'] != 'left' || $element['image_align'] != 'right' || $element['image_align'] != 'between');
-$element['has_panel_padding'] = ((!$element['panel_style'] && $element['has_image']) || preg_match('/^tile-/', $element['panel_style'])) && $element['panel_padding'] && $element['image_align'] != 'between';
+$element['has_panel_image_no_padding'] = $element['has_image'] && (!$element['panel_style'] || $element['panel_image_no_padding']) && !in_array($element['image_align'], ['left', 'right', 'between']);
+$element['has_no_padding'] = !$element['panel_style'] && (!$element['has_image'] || $element['has_image'] && in_array($element['image_align'], ['left', 'right', 'between']));
 
 // Image
 $image = $this->render("{$__dir}/template-slideshow", compact('props'));
@@ -27,11 +27,10 @@ $el = $this->el('div', [
         'el-item',
         'uk-margin-auto uk-width-{item_maxwidth}',
         'uk-panel [uk-{panel_style: tile-.*}] {@panel_style: |tile-.*}',
-        'uk-card uk-{panel_style: card-.*} [uk-card-{panel_card_size}]',
-        'uk-padding[-{!panel_padding: |default}] {@has_panel_padding} {@!has_panel_image_no_padding}',
-        'uk-card-body {@panel_style: card-.*} {@!has_panel_image_no_padding}',
-        'uk-margin-remove-first-child {@panel_style: |tile-.*} {@!has_panel_padding}',
-        'uk-margin-remove-first-child {@panel_style: card-.*} {@!has_panel_image_no_padding}',
+        'uk-card uk-{panel_style: card-.*} [uk-card-{!panel_padding: |default}]',
+        'uk-padding[-{!panel_padding: default}] {@panel_style: |tile-.*} {@panel_padding} {@!has_panel_image_no_padding} {@!has_no_padding}',
+        'uk-card-body {@panel_style: card-.*} {@panel_padding} {@!has_panel_image_no_padding} {@!has_no_padding}',
+        'uk-margin-remove-first-child {@!has_panel_image_no_padding} {@!has_no_padding}',
     ],
 
 ]);
@@ -65,8 +64,9 @@ $cell_image = $this->el('div', [
 $content = $this->el('div', [
 
     'class' => [
-        'uk-card-body uk-margin-remove-first-child {@panel_style: card-.*} {@has_panel_image_no_padding}',
-        'uk-padding[-{!panel_padding: |default}] uk-margin-remove-first-child {@has_panel_padding} {@has_panel_image_no_padding}',
+        'uk-padding[-{!panel_padding: default}] {@panel_style: |tile-.*} {@panel_padding} {@has_panel_image_no_padding}',
+        'uk-card-body {@panel_style: card-.*} {@panel_padding} {@has_panel_image_no_padding}',
+        'uk-margin-remove-first-child {@panel_padding} {@has_panel_image_no_padding}',
         // 1 Column Content Width
         'uk-container uk-container-{panel_content_width}' => $element['has_image'] && $element['image_align'] == 'top' && !$element['panel_style'] && !$element['panel_padding'] && !$element['item_maxwidth'] && (!$element['grid_default'] || $element['grid_default'] == '1') && (!$element['grid_small'] || $element['grid_small'] == '1') && (!$element['grid_medium'] || $element['grid_medium'] == '1') && (!$element['grid_large'] || $element['grid_large'] == '1') && (!$element['grid_xlarge'] || $element['grid_xlarge'] == '1'),
     ],
@@ -76,8 +76,7 @@ $content = $this->el('div', [
 $cell_content = $this->el('div', [
 
     'class' => [
-        'uk-margin-remove-first-child {@panel_style: |tile-.*} {@!has_panel_padding}',
-        'uk-margin-remove-first-child {@panel_style: card-.*} {@!has_panel_image_no_padding}',
+        'uk-margin-remove-first-child' => !($element['panel_padding'] && $element['has_panel_image_no_padding']),
         'uk-flex uk-flex-middle {@image_vertical_align}' => $element['panel_style'] && $element['panel_image_no_padding'],
     ],
 

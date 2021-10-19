@@ -401,18 +401,7 @@
                 "Default": "default",
                 "Large": "large"
             },
-            "enable": "(!panel_style && show_image && image_align != 'between') || $match(panel_style, '^tile-')"
-        },
-        "panel_card_size": {
-            "label": "Padding",
-            "description": "Set the padding.",
-            "type": "select",
-            "options": {
-                "Small": "small",
-                "Default": "",
-                "Large": "large"
-            },
-            "show": "$match(panel_style, '^card-')"
+            "enable": "panel_style || (!panel_style && show_image && image_align != 'between')"
         },
         "panel_image_no_padding": {
             "description": "Top, left or right aligned images can be attached to the panel edge. If the image is aligned to the left or right, it will also extend to cover the whole space.",
@@ -1397,7 +1386,6 @@
                             "fields": [
                                 "panel_style",
                                 "panel_padding",
-                                "panel_card_size",
                                 "panel_image_no_padding",
                                 "item_maxwidth",
                                 "panel_content_width"
