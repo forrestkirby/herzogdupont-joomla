@@ -265,7 +265,7 @@
         },
         "title_font_family": {
             "label": "Font Family",
-            "description": "Select an alternative font family.",
+            "description": "Select an alternative font family. Mind that not all styles have different font families.",
             "type": "select",
             "options": {
                 "None": "",
@@ -873,7 +873,7 @@
         },
         "title_back_font_family": {
             "label": "Font Family",
-            "description": "Select an alternative font family.",
+            "description": "Select an alternative font family. Mind that not all styles have different font families.",
             "type": "select",
             "options": {
                 "None": "",
