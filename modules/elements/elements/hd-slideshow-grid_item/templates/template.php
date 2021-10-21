@@ -29,7 +29,7 @@ $el = $this->el('div', [
         'uk-card uk-{panel_style: card-.*} [uk-card-{!panel_padding: |default}]',
         'uk-padding[-{!panel_padding: default}] {@panel_style: |tile-.*} {@panel_padding} {@!has_panel_image_no_padding} {@!has_no_padding}',
         'uk-card-body {@panel_style: card-.*} {@panel_padding} {@!has_panel_image_no_padding} {@!has_no_padding}',
-        'uk-margin-remove-first-child {@!has_panel_image_no_padding} {@!has_no_padding}',
+        'uk-margin-remove-first-child' => !in_array($element['image_align'], ['left', 'right']) || !($element['panel_padding'] && $element['has_panel_image_no_padding']),
     ],
 
 ]);
