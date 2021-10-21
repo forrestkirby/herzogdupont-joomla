@@ -7,7 +7,7 @@ $title = $this->el($element['title_element'], [
 
     'class' => [
         'el-title',
-        'uk-{title_style}',
+        'uk-[text-{@title_style: meta|lead}]{title_style}',
         'uk-card-title {@panel_style} {@!title_style}',
         'uk-heading-{title_decoration}',
         'uk-font-{title_font_family}',
