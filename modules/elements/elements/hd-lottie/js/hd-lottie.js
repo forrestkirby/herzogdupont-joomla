@@ -57,16 +57,6 @@ class hdLottie {
 					anim.playSegments(anim.initialSegment, true);
 					break;
 				case 'inview':
-					// option 1: use scrollspy inview
-					// console.log(this.offsetTop);
-					// UIkit.scrollspy(this.player, { hidden: false, offsetTop: this.offsetTop, repeat: false, delay: 0 });
-					// UIkit.util.on(this.player, 'inview', () => {
-					// 	console.log('inview');
-					// 	anim.playSegments(anim.initialSegment, true);
-					// });
-
-					// break;
-					// option 2: workaround if scrollspy inview is triggered on page load or doesn’t apply offsetTop correctly
 					if (UIkit.util.isInView(this.player, this.offsetTop, 0)) {
 						anim.playSegments(anim.initialSegment, true);
 					} else {
