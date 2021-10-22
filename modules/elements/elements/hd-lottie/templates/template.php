@@ -2,6 +2,8 @@
 
 /* Herzog Dupont Copyright (C) 2019–2021 Thomas Weidlich GNU GPL v3 */
 
+use Joomla\CMS\Uri\Uri;
+
 $el = $this->el('div', [
 
 	'class' => ['hd-lottie'],
@@ -13,7 +15,7 @@ $lottie = $this->el('div', [
 	'class' => ['el-lottie'],
 
 	'data-name' => uniqid('hd-'),
-	'data-animation-path' => $props['path'],
+	'data-animation-path' => parse_url($props['path'], PHP_URL_HOST) ? $props['path'] : Uri::root() . $props['path'],
 	'data-renderer' => $props['renderer'],
 	'data-trigger' => $props['trigger'],
 	'data-offset-top' => $props['offset-top'],

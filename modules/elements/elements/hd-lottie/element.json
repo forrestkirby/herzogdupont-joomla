@@ -105,7 +105,7 @@
 		},
 		"renderer": {
 			"label": "Renderer",
-			"description": "Select the element the lottie animation will be rendered with",
+			"description": "Select the HTML element the lottie animation will be rendered with",
 			"type": "select",
 			"options": {
 				"SVG": "svg",
