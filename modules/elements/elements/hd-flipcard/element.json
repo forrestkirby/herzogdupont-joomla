@@ -42,6 +42,7 @@
         "flip_animation": "right",
         "3d_effect": true,
         "flip_mode": "hover",
+        "flip_mode_touch": "tap",
         "margin": "default"
     },
     "placeholder": {
@@ -179,7 +180,7 @@
         },
         "flip_mode": {
             "label": "Flip Mode",
-            "description": "Choose the flip mode.",
+            "description": "Choose the flip mode for mouse and pen events.",
             "type": "select",
             "default": "hover",
             "options": {
@@ -188,19 +189,33 @@
                 "Hover and Click": "hover, click"
             }
         },
+        "flip_mode_touch": {
+            "label": "Flip Mode Touch",
+            "description": "Choose the flip mode for touch events.",
+            "type": "select",
+            "default": "tap",
+            "options": {
+                "Tap": "tap",
+                "Press": "press"
+            }
+        },
         "panel_style": {
             "label": "Style",
-            "description": "Select one of the boxed card styles or a blank panel.",
+            "description": "Select one of the boxed card or tile styles or a blank panel.",
             "type": "select",
             "options": {
                 "None": "",
                 "Card Default": "card-default",
                 "Card Primary": "card-primary",
                 "Card Secondary": "card-secondary",
-                "Card Hover": "card-hover"
+                "Card Hover": "card-hover",
+                "Tile Default": "tile-default",
+                "Tile Muted": "tile-muted",
+                "Tile Primary": "tile-primary",
+                "Tile Secondary": "tile-secondary"
             }
         },
-        "panel_content_padding": {
+        "panel_padding": {
             "label": "Padding",
             "description": "Add padding to the content if the image is top, bottom, left or right aligned.",
             "type": "select",
@@ -210,10 +225,9 @@
                 "Default": "default",
                 "Large": "large"
             },
-            "show": "!panel_style",
-            "enable": "image && image_align != 'between'"
+            "enable": "(!panel_style && image && image_align != 'between') || $match(panel_style, '^tile-')"
         },
-        "panel_size": {
+        "panel_card_size": {
             "label": "Padding",
             "description": "Define the card's size by selecting the padding between the card and its content.",
             "type": "select",
@@ -222,9 +236,9 @@
                 "Default": "",
                 "Large": "large"
             },
-            "show": "panel_style"
+            "show": "$match(panel_style, '^card-')"
         },
-        "panel_card_image": {
+        "panel_image_no_padding": {
             "description": "Top, bottom, left or right aligned images can be attached to the card's edge. If the image is aligned to the left or right, it will also extend to cover the whole space.",
             "type": "checkbox",
             "text": "Align image without padding",
@@ -265,7 +279,7 @@
         },
         "title_font_family": {
             "label": "Font Family",
-            "description": "Select an alternative font family.",
+            "description": "Select an alternative font family. Mind that not all styles have different font families.",
             "type": "select",
             "options": {
                 "None": "",
@@ -553,7 +567,7 @@
                 "Circle": "circle",
                 "Pill": "pill"
             },
-            "enable": "image && (!panel_style || (panel_style && (!panel_card_image || image_align == 'between')))"
+            "enable": "image && (!panel_style || (panel_style && (!panel_image_no_padding || image_align == 'between')))"
         },
         "image_box_shadow": {
             "label": "Box Shadow",
@@ -570,7 +584,7 @@
         },
         "image_box_decoration": {
             "label": "Box Decoration",
-            "description": "Select the image's box decoration style. Note: The Mask option is not supported by all styles and may have no visible effect.",
+            "description": "Select the image box decoration style.",
             "type": "select",
             "options": {
                 "None": "",
@@ -636,7 +650,7 @@
                 "Large": "large",
                 "None": "collapse"
             },
-            "enable": "(image || icon) && (image_align == 'left' || image_align == 'right') && !(panel_card_image && panel_style)"
+            "enable": "(image || icon) && (image_align == 'left' || image_align == 'right') && !(panel_image_no_padding && panel_style)"
         },
         "image_grid_row_gap": {
             "label": "Grid Row Gap",
@@ -649,7 +663,7 @@
                 "Large": "large",
                 "None": "collapse"
             },
-            "enable": "(image || icon) && (image_align == 'left' || image_align == 'right') && !(panel_card_image && panel_style)"
+            "enable": "(image || icon) && (image_align == 'left' || image_align == 'right') && !(panel_image_no_padding && panel_style)"
         },
         "image_grid_breakpoint": {
             "label": "Grid Breakpoint",
@@ -683,7 +697,7 @@
                 "X-Large": "xlarge",
                 "None": "remove"
             },
-            "enable": "(image || icon) && (image_align == 'between' || (image_align == 'bottom' && !(panel_style && panel_card_image)))"
+            "enable": "(image || icon) && (image_align == 'between' || (image_align == 'bottom' && !(panel_style && panel_image_no_padding)))"
         },
         "image_svg_inline": {
             "label": "Inline SVG",
@@ -761,14 +775,18 @@
         },
         "panel_back_style": {
             "label": "Style",
-            "description": "Select one of the boxed card styles or a blank panel.",
+            "description": "Select one of the boxed card or tile styles or a blank panel.",
             "type": "select",
             "options": {
                 "None": "",
                 "Card Default": "card-default",
                 "Card Primary": "card-primary",
                 "Card Secondary": "card-secondary",
-                "Card Hover": "card-hover"
+                "Card Hover": "card-hover",
+                "Tile Default": "tile-default",
+                "Tile Muted": "tile-muted",
+                "Tile Primary": "tile-primary",
+                "Tile Secondary": "tile-secondary"
             }
         },
         "panel_back_link": {
@@ -778,7 +796,7 @@
             "text": "Link panel",
             "enable": "link_back"
         },
-        "panel_back_content_padding": {
+        "panel_back_padding": {
             "label": "Padding",
             "description": "Add padding to the content if the image is top, bottom, left or right aligned.",
             "type": "select",
@@ -788,10 +806,9 @@
                 "Default": "default",
                 "Large": "large"
             },
-            "show": "!panel_back_style",
-            "enable": "image_back && image_back_align != 'between'"
+            "enable": "(!panel_back_style && image_back && image_back_align != 'between') || $match(panel_back_style, '^tile-')"
         },
-        "panel_back_size": {
+        "panel_back_card_size": {
             "label": "Padding",
             "description": "Define the card's size by selecting the padding between the card and its content.",
             "type": "select",
@@ -800,9 +817,9 @@
                 "Default": "",
                 "Large": "large"
             },
-            "show": "panel_back_style"
+            "show": "$match(panel_back_style, '^card-')"
         },
-        "panel_back_card_image": {
+        "panel_back_image_no_padding": {
             "description": "Top, bottom, left or right aligned images can be attached to the card's edge. If the image is aligned to the left or right, it will also extend to cover the whole space.",
             "type": "checkbox",
             "text": "Align image without padding",
@@ -861,7 +878,7 @@
         },
         "title_back_font_family": {
             "label": "Font Family",
-            "description": "Select an alternative font family.",
+            "description": "Select an alternative font family. Mind that not all styles have different font families.",
             "type": "select",
             "options": {
                 "None": "",
@@ -1149,7 +1166,7 @@
                 "Circle": "circle",
                 "Pill": "pill"
             },
-            "enable": "image_back && (!panel_back_style || (panel_back_style && (!panel_back_card_image || image_back_align == 'between')))"
+            "enable": "image_back && (!panel_back_style || (panel_back_style && (!panel_back_image_no_padding || image_back_align == 'between')))"
         },
         "image_back_box_shadow": {
             "label": "Box Shadow",
@@ -1166,7 +1183,7 @@
         },
         "image_back_box_decoration": {
             "label": "Box Decoration",
-            "description": "Select the image's box decoration style. Note: The Mask option is not supported by all styles and may have no visible effect.",
+            "description": "Select the image box decoration style.",
             "type": "select",
             "options": {
                 "None": "",
@@ -1263,7 +1280,7 @@
                 "Large": "large",
                 "None": "collapse"
             },
-            "enable": "(image_back || icon_back) && (image_back_align == 'left' || image_back_align == 'right') && !(panel_back_card_image && panel_back_style)"
+            "enable": "(image_back || icon_back) && (image_back_align == 'left' || image_back_align == 'right') && !(panel_back_image_no_padding && panel_back_style)"
         },
         "image_back_grid_row_gap": {
             "label": "Grid Row Gap",
@@ -1276,7 +1293,7 @@
                 "Large": "large",
                 "None": "collapse"
             },
-            "enable": "(image_back || icon_back) && (image_back_align == 'left' || image_back_align == 'right') && !(panel_back_card_image && panel_back_style)"
+            "enable": "(image_back || icon_back) && (image_back_align == 'left' || image_back_align == 'right') && !(panel_back_image_no_padding && panel_back_style)"
         },
         "image_back_grid_breakpoint": {
             "label": "Grid Breakpoint",
@@ -1310,7 +1327,7 @@
                 "X-Large": "xlarge",
                 "None": "remove"
             },
-            "enable": "(image_back || icon_back) && (image_back_align == 'between' || (image_back_align == 'bottom' && !(panel_back_style && panel_back_card_image)))"
+            "enable": "(image_back || icon_back) && (image_back_align == 'between' || (image_back_align == 'bottom' && !(panel_back_style && panel_back_image_no_padding)))"
         },
         "image_back_svg_inline": {
             "label": "Inline SVG",
@@ -1483,7 +1500,8 @@
                             "fields": [
                                 "flip_animation",
                                 "3d_effect",
-                                "flip_mode"
+                                "flip_mode",
+                                "flip_mode_touch"
                             ]
                         },
                         {
@@ -1492,9 +1510,9 @@
                             "divider": true,
                             "fields": [
                                 "panel_style",
-                                "panel_content_padding",
-                                "panel_size",
-                                "panel_card_image"
+                                "panel_padding",
+                                "panel_card_size",
+                                "panel_image_no_padding"
                             ]
                         },
                         {
@@ -1582,9 +1600,9 @@
                             "fields": [
                                 "panel_back_style",
                                 "panel_back_link",
-                                "panel_back_content_padding",
-                                "panel_back_size",
-                                "panel_back_card_image"
+                                "panel_back_padding",
+                                "panel_back_card_size",
+                                "panel_back_image_no_padding"
                             ]
                         },
                         {

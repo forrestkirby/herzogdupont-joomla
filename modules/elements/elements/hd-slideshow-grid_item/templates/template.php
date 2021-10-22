@@ -14,7 +14,7 @@ $element['panel_style'] = $props['panel_style'] ?: $element['panel_style'];
 
 // New logic shortcuts
 $element['has_image'] = $props['image_1'] || $props['image_2'] || $props['image_3'] || $props['video_1'] || $props['video_2'] || $props['video_3'];
-$element['has_panel_card_image'] = $element['has_image'] && $element['panel_card_image'] && ($element['image_align'] != 'left' || $element['image_align'] != 'right' || $element['image_align'] != 'between');
+$element['has_panel_card_image'] = $element['has_image'] && $element['panel_card_image'] && $element['image_align'] != 'between';
 $element['has_content_padding'] = $element['has_image'] && $element['panel_content_padding'] && $element['image_align'] != 'between';
 
 // Image

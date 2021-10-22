@@ -28,9 +28,51 @@ function setBackSize() {
 window.addEventListener('load', setBackSize);
 window.addEventListener('resize', setBackSize);
 
-UIkit.util.ready(function() {
+UIkit.util.ready(() => {
+
 	UIkit.util.$$('.hd-flipcard').forEach(el => {
-		let flipMode = el.dataset.flipmode;
-		UIkit.toggle(el, { mode: flipMode, cls: 'hd-flipcard-hover' });
+
+		let evtType = 'mouse',
+			flipMode = el.dataset.flipmode,
+			flipModeTouch = el.dataset.flipmodetouch;
+
+		el.addEventListener('pointerenter', e => {
+			if (flipMode.includes('hover') && e.pointerType !== 'touch') {
+				e.currentTarget.classList.add('hd-flipcard-hover');
+			}
+		});
+
+		el.addEventListener('pointerleave', e => {
+			if (flipMode.includes('hover') && e.pointerType !== 'touch') {
+				e.currentTarget.classList.remove('hd-flipcard-hover');
+			}
+		});
+
+		el.addEventListener('click', e => {
+			if (flipMode.includes('click') && evtType !== 'touch' || flipModeTouch === 'tap' && evtType === 'touch') {
+				if (e.currentTarget.classList.contains('hd-flipcard-hover')) {
+					e.currentTarget.classList.remove('hd-flipcard-hover');
+				} else {
+					e.currentTarget.classList.add('hd-flipcard-hover');
+				}
+			}
+			evtType = 'mouse';
+		});
+
+		el.addEventListener('touchstart', e => {
+			evtType = 'touch';
+			if (flipModeTouch.includes('press')) {
+				e.currentTarget.classList.add('hd-flipcard-hover');
+			}
+		});
+
+		el.addEventListener('touchend', e => {
+			if (flipModeTouch.includes('press')) {
+				e.currentTarget.classList.remove('hd-flipcard-hover');
+			}
+			evtType = 'mouse';
+		});
+
 	});
+
 });

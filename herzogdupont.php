@@ -7,8 +7,8 @@
  * @license   GNU General Public License version 3, see LICENSE
  */
 
-// No direct access to this file
-defined('_JEXEC') or die();
+// No direct access
+defined('_JEXEC') or die;
 
 use Joomla\CMS\Plugin\CMSPlugin;
 use YOOtheme\Application;

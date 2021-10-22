@@ -416,7 +416,7 @@
             "type": "checkbox",
             "text": "Align image without padding",
             "show": "panel_style",
-            "enable": "show_image && (image_align != 'left' || image_align != 'right' || image_align != 'between')"
+            "enable": "show_image && image_align != 'between'"
         },
         "item_maxwidth": {
             "type": "select",
@@ -495,7 +495,7 @@
         },
         "title_font_family": {
             "label": "Font Family",
-            "description": "Select an alternative font family.",
+            "description": "Select an alternative font family. Mind that not all styles have different font families.",
             "type": "select",
             "options": {
                 "None": "",
@@ -896,7 +896,7 @@
         },
         "slideshow_ratio": {
             "label": "Ratio",
-            "description": "Set a ratio. It's recommended to use the same ratio of the background image. Just use its width and height, like <code>1600:900</code>.",
+            "description": "Set the slideshow ratio. It's recommended to use the same ratio as the image or video file. Simply use its width and height, e.g. <code>1600:900</code>.",
             "attrs": {
                 "placeholder": "16:9"
             }
@@ -1071,7 +1071,8 @@
             "options": {
                 "Small": "small",
                 "Default": "",
-                "Medium": "medium"
+                "Medium": "medium",
+                "Large": "large"
             },
             "show": "nav && nav_below"
         },
@@ -1207,7 +1208,7 @@
         },
         "slidenav_outside_color": {
             "label": "Outside Color",
-            "description": "Set light or dark color if the slidenav is outside of the slideshow.",
+            "description": "Set light or dark color if the slidenav is outside.",
             "type": "select",
             "options": {
                 "None": "",

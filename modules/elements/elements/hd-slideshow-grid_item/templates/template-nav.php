@@ -55,7 +55,7 @@ $container = $this->el('div', [
 <?php endif ?>
 
 <?= $nav($element, $element['nav_below'] && !$element['nav_color'] ? $container->attrs : []) ?>
-    <?php for($i = 1; $i <= 3; $i++) :
+    <?php for($i = 1, $j = 0; $i <= 3; $i++) :
 
         // Display
         if (!$element['show_thumbnail']) { $props['thumbnail_' . $i] = ''; }
@@ -76,7 +76,7 @@ $container = $this->el('div', [
         $thumbnail = $image->attrs['src'] && $element['nav'] == 'thumbnav' ? $image($element) : '';
     ?>
     <?php if ($props['image_' . $i] || $props['video_' . $i]) : ?>
-    <li uk-slideshow-item="<?= $i - 1 ?>">
+    <li uk-slideshow-item="<?= $j++ ?>">
         <a href="#"><?= $thumbnail ?></a>
     </li>
     <?php endif ?>
