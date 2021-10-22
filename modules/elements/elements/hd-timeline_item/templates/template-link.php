@@ -17,7 +17,7 @@ if ($link) {
 
     $link->attr([
         'target' => ['_blank {@link_target}'],
-        'uk-scroll' => strpos($props['link'], '#') === 0,
+        'uk-scroll' => str_starts_with((string) $props['link'], '#'),
     ]);
 
 }
