@@ -17,7 +17,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-The Timeline element is based on the Grid element, Copyright (C) 2016–2021 YOOtheme GmbH. The Flipcard element is based on the Panel element, Copyright (C) 2016–2021 YOOtheme GmbH. The Slideshow element is based on the Grid and Slideshow elements, Copyright (C) 2016–2021 YOOtheme GmbH.
+The Timeline element is based on the Grid element, Copyright (C) 2016–2021 YOOtheme GmbH. The Flipcard element is based on the Panel element, Copyright (C) 2016–2021 YOOtheme GmbH. The Slideshow Grid element is based on the Grid and Slideshow elements, Copyright (C) 2016–2021 YOOtheme GmbH.
 
 ## Description
 
