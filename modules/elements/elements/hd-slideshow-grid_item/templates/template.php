@@ -17,7 +17,7 @@ $image = trim($this->render("{$__dir}/template-slideshow", compact('props')));
 
 // New logic shortcuts
 $element['has_panel_image_no_padding'] = $image && (!$element['panel_style'] || $element['panel_image_no_padding']) && !in_array($element['image_align'], ['left', 'right', 'between']);
-$element['has_no_padding'] = !$element['panel_style'] && (!$image || $image && in_array($element['image_align'], ['left', 'right', 'between']));
+$element['has_no_padding'] = !$element['panel_style'] && (!$image || ($image && in_array($element['image_align'], ['left', 'right', 'between'])));
 
 // Panel/Card/Tile
 $el = $this->el('div', [
