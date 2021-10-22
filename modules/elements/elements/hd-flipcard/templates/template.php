@@ -251,6 +251,10 @@ $el = $this->el('div', [
         '{flip_mode}',
     ],
 
+    'data-flipmodetouch' => [
+        '{flip_mode_touch}',
+    ],
+
 ]);
 
 // Inner
