@@ -42,8 +42,8 @@ class hdLottie {
 
 		anim.addEventListener('DOMLoaded', () => {
 			// we don’t take absolute values for start and end frame, but values relative to the total frames
-			this.animationStart = this.player.dataset.animationStart ? Math.floor(anim.totalFrames * Math.min(Math.max(this.player.dataset.animationStart, 0), 100) / 100) : anim.firstFrame;
-			this.animationEnd = this.player.dataset.animationEnd ? Math.ceil(anim.totalFrames * Math.min(Math.max(this.player.dataset.animationEnd, 0), 100) / 100) : anim.totalFrames;
+			this.animationStart = this.player.dataset.animationStart ? Math.ceil(anim.totalFrames * Math.min(Math.max(this.player.dataset.animationStart, 0), 100) / 100) : anim.firstFrame;
+			this.animationEnd = this.player.dataset.animationEnd ? Math.floor(anim.totalFrames * Math.min(Math.max(this.player.dataset.animationEnd, 0), 100) / 100) : anim.totalFrames;
 			this.initialFirstFrame = anim.firstFrame;
 			this.initialTotalFrames = anim.totalFrames;
 			anim.initialSegment = [this.animationStart, this.animationEnd];

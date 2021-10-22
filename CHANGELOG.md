@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.1 (October 22, 2021)
+
+### Fixed
+
+- animation path in lottie element
+
 ## 1.4.0 (October 22, 2021)
 
 ### Added
