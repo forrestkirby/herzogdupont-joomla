@@ -63,6 +63,12 @@ class hdImgComp {
 }
 
 UIkit.util.$$('.hd-image-comparison').forEach(el => {
+
 	let x = new hdImgComp(el);
-	UIkit.util.on(x.afterimg, 'load', () => x.init());
+
+	if (x.afterimg.complete && x.beforeimg.complete && x.afterimg.clientHeight > 1)
+		x.init()
+	else
+		UIkit.util.on(x.afterimg, 'load', () => { x.init() });
+
 });

@@ -7,15 +7,15 @@
   @license   GNU General Public License version 3, see LICENSE
   -->
 
-<extension type="plugin" group="system" method="upgrade">
+<extension version="3.9.0" type="plugin" group="system" method="upgrade">
     <name>PLG_SYSTEM_HERZOGDUPONT</name>
     <author>Thomas Weidlich</author>
     <authorEmail>thomas@herzog-dupont.de</authorEmail>
     <authorUrl>https://herzog-dupont.de</authorUrl>
     <copyright>Copyright (C) 2021 Thomas Weidlich</copyright>
     <license>GNU General Public License version 3, see LICENSE</license>
-    <creationDate>October 22, 2021</creationDate>
-    <version>1.4.0</version>
+    <creationDate>July 2021</creationDate>
+    <version>1.3.1</version>
     <description>PLG_SYSTEM_HERZOGDUPONT_XML_DESC</description>
     <scriptfile>script.php</scriptfile>
     <files>
@@ -27,7 +27,6 @@
         <language tag="en-GB">en-GB/en-GB.plg_system_herzogdupont.sys.ini</language>
         <language tag="de-DE">de-DE/de-DE.plg_system_herzogdupont.sys.ini</language>
     </languages>
-    <changelogurl>https://yootheme.herzog-dupont.de/updates/changelog.xml</changelogurl>
     <updateservers>
         <server type="extension" priority="1" name="Herzog Dupont">https://yootheme.herzog-dupont.de/updates/herzogdupont-joomla.xml</server>
     </updateservers>

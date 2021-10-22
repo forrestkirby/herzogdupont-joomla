@@ -92,7 +92,7 @@
         },
         "image_box_decoration": {
             "label": "Box Decoration",
-            "description": "Select the image box decoration style.",
+            "description": "Select the image's box decoration style. Note: The Mask option is not supported by all styles and may have no visible effect.",
             "type": "select",
             "options": {
                 "None": "",

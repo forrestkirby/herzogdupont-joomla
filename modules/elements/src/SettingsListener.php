@@ -28,27 +28,21 @@ class SettingsListener
                     'default' => true,
                     'text' => 'Add to the element library',
                 ],
+                'hd.elements.hd-slideshow-grid' => [
+                    'type' => 'checkbox',
+                    'label' => 'Slideshow Grid element',
+                    'default' => true,
+                    'text' => 'Add to the element library',
+                ],
                 'hd.elements.hd-image-comparison' => [
                     'type' => 'checkbox',
                     'label' => 'Image Comparison element',
                     'default' => true,
                     'text' => 'Add to the element library',
                 ],
-                'hd.elements.hd-lottie' => [
-                    'type' => 'checkbox',
-                    'label' => 'Lottie element',
-                    'default' => true,
-                    'text' => 'Add to the element library',
-                ],
                 'hd.elements.hd-progress' => [
                     'type' => 'checkbox',
                     'label' => 'Progress element',
-                    'default' => true,
-                    'text' => 'Add to the element library',
-                ],
-                'hd.elements.hd-slideshow-grid' => [
-                    'type' => 'checkbox',
-                    'label' => 'Slideshow Grid element',
                     'default' => true,
                     'text' => 'Add to the element library',
                 ],

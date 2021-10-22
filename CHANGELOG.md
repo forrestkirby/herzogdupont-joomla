@@ -1,18 +1,5 @@
 # Changelog
 
-## 1.4.0 (October 22, 2021)
-
-### Added
-
-- flip mode touch options to flipcard element
-- figcaption to content.php in image comparison element
-- lottie element
-
-### Fixed
-
-- nav if image is skipped in slideshow grid element
-- initialization in Safari in image comparison element
-
 ## 1.3.1 (August 09, 2021)
 
 ### Fixed
@@ -47,7 +34,7 @@
 
 ## 1.2.1 (May 02, 2021)
 
-### Changed
+### Added
 
 - JED compliance
 
@@ -55,7 +42,7 @@
 
 ### Added
 
-- flip mode options to flipcard element
+- flip mode option to flipcard element
 
 ## 1.1.2 (March 31, 2021)
 
