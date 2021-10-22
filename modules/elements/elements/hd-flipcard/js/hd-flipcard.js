@@ -67,10 +67,10 @@ UIkit.util.ready(() => {
 		});
 
 		el.addEventListener('touchend', e => {
+			evtType = 'touch';
 			if (flipModeTouch.includes('press')) {
 				e.currentTarget.classList.remove('hd-flipcard-hover');
 			}
-			evtType = 'mouse';
 		});
 
 	});
