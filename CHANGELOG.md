@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.5.0 (November 18, 2021)
+
+### Added
+
+- tile style options to timeline, flipcard and slideshow grid elements
+- heading options to content style in timeline, flipcard and slideshow grid elements
+- text lead and meta options to title style in timeline, flipcard and slideshow grid elements
+
+### Fixed
+
+- center content vertically if image is left/right aligned in slideshow grid element
+
 ## 1.4.1 (October 22, 2021)
 
 ### Fixed
