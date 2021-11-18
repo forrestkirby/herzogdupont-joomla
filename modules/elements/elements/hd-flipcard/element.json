@@ -42,6 +42,7 @@
         "flip_animation": "right",
         "3d_effect": true,
         "flip_mode": "hover",
+        "flip_mode_touch": "tap",
         "margin": "default"
     },
     "placeholder": {
@@ -179,13 +180,23 @@
         },
         "flip_mode": {
             "label": "Flip Mode",
-            "description": "Choose the flip mode.",
+            "description": "Choose the flip mode for mouse and pen events.",
             "type": "select",
             "default": "hover",
             "options": {
                 "Hover": "hover",
                 "Click": "click",
                 "Hover and Click": "hover, click"
+            }
+        },
+        "flip_mode_touch": {
+            "label": "Flip Mode Touch",
+            "description": "Choose the flip mode for touch events.",
+            "type": "select",
+            "default": "tap",
+            "options": {
+                "Tap": "tap",
+                "Press": "press"
             }
         },
         "panel_style": {
@@ -584,7 +595,7 @@
         },
         "image_box_decoration": {
             "label": "Box Decoration",
-            "description": "Select the image's box decoration style. Note: The Mask option is not supported by all styles and may have no visible effect.",
+            "description": "Select the image box decoration style.",
             "type": "select",
             "options": {
                 "None": "",
@@ -1180,7 +1191,7 @@
         },
         "image_back_box_decoration": {
             "label": "Box Decoration",
-            "description": "Select the image's box decoration style. Note: The Mask option is not supported by all styles and may have no visible effect.",
+            "description": "Select the image box decoration style.",
             "type": "select",
             "options": {
                 "None": "",
@@ -1497,7 +1508,8 @@
                             "fields": [
                                 "flip_animation",
                                 "3d_effect",
-                                "flip_mode"
+                                "flip_mode",
+                                "flip_mode_touch"
                             ]
                         },
                         {

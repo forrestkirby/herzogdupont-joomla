@@ -1,11 +1,11 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont Copyright (C) 2016â€“2021 YOOtheme GmbH, 2019â€“2021 Thomas Weidlich GNU GPL v3 */
 
 $link_back = $props['link_back'] ? $this->el('a', [
     'href' => ['{link_back}'],
     'target' => ['_blank {@link_back_target}'],
-    'uk-scroll' => strpos($props['link_back'], '#') === 0,
+    'uk-scroll' => str_starts_with((string) $props['link_back'], '#'),
 ]) : null;
 
 if ($link_back && $props['panel_back_link']) {

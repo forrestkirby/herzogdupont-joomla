@@ -202,14 +202,14 @@
 		"circle_radius":
 		{
 			"label": "Circle radius",
-			"description": "Set the radius for the circle",
+			"description": "Set the radius for the circle in px",
 			"type": "number",
 			"enable": "show_circle"
 		},
 		"circle_stroke_width":
 		{
 			"label": "Circle stroke width",
-			"description": "Set the stroke width for the circle",
+			"description": "Set the stroke width for the circle in px",
 			"type": "number",
 			"enable": "show_circle"
 		},

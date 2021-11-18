@@ -1,6 +1,6 @@
 # Herzog Dupont Joomla! Plugin
 
-Herzog Dupont is an extension for YOOtheme Pro developed by [YOOtheme](https://yootheme.com) which adds more elements to the element library of the page builder.
+Herzog Dupont is an extension for the [YOOtheme Pro page builder](https://yootheme.com/page-builder) which adds more elements to the element library.
 
 Copyright (C) 2021 Thomas Weidlich
 
@@ -17,7 +17,7 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-The Timeline element is based on the Grid element, Copyright (C) 2016–2021 YOOtheme GmbH. The Flipcard element is based on the Panel element, Copyright (C) 2016–2021 YOOtheme GmbH. The Slideshow element is based on the Grid and Slideshow elements, Copyright (C) 2016–2021 YOOtheme GmbH.
+The Timeline element is based on the Grid element, Copyright (C) 2016–2021 YOOtheme GmbH. The Flipcard element is based on the Panel element, Copyright (C) 2016–2021 YOOtheme GmbH. The Slideshow Grid element is based on the Grid and Slideshow elements, Copyright (C) 2016–2021 YOOtheme GmbH.
 
 ## Description
 
@@ -30,6 +30,7 @@ This plugin adds more elements to the element library of the YOOtheme Pro page b
 - Flipcard Element: Display a panel element with a flipcard animation. It flips the panel on hover or click to reveal another panel with different content on the back side.
 - Image Comparison Element: Quickly compare two images with a draggable slider showing a before-after effect. Choose from many image and slider icon options.
 - Slideshow Grid Element: Display multiple Slideshows within one grid. Every grid item will contain its own Slideshow including navigations, animations and other features.
+- Lottie Element: Display eye-catching and engaging Lottie animations. Choose from a variety of triggers.
 
 ## Installation
 
@@ -45,6 +46,7 @@ If you want to report an issue, please use the [Github issue tool](https://githu
 ## Links
 
 - [Demo](https://herzog-dupont.de/yootheme-pro-custom-elements)
+- [Documentation](https://herzog-dupont.de/documentation/herzog-dupont-plugin)
 - [Herzog Dupont WordPress Plugin](https://wordpress.org/plugins/herzog-dupont)
 - [YOOtheme Pro Documentation](https://yootheme.com/support/yootheme-pro/joomla/introduction)
 - [YOOtheme Support](https://yootheme.com/support)
