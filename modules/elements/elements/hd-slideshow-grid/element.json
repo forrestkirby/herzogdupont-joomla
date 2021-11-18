@@ -377,19 +377,23 @@
         },
         "panel_style": {
             "label": "Style",
-            "description": "Select one of the boxed card styles or a blank panel.",
+            "description": "Select one of the boxed card or tile styles or a blank panel.",
             "type": "select",
             "options": {
                 "None": "",
                 "Card Default": "card-default",
                 "Card Primary": "card-primary",
                 "Card Secondary": "card-secondary",
-                "Card Hover": "card-hover"
+                "Card Hover": "card-hover",
+                "Tile Default": "tile-default",
+                "Tile Muted": "tile-muted",
+                "Tile Primary": "tile-primary",
+                "Tile Secondary": "tile-secondary"
             }
         },
-        "panel_content_padding": {
+        "panel_padding": {
             "label": "Padding",
-            "description": "Add padding to the content if the image is top, left or right aligned.",
+            "description": "Set the padding.",
             "type": "select",
             "options": {
                 "None": "",
@@ -397,22 +401,10 @@
                 "Default": "default",
                 "Large": "large"
             },
-            "show": "!panel_style",
-            "enable": "show_image && image_align != 'between'"
+            "enable": "panel_style || (!panel_style && show_image && image_align != 'between')"
         },
-        "panel_size": {
-            "label": "Padding",
-            "description": "Define the card's size by selecting the padding between the card and its content.",
-            "type": "select",
-            "options": {
-                "Small": "small",
-                "Default": "",
-                "Large": "large"
-            },
-            "show": "panel_style"
-        },
-        "panel_card_image": {
-            "description": "Top, left or right aligned images can be attached to the card's edge. If the image is aligned to the left or right, it will also extend to cover the whole space.",
+        "panel_image_no_padding": {
+            "description": "Top, left or right aligned images can be attached to the panel edge. If the image is aligned to the left or right, it will also extend to cover the whole space.",
             "type": "checkbox",
             "text": "Align image without padding",
             "show": "panel_style",
@@ -441,7 +433,7 @@
                 "Small": "small"
             },
             "show": "!panel_style",
-            "enable": "show_image && image_align == 'top' && !panel_content_padding && !item_maxwidth && (!grid_default || grid_default == '1') && (!grid_small || grid_small == '1') && (!grid_medium || grid_medium == '1') && (!grid_large || grid_large == '1') && (!grid_xlarge || grid_xlarge == '1')"
+            "enable": "show_image && image_align == 'top' && !panel_padding && !item_maxwidth && (!grid_default || grid_default == '1') && (!grid_small || grid_small == '1') && (!grid_medium || grid_medium == '1') && (!grid_large || grid_large == '1') && (!grid_xlarge || grid_xlarge == '1')"
         },
         "title_style": {
             "label": "Style",
@@ -459,7 +451,9 @@
                 "H3": "h3",
                 "H4": "h4",
                 "H5": "h5",
-                "H6": "h6"
+                "H6": "h6",
+                "Meta": "meta",
+                "Lead": "lead"
             },
             "enable": "show_title"
         },
@@ -631,6 +625,7 @@
             "options": {
                 "None": "",
                 "Meta": "meta",
+                "Lead": "lead",
                 "2X-Large": "heading-2xlarge",
                 "X-Large": "heading-xlarge",
                 "Large": "heading-large",
@@ -709,7 +704,18 @@
             "options": {
                 "None": "",
                 "Lead": "lead",
-                "Meta": "meta"
+                "Meta": "meta",
+                "2X-Large": "heading-2xlarge",
+                "X-Large": "heading-xlarge",
+                "Large": "heading-large",
+                "Medium": "heading-medium",
+                "Small": "heading-small",
+                "H1": "h1",
+                "H2": "h2",
+                "H3": "h3",
+                "H4": "h4",
+                "H5": "h5",
+                "H6": "h6"
             },
             "enable": "show_content"
         },
@@ -845,7 +851,7 @@
                 "Large": "large",
                 "None": "collapse"
             },
-            "enable": "show_image && (image_align == 'left' || image_align == 'right') && !(panel_card_image && panel_style)"
+            "enable": "show_image && (image_align == 'left' || image_align == 'right') && !(panel_image_no_padding && panel_style)"
         },
         "image_grid_row_gap": {
             "label": "Grid Row Gap",
@@ -858,7 +864,7 @@
                 "Large": "large",
                 "None": "collapse"
             },
-            "enable": "show_image && (image_align == 'left' || image_align == 'right') && !(panel_card_image && panel_style)"
+            "enable": "show_image && (image_align == 'left' || image_align == 'right') && !(panel_image_no_padding && panel_style)"
         },
         "image_grid_breakpoint": {
             "label": "Grid Breakpoint",
@@ -892,7 +898,7 @@
                 "X-Large": "xlarge",
                 "None": "remove"
             },
-            "enable": "show_image && (image_align == 'between' || (image_align == 'bottom' && !(panel_style && panel_card_image)))"
+            "enable": "show_image && (image_align == 'between' || (image_align == 'bottom' && !(panel_style && panel_image_no_padding)))"
         },
         "slideshow_ratio": {
             "label": "Ratio",
@@ -1382,9 +1388,8 @@
                             "divider": true,
                             "fields": [
                                 "panel_style",
-                                "panel_content_padding",
-                                "panel_size",
-                                "panel_card_image",
+                                "panel_padding",
+                                "panel_image_no_padding",
                                 "item_maxwidth",
                                 "panel_content_width"
                             ]

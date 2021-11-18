@@ -123,14 +123,18 @@
         },
         "panel_style": {
             "label": "Style",
-            "description": "Select one of the boxed card styles.",
+            "description": "Select one of the boxed card or tile styles or a blank panel.",
             "type": "select",
             "options": {
                 "None": "",
                 "Card Default": "card-default",
                 "Card Primary": "card-primary",
                 "Card Secondary": "card-secondary",
-                "Card Hover": "card-hover"
+                "Card Hover": "card-hover",
+                "Tile Default": "tile-default",
+                "Tile Muted": "tile-muted",
+                "Tile Primary": "tile-primary",
+                "Tile Secondary": "tile-secondary"
             }
         },
         "status": "${builder.statusItem}",
