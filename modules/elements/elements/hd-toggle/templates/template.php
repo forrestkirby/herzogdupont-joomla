@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2018–2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2018–2021 Thomas Weidlich GNU GPL v3 */
 
 $el = $this->el('div', [
 

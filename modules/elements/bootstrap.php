@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2021 Thomas Weidlich GNU GPL v3 */
 
 // No direct access to this file
 defined('_JEXEC') or die();
@@ -11,6 +11,14 @@ use YOOtheme\Path;
 include_once __DIR__ . '/src/SettingsListener.php';
 
 return [
+
+    'theme' => [
+        'styles' => [
+            'components' => [
+                'hd-timeline' => Path::get('./assets/less/hd-timeline.less'),
+            ],
+        ],
+    ],
 
     'events' => [
 

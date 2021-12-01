@@ -1,11 +1,12 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2021 Thomas Weidlich GNU GPL v3 */
 
 // No direct access to this file
 defined('_JEXEC') or die();
 
 use YOOtheme\Config;
+use YOOtheme\Path;
 
 class SettingsListener
 {
@@ -68,5 +69,7 @@ class SettingsListener
         ]);
 
         $config->set('customizer.sections.settings.fields.settings.items.herzogdupont', 'Herzog Dupont');
+        
+        $config->addFile('customizer', Path::get('./customizer.json'));
     }
 }

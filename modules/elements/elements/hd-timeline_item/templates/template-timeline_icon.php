@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2019–2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 // Timeline icon
 if ($props['timeline_icon']) {
@@ -34,7 +34,7 @@ if ($props['timeline_icon']) {
         'class' => [
             'el-timeline-icon',
             'uk-text-{timeline_icon_color}',
-            'timeline-icon-default',
+            'hd-timeline-icon-default',
         ],
 
         'style' => [

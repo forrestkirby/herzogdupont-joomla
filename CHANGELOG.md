@@ -1,12 +1,25 @@
 # Changelog
 
+## 1.5.1 (December 01, 2021)
+
+### Fixed
+
+- tile style options in timeline and flipcard elements
+- layout update for card padding when set on items
+
+### Changed
+
+- replace CSS by LESS to use breakpoints of style customizer in timeline element
+- raised minimum YOOtheme Pro version to 2.7
+
 ## 1.5.0 (November 18, 2021)
 
 ### Added
 
 - tile style options to timeline, flipcard and slideshow grid elements
-- heading options to content style in timeline, flipcard and slideshow grid elements
-- text lead and meta options to title style in timeline, flipcard and slideshow grid elements
+- heading options to content style in all elements
+- text lead option to meta style in all elements
+- text lead and meta options to title style in all elements
 
 ### Fixed
 

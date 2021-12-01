@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  @package   Herzog Dupont
+  @package   Herzog Dupont for YOOtheme Pro
   @author    Thomas Weidlich
   @copyright Copyright (C) 2021 Thomas Weidlich
   @license   GNU General Public License version 3, see LICENSE
@@ -14,8 +14,8 @@
     <authorUrl>https://herzog-dupont.de</authorUrl>
     <copyright>Copyright (C) 2021 Thomas Weidlich</copyright>
     <license>GNU General Public License version 3, see LICENSE</license>
-    <creationDate>November 18, 2021</creationDate>
-    <version>1.5.0</version>
+    <creationDate>December 01, 2021</creationDate>
+    <version>1.5.1</version>
     <description>PLG_SYSTEM_HERZOGDUPONT_XML_DESC</description>
     <scriptfile>script.php</scriptfile>
     <files>

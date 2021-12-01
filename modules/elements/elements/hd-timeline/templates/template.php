@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 // Resets
 if ($props['panel_link']) {
@@ -11,12 +11,12 @@ if ($props['panel_link']) {
 $el = $this->el('div', [
 
     'class' => [
-        'timeline-container',
-        'timeline-align-{align_default}',
-        'timeline-align-{align_small}@s',
-        'timeline-align-{align_medium}@m',
-        'timeline-align-{align_large}@l',
-        'timeline-align-{align_xlarge}@xl',
+        'hd-timeline-container',
+        'hd-timeline-align-{align_default}',
+        'hd-timeline-align-{align_small}@s',
+        'hd-timeline-align-{align_medium}@m',
+        'hd-timeline-align-{align_large}@l',
+        'hd-timeline-align-{align_xlarge}@xl',
     ]
 
 ]);
@@ -24,7 +24,7 @@ $el = $this->el('div', [
 $line = $this->el('div', [
 
     'class' => [
-        'timeline-line',
+        'hd-timeline-line',
     ],
 
     'style' => [

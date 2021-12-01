@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2021 YOOtheme GmbH, 2021 Thomas Weidlich GNU GPL v3 */
 
 // => gallery
 $nav = $this->el('ul', [
@@ -45,7 +45,7 @@ $nav_attrs = $props['filter_position'] === 'top'
 <?= $nav($props, $nav_attrs) ?>
 
     <?php if ($props['filter_all']) : ?>
-    <li class="uk-active" uk-filter-control><a href><?= $this->trans($props['filter_all_label'] ?: 'All') ?></a></li>
+    <li class="uk-active" uk-filter-control><a href="#"><?= $this->trans($props['filter_all_label'] ?: 'All') ?></a></li>
     <?php endif ?>
 
     <?php foreach ($tags as $tag => $name) : ?>

@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 namespace YOOtheme;
 
@@ -29,7 +29,7 @@ if ($link && $element['panel_link']) {
         'class' => [
             'uk-link-toggle',
             // Only if `uk-flex` is not already set in `template.php` to let images cover the card height if the cards have different heights
-            'uk-display-block' => !($element['panel_style'] && $element['has_panel_card_image'] && in_array($element['image_align'], ['left', 'right'])),
+            'uk-display-block' => !($element['panel_style'] && $element['has_panel_image_no_padding'] && in_array($element['image_align'], ['left', 'right'])),
         ],
 
     ]);
@@ -63,7 +63,7 @@ if ($link && $props['image'] && $element['image_link']) {
 
     $props['image'] = $link($element, ['class' => [
 
-        'uk-display-block' => $element['panel_style'] && $element['has_panel_card_image'] && in_array($element['image_align'], ['left', 'right']),
+        'uk-display-block' => $element['panel_style'] && $element['has_panel_image_no_padding'] && in_array($element['image_align'], ['left', 'right']),
 
     ]], $props['image']);
 

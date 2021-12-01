@@ -2,7 +2,7 @@
     "@import": "./element.php",
     "name": "hd-slideshow-grid",
     "title": "HD Slideshow Grid",
-    "group": "herzog-dupont",
+    "group": "Herzog Dupont",
     "icon": "${url:images/icon.svg}",
     "iconSmall": "${url:images/iconSmall.svg}",
     "element": true,
@@ -93,7 +93,6 @@
             "text": "Show the image"
         },
         "show_link": {
-            "description": "Show or hide content fields without the need to delete the content itself.",
             "type": "checkbox",
             "text": "Show the link"
         },
@@ -793,7 +792,7 @@
         },
         "image_box_shadow": {
             "label": "Box Shadow",
-            "description": "Select the image's box shadow size.",
+            "description": "Select the image box shadow size.",
             "type": "select",
             "options": {
                 "None": "",
@@ -1049,7 +1048,7 @@
         },
         "nav_align": {
             "label": "Position",
-            "description": "Align the navigation's items.",
+            "description": "Align the navigation items.",
             "type": "select",
             "options": {
                 "Left": "left",

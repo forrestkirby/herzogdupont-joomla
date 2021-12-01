@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 // Image
 if ($props['image']) {
@@ -9,11 +9,11 @@ if ($props['image']) {
 
         'class' => [
             'el-image',
-            'uk-border-{image_border}' => !$props['panel_style'] || ($props['panel_style'] && (!$props['panel_card_image'] || $props['image_align'] == 'between')),
+            'uk-border-{image_border}' => !$props['panel_style'] || ($props['panel_style'] && (!$props['panel_image_no_padding'] || $props['image_align'] == 'between')),
             'uk-box-shadow-{image_box_shadow} {@!panel_style}',
 
             'uk-text-{image_svg_color} {@image_svg_inline}' => $this->isImage($props['image']) == 'svg',
-            'uk-margin[-{image_margin}]-top {@!image_margin: remove} {@!image_box_decoration}' => $props['image_align'] == 'between' || ($props['image_align'] == 'bottom' && !($props['panel_style'] && $props['panel_card_image'])),
+            'uk-margin[-{image_margin}]-top {@!image_margin: remove} {@!image_box_decoration}' => $props['image_align'] == 'between' || ($props['image_align'] == 'bottom' && !($props['panel_style'] && $props['panel_image_no_padding'])),
         ],
 
         'src' => $props['image'],
@@ -21,7 +21,7 @@ if ($props['image']) {
         'width' => $props['image_width'],
         'height' => $props['image_height'],
         'uk-svg' => $props['image_svg_inline'],
-        'uk-cover' => $props['panel_style'] && $props['panel_card_image'] && in_array($props['image_align'], ['left', 'right']),
+        'uk-cover' => $props['panel_style'] && $props['panel_image_no_padding'] && in_array($props['image_align'], ['left', 'right']),
         'thumbnail' => true,
     ]);
 
@@ -43,7 +43,7 @@ if ($props['image']) {
         'class' => [
             'el-image',
             'uk-text-{icon_color}',
-            'uk-margin[-{image_margin}]-top {@!image_margin: remove}' => $props['image_align'] == 'between' || ($props['image_align'] == 'bottom' && !($props['panel_style'] && $props['panel_card_image'])),
+            'uk-margin[-{image_margin}]-top {@!image_margin: remove}' => $props['image_align'] == 'between' || ($props['image_align'] == 'bottom' && !($props['panel_style'] && $props['panel_image_no_padding'])),
         ],
 
         'uk-icon' => [

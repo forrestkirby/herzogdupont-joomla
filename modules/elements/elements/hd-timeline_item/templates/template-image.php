@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 // Image
 if ($props['image']) {
@@ -9,13 +9,13 @@ if ($props['image']) {
 
         'class' => [
             'el-image',
-            'uk-border-{image_border} {@!image_transition}' => !$element['panel_style'] || ($element['panel_style'] && (!$element['panel_card_image'] || $element['image_align'] == 'between')),
+            'uk-border-{image_border} {@!image_transition}' => !$element['panel_style'] || ($element['panel_style'] && (!$element['panel_image_no_padding'] || $element['image_align'] == 'between')),
             'uk-box-shadow-{image_box_shadow} {@!panel_style} {@!image_transition}',
             'uk-box-shadow-hover-{image_hover_box_shadow} {@!panel_style} {@!image_transition}' => $props['link'] && ($element['image_link'] || $element['panel_link']),
             'uk-transition-{image_transition} uk-transition-opaque' => $props['link'] && ($element['image_link'] || $element['panel_link']),
 
             'uk-text-{image_svg_color} {@image_svg_inline}' => $this->isImage($props['image']) == 'svg',
-            'uk-margin[-{image_margin}]-top {@!image_margin: remove} {@!image_box_decoration} {@!image_transition}' => $element['image_align'] == 'between' || ($element['image_align'] == 'bottom' && !($element['panel_style'] && $element['panel_card_image'])),
+            'uk-margin[-{image_margin}]-top {@!image_margin: remove} {@!image_box_decoration} {@!image_transition}' => $element['image_align'] == 'between' || ($element['image_align'] == 'bottom' && !($element['panel_style'] && $element['panel_image_no_padding'])),
         ],
 
         'src' => $props['image'],
@@ -23,7 +23,7 @@ if ($props['image']) {
         'width' => $element['image_width'],
         'height' => $element['image_height'],
         'uk-svg' => $element['image_svg_inline'],
-        'uk-cover' => $element['panel_style'] && $element['panel_card_image'] && in_array($element['image_align'], ['left', 'right']),
+        'uk-cover' => $element['panel_style'] && $element['panel_image_no_padding'] && in_array($element['image_align'], ['left', 'right']),
         'thumbnail' => true,
     ]);
 
@@ -45,7 +45,7 @@ if ($props['image']) {
         'class' => [
             'el-image',
             'uk-text-{icon_color}',
-            'uk-margin[-{image_margin}]-top {@!image_margin: remove}' => $element['image_align'] == 'between' || ($element['image_align'] == 'bottom' && !($element['panel_style'] && $element['panel_card_image'])),
+            'uk-margin[-{image_margin}]-top {@!image_margin: remove}' => $element['image_align'] == 'between' || ($element['image_align'] == 'bottom' && !($element['panel_style'] && $element['panel_image_no_padding'])),
         ],
 
         'uk-icon' => [

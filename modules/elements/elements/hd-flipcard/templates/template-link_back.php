@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 $link_back = $props['link_back'] ? $this->el('a', [
     'href' => ['{link_back}'],
@@ -15,7 +15,7 @@ if ($link_back && $props['panel_back_link']) {
         'class' => [
             'uk-link-toggle',
             // Only if `uk-flex` is not already set in `template.php` to let images cover the card height if the cards have different heights
-            'uk-display-block' => !($props['panel_back_style'] && $props['has_panel_back_card_image'] && in_array($props['image_back_align'], ['left', 'right'])),
+            'uk-display-block' => !($props['panel_back_style'] && $props['has_panel_back_image_no_padding'] && in_array($props['image_back_align'], ['left', 'right'])),
         ],
 
     ]);
@@ -49,7 +49,7 @@ if ($link_back && $props['image_back'] && $props['image_back_link']) {
 
     $props['image_back'] = $link_back($props, ['class' => [
 
-        'uk-display-block' => $props['panel_back_style'] && $props['has_panel_back_card_image'] && in_array($props['image_back_align'], ['left', 'right']),
+        'uk-display-block' => $props['panel_back_style'] && $props['has_panel_back_image_no_padding'] && in_array($props['image_back_align'], ['left', 'right']),
 
     ]], $props['image_back']);
 

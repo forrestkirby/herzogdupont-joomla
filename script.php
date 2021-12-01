@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package   Herzog Dupont
+ * @package   Herzog Dupont for YOOtheme Pro
  * @author    Thomas Weidlich
  * @copyright Copyright (C) 2021 Thomas Weidlich
  * @license   GNU General Public License version 3, see LICENSE
@@ -14,7 +14,7 @@ class plgSystemHerzogdupontInstallerScript
 {
     protected $minimumPHPVersion = '7.3.0';
     protected $minimumJoomlaVersion = '3.9.0';
-    protected $minimumYOOthemeVersion = '2.5.0';
+    protected $minimumYOOthemeVersion = '2.7.0';
 
     public function install($parent)
     {

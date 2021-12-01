@@ -2,7 +2,7 @@
 	"@import": "./element.php",
 	"name": "hd-counter",
 	"title": "HD Counter",
-	"group": "herzog-dupont",
+	"group": "Herzog Dupont",
 	"icon": "${url:images/icon.svg}",
 	"iconSmall": "${url:images/iconSmall.svg}",
 	"element": true,

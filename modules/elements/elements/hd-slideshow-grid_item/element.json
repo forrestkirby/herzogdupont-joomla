@@ -174,9 +174,7 @@
                         {
                             "label": "Panel",
                             "type": "group",
-                            "fields": [
-                                "panel_style"
-                            ]
+                            "fields": ["panel_style"]
                         }
                     ]
                 },

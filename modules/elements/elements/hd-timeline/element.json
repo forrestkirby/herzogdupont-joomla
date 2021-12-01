@@ -2,7 +2,7 @@
     "@import": "./element.php",
     "name": "hd-timeline",
     "title": "HD Timeline",
-    "group": "herzog-dupont",
+    "group": "Herzog Dupont",
     "icon": "${url:images/icon.svg}",
     "iconSmall": "${url:images/iconSmall.svg}",
     "element": true,
@@ -54,7 +54,7 @@
             "item": "hd-timeline_item",
             "media": {
                 "type": "image",
-                "item": {"title": "title", "image": "src"}
+                "item": { "title": "title", "image": "src" }
             }
         },
         "show_title": {
@@ -197,14 +197,18 @@
         },
         "panel_style": {
             "label": "Style",
-            "description": "Select one of the boxed card styles or a blank panel.",
+            "description": "Select one of the boxed card or tile styles or a blank panel.",
             "type": "select",
             "options": {
                 "None": "",
                 "Card Default": "card-default",
                 "Card Primary": "card-primary",
                 "Card Secondary": "card-secondary",
-                "Card Hover": "card-hover"
+                "Card Hover": "card-hover",
+                "Tile Default": "tile-default",
+                "Tile Muted": "tile-muted",
+                "Tile Primary": "tile-primary",
+                "Tile Secondary": "tile-secondary"
             }
         },
         "panel_link": {
@@ -214,9 +218,9 @@
             "text": "Link panel",
             "enable": "show_link"
         },
-        "panel_content_padding": {
+        "panel_padding": {
             "label": "Padding",
-            "description": "Add padding to the content if the image is top, left or right aligned.",
+            "description": "Set the padding.",
             "type": "select",
             "options": {
                 "None": "",
@@ -224,22 +228,10 @@
                 "Default": "default",
                 "Large": "large"
             },
-            "show": "!panel_style",
-            "enable": "show_image && image_align != 'between'"
+            "enable": "panel_style || (!panel_style && show_image && image_align != 'between')"
         },
-        "panel_size": {
-            "label": "Padding",
-            "description": "Define the card's size by selecting the padding between the card and its content.",
-            "type": "select",
-            "options": {
-                "Small": "small",
-                "Default": "",
-                "Large": "large"
-            },
-            "show": "panel_style"
-        },
-        "panel_card_image": {
-            "description": "Top, left or right aligned images can be attached to the card's edge. If the image is aligned to the left or right, it will also extend to cover the whole space.",
+        "panel_image_no_padding": {
+            "description": "Top, left or right aligned images can be attached to the panel edge. If the image is aligned to the left or right, it will also extend to cover the whole space.",
             "type": "checkbox",
             "text": "Align image without padding",
             "show": "panel_style",
@@ -268,7 +260,7 @@
                 "Small": "small"
             },
             "show": "!panel_style",
-            "enable": "show_image && image_align == 'top' && !panel_content_padding && !item_maxwidth && (!align_default || align_default == '1') && (!align_small || align_small == '1') && (!align_medium || align_medium == '1') && (!align_large || align_large == '1') && (!align_xlarge || align_xlarge == '1')"
+            "enable": "show_image && image_align == 'top' && !panel_padding && !item_maxwidth && (!align_default || align_default == '1') && (!align_small || align_small == '1') && (!align_medium || align_medium == '1') && (!align_large || align_large == '1') && (!align_xlarge || align_xlarge == '1')"
         },
         "title_style": {
             "label": "Style",
@@ -628,7 +620,7 @@
         },
         "image_border": {
             "label": "Border",
-            "description": "Select the image's border style.",
+            "description": "Select the image border style.",
             "type": "select",
             "options": {
                 "None": "",
@@ -636,11 +628,11 @@
                 "Circle": "circle",
                 "Pill": "pill"
             },
-            "enable": "show_image && (!panel_style || (panel_style && (!panel_card_image || image_align == 'between')))"
+            "enable": "show_image && (!panel_style || (panel_style && (!panel_image_no_padding || image_align == 'between')))"
         },
         "image_box_shadow": {
             "label": "Box Shadow",
-            "description": "Select the image's box shadow size.",
+            "description": "Select the image box shadow size.",
             "type": "select",
             "options": {
                 "None": "",
@@ -653,7 +645,7 @@
         },
         "image_box_decoration": {
             "label": "Box Decoration",
-            "description": "Select the image's box decoration style. Note: The Mask option is not supported by all styles and may have no visible effect.",
+            "description": "Select the image box decoration style.",
             "type": "select",
             "options": {
                 "None": "",
@@ -690,7 +682,7 @@
         },
         "image_hover_box_shadow": {
             "label": "Hover Box Shadow",
-            "description": "Select the image's box shadow size on hover.",
+            "description": "Select the image box shadow size on hover.",
             "type": "select",
             "options": {
                 "None": "",
@@ -769,7 +761,7 @@
                 "Large": "large",
                 "None": "collapse"
             },
-            "enable": "show_image && (image_align == 'left' || image_align == 'right') && !(panel_card_image && panel_style)"
+            "enable": "show_image && (image_align == 'left' || image_align == 'right') && !(panel_image_no_padding && panel_style)"
         },
         "image_grid_row_gap": {
             "label": "Grid Row Gap",
@@ -782,7 +774,7 @@
                 "Large": "large",
                 "None": "collapse"
             },
-            "enable": "show_image && (image_align == 'left' || image_align == 'right') && !(panel_card_image && panel_style)"
+            "enable": "show_image && (image_align == 'left' || image_align == 'right') && !(panel_image_no_padding && panel_style)"
         },
         "image_grid_breakpoint": {
             "label": "Grid Breakpoint",
@@ -816,7 +808,7 @@
                 "X-Large": "xlarge",
                 "None": "remove"
             },
-            "enable": "show_image && (image_align == 'between' || (image_align == 'bottom' && !(panel_style && panel_card_image)))"
+            "enable": "show_image && (image_align == 'between' || (image_align == 'bottom' && !(panel_style && panel_image_no_padding)))"
         },
         "image_svg_inline": {
             "label": "Inline SVG",
@@ -989,9 +981,8 @@
                             "fields": [
                                 "panel_style",
                                 "panel_link",
-                                "panel_content_padding",
-                                "panel_size",
-                                "panel_card_image",
+                                "panel_padding",
+                                "panel_image_no_padding",
                                 "item_maxwidth",
                                 "panel_content_width"
                             ]
@@ -1052,10 +1043,7 @@
                                     "description": "Setting just one value preserves the original proportions. The image will be resized and cropped automatically, and where possible, high resolution images will be auto-generated.",
                                     "type": "grid",
                                     "width": "1-2",
-                                    "fields": [
-                                        "image_width",
-                                        "image_height"
-                                    ]
+                                    "fields": ["image_width", "image_height"]
                                 },
 
                                 "image_border",

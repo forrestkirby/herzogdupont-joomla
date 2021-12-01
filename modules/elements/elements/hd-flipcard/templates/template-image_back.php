@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2021 YOOtheme GmbH, 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 // Image
 if ($props['image_back']) {
@@ -9,13 +9,13 @@ if ($props['image_back']) {
 
         'class' => [
             'el-image-back',
-            'uk-border-{image_back_border} {@!image_back_transition}' => !$props['panel_back_style'] || ($props['panel_back_style'] && (!$props['panel_back_card_image'] || $props['image_back_align'] == 'between')),
+            'uk-border-{image_back_border} {@!image_back_transition}' => !$props['panel_back_style'] || ($props['panel_back_style'] && (!$props['panel_back_image_no_padding'] || $props['image_back_align'] == 'between')),
             'uk-box-shadow-{image_back_box_shadow} {@!panel_back_style} {@!image_back_transition}',
             'uk-box-shadow-hover-{image_back_hover_box_shadow} {@!panel_back_style} {@link_back} {@!image_back_transition}' => $props['image_back_link'] || $props['panel_back_link'],
             'uk-transition-{image_back_transition} uk-transition-opaque {@link_back}' => $props['image_back_link'] || $props['panel_back_link'],
 
             'uk-text-{image_back_svg_color} {@image_back_svg_inline}' => $this->isImage($props['image_back']) == 'svg',
-            'uk-margin[-{image_back_margin}]-top {@!image_back_margin: remove} {@!image_back_box_decoration} {@!image_back_transition}' => $props['image_back_align'] == 'between' || ($props['image_back_align'] == 'bottom' && !($props['panel_back_style'] && $props['panel_back_card_image'])),
+            'uk-margin[-{image_back_margin}]-top {@!image_back_margin: remove} {@!image_back_box_decoration} {@!image_back_transition}' => $props['image_back_align'] == 'between' || ($props['image_back_align'] == 'bottom' && !($props['panel_back_style'] && $props['panel_back_image_no_padding'])),
         ],
 
         'src' => $props['image_back'],
@@ -23,7 +23,7 @@ if ($props['image_back']) {
         'width' => $props['image_back_width'],
         'height' => $props['image_back_height'],
         'uk-svg' => $props['image_back_svg_inline'],
-        'uk-cover' => $props['panel_back_style'] && $props['panel_back_card_image'] && in_array($props['image_back_align'], ['left', 'right']),
+        'uk-cover' => $props['panel_back_style'] && $props['panel_back_image_no_padding'] && in_array($props['image_back_align'], ['left', 'right']),
         'thumbnail' => true,
     ]);
 
@@ -45,7 +45,7 @@ if ($props['image_back']) {
         'class' => [
             'el-image-back',
             'uk-text-{icon_color}',
-            'uk-margin[-{image_margin}]-top {@!image_margin: remove}' => $props['image_align'] == 'between' || ($props['image_align'] == 'bottom' && !($props['panel_style'] && $props['panel_card_image'])),
+            'uk-margin[-{image_margin}]-top {@!image_margin: remove}' => $props['image_align'] == 'between' || ($props['image_align'] == 'bottom' && !($props['panel_style'] && $props['panel_back_image_no_padding'])),
         ],
 
         'uk-icon' => [

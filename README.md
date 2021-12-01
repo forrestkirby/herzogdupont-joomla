@@ -1,6 +1,6 @@
-# Herzog Dupont Joomla! Plugin
+# Herzog Dupont Elements for YOOtheme Pro Joomla! Plugin
 
-Herzog Dupont is an extension for the [YOOtheme Pro page builder](https://yootheme.com/page-builder) which adds more elements to the element library.
+Herzog Dupont Elements for YOOtheme Pro is an extension for the [YOOtheme Pro page builder](https://yootheme.com/page-builder) which adds more elements to the element library.
 
 Copyright (C) 2021 Thomas Weidlich
 
@@ -45,9 +45,9 @@ If you want to report an issue, please use the [Github issue tool](https://githu
 
 ## Links
 
-- [Demo](https://herzog-dupont.de/yootheme-pro-custom-elements)
-- [Documentation](https://herzog-dupont.de/documentation/herzog-dupont-plugin)
-- [Herzog Dupont WordPress Plugin](https://wordpress.org/plugins/herzog-dupont)
+- [Demo](https://herzog-dupont.de/yootheme-pro)
+- [Documentation](https://herzog-dupont.de/documentation/herzog-dupont-for-yootheme-pro)
+- [Herzog Dupont for YOOtheme Pro WordPress Plugin](https://wordpress.org/plugins/herzog-dupont)
 - [YOOtheme Pro Documentation](https://yootheme.com/support/yootheme-pro/joomla/introduction)
 - [YOOtheme Support](https://yootheme.com/support)
 

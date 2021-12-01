@@ -1,7 +1,7 @@
 {
 	"name": "hd-toggle",
 	"title": "HD Toggle",
-	"group": "herzog-dupont",
+	"group": "Herzog Dupont",
 	"icon": "${url:images/icon.svg}",
 	"iconSmall": "${url:images/iconSmall.svg}",
 	"element": true,

@@ -1,0 +1,18 @@
+{
+    "sections": {
+        "styler": {
+            "components": {
+                "hd-timeline": {
+                    "name": "HD Timeline",
+                    "groups": {
+                        "line": "@hd-timeline-line-*",
+                        "icon": "@hd-timeline-icon-*",
+                        "item": "@hd-timeline-item-*"
+                    },
+                    "hover": "[class*='hd-timeline-']",
+                    "inspect": "[class*='hd-timeline'], [class*='hd-timeline'] > *"
+                }
+            }
+        }
+    }
+}
