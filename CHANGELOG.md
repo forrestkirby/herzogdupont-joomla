@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.5.2 (December 02, 2021)
+
+### Fixed
+
+- warning about undefined array key in timeline element
+
+### Changed
+
+- show style customizer panel for timeline element only if element is enabled
+
 ## 1.5.1 (December 01, 2021)
 
 ### Fixed
@@ -9,7 +19,7 @@
 
 ### Changed
 
-- replace CSS by LESS to use breakpoints of style customizer in timeline element
+- replaced CSS by LESS to use breakpoints of style customizer in timeline element
 - raised minimum YOOtheme Pro version to 2.7
 
 ## 1.5.0 (November 18, 2021)
@@ -63,7 +73,7 @@
 ### Changed
 
 - raised minimum YOOtheme Pro version to 2.5
-- rename `value` field to `start` in progress element
+- renamed `value` field to `start` in progress element
 
 ### Fixed
 
