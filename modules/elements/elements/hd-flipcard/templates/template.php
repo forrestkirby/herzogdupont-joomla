@@ -41,6 +41,7 @@ if ($props['image_box_decoration']) {
 $front = $this->el('div', [
 
     'class' => [
+        'el-card',
         'uk-panel [uk-{panel_style: tile-.*}] {@panel_style: |tile-.*}',
         'uk-card uk-{panel_style: card-.*} [uk-card-{!panel_padding: |default}]',
         'uk-padding[-{!panel_padding: default}] {@panel_style: |tile-.*} {@panel_padding} {@!has_panel_image_no_padding} {@!has_no_padding}',
@@ -168,6 +169,7 @@ if ($props['image_back_box_decoration']) {
 $back = $this->el($props['link_back'] && $props['panel_back_link'] ? 'a' : 'div', [
 
     'class' => [
+        'el-card-back',
         'uk-panel [uk-{panel_back_style: tile-.*}] {@panel_back_style: |tile-.*}',
         'uk-card uk-{panel_back_style: card-.*} [uk-card-{!panel_back_padding: |default}]',
         'uk-tile-hover {@panel_back_style: tile-.*} {@panel_back_link} {@link_back}',

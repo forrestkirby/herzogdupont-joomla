@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.3 (December 02, 2021)
+
+### Fixed
+
+- panel padding update path in flipcard element
+- missing classes on cards in flipcard element
+
 ## 1.5.2 (December 02, 2021)
 
 ### Fixed
