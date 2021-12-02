@@ -112,7 +112,7 @@ $content = $this->el('div', [
         'uk-card-body {@panel_style: card-.*} {@panel_padding} {@has_panel_image_no_padding}',
         'uk-margin-remove-first-child {@panel_padding} {@has_panel_image_no_padding}',
         // 1 Column Content Width
-        'uk-container uk-container-{panel_content_width}' => $props['image'] && $element['image_align'] == 'top' && !$element['panel_style'] && !$element['panel_padding'] && !$element['item_maxwidth'] && (!$element['grid_default'] || $element['grid_default'] == '1') && (!$element['grid_small'] || $element['grid_small'] == '1') && (!$element['grid_medium'] || $element['grid_medium'] == '1') && (!$element['grid_large'] || $element['grid_large'] == '1') && (!$element['grid_xlarge'] || $element['grid_xlarge'] == '1'),
+        'uk-container uk-container-{panel_content_width}' => $props['image'] && $element['image_align'] == 'top' && !$element['panel_style'] && !$element['panel_padding'] && !$element['item_maxwidth'] && (!$element['align_default'] || $element['align_default'] == 'left' || $element['align_default'] == 'right') && (!$element['align_small'] || $element['align_small'] == 'left' || $element['align_small'] == 'right') && (!$element['align_medium'] || $element['align_medium'] == 'left' || $element['align_medium'] == 'right') && (!$element['align_large'] || $element['align_large'] == 'left' || $element['align_large'] == 'right') && (!$element['align_xlarge'] || $element['align_xlarge'] == 'left' || $element['align_xlarge'] == 'right'),
     ],
 
 ]);
