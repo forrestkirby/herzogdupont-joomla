@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.6.0 (December 16, 2021)
+
+### Added
+
+- option to disable pointer events for absolute positioned builder elements
+
 ## 1.5.3 (December 02, 2021)
 
 ### Fixed
