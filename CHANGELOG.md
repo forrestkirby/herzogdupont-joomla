@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.6.1 (December 22, 2021)
+
+### Fixed
+
+- initialization if after image load event is not triggered in image comparison element
+- notice about undefined index in flipcard element
+
 ## 1.6.0 (December 16, 2021)
 
 ### Added
