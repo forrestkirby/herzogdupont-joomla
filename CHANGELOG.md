@@ -6,7 +6,7 @@
 
 - initialization if after image load event is not triggered in image comparison element
 - notice about undefined index in flipcard element
-- 
+
 ### Changed
 
 - raised minimum PHP version to 7.4
