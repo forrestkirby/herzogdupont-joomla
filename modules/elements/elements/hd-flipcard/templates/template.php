@@ -6,10 +6,6 @@
 // Resets
 if ($props['icon'] && !$props['image']) { $props['panel_image_no_padding'] = ''; }
 if ($props['panel_style'] || !$props['image']) { $props['image_box_decoration'] = ''; }
-if ($props['panel_link']) {
-    $props['title_link'] = '';
-    $props['image_link'] = '';
-}
 
 // Image
 $props['image'] = $this->render("{$__dir}/template-image", compact('props'));
@@ -90,7 +86,8 @@ $content = $this->el('div', [
 $cell_content = $this->el('div', [
 
     'class' => [
-        'uk-margin-remove-first-child' => (!$props['panel_style'] && !$props['has_panel_content_padding']) || ($props['panel_style'] && !$props['has_panel_card_image']),
+        'uk-margin-remove-first-child' => !($props['panel_padding'] && $props['has_panel_image_no_padding']),
+        'uk-flex uk-flex-middle {@image_vertical_align}' => $props['panel_style'] && $props['panel_image_no_padding'],
     ],
 
 ]);
@@ -180,7 +177,6 @@ $back = $this->el($props['link_back'] && $props['panel_back_link'] ? 'a' : 'div'
         'uk-flex {@panel_back_style} {@has_panel_back_image_no_padding} {@image_back_align: left|right}', // Let images cover the card/tile height if they have different heights
         'uk-transition-toggle {@image_back} {@image_back_transition} {@panel_back_link}',
     ],
-
 ]);
 
 // Image align
@@ -234,7 +230,7 @@ $link_back = include "{$__dir}/template-link_back.php";
 // Card media
 if ($props['panel_back_style'] && $props['has_panel_back_image_no_padding']) {
     $props['image_back'] = $this->el('div', [
-        
+
         'class' => [
             'uk-card-media-{image_back_align} {@panel_back_style: card-.*}',
         	'uk-cover-container{@image_back_align: left|right}',
