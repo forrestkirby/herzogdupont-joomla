@@ -6,6 +6,11 @@
 
 - initialization if after image load event is not triggered in image comparison element
 - notice about undefined index in flipcard element
+- 
+### Changed
+
+- raised minimum PHP version to 7.4
+- raised minimum YOOtheme Pro version to 2.7.9
 
 ## 1.6.0 (December 16, 2021)
 
