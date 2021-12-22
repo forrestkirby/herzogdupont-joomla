@@ -1,9 +1,10 @@
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2020�2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2020–2021 Thomas Weidlich GNU GPL v3 */
 
 class hdImgComp {
 
 	constructor(el) {
 		this.element = el;
+		this.initialized = false;
 		this.before = el.querySelector('.hd-image-comparison-before');
 		this.beforeimg = el.querySelector('.hd-image-comparison-before img');
 		this.afterimg = el.querySelector('.hd-image-comparison-after img');
@@ -32,6 +33,7 @@ class hdImgComp {
 		}
 		window.addEventListener('resize', () => { this.setSizePos() });
 		window.addEventListener('orientationchange', () => { this.setSizePos() });
+		this.initialized = true;
 	}
 
 	setSizePos() {
@@ -63,6 +65,13 @@ class hdImgComp {
 }
 
 UIkit.util.$$('.hd-image-comparison').forEach(el => {
+
 	let x = new hdImgComp(el);
-	UIkit.util.on(x.afterimg, 'load', () => x.init());
+
+	// add multiple event listeners for initialization because we don’t reliably know which image will be loaded first
+	UIkit.util.on(x.beforeimg, 'load', () => { if (x.initialized === false) { x.init() } });
+	UIkit.util.on(x.afterimg, 'load', () => { if (x.initialized === false) { x.init() } });
+	// catch cases in which no image load event has been triggered or the images are loaded prior to the execution of the script 
+	window.addEventListener('load', () => { if (x.initialized === false) { x.init() } });
+
 });
