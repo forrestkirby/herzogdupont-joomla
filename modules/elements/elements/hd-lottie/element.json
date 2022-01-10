@@ -26,7 +26,7 @@
 	},
 	"fields": {
 		"path": {
-			"label": "Animation Path",
+			"label": "Animation JSON",
 			"description": "Select the source file for the Lottie animation or enter a URL.",
 			"type": "link",
 			"source": true

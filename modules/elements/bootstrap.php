@@ -2,6 +2,8 @@
 
 /* Herzog Dupont for YOOtheme Pro Copyright (C) 2021 Thomas Weidlich GNU GPL v3 */
 
+namespace HerzogDupont;
+
 // No direct access to this file
 defined('_JEXEC') or die();
 

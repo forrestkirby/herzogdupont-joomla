@@ -1,5 +1,11 @@
 # Changelog
 
+## WIP
+
+### Changed
+
+- use namespace to avoid conflicts with other extensions for YOOtheme Pro
+
 ## 1.6.2 (December 24, 2021)
 
 ### Removed
