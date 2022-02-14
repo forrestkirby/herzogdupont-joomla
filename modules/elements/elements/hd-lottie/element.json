@@ -139,7 +139,6 @@
 		"position_top": "${builder.position_top}",
 		"position_bottom": "${builder.position_bottom}",
 		"position_z_index": "${builder.position_z_index}",
-        
 		"margin": "${builder.margin}",
 		"margin_remove_top": "${builder.margin_remove_top}",
 		"margin_remove_bottom": "${builder.margin_remove_bottom}",
@@ -229,7 +228,6 @@
 								"position_top",
 								"position_bottom",
 								"position_z_index",
-    
 								"margin",
 								"margin_remove_top",
 								"margin_remove_bottom",
