@@ -2,7 +2,7 @@
 
 Herzog Dupont Elements for YOOtheme Pro is an extension for the [YOOtheme Pro page builder](https://yootheme.com/page-builder) which adds more elements to the element library.
 
-Copyright (C) 2021 Thomas Weidlich
+Copyright (C) 2021–2022 Thomas Weidlich
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

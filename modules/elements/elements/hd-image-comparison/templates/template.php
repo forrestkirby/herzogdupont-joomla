@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2020–2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2020–2022 Thomas Weidlich GNU GPL v3 */
 
 $uniqid = uniqid('hd-');
 

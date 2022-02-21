@@ -1,4 +1,4 @@
-<!-- Herzog Dupont Copyright (C) 2019–2021 Thomas Weidlich GNU GPL v3 -->
+<!-- Herzog Dupont Copyright (C) 2019–2022 Thomas Weidlich GNU GPL v3 -->
 <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 	<circle fill="none" stroke="#444" stroke-dasharray="48" stroke-dashoffset="15" cx="10" cy="10" r="8" style="transform: rotate(-90deg); transform-origin: center"></circle>
 	<text x="4.75" y="13.25" fill="#444" style="font-size: 0.67em;">42</text>

@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2021 YOOtheme GmbH, 2021 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2022 YOOtheme GmbH, 2021–2022 Thomas Weidlich GNU GPL v3 */
 
 namespace YOOtheme;
 
