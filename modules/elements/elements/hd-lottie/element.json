@@ -10,6 +10,8 @@
 	"defaults": {
 		"margin": "default",
 		"renderer": "svg",
+		"preserve-aspect-ratio": "default",
+		"preserve-aspect-ratio-reference": "meet",
 		"trigger": "autoplay",
 		"offset-top": 0,
 		"loop": true,
@@ -112,6 +114,34 @@
 				"Canvas": "canvas"
 			}
 		},
+		"preserve-aspect-ratio": {
+			"label": "Aspect Ratio",
+			"description": "Select aspect ratio of the animation",
+			"type": "select",
+			"options": {
+				"Default": "default",
+				"None": "none",
+				"xMinYMin": "xMinYMin",
+				"xMidYMin": "xMidYMin",
+				"xMaxYMin": "xMaxYMin",
+				"xMinYMid": "xMinYMid",
+				"xMidYMid": "xMidYMid",
+				"xMaxYMid": "xMaxYMid",
+				"xMinYMax": "xMinYMax",
+				"xMidYMax": "xMidYMax",
+				"xMaxYMax": "xMaxYMax"
+			}
+		},
+		"preserve-aspect-ratio-reference": {
+			"label": "Aspect Ratio Reference",
+			"description": "Select aspect ratio reference",
+			"type": "select",
+			"options": {
+				"Meet (default)": "meet",
+				"Slice": "slice"
+			},
+			"enable": "preserve-aspect-ratio !== 'none' && preserve-aspect-ratio !== 'default'"
+		},
 		"link_target": {
 			"label": "Link Target",
 			"type": "select",
@@ -197,7 +227,9 @@
 								"on-mouseleave",
 								"animation-start",
 								"animation-end",
-								"renderer"
+								"renderer",
+								"preserve-aspect-ratio",
+								"preserve-aspect-ratio-reference"
 							]
 						},
 						{
