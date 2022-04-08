@@ -141,4 +141,8 @@ class hdLottie {
 UIkit.util.$$('.hd-lottie').forEach(el => {
 	let x = new hdLottie(el);
 	x.init();
+
+	window.addEventListener('resize', () => {
+		if (x.renderer === 'canvas') lottie.resize();
+	})
 });

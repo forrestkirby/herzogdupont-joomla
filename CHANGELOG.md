@@ -6,6 +6,10 @@
 
 - animation name to lottie element
 
+### Fixed
+
+- resize canvas on viewport resize in lottie element
+
 ## 1.6.3 (February 21, 2022)
 
 ### Changed
@@ -20,15 +24,15 @@
 
 ## 1.6.1 (December 22, 2021)
 
-### Fixed
-
-- initialization if after image load event is not triggered in image comparison element
-- notice about undefined index in flipcard element
-
 ### Changed
 
 - raised minimum PHP version to 7.4
 - raised minimum YOOtheme Pro version to 2.7.9
+
+### Fixed
+
+- initialization if after image load event is not triggered in image comparison element
+- notice about undefined index in flipcard element
 
 ## 1.6.0 (December 16, 2021)
 
@@ -45,25 +49,25 @@
 
 ## 1.5.2 (December 02, 2021)
 
-### Fixed
-
-- warning about undefined array key in timeline element
-
 ### Changed
 
 - show style customizer panel for timeline element only if element is enabled
 
-## 1.5.1 (December 01, 2021)
-
 ### Fixed
 
-- tile style options in timeline and flipcard elements
-- layout update for card padding when set on items
+- warning about undefined array key in timeline element
+
+## 1.5.1 (December 01, 2021)
 
 ### Changed
 
 - replaced CSS by LESS to use breakpoints of style customizer in timeline element
 - raised minimum YOOtheme Pro version to 2.7
+
+### Fixed
+
+- tile style options in timeline and flipcard elements
+- layout update for card padding when set on items
 
 ## 1.5.0 (November 18, 2021)
 
@@ -118,16 +122,16 @@
 - raised minimum YOOtheme Pro version to 2.5
 - renamed `value` field to `start` in progress element
 
+### Removed
+
+- obsolete margin classes in progress element
+
 ### Fixed
 
 - update script breaks builder library in timeline element
 - images not being clipped for round cards in timeline and flipcard elements
 - render empty `<div>` if content field is empty in progress element
 - link styles if whole panel is linked in panel based elements
-
-### Removed
-
-- obsolete margin classes in progress element
 
 ## 1.2.1 (May 02, 2021)
 
