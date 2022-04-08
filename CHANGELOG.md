@@ -1,5 +1,11 @@
 # Changelog
 
+## WIP
+
+### Added
+
+- animation name to lottie element
+
 ## 1.6.3 (February 21, 2022)
 
 ### Changed

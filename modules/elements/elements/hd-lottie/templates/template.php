@@ -12,7 +12,7 @@ $lottie = $this->el('div', [
 
 	'class' => ['el-lottie'],
 
-	'data-name' => uniqid('hd-'),
+	'data-name' => $props['animation-name'] ?? uniqid('hd-'),
 	'data-animation-path' => realpath($props['path']) ? '/' . $props['path'] : $props['path'],
 	'data-renderer' => $props['renderer'],
     'data-preserve-aspect-ratio' => $props['preserve-aspect-ratio'],

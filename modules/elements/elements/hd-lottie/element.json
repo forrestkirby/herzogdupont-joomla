@@ -29,7 +29,7 @@
 	"fields": {
 		"path": {
 			"label": "Animation JSON",
-			"description": "Select the source file for the Lottie animation or enter a URL.",
+			"description": "Select the source file for the Lottie animation or enter a URL",
 			"type": "link",
 			"source": true
 		},
@@ -104,6 +104,12 @@
 				"max": 100,
 				"step": 1
 			}
+		},
+		"animation-name": {
+			"label": "Animation Name",
+			"description": "Animation name to reference the animation in custom scripts",
+			"type": "text",
+			"source": true
 		},
 		"renderer": {
 			"label": "Renderer",
@@ -228,6 +234,7 @@
 								"animation-start",
 								"animation-end",
 								"renderer",
+								"animation-name",
 								"preserve-aspect-ratio",
 								"preserve-aspect-ratio-reference"
 							]
