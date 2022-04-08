@@ -10,6 +10,8 @@
 	"defaults": {
 		"margin": "default",
 		"renderer": "svg",
+		"preserve-aspect-ratio": "default",
+		"preserve-aspect-ratio-reference": "meet",
 		"trigger": "autoplay",
 		"offset-top": 0,
 		"loop": true,
@@ -103,6 +105,12 @@
 				"step": 1
 			}
 		},
+		"animation-name": {
+			"label": "Animation Name",
+			"description": "Animation name to reference the animation in custom scripts",
+			"type": "text",
+			"source": true
+		},
 		"renderer": {
 			"label": "Renderer",
 			"description": "Select the HTML element the lottie animation will be rendered with",
@@ -112,11 +120,33 @@
 				"Canvas": "canvas"
 			}
 		},
-		"animation-name": {
-			"label": "Animation Name",
-			"description": "Animation name to reference the animation in custom scripts",
-			"type": "text",
-			"source": true
+		"preserve-aspect-ratio": {
+			"label": "Aspect Ratio",
+			"description": "Select aspect ratio of the animation",
+			"type": "select",
+			"options": {
+				"Default": "default",
+				"None": "none",
+				"xMinYMin": "xMinYMin",
+				"xMidYMin": "xMidYMin",
+				"xMaxYMin": "xMaxYMin",
+				"xMinYMid": "xMinYMid",
+				"xMidYMid": "xMidYMid",
+				"xMaxYMid": "xMaxYMid",
+				"xMinYMax": "xMinYMax",
+				"xMidYMax": "xMidYMax",
+				"xMaxYMax": "xMaxYMax"
+			}
+		},
+		"preserve-aspect-ratio-reference": {
+			"label": "Aspect Ratio Reference",
+			"description": "Select aspect ratio reference",
+			"type": "select",
+			"options": {
+				"Meet (default)": "meet",
+				"Slice": "slice"
+			},
+			"enable": "preserve-aspect-ratio !== 'none' && preserve-aspect-ratio !== 'default'"
 		},
 		"link_target": {
 			"label": "Link Target",
@@ -204,7 +234,9 @@
 								"animation-start",
 								"animation-end",
 								"renderer",
-								"animation-name"
+								"animation-name",
+								"preserve-aspect-ratio",
+								"preserve-aspect-ratio-reference"
 							]
 						},
 						{
