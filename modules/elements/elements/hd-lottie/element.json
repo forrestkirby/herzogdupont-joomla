@@ -27,7 +27,7 @@
 	"fields": {
 		"path": {
 			"label": "Animation JSON",
-			"description": "Select the source file for the Lottie animation or enter a URL.",
+			"description": "Select the source file for the Lottie animation or enter a URL",
 			"type": "link",
 			"source": true
 		},
@@ -111,6 +111,12 @@
 				"SVG": "svg",
 				"Canvas": "canvas"
 			}
+		},
+		"animation-name": {
+			"label": "Animation Name",
+			"description": "Animation name to reference the animation in custom scripts",
+			"type": "text",
+			"source": true
 		},
 		"link_target": {
 			"label": "Link Target",
@@ -197,7 +203,8 @@
 								"on-mouseleave",
 								"animation-start",
 								"animation-end",
-								"renderer"
+								"renderer",
+								"animation-name"
 							]
 						},
 						{
