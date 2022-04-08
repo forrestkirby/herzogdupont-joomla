@@ -120,12 +120,12 @@
 				"Canvas": "canvas"
 			}
 		},
-		"preserve-aspect-ratio": {
-			"label": "Aspect Ratio",
-			"description": "Select aspect ratio of the animation",
+		"preserve-aspect-ratio-alignment-value": {
+			"label": "Preserve Aspect Ratio Alignment Value",
+			"description": "Select alignment value of the <code>preserveAspectRatio</code> attribute",
 			"type": "select",
+			"default": "xMidYMid",
 			"options": {
-				"Default": "default",
 				"None": "none",
 				"xMinYMin": "xMinYMin",
 				"xMidYMin": "xMidYMin",
@@ -139,14 +139,14 @@
 			}
 		},
 		"preserve-aspect-ratio-reference": {
-			"label": "Aspect Ratio Reference",
-			"description": "Select aspect ratio reference",
+			"label": "Preserve Aspect Ratio Reference",
+			"description": "Select reference of the <code>preserveAspectRatio</code> attribute",
 			"type": "select",
+			"default": "meet",
 			"options": {
-				"Meet (default)": "meet",
+				"Meet": "meet",
 				"Slice": "slice"
-			},
-			"enable": "preserve-aspect-ratio !== 'none' && preserve-aspect-ratio !== 'default'"
+			}
 		},
 		"link_target": {
 			"label": "Link Target",
@@ -221,7 +221,7 @@
 				{
 					"title": "Settings",
 					"fields": [
-					{
+						{
 							"label": "Lottie Animation",
 							"type": "group",
 							"divider": true,
@@ -233,9 +233,16 @@
 								"on-mouseleave",
 								"animation-start",
 								"animation-end",
-								"renderer",
 								"animation-name",
-								"preserve-aspect-ratio",
+								"renderer"
+							]
+						},
+						{
+							"label": "Renderer Settings",
+							"type": "group",
+							"divider": true,
+							"fields": [
+								"preserve-aspect-ratio-alignment-value",
 								"preserve-aspect-ratio-reference"
 							]
 						},

@@ -14,13 +14,8 @@ class hdLottie {
 		this.speed = this.player.dataset.speed ? Math.abs(parseFloat(this.player.dataset.speed)) : 1;
 		this.step = 0;
 		this.isComplete = false;
-		// More info https://github.com/airbnb/lottie-web/wiki/Renderer-Settings#preserveaspectratio
 		this.rendererSettings = {};
-		if (this.player.dataset.preserveAspectRatio !== "default") {
-			this.rendererSettings.preserveAspectRatio = this.player.dataset.preserveAspectRatio;
-			if (this.player.dataset.preserveAspectRatio !== "none")
-				this.rendererSettings.preserveAspectRatio += " " + this.player.dataset.preserveAspectRatioReference;
-		}
+		this.rendererSettings.preserveAspectRatio = this.player.dataset.preserveAspectRatioAlignmentValue + ' ' + this.player.dataset.preserveAspectRatioReference;
 	}
 
 	init() {
@@ -30,8 +25,8 @@ class hdLottie {
 			path: this.path,
 			renderer: this.renderer,
 			autoplay: false,
-			rendererSettings: this.rendererSettings,
-			loop: this.trigger === 'mouseenter' ? false : this.loop
+			loop: this.trigger === 'mouseenter' ? false : this.loop,
+			rendererSettings: this.rendererSettings
 		});
 
 		let handleMouseEnter = this.handleMouseEnter.bind(this, anim);
