@@ -143,6 +143,6 @@ UIkit.util.$$('.hd-lottie').forEach(el => {
 	x.init();
 
 	window.addEventListener('resize', () => {
-		if (x.renderer === 'canvas') lottie.resize();
+		if (x.renderer === 'canvas') lottie.resize(x.name);
 	})
 });
