@@ -5,6 +5,7 @@
 ### Added
 
 - animation name to lottie element
+- automatically recompile style
 
 ### Fixed
 

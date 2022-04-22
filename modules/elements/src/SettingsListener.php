@@ -14,7 +14,7 @@ class SettingsListener
 {
     public static function initCustomizer(Config $config)
     {
-        // Add panel using a dynamic PHP configuration
+        // Add settings panel
         $config->set('customizer.panels.herzogdupont', [
             'title'  => 'Herzog Dupont',
             'width'  => 400,
@@ -72,6 +72,13 @@ class SettingsListener
 
         $config->set('customizer.sections.settings.fields.settings.items.herzogdupont', 'Herzog Dupont');
         
+        // Add style customizer section
         $config->addFile('customizer', Path::get('./customizer.json'));
+
+        // Recompile LESS style on installation
+        if ($config->get('~theme.hd.recompile') !== true) {
+            $config->set('customizer.sections.styler.update', true);
+            $config->set('~theme.hd.recompile', true);
+        }
     }
 }

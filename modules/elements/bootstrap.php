@@ -15,17 +15,13 @@ include_once __DIR__ . '/src/SettingsListener.php';
 
 return [
 
-    'theme' => function (Config $config) {
-        if (is_null($config->get('~theme.hd.elements')) || $config->get('~theme.hd.elements.hd-timeline') === true) {
-            return [
-                'styles' => [
-                    'components' => [
-                        'hd-timeline' => Path::get('./assets/less/hd-timeline.less'),
-                    ],
-                ],
-            ];
-        }
-    },
+    'theme' => [
+        'styles' => [
+            'components' => [
+                'hd-timeline' => Path::get('./assets/less/hd-timeline.less'),
+            ],
+        ],
+    ],
 
     'events' => [
 
