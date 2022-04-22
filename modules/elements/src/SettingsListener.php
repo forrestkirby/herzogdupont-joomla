@@ -76,9 +76,9 @@ class SettingsListener
         $config->addFile('customizer', Path::get('./customizer.json'));
 
         // Recompile LESS style on installation
-        if ($config->get('~theme.hd.recompile') !== true) {
+        if ($config->get('~theme.hd.recompile-style') !== true) {
             $config->set('customizer.sections.styler.update', true);
-            $config->set('~theme.hd.recompile', true);
+            $config->set('~theme.hd.recompile-style', true);
         }
     }
 }
