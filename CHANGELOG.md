@@ -10,6 +10,7 @@
 ### Fixed
 
 - resize canvas on viewport resize in lottie element
+- item container width in timeline element
 
 ## 1.6.3 (February 21, 2022)
 
