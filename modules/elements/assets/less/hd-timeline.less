@@ -1,4 +1,4 @@
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2019–2022 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2019–2021 Thomas Weidlich GNU GPL v3 */
 
 // Name:            HD Timeline
 // Description:     Herzog Dupont Timeline Element
@@ -14,11 +14,11 @@
 // Variables
 // ========================================================================
 
-@hd-timeline-line-color:             rgba(0, 0, 0, 0.1);
-@hd-timeline-line-width:             4px;
-@internal-hd-timeline-icon-size:     20px;
-@internal-hd-timeline-icon-padding:  calc(0.3 * @internal-hd-timeline-icon-size);
-@hd-timeline-item-container-padding: 40px;
+@hd-timeline-line-color:            rgba(0, 0, 0, 0.1);
+@hd-timeline-line-width:            4px;
+@internal-hd-timeline-icon-size:    20px;
+@internal-hd-timeline-icon-padding: calc(0.3 * @internal-hd-timeline-icon-size);
+@hd-timeline-item-container-margin: 40px;
 
 /* ========================================================================
    Component: HD Timeline
@@ -69,46 +69,46 @@
 	position: relative;
 	width: auto;
 	left: 0;
-	padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-padding);
-	padding-right: 0;
+	margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-margin);
+	margin-right: 0;
 }
 
 .hd-timeline-align-left>div:nth-child(n)>.hd-timeline-item-container {
 	position: relative;
 	width: auto;
 	left: 0;
-	padding-right: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-padding);
-	padding-left: 0;
+	margin-right: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-margin);
+	margin-left: 0;
 }
 
 .hd-timeline-align-right-alternate>div:nth-child(even)>.hd-timeline-item-container {
 	position: relative;
-	width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+	width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 	left: 50%;
-	padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-padding);
-	padding-right: 0;
+	margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-margin);
+	margin-right: 0;
 }
 
 .hd-timeline-align-right-alternate>div:nth-child(odd)>.hd-timeline-item-container {
 	position: relative;
-	width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+	width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 	left: 0;
-	padding-left: 0;
+	margin-left: 0;
 }
 
 .hd-timeline-align-left-alternate>div:nth-child(even)>.hd-timeline-item-container {
 	position: relative;
-	width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+	width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 	left: 0;
-	padding-left: 0;
+	margin-left: 0;
 }
 
 .hd-timeline-align-left-alternate>div:nth-child(odd)>.hd-timeline-item-container {
 	position: relative;
-	width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+	width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 	left: 50%;
-	padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-padding);
-	padding-right: 0;
+	margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-margin);
+	margin-right: 0;
 }
 
 .hd-timeline-container>div>.el-timeline-icon {
@@ -165,41 +165,41 @@
 	.hd-timeline-align-right\@s>div:nth-child(n)>.hd-timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-padding);
-		padding-right: 0;
+		margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-margin);
+		margin-right: 0;
 	}
 
 	.hd-timeline-align-left\@s>div:nth-child(n)>.hd-timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-right: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-padding);
-		padding-left: 0;
+		margin-right: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-margin);
+		margin-left: 0;
 	}
 
 	.hd-timeline-align-right-alternate\@s>div:nth-child(even)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 50%;
-		padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-padding);
-		padding-right: 0;
+		margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-margin);
+		margin-right: 0;
 	}
 
 	.hd-timeline-align-right-alternate\@s>div:nth-child(odd)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 0;
-		padding-left: 0;
+		margin-left: 0;
 	}
 
 	.hd-timeline-align-left-alternate\@s>div:nth-child(even)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 0;
-		padding-left: 0;
+		margin-left: 0;
 	}
 
 	.hd-timeline-align-left-alternate\@s>div:nth-child(odd)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 50%;
-		padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-padding);
-		padding-right: 0;
+		margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-margin);
+		margin-right: 0;
 	}
 
 	.hd-timeline-align-right\@s>div>.el-timeline-icon {
@@ -242,41 +242,41 @@
 	.hd-timeline-align-right\@m>div:nth-child(n)>.hd-timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-padding);
-		padding-right: 0;
+		margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-margin);
+		margin-right: 0;
 	}
 
 	.hd-timeline-align-left\@m>div:nth-child(n)>.hd-timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-right: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-padding);
-		padding-left: 0;
+		margin-right: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-margin);
+		margin-left: 0;
 	}
 
 	.hd-timeline-align-right-alternate\@m>div:nth-child(even)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 50%;
-		padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-padding);
-		padding-right: 0;
+		margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-margin);
+		margin-right: 0;
 	}
 
 	.hd-timeline-align-right-alternate\@m>div:nth-child(odd)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 0;
-		padding-left: 0;
+		margin-left: 0;
 	}
 
 	.hd-timeline-align-left-alternate\@m>div:nth-child(even)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 0;
-		padding-left: 0;
+		margin-left: 0;
 	}
 
 	.hd-timeline-align-left-alternate\@m>div:nth-child(odd)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 50%;
-		padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-padding);
-		padding-right: 0;
+		margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-margin);
+		margin-right: 0;
 	}
 
 	.hd-timeline-align-right\@m>div>.el-timeline-icon {
@@ -319,41 +319,41 @@
 	.hd-timeline-align-right\@l>div:nth-child(n)>.hd-timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-padding);
-		padding-right: 0;
+		margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-margin);
+		margin-right: 0;
 	}
 
 	.hd-timeline-align-left\@l>div:nth-child(n)>.hd-timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-right: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-padding);
-		padding-left: 0;
+		margin-right: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-margin);
+		margin-left: 0;
 	}
 
 	.hd-timeline-align-right-alternate\@l>div:nth-child(even)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 50%;
-		padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-padding);
-		padding-right: 0;
+		margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-margin);
+		margin-right: 0;
 	}
 
 	.hd-timeline-align-right-alternate\@l>div:nth-child(odd)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 0;
-		padding-left: 0;
+		margin-left: 0;
 	}
 
 	.hd-timeline-align-left-alternate\@l>div:nth-child(even)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 0;
-		padding-left: 0;
+		margin-left: 0;
 	}
 
 	.hd-timeline-align-left-alternate\@l>div:nth-child(odd)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 50%;
-		padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-padding);
-		padding-right: 0;
+		margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-margin);
+		margin-right: 0;
 	}
 
 	.hd-timeline-align-right\@l>div>.el-timeline-icon {
@@ -395,41 +395,41 @@
 	.hd-timeline-align-right\@xl>div:nth-child(n)>.hd-timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-padding);
-		padding-right: 0;
+		margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-margin);
+		margin-right: 0;
 	}
 
 	.hd-timeline-align-left\@xl>div:nth-child(n)>.hd-timeline-item-container {
 		width: auto;
 		left: 0;
-		padding-right: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-padding);
-		padding-left: 0;
+		margin-right: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) * 2 + @hd-timeline-item-container-margin);
+		margin-left: 0;
 	}
 
 	.hd-timeline-align-right-alternate\@xl>div:nth-child(even)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 50%;
-		padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-padding);
-		padding-right: 0;
+		margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-margin);
+		margin-right: 0;
 	}
 
 	.hd-timeline-align-right-alternate\@xl>div:nth-child(odd)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 0;
-		padding-left: 0;
+		margin-left: 0;
 	}
 
 	.hd-timeline-align-left-alternate\@xl>div:nth-child(even)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 0;
-		padding-left: 0;
+		margin-left: 0;
 	}
 
 	.hd-timeline-align-left-alternate\@xl>div:nth-child(odd)>.hd-timeline-item-container {
-		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-padding);
+		width: calc(50% - @internal-hd-timeline-icon-size - @internal-hd-timeline-icon-padding - @hd-timeline-line-width - @hd-timeline-item-container-margin);
 		left: 50%;
-		padding-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-padding);
-		padding-right: 0;
+		margin-left: calc((@internal-hd-timeline-icon-size + @internal-hd-timeline-icon-padding + @hd-timeline-line-width) + @hd-timeline-item-container-margin);
+		margin-right: 0;
 	}
 
 	.hd-timeline-align-right\@xl>div>.el-timeline-icon {
