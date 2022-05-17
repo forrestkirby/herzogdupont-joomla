@@ -7,6 +7,10 @@
 - animation name to lottie element
 - automatically recompile style
 
+### Changed
+
+- improve performance for event listening in lottie element
+
 ### Fixed
 
 - resize canvas on viewport resize in lottie element
