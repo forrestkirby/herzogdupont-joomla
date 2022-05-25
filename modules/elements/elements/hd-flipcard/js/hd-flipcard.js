@@ -50,7 +50,7 @@ UIkit.util.ready(() => {
 
 		el.addEventListener('click', e => {
 			if (flipMode.includes('click') && evtType !== 'touch' || flipModeTouch === 'tap' && evtType === 'touch') {
-				if (e.currentTarget.classList.contains('hd-flipcard-hover')) {
+				if (e.currentTarget.classList.contains('hd-flipcard-hover') && e.target.tagName !== 'A') {
 					e.currentTarget.classList.remove('hd-flipcard-hover');
 				} else {
 					e.currentTarget.classList.add('hd-flipcard-hover');
