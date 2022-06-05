@@ -11,6 +11,7 @@
 
 - improve performance for event listening in lottie element
 - card will not flip back when a link is clicked in flipcard element
+- revert fixed centered alignment in Safari in counter element
 
 ### Fixed
 

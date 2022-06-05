@@ -120,12 +120,10 @@ $unitEl = $this->el('span', [
 				<circle class="counter-value" cx="<?= $cx ?>" cy="<?= $cy ?>" r="<?= $props['circle_radius'] ?>" stroke="<?= $props['circle_color'] ?>" stroke-width="<?= $props['circle_stroke_width'] ?>" fill="none" />
 			</svg>
 
-			<div class="uk-overlay uk-position-cover">
-				<div class="uk-position-center">
-					<?php if ($props['number']) : ?><?= $numberEl($props) ?><?= $props['number'] ?></span><?php endif ?>
-					<?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= ' ' ?><?= $props['unit'] ?></span><?php endif ?>
-					<?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></span><?php endif ?>
-				</div>
+			<div class="uk-position-center uk-overlay">
+				<?php if ($props['number']) : ?><?= $numberEl($props) ?><?= $props['number'] ?></span><?php endif ?>
+				<?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= ' ' ?><?= $props['unit'] ?></span><?php endif ?>
+				<?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></span><?php endif ?>
 			</div>
 
 		</div>
