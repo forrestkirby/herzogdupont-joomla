@@ -4,27 +4,27 @@
 
 if ($props['path']) : ?>
 <?php
-	$uniqid = uniqid('hd-');
-	$loop = $props['loop'] == true ? true : false;
-	$path = $props['path'];
+    $uniqid = uniqid('hd-');
+    $loop = $props['loop'] == true ? true : false;
+    $path = $props['path'];
 ?>
 <?php if ($props['link']) : ?>
 <a href="<?= $props['link'] ?>">
 <?php endif ?>
-	<div id="<?= $uniqid ?>"></div>
+    <div id="<?= $uniqid ?>"></div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.2/lottie.min.js" integrity="sha512-R47oG09eydaf225nXyDdSWJ8frKwxkC7QIHXdPpbUx9KaAiC6akjpWxTBw1hb7whk7P2sJNuRhS2ljSBegnIPA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.4/lottie.min.js" integrity="sha512-ilxj730331yM7NbrJAICVJcRmPFErDqQhXJcn+PLbkXdE031JJbcK87Wt4VbAK+YY6/67L+N8p7KdzGoaRjsTg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <?php if ($props['link']) : ?>
 </a>
 <?php endif ?>
 <script>
 lottie.loadAnimation({
-	container: document.getElementById('<?= $uniqid ?>'),
-	renderer: 'svg',
-	loop: <?= $loop ?>,
-	autoplay: true,
-	path: <?= "'" . $path . "'" ?>
+    container: document.getElementById('<?= $uniqid ?>'),
+    renderer: 'svg',
+    loop: <?= $loop ?>,
+    autoplay: true,
+    path: <?= "'" . $path . "'" ?>
 });
 </script>
 <?php endif ?>

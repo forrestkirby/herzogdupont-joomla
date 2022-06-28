@@ -57,9 +57,6 @@ $container = $this->el('div', [
 <?= $nav($element, $element['nav_below'] && !$element['nav_color'] ? $container->attrs : []) ?>
     <?php for($i = 1, $j = 0; $i <= 3; $i++) :
 
-        // Display
-        if (!$element['show_thumbnail']) { $props['thumbnail_' . $i] = ''; }
-
         // Image
         $image = $this->el('image', [
             'class' => [
@@ -67,6 +64,7 @@ $container = $this->el('div', [
             ],
             'src' => $props['thumbnail_' . $i] ?: $props['image_' . $i],
             'alt' => $props['image_' . $i . '_alt'],
+            'loading' => $element['image_loading'] ? false : null,
             'width' => $element['thumbnav_width'],
             'height' => $element['thumbnav_height'],
             'uk-svg' => (bool) $element['thumbnav_svg_inline'],

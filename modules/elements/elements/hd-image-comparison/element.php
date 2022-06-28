@@ -5,11 +5,8 @@
 namespace YOOtheme;
 
 return [
-
     'transforms' => [
-
         'render' => function ($node) {
-
             /**
              * @var Metadata $metadata
              */
@@ -20,15 +17,6 @@ return [
 
             // Don't render element if content fields are empty
             return ($node->props['image_before'] || $node->props['image_after']);
-
         },
-
     ],
-
-    'updates' => [
-
-        //
-
-    ],
-
 ];

@@ -69,7 +69,7 @@
         },
         "image_border": {
             "label": "Border",
-            "description": "Select the image's border style.",
+            "description": "Select the image border style.",
             "type": "select",
             "options": {
                 "None": "",
@@ -80,7 +80,7 @@
         },
         "image_box_shadow": {
             "label": "Box Shadow",
-            "description": "Select the image's box shadow size.",
+            "description": "Select the image box shadow size.",
             "type": "select",
             "options": {
                 "None": "",
@@ -122,6 +122,12 @@
                 "Warning": "warning",
                 "Danger": "danger"
             }
+        },
+        "image_loading": {
+            "label": "Loading",
+            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
+            "type": "checkbox",
+            "text": "Load image eagerly"
         },
         "icon_width": {
             "label": "Slider Icon Width",
@@ -203,10 +209,7 @@
                             "name": "_image_dimension",
                             "type": "grid",
                             "width": "1-2",
-                            "fields": [
-                                "image_width",
-                                "image_height"
-                            ]
+                            "fields": ["image_width", "image_height"]
                         },
                         "image_before_alt",
                         "image_after",
@@ -225,7 +228,8 @@
                                 "image_border",
                                 "image_box_shadow",
                                 "image_box_decoration",
-                                "image_box_decoration_inverse"
+                                "image_box_decoration_inverse",
+                                "image_loading"
                             ]
                         },
                         {

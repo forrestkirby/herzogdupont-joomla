@@ -11,131 +11,131 @@ $dashOffsetEnd = 2 * M_PI * $props['circle_radius'] * (1 - $props['percentage'] 
 
 $el = $this->el('div', [
 
-	'class' => [
-		'counter-container',
-	],
+    'class' => [
+        'counter-container',
+    ],
 
-	'data-number' => [
-		'{number}',
-	],
+    'data-number' => [
+        '{number}',
+    ],
 
-	'data-separator-locale' => [
-		'{separator_locale}',
-	],
+    'data-separator-locale' => [
+        '{separator_locale}',
+    ],
 
-	'data-percentage' => [
-		'{percentage}',
-	],
+    'data-percentage' => [
+        '{percentage}',
+    ],
 
-	'data-radius' => [
-		'{circle_radius}',
-	],
+    'data-radius' => [
+        '{circle_radius}',
+    ],
 
-	'data-duration' => [
-		'{duration}',
-	],
+    'data-duration' => [
+        '{duration}',
+    ],
 
-	'data-uniqid' => [
-		$uniqid,
-	],
+    'data-uniqid' => [
+        $uniqid,
+    ],
 
 ]);
 
 $svg = $this->el('svg', [
 
-	'class' => [
-		'el-circle',
-	],
+    'class' => [
+        'el-circle',
+    ],
 
-	'width' => [
-		$circleWidth,
-	],
+    'width' => [
+        $circleWidth,
+    ],
 
-	'height' => [
-		$circleHeight,
-	],
+    'height' => [
+        $circleHeight,
+    ],
 
-	'viewBox' => [
-		$viewBox,
-	],
+    'viewBox' => [
+        $viewBox,
+    ],
 
 ]);
 
 $textEl = $this->el('span', [
 
-	'class' => [
-		'el-text',
-		'uk-{text_size}',
-		'uk-text-{text_color}',
-	],
+    'class' => [
+        'el-text',
+        'uk-{text_style}',
+        'uk-text-{text_color}',
+    ],
 
 ]);
 
 $numberEl = $this->el('span', [
 
-	'class' => [
-		'el-number',
-		'uk-{number_size}',
-		'uk-text-{number_color}',
-	],
+    'class' => [
+        'el-number',
+        'uk-{number_size}',
+        'uk-text-{number_color}',
+    ],
 
 ]);
 
 $unitEl = $this->el('span', [
 
-	'class' => [
-		'el-unit',
-		'uk-{number_size} {@unit_size: number-size}',
-		'uk-{unit_size} {@!unit_size: number-size}',
-		'uk-text-{number_color}',
-	],
+    'class' => [
+        'el-unit',
+        'uk-{number_size} {@unit_size: number-size}',
+        'uk-{unit_size} {@!unit_size: number-size}',
+        'uk-text-{number_color}',
+    ],
 
 ]);
 
 ?>
 <?= $el($props, $attrs) ?>
 
-	<style>
-	#<?= $uniqid ?> .counter-value {
-		animation: <?= $uniqid ?> <?= $props['duration'] ?>ms;
-	}
+    <style>
+    #<?= $uniqid ?> .counter-value {
+        animation: <?= $uniqid ?> <?= $props['duration'] ?>ms;
+    }
 
-	@keyframes <?= $uniqid ?> {
-		from {
-			stroke-dashoffset: <?= $dashOffsetStart ?>;
-		}
+    @keyframes <?= $uniqid ?> {
+        from {
+            stroke-dashoffset: <?= $dashOffsetStart ?>;
+        }
 
-		to {
-			stroke-dashoffset: <?= $dashOffsetEnd ?>;
-		}
-	}
-	</style>
+        to {
+            stroke-dashoffset: <?= $dashOffsetEnd ?>;
+        }
+    }
+    </style>
 
-	<?php if($props['show_circle']) : ?>
+    <?php if($props['show_circle']) : ?>
 
-		<div class="uk-inline">
+        <div class="uk-inline">
 
-			<?= $svg($props) ?>
-				<circle class="counter-meter" cx="<?= $cx ?>" cy="<?= $cy ?>" r="<?= $props['circle_radius'] ?>" stroke-width="<?= $props['circle_stroke_width'] ?>" fill="none" />
-				<circle class="counter-value" cx="<?= $cx ?>" cy="<?= $cy ?>" r="<?= $props['circle_radius'] ?>" stroke="<?= $props['circle_color'] ?>" stroke-width="<?= $props['circle_stroke_width'] ?>" fill="none" />
-			</svg>
+            <?= $svg($props) ?>
+                <circle class="counter-meter" cx="<?= $cx ?>" cy="<?= $cy ?>" r="<?= $props['circle_radius'] ?>" stroke-width="<?= $props['circle_stroke_width'] ?>" fill="none" />
+                <circle class="counter-value" cx="<?= $cx ?>" cy="<?= $cy ?>" r="<?= $props['circle_radius'] ?>" stroke="<?= $props['circle_color'] ?>" stroke-width="<?= $props['circle_stroke_width'] ?>" fill="none" />
+            </svg>
 
-			<div class="uk-position-center uk-overlay">
-				<?php if ($props['number']) : ?><?= $numberEl($props) ?><?= $props['number'] ?></span><?php endif ?>
-				<?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= ' ' ?><?= $props['unit'] ?></span><?php endif ?>
-				<?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></span><?php endif ?>
-			</div>
+            <div class="uk-position-center uk-overlay">
+                <?php if ($props['number']) : ?><?= $numberEl($props) ?><?= $props['number'] ?></span><?php endif ?>
+                <?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= ' ' ?><?= $props['unit'] ?></span><?php endif ?>
+                <?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></span><?php endif ?>
+            </div>
 
-		</div>
+        </div>
 
-	<?php else : ?>
+    <?php else : ?>
 
-		<div>
-			<?php if ($props['number']) : ?><?= $numberEl($props) ?><?= $props['number'] ?></span><?php endif ?>
-			<?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= ' ' ?><?= $props['unit'] ?></span><?php endif ?>
-			<?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></span><?php endif ?>
-		</div>
+        <div>
+            <?php if ($props['number']) : ?><?= $numberEl($props) ?><?= $props['number'] ?></span><?php endif ?>
+            <?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= ' ' ?><?= $props['unit'] ?></span><?php endif ?>
+            <?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></span><?php endif ?>
+        </div>
 
-	<?php endif; ?>
+    <?php endif; ?>
 
 </div>

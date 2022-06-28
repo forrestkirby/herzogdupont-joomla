@@ -28,7 +28,7 @@
         "title_align": "top",
         "title_grid_width": "1-2",
         "title_grid_breakpoint": "m",
-        "meta_style": "meta",
+        "meta_style": "text-meta",
         "meta_align": "below-title",
         "meta_element": "div",
         "content_column_breakpoint": "m",
@@ -440,19 +440,21 @@
             "type": "select",
             "options": {
                 "None": "",
-                "2X-Large": "heading-2xlarge",
-                "X-Large": "heading-xlarge",
-                "Large": "heading-large",
-                "Medium": "heading-medium",
-                "Small": "heading-small",
-                "H1": "h1",
-                "H2": "h2",
-                "H3": "h3",
-                "H4": "h4",
-                "H5": "h5",
-                "H6": "h6",
-                "Meta": "meta",
-                "Lead": "lead"
+                "Heading 2X-Large": "heading-2xlarge",
+                "Heading X-Large": "heading-xlarge",
+                "Heading Large": "heading-large",
+                "Heading Medium": "heading-medium",
+                "Heading Small": "heading-small",
+                "Heading H1": "h1",
+                "Heading H2": "h2",
+                "Heading H3": "h3",
+                "Heading H4": "h4",
+                "Heading H5": "h5",
+                "Heading H6": "h6",
+                "Text Meta": "text-meta",
+                "Text Lead": "text-lead",
+                "Text Small": "text-small",
+                "Text Large": "text-large"
             },
             "enable": "show_title"
         },
@@ -623,19 +625,21 @@
             "type": "select",
             "options": {
                 "None": "",
-                "Meta": "meta",
-                "Lead": "lead",
-                "2X-Large": "heading-2xlarge",
-                "X-Large": "heading-xlarge",
-                "Large": "heading-large",
-                "Medium": "heading-medium",
-                "Small": "heading-small",
-                "H1": "h1",
-                "H2": "h2",
-                "H3": "h3",
-                "H4": "h4",
-                "H5": "h5",
-                "H6": "h6"
+                "Text Meta": "text-meta",
+                "Text Lead": "text-lead",
+                "Text Small": "text-small",
+                "Text Large": "text-large",
+                "Heading 2X-Large": "heading-2xlarge",
+                "Heading X-Large": "heading-xlarge",
+                "Heading Large": "heading-large",
+                "Heading Medium": "heading-medium",
+                "Heading Small": "heading-small",
+                "Heading H1": "h1",
+                "Heading H2": "h2",
+                "Heading H3": "h3",
+                "Heading H4": "h4",
+                "Heading H5": "h5",
+                "Heading H6": "h6"
             },
             "enable": "show_meta"
         },
@@ -702,19 +706,21 @@
             "type": "select",
             "options": {
                 "None": "",
-                "Lead": "lead",
-                "Meta": "meta",
-                "2X-Large": "heading-2xlarge",
-                "X-Large": "heading-xlarge",
-                "Large": "heading-large",
-                "Medium": "heading-medium",
-                "Small": "heading-small",
-                "H1": "h1",
-                "H2": "h2",
-                "H3": "h3",
-                "H4": "h4",
-                "H5": "h5",
-                "H6": "h6"
+                "Text Meta": "text-meta",
+                "Text Lead": "text-lead",
+                "Text Small": "text-small",
+                "Text Large": "text-large",
+                "Heading 2X-Large": "heading-2xlarge",
+                "Heading X-Large": "heading-xlarge",
+                "Heading Large": "heading-large",
+                "Heading Medium": "heading-medium",
+                "Heading Small": "heading-small",
+                "Heading H1": "h1",
+                "Heading H2": "h2",
+                "Heading H3": "h3",
+                "Heading H4": "h4",
+                "Heading H5": "h5",
+                "Heading H6": "h6"
             },
             "enable": "show_content"
         },
@@ -777,6 +783,13 @@
                 "None": "remove"
             },
             "enable": "show_content"
+        },
+        "image_loading": {
+            "label": "Loading",
+            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
+            "type": "checkbox",
+            "text": "Load image eagerly",
+            "enable": "show_image"
         },
         "image_width": {
             "attrs": {
@@ -1300,6 +1313,7 @@
         "item_animation": "${builder.item_animation}",
         "_parallax_button": "${builder._parallax_button}",
         "visibility": "${builder.visibility}",
+        "container_padding_remove": "${builder.container_padding_remove}",
         "name": "${builder.name}",
         "status": "${builder.status}",
         "id": "${builder.id}",
@@ -1328,7 +1342,8 @@
                         "show_meta",
                         "show_content",
                         "show_image",
-                        "show_link"
+                        "show_link",
+                        "show_thumbnail"
                     ]
                 },
                 {
@@ -1491,10 +1506,7 @@
                                     "description": "Setting just one value preserves the original proportions. The image will be resized and cropped automatically, and where possible, high resolution images will be auto-generated.",
                                     "type": "grid",
                                     "width": "1-2",
-                                    "fields": [
-                                        "thumbnav_width",
-                                        "thumbnav_height"
-                                    ]
+                                    "fields": ["thumbnav_width", "thumbnav_height"]
                                 },
                                 "thumbnav_nowrap",
                                 "thumbnav_svg_inline",
@@ -1520,15 +1532,13 @@
                             "type": "group",
                             "divider": true,
                             "fields": [
+                                "image_loading",
                                 {
                                     "label": "Width/Height",
                                     "description": "Setting just one value preserves the original proportions. The image will be resized and cropped automatically, and where possible, high resolution images will be auto-generated.",
                                     "type": "grid",
                                     "width": "1-2",
-                                    "fields": [
-                                        "image_width",
-                                        "image_height"
-                                    ]
+                                    "fields": ["image_width", "image_height"]
                                 }
                             ]
                         },
@@ -1569,7 +1579,8 @@
                                 "animation",
                                 "item_animation",
                                 "_parallax_button",
-                                "visibility"
+                                "visibility",
+                                "container_padding_remove"
                             ]
                         }
                     ]

@@ -2,13 +2,6 @@
 
 /* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2022 YOOtheme GmbH, 2019–2022 Thomas Weidlich GNU GPL v3 */
 
-// Display
-foreach (['title', 'meta', 'content', 'link'] as $key) {
-    if (!$element["show_{$key}"]) { $props[$key] = ''; }
-}
-
-if (!$element['show_image']) { $props['image'] = $props['icon'] = ''; }
-
 // Resets
 if ($props['icon'] && !$props['image']) { $element['panel_image_no_padding'] = ''; }
 

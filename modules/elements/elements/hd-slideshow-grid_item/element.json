@@ -139,7 +139,6 @@
         },
         "status": "${builder.statusItem}",
         "source": "${builder.source}"
-
     },
     "fieldset": {
         "default": {

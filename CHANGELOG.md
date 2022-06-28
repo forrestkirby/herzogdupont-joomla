@@ -1,22 +1,25 @@
 # Changelog
 
-## WIP
+## 1.7.0
 
 ### Added
 
 - animation name to lottie element
 - automatically recompile style
+- loading eager option for images across all elements
 
 ### Changed
 
 - improve performance for event listening in lottie element
 - card will not flip back when a link is clicked in flipcard element
 - revert fixed centered alignment in Safari in counter element
+- raised minimum YOOtheme Pro version to 3.0.0
 
 ### Fixed
 
 - resize canvas on viewport resize in lottie element
 - item container width in timeline element
+- rendering of grid items depending on display settings in timeline element
 
 ## 1.6.3 (February 21, 2022)
 
@@ -103,6 +106,7 @@
 - flip mode touch options to flipcard element
 - figcaption to content.php in image comparison element
 - lottie element
+- navigation large margin option to slideshow grid element
 
 ### Fixed
 

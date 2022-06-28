@@ -5,36 +5,25 @@
 namespace YOOtheme;
 
 return [
+    'transforms' => [
+        'render' => function ($node) {
+            /**
+             * @var Metadata $metadata
+             */
+            $metadata = app(Metadata::class);
 
-	'transforms' => [
+            $metadata->set('script:builder-hd-progress', ['src' => Path::get('./js/hd-progress.js'), 'defer' => true]);
 
-		'render' => function ($node) {
+            // Don't render element if content fields are empty
+            return Str::length($node->props['content']) || ($node->props['max'] && $node->props['stop'] && $node->props['animation_step'] && $node->props['animation_speed']);
+        },
+    ],
 
-			/**
-			 * @var Metadata $metadata
-			 */
-			$metadata = app(Metadata::class);
-
-			$metadata->set('script:builder-hd-progress', ['src' => Path::get('./js/hd-progress.js'), 'defer' => true]);
-
-			// Don't render element if content fields are empty
-			return Str::length($node->props['content']) || ($node->props['max'] && $node->props['stop'] && $node->props['animation_step'] && $node->props['animation_speed']);
-
-		},
-
-	],
-
-	'updates' => [
-
-		'2.4.12' => function ($node) {
-
-			if (isset($node->props['value'])) {
-				$node->props['start'] = $node->props['value'];
-				unset($node->props['value']);
-			}
-
-		},
-
-	],
-
+    'updates' => [
+        '2.4.12' => function ($node) {
+            Arr::updateKeys($node->props, [
+                'value' => 'start',
+            ]);
+        },
+    ],
 ];

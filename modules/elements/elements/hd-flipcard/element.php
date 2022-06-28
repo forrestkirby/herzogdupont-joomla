@@ -32,7 +32,7 @@ return [
         '2.7.0-beta.0.5' => function ($node) {
             if (
                 isset($node->props['panel_style']) &&
-                preg_match('/^card-/', $node->props['panel_style'])
+                str_starts_with($node->props['panel_style'], 'card-')
             ) {
                 if (empty($node->props['panel_card_size'])) {
                     $node->props['panel_card_size'] = 'default';
@@ -43,7 +43,7 @@ return [
 
             if (
                 isset($node->props['panel_back_style']) &&
-                preg_match('/^card-/', $node->props['panel_back_style'])
+                str_starts_with($node->props['panel_back_style'], 'card-')
             ) {
                 if (empty($node->props['panel_back_card_size'])) {
                     $node->props['panel_back_card_size'] = 'default';
@@ -54,35 +54,14 @@ return [
         },
 
         '2.7.0-beta.0.1' => function ($node) {
-            if (isset($node->props['panel_content_padding'])) {
-                $node->props['panel_padding'] = $node->props['panel_content_padding'];
-                unset($node->props['panel_content_padding']);
-            }
-
-            if (isset($node->props['panel_size'])) {
-                $node->props['panel_card_size'] = $node->props['panel_size'];
-                unset($node->props['panel_size']);
-            }
-
-            if (isset($node->props['panel_card_image'])) {
-                $node->props['panel_image_no_padding'] = $node->props['panel_card_image'];
-                unset($node->props['panel_card_image']);
-            }
-
-            if (isset($node->props['panel_back_content_padding'])) {
-                $node->props['panel_back_padding'] = $node->props['panel_back_content_padding'];
-                unset($node->props['panel_back_content_padding']);
-            }
-
-            if (isset($node->props['panel_back_size'])) {
-                $node->props['panel_back_card_size'] = $node->props['panel_back_size'];
-                unset($node->props['panel_back_size']);
-            }
-
-            if (isset($node->props['panel_back_card_image'])) {
-                $node->props['panel_back_image_no_padding'] = $node->props['panel_back_card_image'];
-                unset($node->props['panel_back_card_image']);
-            }
+            Arr::updateKeys($node->props, [
+                'panel_content_padding' => 'panel_padding',
+                'panel_size' => 'panel_card_size',
+                'panel_card_image' => 'panel_image_no_padding',
+                'panel_back_content_padding' => 'panel_back_padding',
+                'panel_back_size' => 'panel_back_card_size',
+                'panel_back_card_image' => 'panel_back_image_no_padding',
+            ]);
         },
 
         '2.1.0-beta.0.1' => function ($node) {
@@ -115,18 +94,22 @@ return [
         },
 
         '2.0.0-beta.5.1' => function ($node) {
-
-            if (Arr::get($node->props, 'link_back_type') === 'content') {
-                $node->props['title_back_link'] = true;
-                $node->props['image_back_link'] = true;
-                $node->props['link_back_text'] = '';
-            } elseif (Arr::get($node->props, 'link_back_type') === 'element') {
-                $node->props['panel_back_link'] = true;
-                $node->props['link_back_text'] = '';
-            }
-            unset($node->props['link_back_type']);
-
+            Arr::updateKeys($node->props, [
+                'link_back_type' => function ($value) {
+                    if ($value === 'content') {
+                        return [
+                            'title_back_link' => true,
+                            'image_back_link' => true,
+                            'link_back_text' => '',
+                        ];
+                    } elseif ($value === 'element') {
+                        return [
+                            'panel_back_link' => true,
+                            'link_back_text' => '',
+                        ];
+                    }
+                },
+            ]);
         },
     ],
-
 ];

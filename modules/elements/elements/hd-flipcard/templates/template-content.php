@@ -7,7 +7,7 @@ $title = $this->el($props['title_element'], [
 
     'class' => [
         'el-title',
-        'uk-[text-{@title_style: meta|lead}]{title_style}',
+        'uk-{title_style}',
         'uk-card-title {@panel_style} {@!title_style}',
         'uk-heading-{title_decoration}',
         'uk-font-{title_font_family}',
@@ -24,12 +24,11 @@ $meta = $this->el($props['meta_element'], [
 
     'class' => [
         'el-meta',
-        'uk-[text-{@meta_style: meta|lead}]{meta_style}',
+        'uk-{meta_style}',
         'uk-text-{meta_color}',
         'uk-margin[-{meta_margin}]-top {@!meta_margin: remove}',
-        'uk-margin-remove-bottom [uk-margin-{meta_margin: remove}-top]' => !in_array($props['meta_style'], ['', 'meta', 'lead']) || $props['meta_element'] != 'div',
+        'uk-margin-remove-bottom [uk-margin-{meta_margin: remove}-top]' => !in_array($props['meta_style'], ['', 'text-meta', 'text-lead', 'text-small', 'text-large']) || $props['meta_element'] != 'div',
     ],
-
 ]);
 
 // Content
@@ -37,13 +36,13 @@ $content = $this->el('div', [
 
     'class' => [
         'el-content uk-panel',
-        'uk-[text-{@content_style: meta|lead}]{content_style}',
+        'uk-{content_style}',
         '[uk-text-left{@content_align}]',
         'uk-dropcap {@content_dropcap}',
         'uk-column-{content_column}[@{content_column_breakpoint}]',
         'uk-column-divider {@content_column} {@content_column_divider}',
         'uk-margin[-{content_margin}]-top {@!content_margin: remove}',
-        'uk-margin-remove-bottom [uk-margin-{content_margin: remove}-top]' => !in_array($props['content_style'], ['', 'meta', 'lead']),
+        'uk-margin-remove-bottom [uk-margin-{content_margin: remove}-top]' => !in_array($props['content_style'], ['', 'text-meta', 'text-lead', 'text-small', 'text-large']),
     ],
 
 ]);

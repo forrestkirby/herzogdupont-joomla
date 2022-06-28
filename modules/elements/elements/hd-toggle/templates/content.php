@@ -3,9 +3,10 @@
 /* Herzog Dupont for YOOtheme Pro Copyright (C) 2018–2022 Thomas Weidlich GNU GPL v3 */
 
 ?>
-<div>
+<?php if ($props['content']) : ?>
+<div><?= $props['content'] ?></div>
+<?php endif ?>
+<?php if ($props['content2']) : ?>
+<div><?= $props['content2'] ?></div>
+<?php endif ?>
 
-	<div><?= $props['content'] ?></div>
-	<div><?= $props['content2'] ?></div>
-
-</div>

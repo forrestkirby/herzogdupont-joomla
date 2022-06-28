@@ -17,10 +17,10 @@ $image_before = $this->el('image', [
 
     'src' => $props['image_before'],
     'alt' => $props['image_before_alt'],
+    'loading' => $props['image_loading'] ? false : null,
     'width' => $props['image_width'],
     'height' => $props['image_height'],
     'thumbnail' => true,
-    'target' => $props['position'] === 'absolute' ? '!*' : '',
 ]);
 
 // Image After
@@ -34,10 +34,10 @@ $image_after = $this->el('image', [
 
     'src' => $props['image_after'],
     'alt' => $props['image_after_alt'],
+    'loading' => $props['image_loading'] ? false : null,
     'width' => $props['image_width'],
     'height' => $props['image_height'],
     'thumbnail' => true,
-    'target' => $props['position'] === 'absolute' ? '!*' : '',
 ]);
 
 // Slider

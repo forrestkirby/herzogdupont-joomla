@@ -6,7 +6,7 @@ $link = $props['link_text'] ? $this->el('p', [
     //
 ]) : null;
 
-if ($link && $props['link_text']) {
+if ($link) {
 
     $link->attr([
 

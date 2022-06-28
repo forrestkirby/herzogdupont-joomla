@@ -97,39 +97,52 @@ if ($has_image) {
 
         'src' => $props['image_1'],
         'alt' => $props['image_1_alt'],
+        'loading' => $element['image_loading'] ? false : null,
         'width' => $element['image_width'],
         'height' => $element['image_height'],
-        'uk-img' => 'target: !.uk-slideshow-items',
         'uk-cover' => true,
         'thumbnail' => true,
     ]);
 
     // Video 1
-    $video_1 = $this->el('video', [
-        'class' => ['el-image'],
-        'uk-cover' => true,
-    ], '');
-
     if ($iframe = $this->iframeVideo($props['video_1'])) {
 
-        $video_1 = $video_1->copy([
+        $video_1 = $this->el('iframe', [
+
+            'class' => [
+                'uk-disabled',
+            ],
+
             'src' => $iframe,
             'frameborder' => '0',
-            'allowfullscreen' => true,
-        ], '', 'iframe');
+
+        ]);
 
     } else {
 
-        $video_1->attr([
+        $video_1 = $this->el('video', [
+
             'src' => $props['video_1'],
             'controls' => false,
             'loop' => true,
             'autoplay' => true,
             'muted' => true,
             'playsinline' => true,
+
         ]);
 
     }
+
+    $video_1->attr([
+
+        'width' => $element['image_width'],
+        'height' => $element['image_height'],
+
+        'class' => ['el-image'],
+
+        'uk-cover' => true,
+
+    ]);
 
     // Image 2
     $image_2 = $this->el('image', [
@@ -140,39 +153,52 @@ if ($has_image) {
 
         'src' => $props['image_2'],
         'alt' => $props['image_2_alt'],
+        'loading' => $element['image_loading'] ? false : null,
         'width' => $element['image_width'],
         'height' => $element['image_height'],
-        'uk-img' => 'target: !.uk-slideshow-items',
         'uk-cover' => true,
         'thumbnail' => true,
     ]);
 
     // Video 2
-    $video_2 = $this->el('video', [
-        'class' => ['el-image'],
-        'uk-cover' => true,
-    ], '');
-
     if ($iframe = $this->iframeVideo($props['video_2'])) {
 
-        $video_2 = $video_2->copy([
+        $video_2 = $this->el('iframe', [
+
+            'class' => [
+                'uk-disabled',
+            ],
+
             'src' => $iframe,
             'frameborder' => '0',
-            'allowfullscreen' => true,
-        ], '', 'iframe');
+
+        ]);
 
     } else {
 
-        $video_2->attr([
+        $video_2 = $this->el('video', [
+
             'src' => $props['video_2'],
             'controls' => false,
             'loop' => true,
             'autoplay' => true,
             'muted' => true,
             'playsinline' => true,
+
         ]);
 
     }
+
+    $video_2->attr([
+
+        'width' => $element['image_width'],
+        'height' => $element['image_height'],
+
+        'class' => ['el-image'],
+
+        'uk-cover' => true,
+
+    ]);
 
     // Image 3
     $image_3 = $this->el('image', [
@@ -183,39 +209,52 @@ if ($has_image) {
 
         'src' => $props['image_3'],
         'alt' => $props['image_3_alt'],
+        'loading' => $element['image_loading'] ? false : null,
         'width' => $element['image_width'],
         'height' => $element['image_height'],
-        'uk-img' => 'target: !.uk-slideshow-items',
         'uk-cover' => true,
         'thumbnail' => true,
     ]);
 
     // Video 3
-    $video_3 = $this->el('video', [
-        'class' => ['el-image'],
-        'uk-cover' => true,
-    ], '');
-
     if ($iframe = $this->iframeVideo($props['video_3'])) {
 
-        $video_3 = $video_3->copy([
+        $video_3 = $this->el('iframe', [
+
+            'class' => [
+                'uk-disabled',
+            ],
+
             'src' => $iframe,
             'frameborder' => '0',
-            'allowfullscreen' => true,
-        ], '', 'iframe');
+
+        ]);
 
     } else {
 
-        $video_3->attr([
+        $video_3 = $this->el('video', [
+
             'src' => $props['video_3'],
             'controls' => false,
             'loop' => true,
             'autoplay' => true,
             'muted' => true,
             'playsinline' => true,
+
         ]);
 
     }
+
+    $video_3->attr([
+
+        'width' => $element['image_width'],
+        'height' => $element['image_height'],
+
+        'class' => ['el-image'],
+
+        'uk-cover' => true,
+
+    ]);
 
 }
 
@@ -241,7 +280,7 @@ if ($has_image) {
                         <?php endif ?>
 
                             <?= $props['image_1'] ? $image_1() : '' ?>
-                            <?= $props['video_1'] && !$props['image_1'] ? $video_1() : '' ?>
+                            <?= $props['video_1'] && !$props['image_1'] ? $video_1([], '') : '' ?>
 
                         <?php if ($element['slideshow_kenburns']) : ?>
                         </div>
@@ -266,7 +305,7 @@ if ($has_image) {
                         <?php endif ?>
 
                             <?= $props['image_2'] ? $image_2() : '' ?>
-                            <?= $props['video_2'] && !$props['image_2'] ? $video_2() : '' ?>
+                            <?= $props['video_2'] && !$props['image_2'] ? $video_2([], '') : '' ?>
 
                         <?php if ($element['slideshow_kenburns']) : ?>
                         </div>
@@ -291,7 +330,7 @@ if ($has_image) {
                         <?php endif ?>
 
                             <?= $props['image_3'] ? $image_3() : '' ?>
-                            <?= $props['video_3'] && !$props['image_3'] ? $video_3() : '' ?>
+                            <?= $props['video_3'] && !$props['image_3'] ? $video_3([], '') : '' ?>
 
                         <?php if ($element['slideshow_kenburns']) : ?>
                         </div>

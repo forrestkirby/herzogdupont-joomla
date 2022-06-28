@@ -16,8 +16,8 @@ $element['panel_style'] = $props['panel_style'] ?: $element['panel_style'];
 $image = trim($this->render("{$__dir}/template-slideshow", compact('props')));
 
 // New logic shortcuts
-$element['has_panel_image_no_padding'] = $image && (!$element['panel_style'] || $element['panel_image_no_padding']) && !in_array($element['image_align'], ['left', 'right', 'between']);
-$element['has_no_padding'] = !$element['panel_style'] && (!$image || ($image && in_array($element['image_align'], ['left', 'right', 'between'])));
+$element['has_panel_image_no_padding'] = $image && (!$element['panel_style'] || $element['panel_image_no_padding']) && $element['image_align'] != 'between';
+$element['has_no_padding'] = !$element['panel_style'] && (!$image || ($image && $element['image_align'] == 'between'));
 
 // Panel/Card/Tile
 $el = $this->el('div', [
@@ -30,6 +30,7 @@ $el = $this->el('div', [
         'uk-padding[-{!panel_padding: default}] {@panel_style: |tile-.*} {@panel_padding} {@!has_panel_image_no_padding} {@!has_no_padding}',
         'uk-card-body {@panel_style: card-.*} {@panel_padding} {@!has_panel_image_no_padding} {@!has_no_padding}',
         'uk-margin-remove-first-child' => !in_array($element['image_align'], ['left', 'right']) || !($element['panel_padding'] && $element['has_panel_image_no_padding']),
+        'uk-flex {@panel_style} {@has_panel_image_no_padding} {@image_align: left|right}', // Let images cover the card/tile height if they have different heights
     ],
 
 ]);
@@ -87,9 +88,10 @@ $link = include "{$__dir}/template-link.php";
 // Card media
 if ($element['panel_style'] && $element['has_panel_image_no_padding']) {
     $image = $this->el('div', [
-        
+
         'class' => [
             'uk-card-media-{image_align} {@panel_style: card-.*}',
+            'uk-cover-container{@image_align: left|right}',
         ],
 
         'uk-toggle' => [

@@ -1,333 +1,299 @@
 {
-	"name": "hd-toggle",
-	"title": "HD Toggle",
-	"group": "Herzog Dupont",
-	"icon": "${url:images/icon.svg}",
-	"iconSmall": "${url:images/iconSmall.svg}",
-	"element": true,
-	"container": true,
-	"width": 500,
-	"defaults":
-	{
-		"btn_label": "Toggle",
-		"content": "Lorem ipsum dolor sit amet",
-		"content2": "Hello, world!",
-		"btn_style": "default",
-		"btn_size": "",
-		"icon_align": "left",
-		"mode": "click",
-		"media": "false",
-		"hidden": true,
-		"target": "false",
-		"cls": "",
-		"toggle_animation_advanced": "false",
-		"toggle_animation_use_advanced": false,
-		"duration": 200,
-		"queued": true,
-		"margin": "default"
-	},
-	"templates":
-	{
-		"render": "./templates/template.php",
-		"content": "./templates/content.php"
-	},
-	"fields":
-	{
-		"btn_label":
-		{
-			"label": "Button Label",
-			"description": "Label that will be displayed on the button.",
-			"type": "text",
-			"source": true
-		},
-		"icon":
-		{
-			"label": "Button Icon",
-			"description": "Pick an optional icon.",
-			"type": "icon",
-			"source": true
-		},
-		"content":
-		{
-			"label": "Content",
-			"description": "Content that will be displayed before the toggle button.",
-			"type": "editor",
-			"source": true,
-			"attrs":
-			{
-				"rows": 10,
-				"placeholder": "Enter text..."
-			}
-		},
-		"content2":
-		{
-			"label": "Content 2",
-			"description": "Content that will be displayed after the toggle button.",
-			"type": "editor",
-			"source": true,
-			"attrs":
-			{
-				"rows": 10,
-				"placeholder": "Enter text..."
-			}
-		},
-		"btn_style":
-		{
-			"label": "Button Style",
-			"description": "Set the button style.",
-			"type": "select",
-			"options":
-			{
-				"Button Default": "default",
-				"Button Primary": "primary",
-				"Button Secondary": "secondary",
-				"Button Danger": "danger",
-				"Button Text": "text",
-				"Link": "",
-				"Link Muted": "link-muted",
-				"Link Text": "link-text"
-			}
-		},
-		"btn_size":
-		{
-			"label": "Button Size",
-			"description": "Set the button size.",
-			"type": "select",
-			"options":
-			{
-				"Default": "",
-				"Small": "small",
-				"Large": "large"
-			}
-		},
-		"btn_fullwidth": {
-			"type": "checkbox",
-			"text": "Full width button",
-			"enable": "btn_label && btn_style && btn_style != 'link-muted' && btn_style != 'link-text'"
-		},
-		"icon_align":
-		{
-			"label": "Icon Align",
-			"description": "Choose the icon position.",
-			"type": "select",
-			"options":
-			{
-				"Left": "left",
-				"Right": "right"
-			}
-		},
-		"mode":
-		{
-			"label": "Mode",
-			"description": "Set the trigger behaviour mode.",
-			"type": "select",
-			"options":
-			{
-				"Click": "click",
-				"Hover": "hover",
-				"Media": "media",
-				"Click and Hover": "click, hover",
-				"Click and Media": "click, media",
-				"Hover and Media": "hover, media",
-				"Click, Hover and Media": "click, hover, media"
-			}
-		},
-		"media":
-		{
-			"label": "Media",
-			"description": "Select the breakpoint for the media mode.",
-			"type": "select",
-			"options":
-			{
-				"Always": "false",
-				"Small": "@s",
-				"Medium": "@m",
-				"Large": "@l",
-				"X-Large": "@xl"
-			},
-			"enable": "mode == 'media' || mode == 'click, media' || mode == 'hover, media' || mode == 'click, hover, media'"
-		},
-		"hidden":
-		{
-			"label": "Hide Content 2 on load",
-			"description": "Set the second content to be hidden on load. The toggle event will then show the target instead of hiding it or applying a custom class.",
-			"type": "checkbox",
-			"text": "Hide Content 2 on load",
-			"enable": "content2"
-		},
-		"target":
-		{
-			"label": "Target",
-			"description": "CSS selector of the element(s) to toggle, if Content 2 has not been set.",
-			"type": "text",
-			"enable": "!content2"
-		},
-		"cls":
-		{
-			"label": "Cls",
-			"description": "The class that is being toggled. Defaults to the `hidden` attribute.",
-			"type": "text",
-			"enable": "!content2 || !hidden"
-		},
-		"toggle_animation":
-		{
-			"label": "Toggle Animation",
-			"description": "Choose an animation to use from the list of <a href=\"https://getuikit.com/docs/animation\">animations</a>.",
-			"type": "select",
-			"default": "false",
-			"options":
-			{
-				"None": "false",
-				"Fade": "fade",
-				"Scale Up": "scale-up",
-				"Scale Down": "scale-down",
-				"Slide Top": "slide-top",
-				"Slide Bottom": "slide-bottom",
-				"Slide Left": "slide-left",
-				"Slide Right": "slide-right",
-				"Slide Top Small": "slide-top-small",
-				"Slide Bottom Small": "slide-bottom-small",
-				"Slide Left Small": "slide-left-small",
-				"Slide Right Small": "slide-right-small",
-				"Slide Top Medium": "slide-top-medium",
-				"Slide Bottom Medium": "slide-bottom-medium",
-				"Slide Left Medium": "slide-left-medium",
-				"Slide Right Medium": "slide-right-medium",
-				"Ken Burns": "ken-burns",
-				"Shake": "shake",
-				"Stroke": "stroke"
-			},
-			"enable": "!toggle_animation_use_advanced"
-		},
-		"toggle_animation_use_advanced":
-		{
-			"label": "Use Advanced Toggle Animation",
-			"description": "Check to activate field for advanced toggle animations.",
-			"type": "checkbox"
-		},
-		"toggle_animation_advanced":
-		{
-			"label": "Advanced Toggle Animation",
-			"description": "Space separated names of <a href=\"https://getuikit.com/docs/animation\">animations</a> to use, comma separated for out animation.",
-			"type": "text",
-			"enable": "toggle_animation_use_advanced"
-		},
-		"duration":
-		{
-			"label": "Duration",
-			"description": "Set the animation duration in ms.",
-			"type": "number",
-			"source": true,
-			"enable": "toggle_animation != 'false' || (toggle_animation_use_advanced && toggle_animation_advanced != 'false')"
-		},
-		"queued":
-		{
-			"label": "Queued",
-			"description": "Toggle the targets successively.",
-			"type": "checkbox",
-			"enable": "!content2 && target != 'false'"
-		},
-		"position": "${builder.position}",
-		"position_left": "${builder.position_left}",
-		"position_right": "${builder.position_right}",
-		"position_top": "${builder.position_top}",
-		"position_bottom": "${builder.position_bottom}",
-		"position_z_index": "${builder.position_z_index}",
-		"margin": "${builder.margin}",
-		"margin_remove_top": "${builder.margin_remove_top}",
-		"margin_remove_bottom": "${builder.margin_remove_bottom}",
-		"maxwidth": "${builder.maxwidth}",
-		"maxwidth_breakpoint": "${builder.maxwidth_breakpoint}",
-		"block_align": "${builder.block_align}",
-		"block_align_breakpoint": "${builder.block_align_breakpoint}",
-		"block_align_fallback": "${builder.block_align_fallback}",
-		"text_align": "${builder.text_align}",
-		"text_align_breakpoint": "${builder.text_align_breakpoint}",
-		"text_align_fallback": "${builder.text_align_fallback}",
-		"animation": "${builder.animation}",
-		"_parallax_button": "${builder._parallax_button}",
-		"visibility": "${builder.visibility}",
-		"name": "${builder.name}",
-		"status": "${builder.status}",
-		"source": "${builder.source}",
-		"id": "${builder.id}",
-		"class": "${builder.cls}",
-		"attributes": "${builder.attrs}",
-		"css":
-		{
-			"label": "CSS",
-			"description": "Enter your own custom CSS. The following selectors will be prefixed automatically for this element: <code>.el-element</code>",
-			"type": "editor",
-			"editor": "code",
-			"mode": "css",
-			"attrs":
-			{
-				"debounce": 500
-			}
-		}
-	},
-	"fieldset":
-	{
-		"default":
-		{
-			"type": "tabs",
-			"fields": [
-				{
-					"title": "Content",
-					"fields": [
-						"btn_label",
-						"icon",
-						"content",
-						"content2"
-					]
-				},
-				{
-					"title": "Settings",
-					"fields": [
-						"btn_style",
-						"btn_size",
-						"btn_fullwidth",
-						"icon_align",
-						"mode",
-						"media",
-						"hidden",
-						"target",
-						"cls",
-						"toggle_animation",
-						"toggle_animation_use_advanced",
-						"toggle_animation_advanced",
-						"duration",
-						"queued",
-						{
-							"label": "General",
-							"type": "group",
-							"fields": [
-								"position",
-								"position_left",
-								"position_right",
-								"position_top",
-								"position_bottom",
-								"position_z_index",
-								"margin",
-								"margin_remove_top",
-								"margin_remove_bottom",
-								"maxwidth",
-								"maxwidth_breakpoint",
-								"block_align",
-								"block_align_breakpoint",
-								"block_align_fallback",
-								"text_align",
-								"text_align_breakpoint",
-								"text_align_fallback",
-								"animation",
-								"_parallax_button",
-								"visibility"
-							]
-						}
-					]
-				},
-				"${builder.advanced}"
-			]
-		}
-	}
+    "@import": "./element.php",
+    "name": "hd-toggle",
+    "title": "HD Toggle",
+    "group": "Herzog Dupont",
+    "icon": "${url:images/icon.svg}",
+    "iconSmall": "${url:images/iconSmall.svg}",
+    "element": true,
+    "width": 500,
+    "defaults": {
+        "btn_label": "Toggle",
+        "content": "Lorem ipsum dolor sit amet",
+        "content2": "Hello, world!",
+        "btn_style": "default",
+        "btn_size": "",
+        "icon_align": "left",
+        "mode": "click",
+        "media": "false",
+        "hidden": true,
+        "target": "false",
+        "cls": "",
+        "toggle_animation_advanced": "false",
+        "toggle_animation_use_advanced": false,
+        "duration": 200,
+        "queued": true,
+        "margin": "default"
+    },
+    "templates": {
+        "render": "./templates/template.php",
+        "content": "./templates/content.php"
+    },
+    "fields": {
+        "btn_label": {
+            "label": "Button Label",
+            "description": "Define the label that will be displayed on the button.",
+            "type": "text",
+            "source": true
+        },
+        "icon": {
+            "label": "Button Icon",
+            "description": "Pick an optional icon.",
+            "type": "icon",
+            "source": true
+        },
+        "content": {
+            "label": "Content",
+            "description": "Define the content that will be displayed before the toggle button.",
+            "type": "editor",
+            "source": true,
+            "attrs": {
+                "rows": 10,
+                "placeholder": "Enter text..."
+            }
+        },
+        "content2": {
+            "label": "Content 2",
+            "description": "Define the content that will be displayed after the toggle button.",
+            "type": "editor",
+            "source": true,
+            "attrs": {
+                "rows": 10,
+                "placeholder": "Enter text..."
+            }
+        },
+        "btn_style": {
+            "label": "Button Style",
+            "description": "Set the button style.",
+            "type": "select",
+            "options": {
+                "Default": "default",
+                "Primary": "primary",
+                "Secondary": "secondary",
+                "Danger": "danger",
+                "Text": "text",
+                "Link": "",
+                "Link Muted": "link-muted",
+                "Link Text": "link-text"
+            }
+        },
+        "btn_size": {
+            "label": "Button Size",
+            "type": "select",
+            "options": {
+                "Small": "small",
+                "Default": "",
+                "Large": "large"
+            }
+        },
+        "btn_fullwidth": {
+            "type": "checkbox",
+            "text": "Full width button"
+        },
+        "icon_align": {
+            "label": "Icon Align",
+            "description": "Choose the icon position.",
+            "type": "select",
+            "options": {
+                "Left": "left",
+                "Right": "right"
+            }
+        },
+        "mode": {
+            "label": "Mode",
+            "description": "Set the trigger behaviour mode.",
+            "type": "select",
+            "options": {
+                "Click": "click",
+                "Hover": "hover",
+                "Media": "media",
+                "Click and Hover": "click, hover",
+                "Click and Media": "click, media",
+                "Hover and Media": "hover, media",
+                "Click, Hover and Media": "click, hover, media"
+            }
+        },
+        "media": {
+            "label": "Media",
+            "description": "Select the breakpoint for the media mode.",
+            "type": "select",
+            "options": {
+                "Always": "false",
+                "Small": "@s",
+                "Medium": "@m",
+                "Large": "@l",
+                "X-Large": "@xl"
+            },
+            "enable": "mode == 'media' || mode == 'click, media' || mode == 'hover, media' || mode == 'click, hover, media'"
+        },
+        "hidden": {
+            "label": "Hide Content 2 on load",
+            "description": "Set the second content to be hidden on load. The toggle event will then show the target instead of hiding it or applying a custom class.",
+            "type": "checkbox",
+            "text": "Hide Content 2 on load",
+            "enable": "content2"
+        },
+        "target": {
+            "label": "Target",
+            "description": "CSS selector of the element(s) to toggle, if Content 2 has not been set.",
+            "type": "text",
+            "enable": "!content2"
+        },
+        "cls": {
+            "label": "Cls",
+            "description": "The class that is being toggled. Defaults to the `hidden` attribute.",
+            "type": "text",
+            "enable": "!content2 || !hidden"
+        },
+        "toggle_animation": {
+            "label": "Toggle Animation",
+            "description": "Choose an animation to use from the list of <a href=\"https://getuikit.com/docs/animation\">animations</a>.",
+            "type": "select",
+            "default": "false",
+            "options": {
+                "None": "false",
+                "Fade": "fade",
+                "Scale Up": "scale-up",
+                "Scale Down": "scale-down",
+                "Slide Top": "slide-top",
+                "Slide Bottom": "slide-bottom",
+                "Slide Left": "slide-left",
+                "Slide Right": "slide-right",
+                "Slide Top Small": "slide-top-small",
+                "Slide Bottom Small": "slide-bottom-small",
+                "Slide Left Small": "slide-left-small",
+                "Slide Right Small": "slide-right-small",
+                "Slide Top Medium": "slide-top-medium",
+                "Slide Bottom Medium": "slide-bottom-medium",
+                "Slide Left Medium": "slide-left-medium",
+                "Slide Right Medium": "slide-right-medium",
+                "Ken Burns": "ken-burns",
+                "Shake": "shake",
+                "Stroke": "stroke"
+            },
+            "enable": "!toggle_animation_use_advanced"
+        },
+        "toggle_animation_use_advanced": {
+            "label": "Use Advanced Toggle Animation",
+            "description": "Check to activate field for advanced toggle animations.",
+            "type": "checkbox"
+        },
+        "toggle_animation_advanced": {
+            "label": "Advanced Toggle Animation",
+            "description": "Space separated names of <a href=\"https://getuikit.com/docs/animation\">animations</a> to use, comma separated for out animation.",
+            "type": "text",
+            "enable": "toggle_animation_use_advanced"
+        },
+        "duration": {
+            "label": "Duration",
+            "description": "Set the animation duration in ms.",
+            "type": "number",
+            "source": true,
+            "enable": "toggle_animation != 'false' || (toggle_animation_use_advanced && toggle_animation_advanced != 'false')"
+        },
+        "queued": {
+            "label": "Queued",
+            "description": "Toggle the targets successively.",
+            "type": "checkbox",
+            "enable": "!content2 && target != 'false'"
+        },
+        "position": "${builder.position}",
+        "position_left": "${builder.position_left}",
+        "position_right": "${builder.position_right}",
+        "position_top": "${builder.position_top}",
+        "position_bottom": "${builder.position_bottom}",
+        "position_z_index": "${builder.position_z_index}",
+        "margin": "${builder.margin}",
+        "margin_remove_top": "${builder.margin_remove_top}",
+        "margin_remove_bottom": "${builder.margin_remove_bottom}",
+        "maxwidth": "${builder.maxwidth}",
+        "maxwidth_breakpoint": "${builder.maxwidth_breakpoint}",
+        "block_align": "${builder.block_align}",
+        "block_align_breakpoint": "${builder.block_align_breakpoint}",
+        "block_align_fallback": "${builder.block_align_fallback}",
+        "text_align": "${builder.text_align}",
+        "text_align_breakpoint": "${builder.text_align_breakpoint}",
+        "text_align_fallback": "${builder.text_align_fallback}",
+        "animation": "${builder.animation}",
+        "_parallax_button": "${builder._parallax_button}",
+        "visibility": "${builder.visibility}",
+        "name": "${builder.name}",
+        "status": "${builder.status}",
+        "source": "${builder.source}",
+        "id": "${builder.id}",
+        "class": "${builder.cls}",
+        "attributes": "${builder.attrs}",
+        "css": {
+            "label": "CSS",
+            "description": "Enter your own custom CSS. The following selectors will be prefixed automatically for this element: <code>.el-element</code>",
+            "type": "editor",
+            "editor": "code",
+            "mode": "css",
+            "attrs": {
+                "debounce": 500
+            }
+        }
+    },
+    "fieldset": {
+        "default": {
+            "type": "tabs",
+            "fields": [
+                {
+                    "title": "Content",
+                    "fields": [
+                        "btn_label",
+                        "icon",
+                        "content",
+                        "content2"
+                    ]
+                },
+                {
+                    "title": "Settings",
+                    "fields": [
+                        "btn_style",
+                        "btn_size",
+                        "btn_fullwidth",
+                        "icon_align",
+                        "mode",
+                        "media",
+                        "hidden",
+                        "target",
+                        "cls",
+                        "toggle_animation",
+                        "toggle_animation_use_advanced",
+                        "toggle_animation_advanced",
+                        "duration",
+                        "queued",
+                        {
+                            "label": "General",
+                            "type": "group",
+                            "fields": [
+                                "position",
+                                "position_left",
+                                "position_right",
+                                "position_top",
+                                "position_bottom",
+                                "position_z_index",
+                                "margin",
+                                "margin_remove_top",
+                                "margin_remove_bottom",
+                                "maxwidth",
+                                "maxwidth_breakpoint",
+                                "block_align",
+                                "block_align_breakpoint",
+                                "block_align_fallback",
+                                "text_align",
+                                "text_align_breakpoint",
+                                "text_align_fallback",
+                                "animation",
+                                "_parallax_button",
+                                "visibility"
+                            ]
+                        }
+                    ]
+                },
+                "${builder.advanced}"
+            ]
+        }
+    }
 }

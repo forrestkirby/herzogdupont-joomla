@@ -6,26 +6,28 @@ namespace YOOtheme;
 
 return [
     'transforms' => [
-        'render' => function ($node) {
+        'render' => function ($node, $params) {
+            // Display
+            foreach (['title', 'meta', 'content', 'link', 'image'] as $key) {
+                if (!$params['parent']->props["show_{$key}"]) {
+                    $node->props[$key] = '';
+                    if ($key === 'image') {
+                        $node->props['icon'] = '';
+                    }
+                }
+            }
+
             // Don't render element if content fields are empty
             return Str::length($node->props['title']) ||
                 Str::length($node->props['meta']) ||
                 Str::length($node->props['content']) ||
                 $node->props['image'] ||
-                $node->props['icon'];
+                $node->props['icon'] ||
+                $node->props['link'];
         },
     ],
 
     'updates' => [
-        '2.1.0-beta.0.1' => function ($node) {
-            if (!empty($node->props['icon_ratio'])) {
-                $node->props['icon_width'] = round(20 * $node->props['icon_ratio']);
-                unset($node->props['icon_ratio']);
-            }
-            if (!empty($node->props['timeline_icon_ratio'])) {
-                $node->props['timeline_icon_width'] = round(20 * $node->props['timeline_icon_ratio']);
-                unset($node->props['timeline_icon_ratio']);
-            }
-        },
+        //
     ],
 ];

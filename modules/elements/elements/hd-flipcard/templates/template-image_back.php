@@ -20,6 +20,7 @@ if ($props['image_back']) {
 
         'src' => $props['image_back'],
         'alt' => $props['image_back_alt'],
+        'loading' => $props['image_back_loading'] ? false : null,
         'width' => $props['image_back_width'],
         'height' => $props['image_back_height'],
         'uk-svg' => $props['image_back_svg_inline'],

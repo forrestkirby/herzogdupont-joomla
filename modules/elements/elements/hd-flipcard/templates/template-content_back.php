@@ -7,7 +7,7 @@ $title_back = $this->el($props['title_back_element'], [
 
     'class' => [
         'el-title-back',
-        'uk-[text-{@title_back_style: meta|lead}]{title_back_style}',
+        'uk-{title_back_style}',
         'uk-card-title {@panel_back_style} {@!title_back_style}',
         'uk-heading-{title_back_decoration}',
         'uk-font-{title_back_font_family}',
@@ -24,12 +24,11 @@ $meta_back = $this->el($props['meta_back_element'], [
 
     'class' => [
         'el-meta-back',
-        'uk-[text-{@meta_back_style: meta|lead}]{meta_back_style}',
+        'uk-{meta_back_style}',
         'uk-text-{meta_back_color}',
         'uk-margin[-{meta_back_margin}]-top {@!meta_back_margin: remove}',
-        'uk-margin-remove-bottom [uk-margin-{meta_back_margin: remove}-top]' => !in_array($props['meta_back_style'], ['', 'meta', 'lead']) || $props['meta_back_element'] != 'div',
+        'uk-margin-remove-bottom [uk-margin-{meta_back_margin: remove}-top]' => !in_array($props['meta_back_style'], ['', 'text-meta', 'text-lead', 'text-small', 'text-large']) || $props['meta_back_element'] != 'div',
     ],
-
 ]);
 
 // Content
@@ -37,13 +36,13 @@ $content_back = $this->el('div', [
 
     'class' => [
         'el-content-back uk-panel',
-        'uk-[text-{@content_back_style: meta|lead}]{content_back_style}',
+        'uk-{content_back_style}',
         '[uk-text-left{@content_back_align}]',
         'uk-dropcap {@content_back_dropcap}',
         'uk-column-{content_back_column}[@{content_back_column_breakpoint}]',
         'uk-column-divider {@content_back_column} {@content_back_column_divider}',
         'uk-margin[-{content_back_margin}]-top {@!content_back_margin: remove}',
-        'uk-margin-remove-bottom [uk-margin-{content_back_margin: remove}-top]' => !in_array($props['content_back_style'], ['', 'meta', 'lead']),
+        'uk-margin-remove-bottom [uk-margin-{content_back_margin: remove}-top]' => !in_array($props['content_back_style'], ['', 'text-meta', 'text-lead', 'text-small', 'text-large']),
     ],
 
 ]);

@@ -17,7 +17,7 @@ $el = $this->el('div', [
         'hd-timeline-align-{align_medium}@m',
         'hd-timeline-align-{align_large}@l',
         'hd-timeline-align-{align_xlarge}@xl',
-    ]
+    ],
 
 ]);
 
