@@ -13,6 +13,65 @@
                     "inspect": "[class*='hd-timeline'], [class*='hd-timeline'] > *"
                 }
             }
+        },
+        "settings": {
+            "fields": {
+                "settings": {
+                    "items": {
+                        "herzogdupont": "Herzog Dupont"
+                    }
+                }
+            }
+        }
+    },
+    "panels": {
+        "herzogdupont": {
+            "title": "Herzog Dupont",
+            "width": 400,
+            "fields": {
+                "hd.elements.hd-counter": {
+                    "type": "checkbox",
+                    "label": "Element library",
+                    "default": true,
+                    "text": "Counter element"
+                },
+                "hd.elements.hd-flipcard": {
+                    "type": "checkbox",
+                    "default": true,
+                    "text": "Flipcard element"
+                },
+                "hd.elements.hd-image-comparison": {
+                    "type": "checkbox",
+                    "default": true,
+                    "text": "Image Comparison element"
+                },
+                "hd.elements.hd-lottie": {
+                    "type": "checkbox",
+                    "default": true,
+                    "text": "Lottie element"
+                },
+                "hd.elements.hd-progress": {
+                    "type": "checkbox",
+                    "default": true,
+                    "text": "Progress element"
+                },
+                "hd.elements.hd-slideshow-grid": {
+                    "type": "checkbox",
+                    "default": true,
+                    "text": "Slideshow Grid element"
+                },
+                "hd.elements.hd-timeline": {
+                    "type": "checkbox",
+                    "default": true,
+                    "text": "Timeline element"
+                },
+                "hd.elements.hd-toggle": {
+                    "type": "checkbox",
+                    "default": true,
+                    "text": "Toggle element",
+                    "description": "Select the element which should be available in the element library."
+                }
+            }
         }
     }
 }
