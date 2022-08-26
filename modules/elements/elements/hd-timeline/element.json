@@ -693,6 +693,11 @@
             },
             "enable": "show_image && show_link && (image_link || panel_link)"
         },
+        "image_transition_border": {
+            "type": "checkbox",
+            "text": "Border",
+            "enable": "show_image && show_link && (image_link || panel_link)"
+        },
         "image_hover_box_shadow": {
             "label": "Hover Box Shadow",
             "description": "Select the image box shadow size on hover.",
@@ -1060,13 +1065,13 @@
                                     "width": "1-2",
                                     "fields": ["image_width", "image_height"]
                                 },
-
                                 "image_border",
                                 "image_box_shadow",
                                 "image_box_decoration",
                                 "image_box_decoration_inverse",
                                 "image_link",
                                 "image_transition",
+                                "image_transition_border",
                                 "image_hover_box_shadow",
                                 "icon_width",
                                 "icon_color",

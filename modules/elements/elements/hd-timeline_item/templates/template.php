@@ -16,11 +16,12 @@ $element['has_panel_image_no_padding'] = $props['image'] && (!$element['panel_st
 $element['has_no_padding'] = !$element['panel_style'] && (!$props['image'] || ($props['image'] && $element['image_align'] == 'between'));
 
 // Transition
-if ($element['image_transition']) {
+if ($element['image_transition'] || $element['image_transition_border']) {
 
     $transition_toggle = $this->el('div', [
         'class' => [
             'uk-inline-clip [uk-transition-toggle {@image_link}]',
+            'tm-transition-border {@image_transition_border}',
             'uk-border-{image_border}' => !$element['panel_style'] || ($element['panel_style'] && (!$element['panel_image_no_padding'] || $element['image_align'] == 'between')),
             'uk-box-shadow-{image_box_shadow} {@!panel_style}',
             'uk-box-shadow-hover-{image_hover_box_shadow} {@!panel_style}' => $props['link'] && ($element['image_link'] || $element['panel_link']),

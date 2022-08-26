@@ -13,7 +13,7 @@ return [
                 }
             }
         },
-        
+
         '2.7.3.1' => function ($node) {
             if (empty($node->props['panel_style']) && empty($node->props['panel_padding'])) {
                 foreach ($node->children as $child) {

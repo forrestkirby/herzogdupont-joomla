@@ -7,6 +7,7 @@
 - animation name to lottie element
 - automatically recompile style
 - loading eager option for images across all elements
+- transition border option to timeline element
 
 ### Changed
 

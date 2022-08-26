@@ -9,13 +9,9 @@ if ($props['image']) {
 
         'class' => [
             'el-image',
-            'uk-border-{image_border} {@!image_transition}' => !$element['panel_style'] || ($element['panel_style'] && (!$element['panel_image_no_padding'] || $element['image_align'] == 'between')),
-            'uk-box-shadow-{image_box_shadow} {@!panel_style} {@!image_transition}',
-            'uk-box-shadow-hover-{image_hover_box_shadow} {@!panel_style} {@!image_transition}' => $props['link'] && ($element['image_link'] || $element['panel_link']),
             'uk-transition-{image_transition} uk-transition-opaque' => $props['link'] && ($element['image_link'] || $element['panel_link']),
 
             'uk-text-{image_svg_color} {@image_svg_inline}' => $this->isImage($props['image']) == 'svg',
-            'uk-margin[-{image_margin}]-top {@!image_margin: remove} {@!image_box_decoration} {@!image_transition}' => $element['image_align'] == 'between' || ($element['image_align'] == 'bottom' && !($element['panel_style'] && $element['panel_image_no_padding'])),
         ],
 
         'src' => $props['image'],
@@ -27,6 +23,20 @@ if ($props['image']) {
         'uk-cover' => $element['panel_style'] && $element['panel_image_no_padding'] && in_array($element['image_align'], ['left', 'right']),
         'thumbnail' => true,
     ]);
+
+    if (!$element['image_transition'] && !$element['image_transition_border']) {
+        $image->attr([
+
+            'class' => [
+                'uk-border-{image_border}' => !$element['panel_style'] || ($element['panel_style'] && (!$element['panel_image_no_padding'] || $element['image_align'] == 'between')),
+                'uk-box-shadow-{image_box_shadow} {@!panel_style}',
+                'uk-box-shadow-hover-{image_hover_box_shadow} {@!panel_style}' => $props['link'] && ($element['image_link'] || $element['panel_link']),
+
+                'uk-margin[-{image_margin}]-top {@!image_margin: remove} {@!image_box_decoration}' => $element['image_align'] == 'between' || ($element['image_align'] == 'bottom' && !($element['panel_style'] && $element['panel_image_no_padding'])),
+            ],
+        
+        ]);
+    }
 
     echo $image($element, []);
 
