@@ -5,12 +5,12 @@
 if ($props['image_before']) : ?>
 <figure>
 	<img src="<?= $props['image_before'] ?>" alt="<?= $props['image_before_alt'] ?>">
-	<figcaption>Before</figcaption>
+	<figcaption><?= $props['$image_before_label'] ?></figcaption>
 </figure>
 <?php endif ?>
 <?php if ($props['image_after']) : ?>
 <figure>
 	<img src="<?= $props['image_after'] ?>" alt="<?= $props['image_after_alt'] ?>">
-	<figcaption>After</figcaption>
+	<figcaption><?= $props['$image_after_label'] ?></figcaption>
 </figure>
 <?php endif ?>

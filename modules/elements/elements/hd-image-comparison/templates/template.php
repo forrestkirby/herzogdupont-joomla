@@ -101,8 +101,18 @@ $decoration = $this->el('div', [
         <?php if ($props['image_box_decoration']) : ?>
         <?= $decoration($props) ?>
         <?php endif ?>
-            <div class="hd-image-comparison-after"><?= $image_after($props) ?></div>
-            <div class="hd-image-comparison-before"><?= $image_before($props) ?></div>
+            <div class="hd-image-comparison-after">
+                <?php if ($props['show_image_labels'] && $props['image_after_label']) : ?>
+                <div class="hd-image-comparison-after-label"><?= $props['image_after_label'] ?></div>
+                <?php endif ?>
+                <?= $image_after($props) ?>
+            </div>
+            <div class="hd-image-comparison-before">
+                <?php if ($props['show_image_labels'] && $props['image_before_label']) : ?>
+                <div class="hd-image-comparison-before-label"><?= $props['image_before_label'] ?></div>
+                <?php endif ?>
+                <?= $image_before($props) ?>
+            </div>
         <?php if ($props['image_box_decoration']) : ?>
         <?= $decoration->end() ?>
         <?php endif ?>

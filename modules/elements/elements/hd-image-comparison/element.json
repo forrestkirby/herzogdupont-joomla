@@ -8,7 +8,10 @@
     "element": true,
     "width": 500,
     "defaults": {
+        "image_before_label": "Before",
+        "image_after_label": "After",
         "icon": "code",
+        "show_image_labels": true,
         "icon_width": 40,
         "slider_background": "default",
         "slider_start": 50,
@@ -50,6 +53,12 @@
             "source": true,
             "enable": "image_before"
         },
+        "image_before_label": {
+            "label": "Before Image Label",
+            "description": "Enter a label for the first image.",
+            "source": true,
+            "enable": "image_before"
+        },
         "image_after": {
             "label": "After Image",
             "type": "image",
@@ -61,11 +70,23 @@
             "source": true,
             "enable": "image_after"
         },
+        "image_after_label": {
+            "label": "After Image Label",
+            "description": "Enter a label for the second image.",
+            "source": true,
+            "enable": "image_after"
+        },
         "icon": {
             "label": "Slider Icon",
             "description": "Click on the pencil to pick an icon from the icon library.",
             "type": "icon",
             "source": true
+        },
+        "show_image_labels": {
+            "label": "Display",
+            "description": "Show or hide content fields without the need to delete the content itself.",
+            "type": "checkbox",
+            "text": "Show the image labels"
         },
         "image_border": {
             "label": "Border",
@@ -108,6 +129,12 @@
             "text": "Inverse style",
             "enable": "$match(image_box_decoration, '^(default|primary|secondary)$')"
         },
+        "image_loading": {
+            "label": "Loading",
+            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
+            "type": "checkbox",
+            "text": "Load image eagerly"
+        },
         "icon_color": {
             "label": "Slider Icon Color",
             "description": "Select the icon color.",
@@ -122,12 +149,6 @@
                 "Warning": "warning",
                 "Danger": "danger"
             }
-        },
-        "image_loading": {
-            "label": "Loading",
-            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
-            "type": "checkbox",
-            "text": "Load image eagerly"
         },
         "icon_width": {
             "label": "Slider Icon Width",
@@ -212,9 +233,12 @@
                             "fields": ["image_width", "image_height"]
                         },
                         "image_before_alt",
+                        "image_before_label",
                         "image_after",
                         "image_after_alt",
-                        "icon"
+                        "image_after_label",
+                        "icon",
+                        "show_image_labels"
                     ]
                 },
                 {
