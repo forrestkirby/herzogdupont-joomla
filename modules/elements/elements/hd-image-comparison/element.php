@@ -19,4 +19,12 @@ return [
             return ($node->props['image_before'] || $node->props['image_after']);
         },
     ],
+
+    'updates' => [
+        '3.0.0' => function ($node) {
+            if (!isset($node->props['show_image_labels'])) {
+                $node->props['show_image_labels'] = false;
+            }
+        },
+    ],
 ];
