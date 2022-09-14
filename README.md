@@ -34,7 +34,7 @@ This plugin adds more elements to the element library of the YOOtheme Pro page b
 
 ## Installation
 
-- [download](https://github.com/forrestkirby/herzogdupont-joomla/archive/main.zip) package
+- download the latest release package from the [releases page](https://github.com/forrestkirby/herzogdupont-joomla/releases) (*Assets 🠖 Source code (zip) or Source code (tar.gz)*)
 - install it via the Joomla! extensions manager
 - access the YOOtheme Pro Page Builder, the custom elements should now be available
 - you can select which elements should or should not be loaded in YOOtheme Pro at *Settings > Herzog Dupont*
