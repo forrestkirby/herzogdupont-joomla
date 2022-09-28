@@ -101,7 +101,8 @@
                 "Bottom Left": "bottom-left",
                 "Bottom Center": "bottom-center",
                 "Bottom Right": "bottom-right"
-            }
+            },
+            "source": true
         },
         "image_after_focal_point": {
             "label": "After Focal Point",
@@ -116,7 +117,8 @@
                 "Bottom Left": "bottom-left",
                 "Bottom Center": "bottom-center",
                 "Bottom Right": "bottom-right"
-            }
+            },
+            "source": true
         },
         "image_loading": {
             "label": "Loading",

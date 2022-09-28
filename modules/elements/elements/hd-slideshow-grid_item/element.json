@@ -151,6 +151,7 @@
                 "Bottom Center": "bottom-center",
                 "Bottom Right": "bottom-right"
             },
+            "source": true,
             "enable": "image_1"
         },
         "image_2_focal_point": {
@@ -167,6 +168,7 @@
                 "Bottom Center": "bottom-center",
                 "Bottom Right": "bottom-right"
             },
+            "source": true,
             "enable": "image_2"
         },
         "image_3_focal_point": {
@@ -183,6 +185,7 @@
                 "Bottom Center": "bottom-center",
                 "Bottom Right": "bottom-right"
             },
+            "source": true,
             "enable": "image_3"
         },
         "thumbnail_1_focal_point": {
@@ -199,6 +202,7 @@
                 "Bottom Center": "bottom-center",
                 "Bottom Right": "bottom-right"
             },
+            "source": true,
             "enable": "thumbnail_1"
         },
         "thumbnail_2_focal_point": {
@@ -215,6 +219,7 @@
                 "Bottom Center": "bottom-center",
                 "Bottom Right": "bottom-right"
             },
+            "source": true,
             "enable": "thumbnail_2"
         },
         "thumbnail_3_focal_point": {
@@ -231,6 +236,7 @@
                 "Bottom Center": "bottom-center",
                 "Bottom Right": "bottom-right"
             },
+            "source": true,
             "enable": "thumbnail_3"
         },
         "status": "${builder.statusItem}",

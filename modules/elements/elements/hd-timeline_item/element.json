@@ -87,6 +87,7 @@
                 "Bottom Center": "bottom-center",
                 "Bottom Right": "bottom-right"
             },
+            "source": true,
             "enable": "image"
         },
         "status": "${builder.statusItem}",

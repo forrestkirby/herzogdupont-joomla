@@ -580,6 +580,7 @@
                 "Bottom Center": "bottom-center",
                 "Bottom Right": "bottom-right"
             },
+            "source": true,
             "enable": "image"
         },
         "image_loading": {
@@ -1211,6 +1212,7 @@
                 "Bottom Center": "bottom-center",
                 "Bottom Right": "bottom-right"
             },
+            "source": true,
             "enable": "image_back"
         },
         "image_back_border": {

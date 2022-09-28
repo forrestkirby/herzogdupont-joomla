@@ -183,6 +183,7 @@
                 "Bottom Center": "bottom-center",
                 "Bottom Right": "bottom-right"
             },
+            "source": true,
             "enable": "link_target == 'modal'"
         },
         "position": "${builder.position}",
