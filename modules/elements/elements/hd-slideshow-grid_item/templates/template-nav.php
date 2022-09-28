@@ -67,7 +67,7 @@ $container = $this->el('div', [
             'loading' => $element['image_loading'] ? false : null,
             'width' => $element['thumbnav_width'],
             'height' => $element['thumbnav_height'],
-            'focal_point' => $element['thumbnav_focal_point'],
+            'focal_point' => $props["thumbnail_$i"] ? $props["thumbnail_{$i}_focal_point"] : $props["image_{$i}_focal_point"],
             'uk-svg' => (bool) $element['thumbnav_svg_inline'],
             'thumbnail' => true,
         ]);

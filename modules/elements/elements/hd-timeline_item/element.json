@@ -73,6 +73,22 @@
                 "Tile Secondary": "tile-secondary"
             }
         },
+        "image_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "enable": "image"
+        },
         "status": "${builder.statusItem}",
         "source": "${builder.source}"
     },
@@ -101,6 +117,11 @@
                             "label": "Panel",
                             "type": "group",
                             "fields": ["panel_style"]
+                        },
+                        {
+                            "label": "Image",
+                            "type": "group",
+                            "fields": ["image_focal_point"]
                         }
                     ]
                 },

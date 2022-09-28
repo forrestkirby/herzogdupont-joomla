@@ -100,7 +100,7 @@ if ($has_image) {
         'loading' => $element['image_loading'] ? false : null,
         'width' => $element['image_width'],
         'height' => $element['image_height'],
-        'focal_point' => $element['image_focal_point'],
+        'focal_point' => $props['image_1_focal_point'],
         'uk-cover' => true,
         'thumbnail' => true,
     ]);
@@ -157,6 +157,7 @@ if ($has_image) {
         'loading' => $element['image_loading'] ? false : null,
         'width' => $element['image_width'],
         'height' => $element['image_height'],
+        'focal_point' => $props['image_2_focal_point'],
         'uk-cover' => true,
         'thumbnail' => true,
     ]);
@@ -213,6 +214,7 @@ if ($has_image) {
         'loading' => $element['image_loading'] ? false : null,
         'width' => $element['image_width'],
         'height' => $element['image_height'],
+        'focal_point' => $props['image_3_focal_point'],
         'uk-cover' => true,
         'thumbnail' => true,
     ]);

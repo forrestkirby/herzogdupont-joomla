@@ -137,6 +137,102 @@
                 "Tile Secondary": "tile-secondary"
             }
         },
+        "image_1_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "enable": "image_1"
+        },
+        "image_2_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "enable": "image_2"
+        },
+        "image_3_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "enable": "image_3"
+        },
+        "thumbnail_1_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "enable": "thumbnail_1"
+        },
+        "thumbnail_2_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "enable": "thumbnail_2"
+        },
+        "thumbnail_3_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "enable": "thumbnail_3"
+        },
         "status": "${builder.statusItem}",
         "source": "${builder.source}"
     },
@@ -174,6 +270,36 @@
                             "label": "Panel",
                             "type": "group",
                             "fields": ["panel_style"]
+                        },
+                        {
+                            "label": "Image 1",
+                            "type": "group",
+                            "fields": ["image_1_focal_point"]
+                        },
+                        {
+                            "label": "Thumbnail 1",
+                            "type": "group",
+                            "fields": ["thumbnail_1_focal_point"]
+                        },
+                        {
+                            "label": "Image 2",
+                            "type": "group",
+                            "fields": ["image_2_focal_point"]
+                        },
+                        {
+                            "label": "Thumbnail 2",
+                            "type": "group",
+                            "fields": ["thumbnail_2_focal_point"]
+                        },
+                        {
+                            "label": "Image 3",
+                            "type": "group",
+                            "fields": ["image_3_focal_point"]
+                        },
+                        {
+                            "label": "Thumbnail 3",
+                            "type": "group",
+                            "fields": ["thumbnail_3_focal_point"]
                         }
                     ]
                 },
