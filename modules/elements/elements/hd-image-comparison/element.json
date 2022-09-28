@@ -88,6 +88,12 @@
             "type": "checkbox",
             "text": "Show the image labels"
         },
+        "image_loading": {
+            "label": "Loading",
+            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
+            "type": "checkbox",
+            "text": "Load image eagerly"
+        },
         "image_border": {
             "label": "Border",
             "description": "Select the image border style.",
@@ -128,12 +134,6 @@
             "type": "checkbox",
             "text": "Inverse style",
             "enable": "$match(image_box_decoration, '^(default|primary|secondary)$')"
-        },
-        "image_loading": {
-            "label": "Loading",
-            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
-            "type": "checkbox",
-            "text": "Load image eagerly"
         },
         "icon_color": {
             "label": "Slider Icon Color",
@@ -249,11 +249,11 @@
                             "type": "group",
                             "divider": true,
                             "fields": [
+                                "image_loading",
                                 "image_border",
                                 "image_box_shadow",
                                 "image_box_decoration",
-                                "image_box_decoration_inverse",
-                                "image_loading"
+                                "image_box_decoration_inverse"
                             ]
                         },
                         {
