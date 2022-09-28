@@ -100,6 +100,7 @@ if ($has_image) {
         'loading' => $element['image_loading'] ? false : null,
         'width' => $element['image_width'],
         'height' => $element['image_height'],
+        'focal_point' => $element['image_focal_point'],
         'uk-cover' => true,
         'thumbnail' => true,
     ]);

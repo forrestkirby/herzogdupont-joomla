@@ -566,6 +566,22 @@
             },
             "enable": "content"
         },
+        "image_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "enable": "image"
+        },
         "image_loading": {
             "label": "Loading",
             "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
@@ -1181,6 +1197,22 @@
             },
             "enable": "content_back"
         },
+        "image_back_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "enable": "image_back"
+        },
         "image_back_border": {
             "label": "Border",
             "description": "Select the image border style.",
@@ -1589,6 +1621,7 @@
                             "type": "group",
                             "divider": true,
                             "fields": [
+                                "image_focal_point",
                                 "image_loading",
                                 "image_border",
                                 "image_box_shadow",
@@ -1676,6 +1709,7 @@
                             "type": "group",
                             "divider": true,
                             "fields": [
+                                "image_back_focal_point",
                                 "image_back_border",
                                 "image_back_box_shadow",
                                 "image_back_box_decoration",

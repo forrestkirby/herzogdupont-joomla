@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2019–2022 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2019-2022 Thomas Weidlich GNU GPL v3 */
 
 $el = $this->el('div', [
 
@@ -58,6 +58,7 @@ if ($props['link'] && $props['link_target'] === 'modal') {
     if ($this->isImage($props['link'])) {
 
         $lightbox = $target($props, [
+            'focal_point' => $props['lightbox_image_focal_point'],
             'thumbnail' => true,
         ]);
 

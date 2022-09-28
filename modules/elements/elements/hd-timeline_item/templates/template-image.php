@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2022 YOOtheme GmbH, 2019–2022 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016-2022 YOOtheme GmbH, 2019-2022 Thomas Weidlich GNU GPL v3 */
 
 // Image
 if ($props['image']) {
@@ -19,6 +19,7 @@ if ($props['image']) {
         'loading' => $element['image_loading'] ? false : null,
         'width' => $element['image_width'],
         'height' => $element['image_height'],
+        'focal_point' => $element['image_focal_point'],
         'uk-svg' => $element['image_svg_inline'],
         'uk-cover' => $element['panel_style'] && $element['panel_image_no_padding'] && in_array($element['image_align'], ['left', 'right']),
         'thumbnail' => true,

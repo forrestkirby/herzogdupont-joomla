@@ -796,6 +796,22 @@
             },
             "enable": "show_image"
         },
+        "image_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "enable": "show_image"
+        },
         "image_loading": {
             "label": "Loading",
             "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
@@ -1127,6 +1143,22 @@
         "thumbnav_height": {
             "attrs": {
                 "placeholder": "auto"
+            },
+            "enable": "nav == 'thumbnav' && show_thumbnail"
+        },
+        "thumbnav_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
             },
             "enable": "nav == 'thumbnav' && show_thumbnail"
         },
@@ -1508,6 +1540,7 @@
                                     "width": "1-2",
                                     "fields": ["thumbnav_width", "thumbnav_height"]
                                 },
+                                "thumbnav_focal_point",
                                 "thumbnav_nowrap",
                                 "thumbnav_svg_inline",
                                 "thumbnav_svg_color"
@@ -1539,6 +1572,7 @@
                                     "width": "1-2",
                                     "fields": ["image_width", "image_height"]
                                 },
+                                "image_focal_point",
                                 "image_loading"
                             ]
                         },
