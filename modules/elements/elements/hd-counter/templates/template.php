@@ -7,7 +7,7 @@ $circleWidth = $circleHeight = $cx * 2;
 $viewBox = '0 0 ' . $circleWidth . ' ' . $circleWidth;
 $uniqid = uniqid('counter-');
 $dashOffsetStart = 2 * M_PI * $props['circle_radius'];
-$dashOffsetEnd = 2 * M_PI * $props['circle_radius'] * (1 - $props['percentage'] / 100);
+$dashOffsetEnd = 2 * M_PI * $props['circle_radius'] * (1 - intval($props['percentage']) / 100);
 
 $el = $this->el('div', [
 
