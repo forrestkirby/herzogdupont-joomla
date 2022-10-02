@@ -3,7 +3,7 @@
 <!--
   @package   Herzog Dupont for YOOtheme Pro
   @author    Thomas Weidlich
-  @copyright Copyright (C) 2021–2022 Thomas Weidlich
+  @copyright Copyright (C) 2021-2022 Thomas Weidlich
   @license   GNU General Public License version 3, see LICENSE
   -->
 
@@ -12,7 +12,7 @@
     <author>Thomas Weidlich</author>
     <authorEmail>thomas@herzog-dupont.de</authorEmail>
     <authorUrl>https://herzog-dupont.de</authorUrl>
-    <copyright>Copyright (C) 2021–2022 Thomas Weidlich</copyright>
+    <copyright>Copyright (C) 2021-2022 Thomas Weidlich</copyright>
     <license>GNU General Public License version 3, see LICENSE</license>
     <creationDate>September 19, 2022</creationDate>
     <version>1.7.0</version>
