@@ -4,6 +4,7 @@
 
 ### Fixed
 
+- fix error if percentage is empty in counter element
 - render conditions in toggle element
 
 ## 1.7.0
