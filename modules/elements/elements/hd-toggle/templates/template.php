@@ -32,7 +32,6 @@ $props['queued'] = $props['queued'] ? true : false;
 $button = $this->el('a', [
 
     'class' => $this->expr([
-        'mytest',
         'uk-width-1-1 {@btn_fullwidth}',
         'uk-{btn_style: link-\w+}' => ['btn_style' => $props['btn_style']],
         'uk-button uk-button-{!btn_style: |link-\w+} [uk-button-{btn_size}]' => ['btn_style' => $props['btn_style']],

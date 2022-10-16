@@ -1,5 +1,11 @@
 # Changelog
 
+## WIP
+
+### Fixed
+
+- render conditions in toggle element
+
 ## 1.7.0
 
 ### Added
