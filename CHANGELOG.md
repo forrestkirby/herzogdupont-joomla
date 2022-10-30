@@ -1,6 +1,6 @@
 # Changelog
 
-## WIP
+## 1.7.1
 
 ### Fixed
 
