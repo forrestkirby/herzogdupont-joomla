@@ -66,6 +66,10 @@ $slider = $this->el('div', [
         '{slider_onmousemove}',
     ],
 
+    'data-margin-remove' => [
+        '{slider_margin_remove}',
+    ],
+
 ]);
 
 // Box decoration

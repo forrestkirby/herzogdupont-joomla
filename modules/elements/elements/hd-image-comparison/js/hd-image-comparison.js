@@ -10,7 +10,7 @@ class hdImgComp {
 		this.afterimg = el.querySelector('.hd-image-comparison-after img');
 		this.slider = el.querySelector('.hd-image-comparison-slider');
 		this.iconWidth = parseInt(this.slider.getAttribute('uk-icon').split('height: ')[1]);
-		this.element.style.marginLeft = this.element.style.marginRight = this.iconWidth / 2 + 10 + 'px';
+		if (!('marginRemove' in this.slider.dataset)) this.element.style.marginLeft = this.element.style.marginRight = this.iconWidth / 2 + 10 + 'px';
 		this.range = document.createElement('input');
 		this.range.type = 'range';
 		this.range.min = '0';

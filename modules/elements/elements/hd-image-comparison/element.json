@@ -179,6 +179,11 @@
             "type": "checkbox",
             "text": "Change the slider position on mousemove"
         },
+        "slider_margin_remove": {
+            "label": "Remove Horizontal Margin",
+            "type": "checkbox",
+            "text": "Remove the horizontal margin of the element"
+        },
         "position": "${builder.position}",
         "position_left": "${builder.position_left}",
         "position_right": "${builder.position_right}",
@@ -265,7 +270,8 @@
                                 "icon_color",
                                 "slider_background",
                                 "slider_start",
-                                "slider_onmousemove"
+                                "slider_onmousemove",
+                                "slider_margin_remove"
                             ]
                         },
                         {

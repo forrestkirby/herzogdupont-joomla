@@ -1,5 +1,11 @@
 # Changelog
 
+## WIP
+
+### Added
+
+- option to remove margin to image comparison element
+
 ## 1.7.1
 
 ### Fixed
