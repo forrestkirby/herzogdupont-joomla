@@ -109,6 +109,12 @@
             "description": "Enter the text for the link. There is no actual link on the flip card front, it will only be used for styling purposes.",
             "source": true
         },
+        "link_aria_label": {
+            "label": "ARIA Label",
+            "description": "Enter a descriptive text label to make it accessible if the link has no visible text.",
+            "enable": "show_link",
+            "source": true
+        },
         "title_back": {
             "label": "Title",
             "source": true
@@ -1528,7 +1534,8 @@
                         },
                         "image_alt",
                         "icon",
-                        "link_text"
+                        "link_text",
+                        "link_aria_label"
                     ]
                 },
                 {

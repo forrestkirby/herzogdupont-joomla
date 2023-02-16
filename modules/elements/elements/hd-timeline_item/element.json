@@ -57,6 +57,12 @@
             "source": true,
             "enable": "link"
         },
+        "link_aria_label": {
+            "label": "Link ARIA Label",
+            "description": "Set a different link ARIA label for this item.",
+            "source": true,
+            "enable": "link"
+        },
         "panel_style": {
             "label": "Style",
             "description": "Select one of the boxed card or tile styles or a blank panel.",
@@ -109,7 +115,8 @@
                         "icon",
                         "timeline_icon",
                         "link",
-                        "link_text"
+                        "link_text",
+                        "link_aria_label"
                     ]
                 },
                 {

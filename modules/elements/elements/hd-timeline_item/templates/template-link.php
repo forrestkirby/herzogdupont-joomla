@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2022 YOOtheme GmbH, 2019–2022 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016ï¿½2022 YOOtheme GmbH, 2019ï¿½2022 Thomas Weidlich GNU GPL v3 */
 
 namespace YOOtheme;
 
@@ -11,6 +11,7 @@ $imageProvider = app(ImageProvider::class);
 
 $link = $props['link'] ? $this->el('a', [
     'href' => $props['link'],
+    'aria-label' => $props['link_aria_label'] ?: $element['link_aria_label'],
 ]) : null;
 
 if ($link) {

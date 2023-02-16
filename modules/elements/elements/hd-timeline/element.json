@@ -867,6 +867,11 @@
             "description": "Enter the text for the link.",
             "enable": "show_link"
         },
+        "link_aria_label": {
+            "label": "ARIA Label",
+            "description": "Enter a descriptive text label to make it accessible if the link has no visible text.",
+            "enable": "show_link"
+        },
         "link_style": {
             "label": "Style",
             "description": "Set the link style.",
@@ -1094,6 +1099,7 @@
                             "fields": [
                                 "link_target",
                                 "link_text",
+                                "link_aria_label",
                                 "link_style",
                                 "link_size",
                                 "link_fullwidth",
