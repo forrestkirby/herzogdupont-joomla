@@ -6,6 +6,7 @@ namespace YOOtheme;
 
 $link = $props['link'] ? $this->el('a', [
     'href' => $props['link'],
+    'aria-label' => $props['link_aria_label'] ?: $element['link_aria_label'],
 ]) : null;
 
 if ($link && $props['title'] && $element['title_link']) {

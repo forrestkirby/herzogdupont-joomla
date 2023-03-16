@@ -116,6 +116,12 @@
             "source": true,
             "enable": "link"
         },
+        "link_aria_label": {
+            "label": "Link ARIA Label",
+            "description": "Set a different link ARIA label for this item.",
+            "source": true,
+            "enable": "link"
+        },
         "tags": {
             "label": "Tags",
             "description": "Enter a comma-separated list of tags, for example, <code>blue, white, black</code>.",
@@ -272,6 +278,7 @@
                         "content",
                         "link",
                         "link_text",
+                        "link_aria_label",
                         "tags"
                     ]
                 },
