@@ -612,13 +612,6 @@
             },
             "enable": "show_content"
         },
-        "image_loading": {
-            "label": "Loading",
-            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
-            "type": "checkbox",
-            "text": "Load image eagerly",
-            "enable": "show_image"
-        },
         "image_width": {
             "attrs": {
                 "placeholder": "auto"
@@ -629,6 +622,13 @@
             "attrs": {
                 "placeholder": "auto"
             },
+            "enable": "show_image"
+        },
+        "image_loading": {
+            "label": "Loading",
+            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
+            "type": "checkbox",
+            "text": "Load image eagerly",
             "enable": "show_image"
         },
         "image_border": {
@@ -1057,7 +1057,6 @@
                             "type": "group",
                             "divider": true,
                             "fields": [
-                                "image_loading",
                                 {
                                     "label": "Width/Height",
                                     "description": "Setting just one value preserves the original proportions. The image will be resized and cropped automatically, and where possible, high resolution images will be auto-generated.",
@@ -1065,6 +1064,7 @@
                                     "width": "1-2",
                                     "fields": ["image_width", "image_height"]
                                 },
+                                "image_loading",
                                 "image_border",
                                 "image_box_shadow",
                                 "image_box_decoration",
