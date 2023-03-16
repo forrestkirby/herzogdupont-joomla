@@ -21,6 +21,7 @@ if ($props['image']) {
         'loading' => $props['image_loading'] ? false : null,
         'width' => $props['image_width'],
         'height' => $props['image_height'],
+        'focal_point' => $props['image_focal_point'],
         'uk-svg' => $props['image_svg_inline'],
         'uk-cover' => $props['panel_style'] && $props['panel_image_no_padding'] && in_array($props['image_align'], ['left', 'right']),
         'thumbnail' => true,

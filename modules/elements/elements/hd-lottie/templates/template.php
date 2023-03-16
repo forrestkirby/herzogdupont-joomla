@@ -58,6 +58,7 @@ if ($props['link'] && $props['link_target'] === 'modal') {
     if ($this->isImage($props['link'])) {
 
         $lightbox = $target($props, [
+            'focal_point' => $props['lightbox_image_focal_point'],
             'thumbnail' => true,
         ]);
 

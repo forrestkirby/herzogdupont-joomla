@@ -23,6 +23,7 @@ if ($props['image_back']) {
         'loading' => $props['image_back_loading'] ? false : null,
         'width' => $props['image_back_width'],
         'height' => $props['image_back_height'],
+        'focal_point' => $props['image_back_focal_point'],
         'uk-svg' => $props['image_back_svg_inline'],
         'uk-cover' => $props['panel_back_style'] && $props['panel_back_image_no_padding'] && in_array($props['image_back_align'], ['left', 'right']),
         'thumbnail' => true,

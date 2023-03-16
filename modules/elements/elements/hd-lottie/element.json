@@ -169,6 +169,24 @@
             },
             "enable": "link_target == 'modal'"
         },
+        "lightbox_image_focal_point": {
+            "label": "Modal Image Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Center Right": "center-right",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "source": true,
+            "enable": "link_target == 'modal'"
+        },
         "position": "${builder.position}",
         "position_left": "${builder.position_left}",
         "position_right": "${builder.position_right}",
@@ -258,7 +276,8 @@
                                     "type": "grid",
                                     "width": "1-2",
                                     "fields": ["lightbox_width", "lightbox_height"]
-                                }
+                                },
+                                "lightbox_image_focal_point"
                             ]
                         },
                         {
