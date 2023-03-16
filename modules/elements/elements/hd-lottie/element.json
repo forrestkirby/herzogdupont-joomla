@@ -223,7 +223,8 @@
             "attrs": {
                 "debounce": 500
             }
-        }
+        },
+        "transform": "${builder.transform}"
     },
     "fieldset": {
         "default": {
