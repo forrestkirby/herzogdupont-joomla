@@ -4,7 +4,7 @@
 
 $link_back = $props['link_back'] ? $this->el('a', [
     'href' => ['{link_back}'],
-    'aria-label' => ['{link_aria_label}'],
+    'aria-label' => ['{link_back_aria_label}'],
     'target' => ['_blank {@link_back_target}'],
     'uk-scroll' => str_starts_with((string) $props['link_back'], '#'),
 ]) : null;
