@@ -71,6 +71,17 @@ $textEl = $this->el('span', [
 
 ]);
 
+$prefixEl = $this->el('span', [
+
+    'class' => [
+        'el-prefix',
+        'uk-{number_size} {@prefix_size: number-size}',
+        'uk-{prefix_size} {@!prefix_size: number-size}',
+        'uk-text-{number_color}',
+    ],
+
+]);
+
 $numberEl = $this->el('span', [
 
     'class' => [
@@ -121,8 +132,9 @@ $unitEl = $this->el('span', [
             </svg>
 
             <div class="uk-position-center uk-overlay">
+                <?php if ($props['prefix']) : ?><?= $prefixEl($props) ?><?= $props['prefix'] ?><?= !$props['prefix_space_remove'] ? '&#x00A0;' : '' ?></span><?php endif ?>
                 <?php if ($props['number']) : ?><?= $numberEl($props) ?><?= $props['number'] ?></span><?php endif ?>
-                <?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= ' ' ?><?= $props['unit'] ?></span><?php endif ?>
+                <?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= !$props['unit_space_remove'] ? '&#x00A0;' : '' ?><?= $props['unit'] ?></span><?php endif ?>
                 <?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></span><?php endif ?>
             </div>
 

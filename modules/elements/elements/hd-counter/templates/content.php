@@ -4,6 +4,6 @@
 
 if ($props['number']) : ?>
 <div>
-    <?= $props['number'] ?><?= $props['unit'] ? ' ' . $props['unit'] : '' ?><?= $props['text'] ? ' ' . $props['text'] : '' ?>
+    <?= $props['prefix'] ? $props['prefix'] : '' ?><?= !$props['prefix_space_remove'] ? '&#x00A0;' : '' ?><?= $props['number'] ?><?= !$props['unit_space_remove'] ? '&#x00A0;' : '' ?><?= $props['unit'] ? $props['unit'] : '' ?><?= $props['text'] ? ' ' . $props['text'] : '' ?>
 </div>
 <?php endif ?>
