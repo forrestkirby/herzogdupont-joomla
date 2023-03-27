@@ -61,44 +61,48 @@ $svg = $this->el('svg', [
 
 ]);
 
-$textEl = $this->el('span', [
+$textEl = $this->el('div', [
 
     'class' => [
         'el-text',
         'uk-{text_style}',
         'uk-text-{text_color}',
+        'uk-margin-remove',
     ],
 
 ]);
 
-$prefixEl = $this->el('span', [
+$prefixEl = $this->el('div', [
 
     'class' => [
         'el-prefix',
         'uk-{number_size} {@prefix_size: number-size}',
         'uk-{prefix_size} {@!prefix_size: number-size}',
         'uk-text-{number_color}',
+        'uk-margin-remove',
     ],
 
 ]);
 
-$numberEl = $this->el('span', [
+$numberEl = $this->el('div', [
 
     'class' => [
         'el-number',
         'uk-{number_size}',
         'uk-text-{number_color}',
+        'uk-margin-remove',
     ],
 
 ]);
 
-$unitEl = $this->el('span', [
+$unitEl = $this->el('div', [
 
     'class' => [
         'el-unit',
         'uk-{number_size} {@unit_size: number-size}',
         'uk-{unit_size} {@!unit_size: number-size}',
         'uk-text-{number_color}',
+        'uk-margin-remove',
     ],
 
 ]);
@@ -131,21 +135,22 @@ $unitEl = $this->el('span', [
                 <circle class="counter-value" cx="<?= $cx ?>" cy="<?= $cy ?>" r="<?= $props['circle_radius'] ?>" stroke="<?= $props['circle_color'] ?>" stroke-width="<?= $props['circle_stroke_width'] ?>" fill="none" />
             </svg>
 
-            <div class="uk-position-center uk-overlay">
-                <?php if ($props['prefix']) : ?><?= $prefixEl($props) ?><?= $props['prefix'] ?><?= !$props['prefix_space_remove'] ? '&#x00A0;' : '' ?></span><?php endif ?>
-                <?php if ($props['number']) : ?><?= $numberEl($props) ?><?= $props['number'] ?></span><?php endif ?>
-                <?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= !$props['unit_space_remove'] ? '&#x00A0;' : '' ?><?= $props['unit'] ?></span><?php endif ?>
-                <?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></span><?php endif ?>
+            <div class="uk-position-center uk-overlay uk-flex">
+                <?php if ($props['prefix']) : ?><?= $prefixEl($props) ?><?= $props['prefix'] ?><?= !$props['prefix_space_remove'] ? '&#x00A0;' : '' ?></div><?php endif ?>
+                <?php if ($props['number']) : ?><?= $numberEl($props) ?><?= $props['number'] ?></div><?php endif ?>
+                <?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= !$props['unit_space_remove'] ? '&#x00A0;' : '' ?><?= $props['unit'] ?></div><?php endif ?>
+                <?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></div><?php endif ?>
             </div>
 
         </div>
 
     <?php else : ?>
 
-        <div>
-            <?php if ($props['number']) : ?><?= $numberEl($props) ?><?= $props['number'] ?></span><?php endif ?>
-            <?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= ' ' ?><?= $props['unit'] ?></span><?php endif ?>
-            <?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></span><?php endif ?>
+        <div class="uk-flex">
+            <?php if ($props['prefix']) : ?><?= $prefixEl($props) ?><?= $props['prefix'] ?><?= !$props['prefix_space_remove'] ? '&#x00A0;' : '' ?></div><?php endif ?>
+            <?php if ($props['number']) : ?><?= $numberEl($props) ?><?= $props['number'] ?></div><?php endif ?>
+            <?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= !$props['unit_space_remove'] ? '&#x00A0;' : '' ?><?= $props['unit'] ?></div><?php endif ?>
+            <?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></div><?php endif ?>
         </div>
 
     <?php endif; ?>
