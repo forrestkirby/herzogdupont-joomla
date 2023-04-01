@@ -20,6 +20,7 @@ $image_before = $this->el('image', [
     'loading' => $props['image_loading'] ? false : null,
     'width' => $props['image_width'],
     'height' => $props['image_height'],
+    'focal_point' => $props['image_before_focal_point'],
     'thumbnail' => true,
 ]);
 
@@ -37,6 +38,7 @@ $image_after = $this->el('image', [
     'loading' => $props['image_loading'] ? false : null,
     'width' => $props['image_width'],
     'height' => $props['image_height'],
+    'focal_point' => $props['image_after_focal_point'],
     'thumbnail' => true,
 ]);
 
