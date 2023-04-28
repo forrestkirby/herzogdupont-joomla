@@ -1316,6 +1316,7 @@
         "container_padding_remove": "${builder.container_padding_remove}",
         "name": "${builder.name}",
         "status": "${builder.status}",
+        "source": "${builder.source}",
         "id": "${builder.id}",
         "class": "${builder.cls}",
         "attributes": "${builder.attrs}",
