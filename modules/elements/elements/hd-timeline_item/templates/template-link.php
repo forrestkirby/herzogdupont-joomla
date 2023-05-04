@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2022 YOOtheme GmbH, 2019–2022 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016ï¿½2022 YOOtheme GmbH, 2019ï¿½2022 Thomas Weidlich GNU GPL v3 */
 
 namespace YOOtheme;
 
@@ -24,7 +24,7 @@ if ($link) {
 
 if ($link && $element['panel_link']) {
 
-    $el->attr($link->attrs + [
+    $link_container->attr($link->attrs + [
 
         'class' => [
             'uk-link-toggle',

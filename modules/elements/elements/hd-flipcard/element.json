@@ -234,6 +234,7 @@
             "show": "panel_style",
             "enable": "image && image_align != 'between'"
         },
+        "html_element": "${builder.html_element}",
         "title_style": {
             "label": "Style",
             "description": "Title styles differ in font-size but may also come with a predefined color, size and font.",
@@ -1537,7 +1538,8 @@
                             "fields": [
                                 "panel_style",
                                 "panel_padding",
-                                "panel_image_no_padding"
+                                "panel_image_no_padding",
+                                "html_element"
                             ]
                         },
                         {

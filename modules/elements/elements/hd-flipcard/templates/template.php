@@ -244,7 +244,7 @@ if ($props['panel_back_style'] && $props['has_panel_back_image_no_padding']) {
 }
 
 // Container
-$el = $this->el('div', [
+$el = $this->el($props['html_element'] ?: 'div', [
 
     'class' => [
         'hd-flipcard',
