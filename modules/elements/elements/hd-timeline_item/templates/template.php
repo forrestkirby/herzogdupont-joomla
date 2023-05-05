@@ -12,6 +12,7 @@ $element['panel_style'] = $props['panel_style'] ?: $element['panel_style'];
 $props['image'] = $this->render("{$__dir}/template-image", compact('props'));
 
 // New logic shortcuts
+$element['has_link'] = $props['link'] && $element['panel_link'];
 $element['has_panel_image_no_padding'] = $props['image'] && (!$element['panel_style'] || $element['panel_image_no_padding']) && $element['image_align'] != 'between';
 $element['has_no_padding'] = !$element['panel_style'] && (!$props['image'] || ($props['image'] && $element['image_align'] == 'between'));
 
@@ -55,11 +56,24 @@ if ($props['image'] && $element['image_box_decoration']) {
 $props['timeline_icon'] = $this->render("{$__dir}/template-timeline_icon", compact('props'));
 
 // Panel/Card/Tile
-$el = $this->el($props['link'] && $element['panel_link'] ? 'a' : 'div', [
+$el = $this->el($element['item_element'] ?: 'div', [
 
     'class' => [
         'el-item',
         'uk-margin-auto uk-width-{item_maxwidth}',
+
+        // Match link container height
+        'uk-grid-item-match {@has_link}',
+    ],
+
+]);
+
+// Link Container
+$link_container = $element['has_link'] ? $this->el('a') : null;
+
+($element['has_link'] ? $link_container : $el)->attr([
+
+    'class' => [
         'uk-panel [uk-{panel_style: tile-.*}] {@panel_style: |tile-.*}',
         'uk-card uk-{panel_style: card-.*} [uk-card-{!panel_padding: |default}]',
         'uk-tile-hover {@panel_style: tile-.*} {@panel_link}' => $props['link'],
@@ -147,6 +161,10 @@ if ($element['panel_style'] && $element['has_panel_image_no_padding']) {
 
 <?= $el($element, $attrs) ?>
 
+    <?php if ($link_container) : ?>
+    <?= $link_container($element) ?>
+    <?php endif ?>
+
     <?php if ($props['image'] && in_array($element['image_align'], ['left', 'right'])) : ?>
 
         <?= $grid($element) ?>
@@ -178,6 +196,10 @@ if ($element['panel_style'] && $element['has_panel_image_no_padding']) {
         <?= $props['image'] ?>
         <?php endif ?>
 
+    <?php endif ?>
+
+    <?php if ($link_container) : ?>
+    <?= $link_container->end() ?>
     <?php endif ?>
 
 <?= $el->end() ?>

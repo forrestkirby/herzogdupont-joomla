@@ -20,7 +20,7 @@ $element['has_panel_image_no_padding'] = $image && (!$element['panel_style'] || 
 $element['has_no_padding'] = !$element['panel_style'] && (!$image || ($image && $element['image_align'] == 'between'));
 
 // Panel/Card/Tile
-$el = $this->el('div', [
+$el = $this->el($element['item_element'] ?: 'div', [
 
     'class' => [
         'el-item',
