@@ -160,8 +160,8 @@
             "type": "select",
             "options": {
                 "None": "",
-                "English (U.S.) – comma": "en-US",
-                "German (Germany) – full stop": "de-DE"
+                "English (U.S.) - comma": "en-US",
+                "German (Germany) - full stop": "de-DE"
             },
             "enable": "number"
         },
@@ -236,7 +236,8 @@
             "attrs": {
                 "debounce": 500
             }
-        }
+        },
+        "transform": "${builder.transform}"
     },
     "fieldset": {
         "default": {

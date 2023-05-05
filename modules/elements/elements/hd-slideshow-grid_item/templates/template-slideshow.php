@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2022 YOOtheme GmbH, 2021–2022 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016-2022 YOOtheme GmbH, 2021-2022 Thomas Weidlich GNU GPL v3 */
 
 $has_image = $props['image_1'] || $props['image_2'] || $props['image_3'] || $props['video_1'] || $props['video_2'] || $props['video_3'];
 
@@ -100,6 +100,7 @@ if ($has_image) {
         'loading' => $element['image_loading'] ? false : null,
         'width' => $element['image_width'],
         'height' => $element['image_height'],
+        'focal_point' => $props['image_1_focal_point'],
         'uk-cover' => true,
         'thumbnail' => true,
     ]);
@@ -156,6 +157,7 @@ if ($has_image) {
         'loading' => $element['image_loading'] ? false : null,
         'width' => $element['image_width'],
         'height' => $element['image_height'],
+        'focal_point' => $props['image_2_focal_point'],
         'uk-cover' => true,
         'thumbnail' => true,
     ]);
@@ -212,6 +214,7 @@ if ($has_image) {
         'loading' => $element['image_loading'] ? false : null,
         'width' => $element['image_width'],
         'height' => $element['image_height'],
+        'focal_point' => $props['image_3_focal_point'],
         'uk-cover' => true,
         'thumbnail' => true,
     ]);

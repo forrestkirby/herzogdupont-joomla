@@ -88,6 +88,46 @@
             "type": "checkbox",
             "text": "Show the image labels"
         },
+        "image_before_focal_point": {
+            "label": "Before Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Center Right": "center-right",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "source": true
+        },
+        "image_after_focal_point": {
+            "label": "After Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Center Right": "center-right",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "source": true
+        },
+        "image_loading": {
+            "label": "Loading",
+            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
+            "type": "checkbox",
+            "text": "Load image eagerly"
+        },
         "image_border": {
             "label": "Border",
             "description": "Select the image border style.",
@@ -128,12 +168,6 @@
             "type": "checkbox",
             "text": "Inverse style",
             "enable": "$match(image_box_decoration, '^(default|primary|secondary)$')"
-        },
-        "image_loading": {
-            "label": "Loading",
-            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
-            "type": "checkbox",
-            "text": "Load image eagerly"
         },
         "icon_color": {
             "label": "Slider Icon Color",
@@ -179,6 +213,11 @@
             "type": "checkbox",
             "text": "Change the slider position on mousemove"
         },
+        "slider_margin_remove": {
+            "label": "Remove Horizontal Margin",
+            "type": "checkbox",
+            "text": "Remove the horizontal margin of the element"
+        },
         "position": "${builder.position}",
         "position_left": "${builder.position_left}",
         "position_right": "${builder.position_right}",
@@ -215,7 +254,8 @@
             "attrs": {
                 "debounce": 500
             }
-        }
+        },
+        "transform": "${builder.transform}"
     },
     "fieldset": {
         "default": {
@@ -249,11 +289,13 @@
                             "type": "group",
                             "divider": true,
                             "fields": [
+                                "image_before_focal_point",
+                                "image_after_focal_point",
+                                "image_loading",
                                 "image_border",
                                 "image_box_shadow",
                                 "image_box_decoration",
-                                "image_box_decoration_inverse",
-                                "image_loading"
+                                "image_box_decoration_inverse"
                             ]
                         },
                         {
@@ -265,7 +307,8 @@
                                 "icon_color",
                                 "slider_background",
                                 "slider_start",
-                                "slider_onmousemove"
+                                "slider_onmousemove",
+                                "slider_margin_remove"
                             ]
                         },
                         {

@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2022 YOOtheme GmbH, 2021–2022 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016-2022 YOOtheme GmbH, 2021-2022 Thomas Weidlich GNU GPL v3 */
 
 $nav = $this->el('ul', [
 
@@ -67,6 +67,7 @@ $container = $this->el('div', [
             'loading' => $element['image_loading'] ? false : null,
             'width' => $element['thumbnav_width'],
             'height' => $element['thumbnav_height'],
+            'focal_point' => $props["thumbnail_$i"] ? $props["thumbnail_{$i}_focal_point"] : $props["image_{$i}_focal_point"],
             'uk-svg' => (bool) $element['thumbnav_svg_inline'],
             'thumbnail' => true,
         ]);

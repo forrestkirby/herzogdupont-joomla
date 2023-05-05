@@ -1,5 +1,18 @@
 # Changelog
 
+## WIP
+
+### Added
+
+- option to remove margin to image comparison element
+
+## 1.7.1
+
+### Fixed
+
+- error if percentage is empty in counter element
+- render conditions in toggle element
+
 ## 1.7.0
 
 ### Added

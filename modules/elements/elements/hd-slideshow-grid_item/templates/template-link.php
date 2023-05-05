@@ -1,11 +1,12 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2022 YOOtheme GmbH, 2021–2022 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016-2022 YOOtheme GmbH, 2021-2022 Thomas Weidlich GNU GPL v3 */
 
 namespace YOOtheme;
 
 $link = $props['link'] ? $this->el('a', [
     'href' => $props['link'],
+    'aria-label' => $props['link_aria_label'] ?: $element['link_aria_label'],
 ]) : null;
 
 if ($link && $props['title'] && $element['title_link']) {

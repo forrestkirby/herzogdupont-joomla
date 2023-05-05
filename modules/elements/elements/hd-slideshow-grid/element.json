@@ -785,13 +785,6 @@
             },
             "enable": "show_content"
         },
-        "image_loading": {
-            "label": "Loading",
-            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
-            "type": "checkbox",
-            "text": "Load image eagerly",
-            "enable": "show_image"
-        },
         "image_width": {
             "attrs": {
                 "placeholder": "auto"
@@ -802,6 +795,13 @@
             "attrs": {
                 "placeholder": "auto"
             },
+            "enable": "show_image"
+        },
+        "image_loading": {
+            "label": "Loading",
+            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
+            "type": "checkbox",
+            "text": "Load image eagerly",
             "enable": "show_image"
         },
         "image_box_shadow": {
@@ -1247,6 +1247,11 @@
             "description": "Enter the text for the link.",
             "enable": "show_link"
         },
+        "link_aria_label": {
+            "label": "ARIA Label",
+            "description": "Enter a descriptive text label to make it accessible if the link has no visible text.",
+            "enable": "show_link"
+        },
         "link_style": {
             "label": "Style",
             "description": "Set the link style.",
@@ -1317,6 +1322,7 @@
         "container_padding_remove": "${builder.container_padding_remove}",
         "name": "${builder.name}",
         "status": "${builder.status}",
+        "source": "${builder.source}",
         "id": "${builder.id}",
         "class": "${builder.cls}",
         "attributes": "${builder.attrs}",
@@ -1329,7 +1335,8 @@
             "attrs": {
                 "debounce": 500
             }
-        }
+        },
+        "transform": "${builder.transform}"
     },
     "fieldset": {
         "default": {
@@ -1534,14 +1541,14 @@
                             "type": "group",
                             "divider": true,
                             "fields": [
-                                "image_loading",
                                 {
                                     "label": "Width/Height",
                                     "description": "Setting just one value preserves the original proportions. The image will be resized and cropped automatically, and where possible, high resolution images will be auto-generated.",
                                     "type": "grid",
                                     "width": "1-2",
                                     "fields": ["image_width", "image_height"]
-                                }
+                                },
+                                "image_loading"
                             ]
                         },
                         {
@@ -1551,6 +1558,7 @@
                             "fields": [
                                 "link_target",
                                 "link_text",
+                                "link_aria_label",
                                 "link_style",
                                 "link_size",
                                 "link_fullwidth",

@@ -1,9 +1,10 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016–2022 YOOtheme GmbH, 2019–2022 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016-2022 YOOtheme GmbH, 2019-2022 Thomas Weidlich GNU GPL v3 */
 
 $link_back = $props['link_back'] ? $this->el('a', [
     'href' => ['{link_back}'],
+    'aria-label' => ['{link_back_aria_label}'],
     'target' => ['_blank {@link_back_target}'],
     'uk-scroll' => str_starts_with((string) $props['link_back'], '#'),
 ]) : null;
