@@ -25,7 +25,7 @@ if ($link) {
 
 if ($link && $element['panel_link']) {
 
-    $el->attr($link->attrs + [
+    $link_container->attr($link->attrs + [
 
         'class' => [
             'uk-link-toggle',

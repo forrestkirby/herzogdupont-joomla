@@ -262,6 +262,7 @@
             "show": "!panel_style",
             "enable": "show_image && image_align == 'top' && !panel_padding && !item_maxwidth && (!align_default || align_default == '1') && (!align_small || align_small == '1') && (!align_medium || align_medium == '1') && (!align_large || align_large == '1') && (!align_xlarge || align_xlarge == '1')"
         },
+        "item_element": "${builder.html_element_item}",
         "title_style": {
             "label": "Style",
             "description": "Title styles differ in font-size but may also come with a predefined color, size and font.",
@@ -1010,7 +1011,8 @@
                                 "panel_padding",
                                 "panel_image_no_padding",
                                 "item_maxwidth",
-                                "panel_content_width"
+                                "panel_content_width",
+                                "item_element"
                             ]
                         },
                         {
