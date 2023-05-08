@@ -309,7 +309,7 @@
         },
         "title_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit the semantic structure.",
+            "description": "Set the level for the section heading or give it no semantic meaning.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -462,7 +462,7 @@
         },
         "meta_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit the semantic structure.",
+            "description": "Set the level for the section heading or give it no semantic meaning.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -942,7 +942,7 @@
         },
         "title_back_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit the semantic structure.",
+            "description": "Set the level for the section heading or give it no semantic meaning.",
             "type": "select",
             "options": {
                 "h1": "h1",
@@ -1095,7 +1095,7 @@
         },
         "meta_back_element": {
             "label": "HTML Element",
-            "description": "Choose one of the HTML elements to fit the semantic structure.",
+            "description": "Set the level for the section heading or give it no semantic meaning.",
             "type": "select",
             "options": {
                 "h1": "h1",
