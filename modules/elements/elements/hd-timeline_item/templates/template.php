@@ -56,7 +56,7 @@ if ($props['image'] && $element['image_box_decoration']) {
 $props['timeline_icon'] = $this->render("{$__dir}/template-timeline_icon", compact('props'));
 
 // Panel/Card/Tile
-$el = $this->el($element['item_element'] ?: 'div', [
+$el = $this->el($props['item_element'] ?: 'div', [
 
     'class' => [
         'el-item',
