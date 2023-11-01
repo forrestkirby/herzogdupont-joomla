@@ -16,6 +16,7 @@
 - raised minimum Joomla version to 4.0.0
 - raised minimum PHP version to 8.0.0
 - raised minimum YOOtheme Pro version to 4.0.0
+- replace `isInView` by `isVisible`
 
 ## 1.7.1
 
