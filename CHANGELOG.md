@@ -1,10 +1,21 @@
 # Changelog
 
-## WIP
+## 1.7.2
 
 ### Added
 
+- HTML element option to Flipcard and multiple items elements
+- source option to all multiple items elements
+- option to transform element type into another
+- aria label option for links across all elements
+- focal point option for image cropping across all elements
 - option to remove margin to image comparison element
+
+### Changed
+
+- raised minimum Joomla version to 4.0.0
+- raised minimum PHP version to 8.0.0
+- raised minimum YOOtheme Pro version to 4.0.0
 
 ## 1.7.1
 
@@ -100,9 +111,9 @@
 ### Added
 
 - tile style options to timeline, flipcard and slideshow grid elements
-- heading options to content style in all elements
-- text lead option to meta style in all elements
-- text lead and meta options to title style in all elements
+- heading options to content style across all elements
+- text lead option to meta style across all elements
+- text lead and meta options to title style across all elements
 
 ### Fixed
 

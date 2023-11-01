@@ -3,7 +3,7 @@
 /**
  * @package   Herzog Dupont for YOOtheme Pro
  * @author    Thomas Weidlich
- * @copyright Copyright (C) 2021-2022 Thomas Weidlich
+ * @copyright Copyright (C) 2021-2023 Thomas Weidlich
  * @license   GNU General Public License version 3, see LICENSE
  */
 
@@ -12,9 +12,9 @@ defined('_JEXEC') or die;
 
 class plgSystemHerzogdupontInstallerScript
 {
-    protected $minimumPHPVersion = '7.4.0';
-    protected $minimumJoomlaVersion = '3.9.0';
-    protected $minimumYOOthemeVersion = '3.0.0';
+    protected $minimumPHPVersion = '8.0.0';
+    protected $minimumJoomlaVersion = '4.0.0';
+    protected $minimumYOOthemeVersion = '4.0.0';
 
     public function install($parent)
     {
