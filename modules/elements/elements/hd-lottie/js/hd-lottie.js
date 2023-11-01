@@ -60,11 +60,11 @@ class hdLottie {
 					anim.playSegments(anim.initialSegment, true);
 					break;
 				case 'inview':
-					if (UIkit.util.isInView(this.player, this.offsetTop, 0)) {
+					if (UIkit.util.isVisible(this.player)) {
 						anim.playSegments(anim.initialSegment, true);
 					} else {
 						window.addEventListener('scroll', () => {
-							if (UIkit.util.isInView(this.player, this.offsetTop, 0) && !this.isComplete) {
+							if (UIkit.util.isVisible(this.player) && !this.isComplete) {
 								anim.playSegments(anim.initialSegment, true);
 								this.isComplete = true;
 							}

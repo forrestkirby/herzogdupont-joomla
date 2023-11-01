@@ -31,7 +31,7 @@ function startAnimation() {
 
 		let el = counters[i];
 
-		if (!el.getAttribute('data-animated') && UIkit.util.isInView(el)) {
+		if (!el.getAttribute('data-animated') && ((typeof UIkit.util.isInView === 'function' && UIkit.util.isInView(el)) || (typeof UIkit.util.isVisible === 'function' && UIkit.util.isVisible(el)))) {
 
 			let perimeter = 2 * Math.PI * el.dataset.radius,
 			    circle    = el.querySelector('.counter-value'),
