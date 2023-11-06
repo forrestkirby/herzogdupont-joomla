@@ -1,10 +1,16 @@
 # Changelog
 
+## 1.7.3
+
+### Added
+
+- justify grid parallax option to slideshow grid element
+
 ## 1.7.2
 
 ### Added
 
-- HTML element option to Flipcard and multiple items elements
+- HTML element option to flipcard and multiple items elements
 - source option to all multiple items elements
 - option to transform element type into another
 - aria label option for links across all elements
