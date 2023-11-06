@@ -31,6 +31,7 @@ $grid = $this->el('div', [
     'uk-grid' => $this->expr([
         'masonry: {grid_masonry};',
         'parallax: {grid_parallax};',
+        'parallax-justify: true {grid_parallax} {grid_parallax_justify};',
     ], $props) ?: true,
 
 ]);

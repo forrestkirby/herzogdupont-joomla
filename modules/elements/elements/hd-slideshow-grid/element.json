@@ -117,6 +117,10 @@
                 "step": 10
             }
         },
+        "grid_parallax_justify": {
+            "type": "checkbox",
+            "text": "Justify parallax"
+        },
         "grid_column_gap": {
             "label": "Column Gap",
             "description": "Set the size of the gap between the grid columns.",
@@ -1363,6 +1367,7 @@
                             "fields": [
                                 "grid_masonry",
                                 "grid_parallax",
+                                "grid_parallax_justify",
                                 "grid_column_gap",
                                 "grid_row_gap",
                                 "grid_divider",
