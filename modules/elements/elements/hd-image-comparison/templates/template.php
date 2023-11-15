@@ -42,6 +42,20 @@ $image_after = $this->el('image', [
     'thumbnail' => true,
 ]);
 
+// Range
+$range = $this->el('input', [
+
+    'class' => [
+        'hd-image-comparison-range',
+    ],
+
+    'type' => 'range',
+    'min' => 0,
+    'max' => 100,
+    'aria-label' => $props['slider_aria_label'],
+
+]);
+
 // Slider
 $slider = $this->el('div', [
 
@@ -122,6 +136,7 @@ $decoration = $this->el('div', [
         <?php if ($props['image_box_decoration']) : ?>
         <?= $decoration->end() ?>
         <?php endif ?>
+        <?= $range($props) ?>
         <?= $slider($props) ?></div>
     </div>
     <?php elseif ($props['image_before']) : ?>

@@ -11,15 +11,11 @@ class hdImgComp {
 		this.slider = el.querySelector('.hd-image-comparison-slider');
 		this.iconWidth = parseInt(this.slider.getAttribute('uk-icon').split('height: ')[1]);
 		if (!('marginRemove' in this.slider.dataset)) this.element.style.marginLeft = this.element.style.marginRight = this.iconWidth / 2 + 10 + 'px';
-		this.range = document.createElement('input');
-		this.range.type = 'range';
-		this.range.min = '0';
-		this.range.max = '100';
+		this.range = el.querySelector('.hd-image-comparison-range');
 		this.range.value = this.slider.dataset.start ? this.slider.dataset.start : 50;
 		this.range.style.marginLeft = `calc(-1 * (${this.slider.dataset.width}px + ${this.iconWidth}px) / 2)`;
 		this.range.style.width = `calc(100% + (${this.slider.dataset.width}px + ${this.iconWidth}px))`;
 		this.range.classList.add('hd-image-comparison-range');
-		el.insertBefore(this.range, this.slider);
 	}
 
 	init() {

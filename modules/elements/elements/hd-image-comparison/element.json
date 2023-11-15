@@ -11,6 +11,7 @@
         "image_before_label": "Before",
         "image_after_label": "After",
         "icon": "code",
+        "slider_aria_label": "Percentage of before image that is visible",
         "show_image_labels": true,
         "icon_width": 40,
         "slider_background": "default",
@@ -80,6 +81,11 @@
             "label": "Slider Icon",
             "description": "Click on the pencil to pick an icon from the icon library.",
             "type": "icon",
+            "source": true
+        },
+        "slider_aria_label": {
+            "label": "Slider ARIA Label",
+            "description": "Set a different slider ARIA label for this item.",
             "source": true
         },
         "show_image_labels": {
@@ -278,6 +284,7 @@
                         "image_after_alt",
                         "image_after_label",
                         "icon",
+                        "slider_aria_label",
                         "show_image_labels"
                     ]
                 },

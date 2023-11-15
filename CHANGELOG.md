@@ -1,16 +1,17 @@
 # Changelog
 
-## 1.7.3
+## 1.9.0
 
 ### Added
 
 - justify grid parallax option to slideshow grid element
+- aria label for range slider in image comparison element
 
 ### Changed
 
 - replace UIkit `isVisible` function by `IntersectionObserver` in counter and lottie element
 
-## 1.7.2
+## 1.8.0
 
 ### Added
 
