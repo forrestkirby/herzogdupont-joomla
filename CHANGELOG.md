@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.7.4
+
+### Changed
+
+- replace UIkit `isInView` function by `IntersectionObserver` in counter and lottie element
+
 ## 1.7.3
 
 ### Added
@@ -22,7 +28,7 @@
 - raised minimum Joomla version to 4.0.0
 - raised minimum PHP version to 8.0.0
 - raised minimum YOOtheme Pro version to 4.0.0
-- replace `isInView` by `isVisible`
+- replace UIkit `isInView` function by UIkit `isVisible` function in counter and lottie element
 
 ## 1.7.1
 
