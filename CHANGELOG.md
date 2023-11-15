@@ -1,16 +1,14 @@
 # Changelog
 
-## 1.7.4
-
-### Changed
-
-- replace UIkit `isVisible` function by `IntersectionObserver` in counter and lottie element
-
 ## 1.7.3
 
 ### Added
 
 - justify grid parallax option to slideshow grid element
+
+### Changed
+
+- replace UIkit `isVisible` function by `IntersectionObserver` in counter and lottie element
 
 ## 1.7.2
 
