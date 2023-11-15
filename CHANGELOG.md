@@ -4,7 +4,7 @@
 
 ### Changed
 
-- replace UIkit `isInView` function by `IntersectionObserver` in counter and lottie element
+- replace UIkit `isVisible` function by `IntersectionObserver` in counter and lottie element
 
 ## 1.7.3
 
