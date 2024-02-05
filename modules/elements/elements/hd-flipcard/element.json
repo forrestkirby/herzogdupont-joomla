@@ -240,6 +240,12 @@
             "show": "panel_style",
             "enable": "image && image_align != 'between'"
         },
+        "height_expand": {
+            "label": "Height",
+            "description": "Expand the height of the element to fill the available space in the column.",
+            "type": "checkbox",
+            "text": "Fill the available column space"
+        },
         "html_element": "${builder.html_element}",
         "title_style": {
             "label": "Style",
@@ -1583,6 +1589,7 @@
                                 "panel_style",
                                 "panel_padding",
                                 "panel_image_no_padding",
+                                "height_expand",
                                 "html_element"
                             ]
                         },
