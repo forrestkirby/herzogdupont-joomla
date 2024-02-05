@@ -72,7 +72,7 @@ $grid = $this->el('div', [
 $cell_title = $this->el('div', [
 
     'class' => [
-        'uk-width-{title_grid_width}[@{title_grid_breakpoint}]',
+        'uk-width-{!title_grid_width: expand}[@{title_grid_breakpoint}]',
         'uk-margin-remove-first-child',
     ],
 
@@ -81,6 +81,7 @@ $cell_title = $this->el('div', [
 $cell_content = $this->el('div', [
 
     'class' => [
+        'uk-width-auto[@{title_grid_breakpoint}] {@title_grid_width: expand}',
         'uk-margin-remove-first-child',
     ],
 
