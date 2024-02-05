@@ -4,7 +4,13 @@
 
 $uniqid = uniqid('hd-');
 
-$el = $this->el('div');
+$el = $this->el('div', [
+
+    'class' => [
+        'uk-inverse-{text_color}',
+    ],
+
+]);
 
 // Image Before
 $image_before = $this->el('image', [

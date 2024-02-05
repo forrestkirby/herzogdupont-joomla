@@ -16,6 +16,7 @@ if ($props['image_back']) {
 
             'uk-text-{image_back_svg_color} {@image_back_svg_inline}' => $this->isImage($props['image_back']) == 'svg',
             'uk-margin[-{image_back_margin}]-top {@!image_back_margin: remove} {@!image_back_box_decoration} {@!image_back_transition}' => $props['image_back_align'] == 'between' || ($props['image_back_align'] == 'bottom' && !($props['panel_back_style'] && $props['panel_back_image_no_padding'])),
+            'uk-inverse-{image_back_text_color}',
         ],
 
         'src' => $props['image_back'],

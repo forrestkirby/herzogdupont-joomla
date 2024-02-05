@@ -12,6 +12,8 @@ if ($props['image']) {
             'uk-transition-{image_transition} uk-transition-opaque' => $props['link'] && ($element['image_link'] || $element['panel_link']),
 
             'uk-text-{image_svg_color} {@image_svg_inline}' => $this->isImage($props['image']) == 'svg',
+
+            'uk-inverse-{0}' => $element['image_text_color'],
         ],
 
         'src' => $props['image'],

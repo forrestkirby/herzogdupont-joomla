@@ -856,6 +856,18 @@
             },
             "enable": "show_image && image_svg_inline"
         },
+        "image_text_color": {
+            "label": "Text Color",
+            "description": "Set light or dark color mode for text, buttons and controls if a sticky transparent navbar is displayed above.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Light": "light",
+                "Dark": "dark"
+            },
+            "source": true,
+            "enable": "show_image"
+        },
         "link_target": {
             "label": "Target",
             "type": "checkbox",
@@ -1091,7 +1103,8 @@
                                 "image_margin",
                                 "image_svg_inline",
                                 "image_svg_animate",
-                                "image_svg_color"
+                                "image_svg_color",
+                                "image_text_color"
                             ]
                         },
                         {
