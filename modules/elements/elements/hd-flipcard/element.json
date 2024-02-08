@@ -338,6 +338,7 @@
             "type": "select",
             "options": {
                 "Auto": "auto",
+                "Expand": "expand",
                 "80%": "4-5",
                 "75%": "3-4",
                 "66%": "2-3",
