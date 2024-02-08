@@ -11,6 +11,9 @@ if (!$element['show_image']) { $props['image_1'] = $props['image_2'] = $props['i
 
 // Override default settings
 $element['panel_style'] = $props['panel_style'] ?: $element['panel_style'];
+if ($element['grid_masonry']) {
+    $element['panel_expand'] = '';
+}
 
 // Image
 $image = trim($this->render("{$__dir}/template-slideshow", compact('props')));
@@ -46,6 +49,7 @@ $grid = $this->el('div', [
                 ? 'uk-grid-{image_grid_column_gap}'
                 : '[uk-grid-column-{image_grid_column_gap}] [uk-grid-row-{image_grid_row_gap}]'),
         'uk-flex-middle {@image_vertical_align}' => !($element['panel_style'] && $element['panel_image_no_padding']),
+        'uk-flex-1 {@panel_expand}',
     ],
 
     'uk-grid' => true,
@@ -69,6 +73,8 @@ $content = $this->el('div', [
         'uk-margin-remove-first-child {@panel_padding} {@has_panel_image_no_padding}',
         // 1 Column Content Width
         'uk-container uk-container-{panel_content_width}' => $image && $element['image_align'] == 'top' && !$element['panel_style'] && !$element['panel_padding'] && !$element['item_maxwidth'] && (!$element['grid_default'] || $element['grid_default'] == '1') && (!$element['grid_small'] || $element['grid_small'] == '1') && (!$element['grid_medium'] || $element['grid_medium'] == '1') && (!$element['grid_large'] || $element['grid_large'] == '1') && (!$element['grid_xlarge'] || $element['grid_xlarge'] == '1'),
+        'uk-flex-1 uk-flex uk-flex-column {@panel_expand}',
+        'uk-margin-remove-first-child {@panel_expand}' => !$image,
     ],
 
 ]);
@@ -78,6 +84,7 @@ $cell_content = $this->el('div', [
     'class' => [
         'uk-margin-remove-first-child' => !($element['panel_padding'] && $element['has_panel_image_no_padding']),
         'uk-flex uk-flex-middle {@image_vertical_align}' => $element['panel_style'] && $element['panel_image_no_padding'],
+        'uk-flex {@panel_expand}',
     ],
 
 ]);

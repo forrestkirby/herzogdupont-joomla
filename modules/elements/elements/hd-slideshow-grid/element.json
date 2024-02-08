@@ -438,6 +438,13 @@
             "show": "!panel_style",
             "enable": "show_image && image_align == 'top' && !panel_padding && !item_maxwidth && (!grid_default || grid_default == '1') && (!grid_small || grid_small == '1') && (!grid_medium || grid_medium == '1') && (!grid_large || grid_large == '1') && (!grid_xlarge || grid_xlarge == '1')"
         },
+        "panel_expand": {
+            "label": "Expand Content",
+            "description": "Expand the height of the content to fill the available space in the panel and push the link to the bottom.",
+            "type": "checkbox",
+            "text": "Fill the available panel space",
+            "enable": "!grid_masonry"
+        },
         "title_style": {
             "label": "Style",
             "description": "Title styles differ in font-size but may also come with a predefined color, size and font.",
@@ -1418,7 +1425,8 @@
                                 "panel_padding",
                                 "panel_image_no_padding",
                                 "item_maxwidth",
-                                "panel_content_width"
+                                "panel_content_width",
+                                "panel_expand"
                             ]
                         },
                         {

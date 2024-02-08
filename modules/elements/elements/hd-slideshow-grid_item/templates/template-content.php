@@ -44,6 +44,7 @@ $content = $this->el('div', [
         'uk-column-divider {@content_column} {@content_column_divider}',
         'uk-margin[-{content_margin}]-top {@!content_margin: remove}',
         'uk-margin-remove-bottom [uk-margin-{content_margin: remove}-top]' => !in_array($element['content_style'], ['', 'text-meta', 'text-lead', 'text-small', 'text-large']),
+        'uk-flex-1 {@panel_expand}',
     ],
 
 ]);
@@ -65,6 +66,7 @@ $grid = $this->el('div', [
         $element['title_grid_column_gap'] == $element['title_grid_row_gap'] ? 'uk-grid-{title_grid_column_gap}' : '[uk-grid-column-{title_grid_column_gap}] [uk-grid-row-{title_grid_row_gap}]',
         'uk-margin[-{title_margin}]-top {@!title_margin: remove} {@image_align: top}' => !$props['meta'] || $element['meta_align'] != 'above-title',
         'uk-margin[-{meta_margin}]-top {@!meta_margin: remove} {@image_align: top} {@meta_align: above-title}' => $props['meta'],
+        'uk-flex-1 {@panel_expand}',
     ],
 
     'uk-grid' => true,
@@ -84,6 +86,7 @@ $cell_content = $this->el('div', [
     'class' => [
         'uk-width-auto[@{title_grid_breakpoint}] {@title_grid_width: expand}',
         'uk-margin-remove-first-child',
+        'uk-flex uk-flex-column {@panel_expand}',
     ],
 
 ]);
