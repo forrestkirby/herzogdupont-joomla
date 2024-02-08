@@ -250,6 +250,9 @@ $el = $this->el($props['html_element'] ?: 'div', [
         'hd-flipcard',
         'hd-flipcard-{flip_animation}',
         'hd-flipcard-3d {@3d_effect}',
+
+        // Expand to column height
+        'uk-flex-1 {@height_expand}',
     ],
 
     'data-flipmode' => [
