@@ -98,6 +98,18 @@
             "source": true,
             "enable": "image"
         },
+        "image_text_color": {
+            "label": "Text Color",
+            "description": "Set light or dark color mode for text, buttons and controls if a sticky transparent navbar is displayed above.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Light": "light",
+                "Dark": "dark"
+            },
+            "source": true,
+            "enable": "image"
+        },
         "status": "${builder.statusItem}",
         "source": "${builder.source}"
     },
@@ -132,7 +144,7 @@
                         {
                             "label": "Image",
                             "type": "group",
-                            "fields": ["image_focal_point"]
+                            "fields": ["image_focal_point", "image_text_color"]
                         }
                     ]
                 },

@@ -175,6 +175,17 @@
             "text": "Inverse style",
             "enable": "$match(image_box_decoration, '^(default|primary|secondary)$')"
         },
+        "text_color": {
+            "label": "Text Color",
+            "description": "Set light or dark color mode for text, buttons and controls if a sticky transparent navbar is displayed above.",
+            "type": "select",
+            "options": {
+                "None": "",
+                "Light": "light",
+                "Dark": "dark"
+            },
+            "source": true
+        },
         "icon_color": {
             "label": "Slider Icon Color",
             "description": "Select the icon color.",
@@ -302,7 +313,8 @@
                                 "image_border",
                                 "image_box_shadow",
                                 "image_box_decoration",
-                                "image_box_decoration_inverse"
+                                "image_box_decoration_inverse",
+                                "text_color"
                             ]
                         },
                         {

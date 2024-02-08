@@ -7,6 +7,7 @@ if ($props['icon'] && !$props['image']) { $element['panel_image_no_padding'] = '
 
 // Override default settings
 $element['panel_style'] = $props['panel_style'] ?: $element['panel_style'];
+$element['image_text_color'] = $props['image_text_color'] ?: $element['image_text_color'];
 
 // Image
 $props['image'] = $this->render("{$__dir}/template-image", compact('props'));
