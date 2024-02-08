@@ -1244,6 +1244,13 @@
             "source": true,
             "enable": "image_back"
         },
+        "image_back_loading": {
+            "label": "Loading",
+            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
+            "type": "checkbox",
+            "text": "Load image eagerly",
+            "enable": "image_back"
+        },
         "image_back_border": {
             "label": "Border",
             "description": "Select the image border style.",
@@ -1444,13 +1451,6 @@
                 "Danger": "danger"
             },
             "enable": "image_back && image_back_svg_inline"
-        },
-        "image_back_loading": {
-            "label": "Loading",
-            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
-            "type": "checkbox",
-            "text": "Load image eagerly",
-            "enable": "image_back"
         },
         "image_back_text_color": {
             "label": "Text Color",
@@ -1758,6 +1758,7 @@
                             "divider": true,
                             "fields": [
                                 "image_back_focal_point",
+                                "image_back_loading",
                                 "image_back_border",
                                 "image_back_box_shadow",
                                 "image_back_box_decoration",
@@ -1777,7 +1778,6 @@
                                 "image_back_svg_inline",
                                 "image_back_svg_animate",
                                 "image_back_svg_color",
-                                "image_back_loading",
                                 "image_back_text_color"
                             ]
                         },
