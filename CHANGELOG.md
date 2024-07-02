@@ -6,10 +6,19 @@
 
 - justify grid parallax option to slideshow grid element
 - aria label for range slider in image comparison element
+- expand to title grid width option to flipcard, slidehow grid and timeline elements
+- expand content option to slideshow grid element
+- height expand option to flipcard element
+- text color option for transparent header to flipcard, image comparison and timeline elements
 
 ### Changed
 
 - replace UIkit `isVisible` function by `IntersectionObserver` in counter and lottie element
+- raised minimum YOOtheme Pro version to 4.3.0
+
+### Fixed
+
+- automatically recompile style
 
 ## 1.8.0
 

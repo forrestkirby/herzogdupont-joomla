@@ -3,7 +3,7 @@
 /**
  * @package   Herzog Dupont for YOOtheme Pro
  * @author    Thomas Weidlich
- * @copyright Copyright (C) 2021-2023 Thomas Weidlich
+ * @copyright Copyright (C) 2021-2024 Thomas Weidlich
  * @license   GNU General Public License version 3, see LICENSE
  */
 
