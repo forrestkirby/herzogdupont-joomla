@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2019-2023 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2019-2025 Thomas Weidlich GNU GPL v3 */
 
 $cx = $cy = $props['circle_radius'] * 1.1;
 $circleWidth = $circleHeight = $cx * 2;
@@ -127,7 +127,7 @@ $unit_part = $props['unit'] ? $unitEl($props, ' ' . $props['unit']) : ''; // Add
             <div class="uk-position-center uk-overlay">
                 <?php // Conditionally render unit and number based on unit_position_before
                 if ($props['unit_position_before'] && $props['unit']) {
-                    echo $unitEl($props, $props['unit']);
+                    echo $unitEl($props, $props['unit']); // Unit first, no space
                     echo $number_part;
                 } elseif ($props['number']) {
                     echo $number_part;
