@@ -12,6 +12,7 @@
         "number": 1000,
         "unit": "",
         "unit_position_before": false,
+        "unit_space": true,
         "text_style": "",
         "text_color": "",
         "number_size": "",
@@ -46,7 +47,7 @@
         },
         "unit": {
             "label": "Unit",
-            "description": "Enter the text that will be displayed after the counter.",
+            "description": "Enter the text that will be displayed before or after the counter.",
             "type": "text",
             "source": true
         },
@@ -54,6 +55,13 @@
             "label": "Unit Position",
             "type": "checkbox",
             "text": "Display the unit before the number",
+            "enable": "unit"
+        },
+        "unit_space": {
+            "label": "Space Before/After Unit",
+            "description": "Add a space between the number and the unit.",
+            "type": "checkbox",
+            "text": "Add space",
             "enable": "unit"
         },
         "text_style": {
@@ -256,7 +264,8 @@
                         "text",
                         "number",
                         "unit",
-                        "unit_position_before"
+                        "unit_position_before",
+                        "unit_space"
                     ]
                 },
                 {

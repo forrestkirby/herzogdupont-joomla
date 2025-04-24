@@ -92,9 +92,31 @@ $unitEl = $this->el('span', [
 
 ]);
 
-// Prepare number and unit parts
-$number_part = $props['number'] ? $numberEl($props, $props['number']) : '';
-$unit_part = $props['unit'] ? $unitEl($props, ' ' . $props['unit']) : ''; // Add space conditionally later
+// Prepare number and unit parts - Refactored
+$number_html = $props['number'] ? $numberEl($props, $props['number']) : '';
+$unit_html = $props['unit'] ? $unitEl($props, $props['unit']) : '';
+$number_unit_output = '';
+$use_space = !empty($props['unit_space']); // Check the new option (assuming it's boolean)
+
+if ($props['unit_position_before'] && $unit_html) {
+    // Unit first
+    $number_unit_output = $unit_html;
+    if ($number_html) {
+        $number_unit_output .= ($use_space ? ' ' : '') . $number_html;
+    }
+} elseif ($number_html) {
+    // Number first
+    $number_unit_output = $number_html;
+    if ($unit_html) {
+        $number_unit_output .= ($use_space ? ' ' : '') . $unit_html;
+    }
+} elseif ($unit_html) {
+    // Only unit
+    $number_unit_output = $unit_html;
+}
+
+// Prepare text part
+$text_output = $props['text'] ? $textEl($props) . '<br>' . $props['text'] . '</span>' : '';
 
 ?>
 <?= $el($props, $attrs) ?>
@@ -126,17 +148,9 @@ $unit_part = $props['unit'] ? $unitEl($props, ' ' . $props['unit']) : ''; // Add
 
             <div class="uk-position-center uk-overlay">
                 <?php // Conditionally render unit and number based on unit_position_before
-                if ($props['unit_position_before'] && $props['unit']) {
-                    echo $unitEl($props, $props['unit']); // Unit first, no space
-                    echo $number_part;
-                } elseif ($props['number']) {
-                    echo $number_part;
-                    if ($props['unit']) {
-                        echo $unitEl($props, ' ' . $props['unit']); // Number first, add space before unit
-                    }
-                }
+                echo $number_unit_output;
                 ?>
-                <?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></span><?php endif ?>
+                <?php if ($text_output) : ?><?= $text_output ?><?php endif ?>
             </div>
 
         </div>
@@ -145,17 +159,9 @@ $unit_part = $props['unit'] ? $unitEl($props, ' ' . $props['unit']) : ''; // Add
 
         <div>
             <?php // Conditionally render unit and number based on unit_position_before
-            if ($props['unit_position_before'] && $props['unit']) {
-                echo $unitEl($props, $props['unit'] . ' '); // Unit first, add space after
-                echo $number_part;
-            } elseif ($props['number']) {
-                echo $number_part;
-                if ($props['unit']) {
-                    echo $unitEl($props, ' ' . $props['unit']); // Number first, add space before unit
-                }
-            }
+            echo $number_unit_output;
             ?>
-            <?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></span><?php endif ?>
+            <?php if ($text_output) : ?><?= $text_output ?><?php endif ?>
         </div>
 
     <?php endif; ?>
