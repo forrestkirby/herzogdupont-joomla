@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2019-2024 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2019-2023 Thomas Weidlich GNU GPL v3 */
 
 $cx = $cy = $props['circle_radius'] * 1.1;
 $circleWidth = $circleHeight = $cx * 2;
@@ -92,6 +92,10 @@ $unitEl = $this->el('span', [
 
 ]);
 
+// Prepare number and unit parts
+$number_part = $props['number'] ? $numberEl($props, $props['number']) : '';
+$unit_part = $props['unit'] ? $unitEl($props, ' ' . $props['unit']) : ''; // Add space conditionally later
+
 ?>
 <?= $el($props, $attrs) ?>
 
@@ -121,8 +125,17 @@ $unitEl = $this->el('span', [
             </svg>
 
             <div class="uk-position-center uk-overlay">
-                <?php if ($props['number']) : ?><?= $numberEl($props) ?><?= $props['number'] ?></span><?php endif ?>
-                <?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= ' ' ?><?= $props['unit'] ?></span><?php endif ?>
+                <?php // Conditionally render unit and number based on unit_position_before
+                if ($props['unit_position_before'] && $props['unit']) {
+                    echo $unitEl($props, $props['unit']);
+                    echo $number_part;
+                } elseif ($props['number']) {
+                    echo $number_part;
+                    if ($props['unit']) {
+                        echo $unitEl($props, ' ' . $props['unit']); // Number first, add space before unit
+                    }
+                }
+                ?>
                 <?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></span><?php endif ?>
             </div>
 
@@ -131,8 +144,17 @@ $unitEl = $this->el('span', [
     <?php else : ?>
 
         <div>
-            <?php if ($props['number']) : ?><?= $numberEl($props) ?><?= $props['number'] ?></span><?php endif ?>
-            <?php if ($props['unit']) : ?><?= $unitEl($props) ?><?= ' ' ?><?= $props['unit'] ?></span><?php endif ?>
+            <?php // Conditionally render unit and number based on unit_position_before
+            if ($props['unit_position_before'] && $props['unit']) {
+                echo $unitEl($props, $props['unit'] . ' '); // Unit first, add space after
+                echo $number_part;
+            } elseif ($props['number']) {
+                echo $number_part;
+                if ($props['unit']) {
+                    echo $unitEl($props, ' ' . $props['unit']); // Number first, add space before unit
+                }
+            }
+            ?>
             <?php if ($props['text']) : ?><?= $textEl($props) ?><?= '<br>' ?><?= $props['text'] ?></span><?php endif ?>
         </div>
 

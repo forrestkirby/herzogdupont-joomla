@@ -11,6 +11,7 @@
         "text": "",
         "number": 1000,
         "unit": "",
+        "unit_position_before": false,
         "text_style": "",
         "text_color": "",
         "number_size": "",
@@ -48,6 +49,12 @@
             "description": "Enter the text that will be displayed after the counter.",
             "type": "text",
             "source": true
+        },
+        "unit_position_before": {
+            "label": "Unit Position",
+            "type": "checkbox",
+            "text": "Display the unit before the number",
+            "enable": "unit"
         },
         "text_style": {
             "label": "Text Style",
@@ -248,7 +255,8 @@
                     "fields": [
                         "text",
                         "number",
-                        "unit"
+                        "unit",
+                        "unit_position_before"
                     ]
                 },
                 {
