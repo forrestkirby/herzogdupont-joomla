@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.9.1
+
+### Added
+
+- option to place unit before number on counter element
+- option to add space between number and unit on counter element
+
+### Changed
+
+- refactored template logic for conciseness in counter element
+
 ## 1.9.0
 
 ### Added
