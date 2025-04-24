@@ -96,7 +96,7 @@ $unitEl = $this->el('span', [
 $number_html = $props['number'] ? $numberEl($props, $props['number']) : '';
 $unit_html = $props['unit'] ? $unitEl($props, $props['unit']) : '';
 $number_unit_output = '';
-$use_space = !empty($props['unit_space']); // Check the new option (assuming it's boolean)
+$use_space = !empty($props['unit_space']); // Check the new option
 
 if ($props['unit_position_before'] && $unit_html) {
     // Unit first
