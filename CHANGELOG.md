@@ -4,12 +4,16 @@
 
 ### Added
 
-- option to place unit before number on counter element
-- option to add space between number and unit on counter element
+- option to place start unit before number on counter element
+- option to add space between number and start unit on counter element
+- option for a second unit (end unit) after the number on counter element
+- options for space and size for the end unit on counter element
 
 ### Changed
 
 - refactored template logic for conciseness in counter element
+- renamed original unit settings/variables to use 'start_unit' for clarity in counter element
+- renamed unit size settings to unit style settings (e.g., 'Start Unit Size' to 'Start Unit Style') in counter element
 
 ## 1.9.0
 
@@ -53,8 +57,7 @@
 
 ### Fixed
 
-- error if percentage is empty in counter element
-- render conditions in toggle element
+- automatically recompile style
 
 ## 1.7.0
 

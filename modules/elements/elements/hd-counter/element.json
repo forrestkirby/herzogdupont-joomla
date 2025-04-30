@@ -10,9 +10,12 @@
     "defaults": {
         "text": "",
         "number": 1000,
-        "unit": "",
-        "unit_position_before": false,
-        "unit_space": true,
+        "unit_start": "",
+        "unit_start_space": true,
+        "unit_end": "",
+        "unit_end_space": true,
+        "unit_start_style": "number-size",
+        "unit_end_style": "number-size",
         "text_style": "",
         "text_color": "",
         "number_size": "",
@@ -45,24 +48,81 @@
             "type": "number",
             "source": true
         },
-        "unit": {
-            "label": "Unit",
-            "description": "Enter the text that will be displayed before or after the counter.",
+        "unit_start": {
+            "label": "Start Unit",
+            "description": "Enter the text that will be displayed before the counter.",
             "type": "text",
             "source": true
         },
-        "unit_position_before": {
-            "label": "Unit Position",
-            "type": "checkbox",
-            "text": "Display the unit before the number",
-            "enable": "unit"
-        },
-        "unit_space": {
-            "label": "Space Before/After Unit",
-            "description": "Add a space between the number and the unit.",
+        "unit_start_space": {
+            "label": "Space After Start Unit",
+            "description": "Add a space between the start unit and the number.",
             "type": "checkbox",
             "text": "Add space",
-            "enable": "unit"
+            "enable": "unit_start"
+        },
+        "unit_end": {
+            "label": "End Unit",
+            "description": "Enter the text that will be displayed after the counter.",
+            "type": "text",
+            "source": true
+        },
+        "unit_end_space": {
+            "label": "Space Before End Unit",
+            "description": "Add a space between the number and the end unit.",
+            "type": "checkbox",
+            "text": "Add space",
+            "enable": "unit_end"
+        },
+        "unit_start_style": {
+            "label": "Start Unit Style",
+            "description": "Select a predefined style for the start unit.",
+            "type": "select",
+            "options": {
+                "Same as number size": "number-size",
+                "None": "",
+                "Text Meta": "text-meta",
+                "Text Lead": "text-lead",
+                "Text Small": "text-small",
+                "Text Large": "text-large",
+                "Heading 2X-Large": "heading-2xlarge",
+                "Heading X-Large": "heading-xlarge",
+                "Heading Large": "heading-large",
+                "Heading Medium": "heading-medium",
+                "Heading Small": "heading-small",
+                "Heading H1": "h1",
+                "Heading H2": "h2",
+                "Heading H3": "h3",
+                "Heading H4": "h4",
+                "Heading H5": "h5",
+                "Heading H6": "h6"
+            },
+            "enable": "unit_start"
+        },
+            "unit_end_style": {
+                "label": "End Unit Style",
+                "description": "Select a predefined style for the end unit.",
+                "type": "select",
+                "options": {
+                    "Same as number size": "number-size",
+                    "None": "",
+                    "Text Meta": "text-meta",
+                    "Text Lead": "text-lead",
+                    "Text Small": "text-small",
+                    "Text Large": "text-large",
+                    "Heading 2X-Large": "heading-2xlarge",
+                    "Heading X-Large": "heading-xlarge",
+                    "Heading Large": "heading-large",
+                    "Heading Medium": "heading-medium",
+                    "Heading Small": "heading-small",
+                    "Heading H1": "h1",
+                    "Heading H2": "h2",
+                    "Heading H3": "h3",
+                    "Heading H4": "h4",
+                    "Heading H5": "h5",
+                    "Heading H6": "h6"
+                },
+                "enable": "unit_end"    
         },
         "text_style": {
             "label": "Text Style",
@@ -143,31 +203,6 @@
                 "Danger": "danger"
             },
             "enable": "number"
-        },
-        "unit_size": {
-            "label": "Unit Size",
-            "description": "Select a predefined unit style, including color, size and font-family.",
-            "type": "select",
-            "options": {
-                "Same as number size": "number-size",
-                "None": "",
-                "Text Meta": "text-meta",
-                "Text Lead": "text-lead",
-                "Text Small": "text-small",
-                "Text Large": "text-large",
-                "Heading 2X-Large": "heading-2xlarge",
-                "Heading X-Large": "heading-xlarge",
-                "Heading Large": "heading-large",
-                "Heading Medium": "heading-medium",
-                "Heading Small": "heading-small",
-                "Heading H1": "h1",
-                "Heading H2": "h2",
-                "Heading H3": "h3",
-                "Heading H4": "h4",
-                "Heading H5": "h5",
-                "Heading H6": "h6"
-            },
-            "enable": "unit"
         },
         "separator_locale": {
             "label": "Separator locale",
@@ -263,9 +298,10 @@
                     "fields": [
                         "text",
                         "number",
-                        "unit",
-                        "unit_position_before",
-                        "unit_space"
+                        "unit_start",
+                        "unit_start_space",
+                        "unit_end",
+                        "unit_end_space"
                     ]
                 },
                 {
@@ -275,7 +311,8 @@
                         "text_color",
                         "number_size",
                         "number_color",
-                        "unit_size",
+                        "unit_start_style",
+                        "unit_end_style",
                         "separator_locale",
                         "show_circle",
                         "percentage",
