@@ -61,6 +61,7 @@ $el = $this->el($props['item_element'] ?: 'div', [
 
     'class' => [
         'el-item',
+        'uk-margin[-{item_margin}]-top',
         'uk-margin-auto uk-width-{item_maxwidth}',
 
         // Match link container height
