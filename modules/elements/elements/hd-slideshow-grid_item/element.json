@@ -5,11 +5,11 @@
     "width": 500,
     "placeholder": {
         "props": {
-            "image_1": "${url:~yootheme/theme/assets/images/element-image-placeholder.png}",
+            "image_1": "${url:~assets/theme/images/element-image-placeholder.png}",
             "video_1": "",
-            "image_2": "${url:~yootheme/theme/assets/images/element-image-placeholder.png}",
+            "image_2": "${url:~assets/theme/images/element-image-placeholder.png}",
             "video_2": "",
-            "image_3": "${url:~yootheme/theme/assets/images/element-image-placeholder.png}",
+            "image_3": "${url:~assets/theme/images/element-image-placeholder.png}",
             "video_3": "",
             "title": "Title",
             "meta": "",
