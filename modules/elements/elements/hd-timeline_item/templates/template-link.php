@@ -2,13 +2,6 @@
 
 /* Herzog Dupont for YOOtheme Pro Copyright (C) 2016-2024 YOOtheme GmbH, 2019-2024 Thomas Weidlich GNU GPL v3 */
 
-namespace YOOtheme;
-
-/**
- * @var ImageProvider $imageProvider
- */
-$imageProvider = app(ImageProvider::class);
-
 $link = $props['link'] ? $this->el('a', [
     'href' => $props['link'],
     'aria-label' => $props['link_aria_label'] ?: $element['link_aria_label'],

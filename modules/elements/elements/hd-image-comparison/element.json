@@ -20,8 +20,8 @@
     },
     "placeholder": {
         "props": {
-            "image_before": "${url:~yootheme/theme/assets/images/element-image-placeholder.png}",
-            "image_after": "${url:~yootheme/theme/assets/images/element-image-placeholder.png}"
+            "image_before": "${url:~assets/theme/images/element-image-placeholder.png}",
+            "image_after": "${url:~assets/theme/images/element-image-placeholder.png}"
         }
     },
     "templates": {
@@ -130,7 +130,7 @@
         },
         "image_loading": {
             "label": "Loading",
-            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",   
+            "description": "By default, images are loaded lazy. Enable eager loading for images in the initial viewport.",
             "type": "checkbox",
             "text": "Load image eagerly"
         },
