@@ -4,7 +4,7 @@
 	
 	$items = [];
 
-	foreach (['image_1', 'image_2', 'image_3', 'video_1', 'video_2', 'video_3'] as $key) {
+	foreach (['image_1', 'image_2', 'image_3', 'image_4', 'video_1', 'video_2', 'video_3', 'video_4'] as $key) {
 		if ($props[$key]) {
 			$items[] = $props[$key];
 		}
@@ -18,7 +18,7 @@
 <div>
 <?php endif ?>
 
-	<?php for($i = 0; $i<3; $i++) : ?>
+	<?php for($i = 0; $i<4; $i++) : ?>
 	<?php if (count($items) > 1) : ?>
 	<li>
 	<?php endif ?>

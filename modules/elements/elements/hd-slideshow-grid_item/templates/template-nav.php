@@ -55,7 +55,7 @@ $container = $this->el('div', [
 <?php endif ?>
 
 <?= $nav($element, $element['nav_below'] && !$element['nav_color'] ? $container->attrs : []) ?>
-    <?php for($i = 1, $j = 0; $i <= 3; $i++) :
+    <?php for($i = 1, $j = 0; $i <= 4; $i++) :
 
         // Image
         $image = $this->el('image', [
