@@ -14,11 +14,13 @@
 ### Changed
 
 - replace UIkit `isVisible` function by `IntersectionObserver` in counter and lottie element
-- raised minimum YOOtheme Pro version to 4.3.0
+- YOOtheme Pro 5.0.0 compatibility
+- raised minimum YOOtheme Pro version to 5.0.0
 
 ### Fixed
 
 - automatically recompile style
+- fix item margin top not applied in timeline element
 
 ## 1.8.0
 
