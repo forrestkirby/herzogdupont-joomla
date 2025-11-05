@@ -14,7 +14,7 @@ class plgSystemHerzogdupontInstallerScript
 {
     protected $minimumPHPVersion = '8.1.0';
     protected $minimumJoomlaVersion = '5.0.0';
-    protected $minimumYOOthemeVersion = '5.0.0';
+    protected $minimumYOOthemeVersion = '5.0.0-beta.1';
 
     public function install($parent)
     {
