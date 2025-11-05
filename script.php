@@ -12,9 +12,9 @@ defined('_JEXEC') or die;
 
 class plgSystemHerzogdupontInstallerScript
 {
-    protected $minimumPHPVersion = '8.0.0';
-    protected $minimumJoomlaVersion = '4.0.0';
-    protected $minimumYOOthemeVersion = '4.3.0';
+    protected $minimumPHPVersion = '8.1.0';
+    protected $minimumJoomlaVersion = '5.0.0';
+    protected $minimumYOOthemeVersion = '5.0.0';
 
     public function install($parent)
     {
