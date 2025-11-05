@@ -1,4 +1,4 @@
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2019-2024 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2019-2025 Thomas Weidlich GNU GPL v3 */
 
 function countUp(el, start, end, duration, separatorLocale) {
 	let range = end - start;

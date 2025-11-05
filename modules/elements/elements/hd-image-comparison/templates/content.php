@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2020-2024 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2020-2025 Thomas Weidlich GNU GPL v3 */
 
 if ($props['image_before']) : ?>
 <figure>

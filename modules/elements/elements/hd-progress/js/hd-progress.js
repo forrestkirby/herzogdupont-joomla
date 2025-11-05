@@ -1,4 +1,4 @@
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2018-2024 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2018-2025 Thomas Weidlich GNU GPL v3 */
 
 UIkit.util.ready(() => {
 

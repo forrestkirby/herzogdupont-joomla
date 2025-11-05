@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016-2024 YOOtheme GmbH, 2019-2024 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016-2025 YOOtheme GmbH, 2019-2025 Thomas Weidlich GNU GPL v3 */
 
 // Image
 if ($props['image_back']) {

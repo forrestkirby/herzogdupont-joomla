@@ -1,6 +1,6 @@
 <?php
 
-/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016-2024 YOOtheme GmbH, 2019-2024 Thomas Weidlich GNU GPL v3 */
+/* Herzog Dupont for YOOtheme Pro Copyright (C) 2016-2025 YOOtheme GmbH, 2019-2025 Thomas Weidlich GNU GPL v3 */
 
 $link_back = $props['link_back'] ? $this->el('a', [
     'href' => ['{link_back}'],
