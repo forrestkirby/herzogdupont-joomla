@@ -16,6 +16,8 @@
 - replace UIkit `isVisible` function by `IntersectionObserver` in counter and lottie element
 - YOOtheme Pro 5.0.0 compatibility
 - raised minimum YOOtheme Pro version to 5.0.0
+- raised minimum Joomla version to 5.0.0
+- raised minimum PHP version to 8.1.0
 
 ### Fixed
 
