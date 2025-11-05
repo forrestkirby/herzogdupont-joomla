@@ -22,7 +22,7 @@
 ### Fixed
 
 - automatically recompile style
-- fix item margin top not applied in timeline element
+- item margin top not applied in timeline element
 
 ## 1.8.0
 
