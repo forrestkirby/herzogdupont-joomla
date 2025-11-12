@@ -11,6 +11,8 @@
             "video_2": "",
             "image_3": "${url:~assets/theme/images/element-image-placeholder.png}",
             "video_3": "",
+            "image_4": "${url:~assets/theme/images/element-image-placeholder.png}",
+            "video_4": "",
             "title": "Title",
             "meta": "",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -92,6 +94,31 @@
         },
         "thumbnail_3": {
             "label": "Navigation Thumbnail 3",
+            "description": "This option is only used if the thumbnail navigation is set.",
+            "type": "image",
+            "source": true
+        },
+        "image_4": {
+            "label": "Image 4",
+            "type": "image",
+            "source": true,
+            "show": "!video_4",
+            "altRef": "%name%_alt"
+        },
+        "image_4_alt": {
+            "label": "Image 4 Alt",
+            "source": true,
+            "show": "image_4 && !video_4"
+        },
+        "video_4": {
+            "label": "Video 4",
+            "description": "Select a video file or enter a link from <a href=\"https://www.youtube.com\" target=\"_blank\">YouTube</a> or <a href=\"https://vimeo.com\" target=\"_blank\">Vimeo</a>.",
+            "type": "video",
+            "source": true,
+            "show": "!image_4"
+        },
+        "thumbnail_4": {
+            "label": "Navigation Thumbnail 4",
             "description": "This option is only used if the thumbnail navigation is set.",
             "type": "image",
             "source": true
@@ -198,6 +225,24 @@
             "source": true,
             "enable": "image_3"
         },
+        "image_4_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Center Right": "center-right",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "source": true,
+            "enable": "image_4"
+        },
         "thumbnail_1_focal_point": {
             "label": "Focal Point",
             "description": "Set a focal point to adjust the image focus when cropping.",
@@ -252,6 +297,24 @@
             "source": true,
             "enable": "thumbnail_3"
         },
+        "thumbnail_4_focal_point": {
+            "label": "Focal Point",
+            "description": "Set a focal point to adjust the image focus when cropping.",
+            "type": "select",
+            "options": {
+                "Top Left": "top-left",
+                "Top Center": "top-center",
+                "Top Right": "top-right",
+                "Center Left": "center-left",
+                "Center Center": "",
+                "Center Right": "center-right",
+                "Bottom Left": "bottom-left",
+                "Bottom Center": "bottom-center",
+                "Bottom Right": "bottom-right"
+            },
+            "source": true,
+            "enable": "thumbnail_4"
+        },
         "status": "${builder.statusItem}",
         "source": "${builder.source}"
     },
@@ -274,6 +337,10 @@
                         "image_3_alt",
                         "video_3",
                         "thumbnail_3",
+                        "image_4",
+                        "image_4_alt",
+                        "video_4",
+                        "thumbnail_4",
                         "title",
                         "meta",
                         "content",
@@ -290,42 +357,72 @@
                             "label": "Panel",
                             "type": "group",
                             "divider": true,
-                            "fields": ["panel_style", "item_element"]
+                            "fields": [
+                                "panel_style",
+                                "item_element"
+                            ]
                         },
                         {
                             "label": "Image 1",
                             "type": "group",
                             "divider": true,
-                            "fields": ["image_1_focal_point"]
+                            "fields": [
+                                "image_1_focal_point"
+                            ]
                         },
                         {
                             "label": "Thumbnail 1",
                             "type": "group",
                             "divider": true,
-                            "fields": ["thumbnail_1_focal_point"]
+                            "fields": [
+                                "thumbnail_1_focal_point"
+                            ]
                         },
                         {
                             "label": "Image 2",
                             "type": "group",
                             "divider": true,
-                            "fields": ["image_2_focal_point"]
+                            "fields": [
+                                "image_2_focal_point"
+                            ]
                         },
                         {
                             "label": "Thumbnail 2",
                             "type": "group",
                             "divider": true,
-                            "fields": ["thumbnail_2_focal_point"]
+                            "fields": [
+                                "thumbnail_2_focal_point"
+                            ]
                         },
                         {
                             "label": "Image 3",
                             "type": "group",
                             "divider": true,
-                            "fields": ["image_3_focal_point"]
+                            "fields": [
+                                "image_3_focal_point"
+                            ]
                         },
                         {
                             "label": "Thumbnail 3",
                             "type": "group",
-                            "fields": ["thumbnail_3_focal_point"]
+                            "fields": [
+                                "thumbnail_3_focal_point"
+                            ]
+                        },
+                        {
+                            "label": "Image 4",
+                            "type": "group",
+                            "divider": true,
+                            "fields": [
+                                "image_4_focal_point"
+                            ]
+                        },
+                        {
+                            "label": "Thumbnail 4",
+                            "type": "group",
+                            "fields": [
+                                "thumbnail_4_focal_point"
+                            ]
                         }
                     ]
                 },
