@@ -18,12 +18,12 @@ return [
             }
 
             // Don't render element if content fields are empty
-            return Str::length($node->props['title']) ||
-                Str::length($node->props['meta']) ||
-                Str::length($node->props['content']) ||
+            return $node->props['title'] != '' ||
+                $node->props['meta'] != '' ||
+                $node->props['content'] != '' ||
                 $node->props['image'] ||
-                $node->props['icon'] ||
-                $node->props['link'];
+                $node->props['video'] ||
+                $node->props['icon'];
         },
     ],
 

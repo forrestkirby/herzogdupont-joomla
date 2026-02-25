@@ -1,10 +1,16 @@
 # Changelog
 
+## 1.9.2
+
+### Fixed
+
+- render conditions across all elements
+
 ## 1.9.1
 
 ### Fixed
 
-- check for empty fields in flipcard element
+- render conditions in flipcard element
 
 ## 1.9.0
 

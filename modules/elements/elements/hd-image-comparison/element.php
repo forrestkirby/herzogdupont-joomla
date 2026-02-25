@@ -16,7 +16,8 @@ return [
             $metadata->set('script:builder-hd-image-comparison', ['src' => Path::get('./js/hd-image-comparison.js'), 'defer' => true]);
 
             // Don't render element if content fields are empty
-            return ($node->props['image_before'] || $node->props['image_after']);
+            return $node->props['image_before'] ||
+                $node->props['image_after'];
         },
     ],
 

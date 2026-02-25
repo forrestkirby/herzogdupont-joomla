@@ -16,7 +16,7 @@ return [
             $metadata->set('script:builder-hd-lottie', ['src' => Path::get('./js/hd-lottie.js'), 'defer' => true]);
 
             // Don't render element if content fields are empty
-            return (bool) strlen($node->props['path']);
+            return $node->props['path'] != '';
         },
     ],
 ];

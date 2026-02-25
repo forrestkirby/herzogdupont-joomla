@@ -16,7 +16,10 @@ return [
             $metadata->set('script:builder-hd-counter', ['src' => Path::get('./js/hd-counter.js'), 'defer' => true]);
 
             // Don't render element if content fields are empty
-            return Str::length($node->props['text']) || $node->props['number'] || ($node->props['percentage'] && $node->props['duration']);
+            return $node->props['text'] != '' ||
+                $node->props['number']  ||
+                ($node->props['percentage'] &&
+                    $node->props['duration']);
         },
     ],
 

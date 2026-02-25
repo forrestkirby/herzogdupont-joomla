@@ -8,7 +8,11 @@ return [
     'transforms' => [
         'render' => function ($node) {
             // Don't render element if content fields are empty
-            return (Str::length($node->props['btn_label']) || $node->props['icon']) && (Str::length($node->props['content']) || Str::length($node->props['content2']) || Str::length($node->props['target']));
+            return ($node->props['btn_label'] != '' ||
+                    $node->props['icon']) &&
+                ($node->props['content'] != '' ||
+                    $node->props['content2'] != '' ||
+                    $node->props['target'] != '');
         },
     ],
 
