@@ -1,4 +1,6 @@
 # Herzog Dupont Elements for YOOtheme Pro Joomla! Plugin
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fforrestkirby%2Fherzogdupont-joomla.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fforrestkirby%2Fherzogdupont-joomla?ref=badge_shield)
+
 
 Herzog Dupont Elements for YOOtheme Pro is an extension for the [YOOtheme Pro page builder](https://yootheme.com/page-builder) which adds more elements to the element library.
 
@@ -56,3 +58,7 @@ If you want to report an issue, please use the [Github issue tool](https://githu
 ![](https://herzog-dupont.de/images/tutorials/tutorial-herzogdupont-1.jpg)
 
 ![](https://herzog-dupont.de/images/tutorials/tutorial-herzogdupont-2.jpg)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fforrestkirby%2Fherzogdupont-joomla.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fforrestkirby%2Fherzogdupont-joomla?ref=badge_large)
