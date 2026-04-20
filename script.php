@@ -15,7 +15,7 @@ use Joomla\CMS\Log\Log;
 
 class plgSystemHerzogdupontInstallerScript
 {
-    protected $minimumPHPVersion = '8.1.0';
+    protected $minimumPHPVersion = '8.2.0';
     protected $minimumJoomlaVersion = '5.0.0';
     protected $minimumYOOthemeVersion = '5.0.0-beta.1';
 
