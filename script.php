@@ -10,6 +10,9 @@
 // No direct access
 defined('_JEXEC') or die;
 
+use Joomla\CMS\Factory;
+use Joomla\CMS\Log\Log;
+
 class plgSystemHerzogdupontInstallerScript
 {
     protected $minimumPHPVersion = '8.1.0';
@@ -38,7 +41,7 @@ class plgSystemHerzogdupontInstallerScript
         if (!version_compare(PHP_VERSION, $this->minimumPHPVersion, '>='))
         {
             $msg = '<p>You need PHP ' . $this->minimumPHPVersion . ' or later to install this plugin.</p>';
-            JLog::add($msg, JLog::WARNING, 'jerror');
+            Log::add($msg, Log::WARNING, 'jerror');
 
             return false;
         }
@@ -47,7 +50,7 @@ class plgSystemHerzogdupontInstallerScript
         if (!version_compare(JVERSION, $this->minimumJoomlaVersion, '>='))
         {
             $msg = '<p>You need Joomla! ' . $this->minimumJoomlaVersion . ' or later to install this plugin.</p>';
-            JLog::add($msg, JLog::WARNING, 'jerror');
+            Log::add($msg, Log::WARNING, 'jerror');
 
             return false;
         }
@@ -57,7 +60,7 @@ class plgSystemHerzogdupontInstallerScript
         if (!$yoothemeManifest or !version_compare((string) $yoothemeManifest->version, $this->minimumYOOthemeVersion, '>='))
         {
             $msg = '<p>You need YOOtheme Pro ' . $this->minimumYOOthemeVersion . ' or later to install this plugin.</p>';
-            JLog::add($msg, JLog::WARNING, 'jerror');
+            Log::add($msg, Log::WARNING, 'jerror');
 
             return false;
         }
@@ -73,7 +76,7 @@ class plgSystemHerzogdupontInstallerScript
     {
         try
         {
-            $db    = JFactory::getDbo();
+            $db    = Factory::getDbo();
             $query = $db->getQuery(true)
                         ->update($db->qn('#__extensions'))
                         ->set($db->qn('enabled') . ' = ' . $db->q(1))
