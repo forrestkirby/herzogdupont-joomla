@@ -259,6 +259,63 @@ if ($has_image) {
 
     ]);
 
+    // Image 4
+    $image_4 = $this->el('image', [
+
+        'class' => [
+            'el-image',
+        ],
+
+        'src' => $props['image_4'],
+        'alt' => $props['image_4_alt'],
+        'loading' => $element['image_loading'] ? false : null,
+        'width' => $element['image_width'],
+        'height' => $element['image_height'],
+        'focal_point' => $props['image_4_focal_point'],
+        'uk-cover' => true,
+        'thumbnail' => true,
+    ]);
+
+    // Video 4
+    if ($iframe = $this->iframeVideo($props['video_4'])) {
+
+        $video_4 = $this->el('iframe', [
+
+            'class' => [
+                'uk-disabled',
+            ],
+
+            'src' => $iframe,
+            'frameborder' => '0',
+
+        ]);
+
+    } else {
+
+        $video_4 = $this->el('video', [
+
+            'src' => $props['video_4'],
+            'controls' => false,
+            'loop' => true,
+            'autoplay' => true,
+            'muted' => true,
+            'playsinline' => true,
+
+        ]);
+
+    }
+
+    $video_4->attr([
+
+        'width' => $element['image_width'],
+        'height' => $element['image_height'],
+
+        'class' => ['el-image'],
+
+        'uk-cover' => true,
+
+    ]);
+
 }
 
 ?>
@@ -334,6 +391,31 @@ if ($has_image) {
 
                             <?= $props['image_3'] ? $image_3() : '' ?>
                             <?= $props['video_3'] && !$props['image_3'] ? $video_3([], '') : '' ?>
+
+                        <?php if ($element['slideshow_kenburns']) : ?>
+                        </div>
+                        <?php endif ?>
+
+                    <?php if (in_array($element['slideshow_animation'], ['push', 'pull'])) : ?>
+                    </div>
+                    <?php endif ?>
+
+                </li>
+                <?php endif ?>
+
+                <?php if ($props['image_4'] || $props['video_4']) : ?>
+                <li>
+                    
+                    <?php if (in_array($element['slideshow_animation'], ['push', 'pull'])) : ?>
+                    <?= $pull_push($element) ?>
+                    <?php endif ?>
+
+                        <?php if ($element['slideshow_kenburns']) : ?>
+                        <?= $kenburns($element) ?>
+                        <?php endif ?>
+
+                            <?= $props['image_4'] ? $image_4() : '' ?>
+                            <?= $props['video_4'] && !$props['image_4'] ? $video_4([], '') : '' ?>
 
                         <?php if ($element['slideshow_kenburns']) : ?>
                         </div>
