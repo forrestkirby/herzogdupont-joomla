@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.9.3
+
+### Changed
+
+- raised minimum PHP version to 8.2.0
+- migrated legacy `JFactory` and `JLog` classes to modern `Joomla\CMS` namespaces
+
+### Fixed
+
+- JLog error
+
 ## 1.9.2
 
 ### Fixed
