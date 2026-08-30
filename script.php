@@ -70,6 +70,13 @@ class plgSystemHerzogdupontInstallerScript
 
     public function postflight($type, $parent)
     {
+        // Upgrades do not remove files dropped from the manifest, so delete
+        // the legacy entry file replaced by services/provider.php in 1.9.4
+        $legacyFile = JPATH_PLUGINS . '/system/herzogdupont/herzogdupont.php';
+
+        if (is_file($legacyFile)) {
+            @unlink($legacyFile);
+        }
     }
 
     private function enablePlugin()

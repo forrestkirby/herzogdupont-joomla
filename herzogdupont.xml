@@ -17,10 +17,12 @@
     <creationDate>June 03, 2026</creationDate>
     <version>1.9.3</version>
     <description>PLG_SYSTEM_HERZOGDUPONT_XML_DESC</description>
+    <namespace path="src">HerzogDupont\Plugin\System\Herzogdupont</namespace>
     <scriptfile>script.php</scriptfile>
     <files>
+        <folder plugin="herzogdupont">services</folder>
+        <folder>src</folder>
         <folder>modules</folder>
-        <filename plugin="herzogdupont">herzogdupont.php</filename>
         <filename>index.html</filename>
     </files>
     <languages folder="language">
