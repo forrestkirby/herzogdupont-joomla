@@ -40,16 +40,28 @@ return [
     'extend' => [
 
         Builder::class => function (Builder $builder, $app) {
-            if (is_null($app->config->get('~theme.hd.elements'))) {
+            $elements = $app->config->get('~theme.hd.elements');
+
+            if (is_null($elements)) {
                 $builder->addTypePath(Path::get('./elements/*/element.json'));
-            } else {
-                foreach ($app->config->get('~theme.hd.elements') as $key => $value) {
-                    if ($value === true) {
-                        $builder->addTypePath(Path::get('./elements/' . $key . '/element.json'));
-                        if ($key === 'hd-timeline' || $key === 'hd-slideshow-grid') {
-                            $builder->addTypePath(Path::get('./elements/' . $key . '_item/element.json'));
-                        }
-                    }
+                return;
+            }
+
+            // Container elements whose child element must be registered along with them
+            $childElements = [
+                'hd-timeline' => 'hd-timeline_item',
+                'hd-slideshow-grid' => 'hd-slideshow-grid_item',
+            ];
+
+            foreach ($elements as $key => $enabled) {
+                if ($enabled !== true) {
+                    continue;
+                }
+
+                $builder->addTypePath(Path::get("./elements/{$key}/element.json"));
+
+                if (isset($childElements[$key])) {
+                    $builder->addTypePath(Path::get("./elements/{$childElements[$key]}/element.json"));
                 }
             }
         }
