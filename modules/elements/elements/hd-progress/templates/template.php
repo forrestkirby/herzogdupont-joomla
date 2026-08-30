@@ -51,9 +51,9 @@ $progress = $this->el('progress', [
 
 <?= $el($props, $attrs) ?>
 
-    <? if ($uniqid) : ?>
+    <?php if ($uniqid) : ?>
     <style>
-    <? if ($props['progress_value_color']) : ?>
+    <?php if ($props['progress_value_color']) : ?>
     #<?= $uniqid ?>.uk-progress::-webkit-progress-value {
         background-color: <?= $props['progress_value_color'] ?>;
     }
@@ -65,9 +65,9 @@ $progress = $this->el('progress', [
     #<?= $uniqid ?>.uk-progress::-ms-fill {
         background-color: <?= $props['progress_value_color'] ?>;
     }
-    <? endif ?>
+    <?php endif ?>
 
-    <? if ($props['progress_background_color']) : ?>
+    <?php if ($props['progress_background_color']) : ?>
     #<?= $uniqid ?>.uk-progress {
         background-color: <?= $props['progress_background_color'] ?>;
     }
@@ -75,13 +75,13 @@ $progress = $this->el('progress', [
     #<?= $uniqid ?>.uk-progress::-webkit-progress-bar {
         background-color: <?= $props['progress_background_color'] ?>;
     }
-    <? endif ?>
+    <?php endif ?>
     </style>
-    <? endif ?>
+    <?php endif ?>
 
-    <? if ($props['content']) : ?>
+    <?php if ($props['content']) : ?>
     <div><?= $props['content'] ?></div>
-    <? endif ?>
+    <?php endif ?>
 
     <?= $progress($props) ?>
         <?= $props['stop'] ?>/<?= $props['max'] ?>

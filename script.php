@@ -56,7 +56,8 @@ class plgSystemHerzogdupontInstallerScript
         }
 
         // Check the minimum YOOtheme Pro version
-        $yoothemeManifest = simplexml_load_file(JPATH_SITE . '/templates/yootheme/templateDetails.xml');
+        $yoothemeManifestFile = JPATH_SITE . '/templates/yootheme/templateDetails.xml';
+        $yoothemeManifest = is_file($yoothemeManifestFile) ? simplexml_load_file($yoothemeManifestFile) : false;
         if (!$yoothemeManifest or !version_compare((string) $yoothemeManifest->version, $this->minimumYOOthemeVersion, '>='))
         {
             $msg = '<p>You need YOOtheme Pro ' . $this->minimumYOOthemeVersion . ' or later to install this plugin.</p>';
@@ -70,6 +71,13 @@ class plgSystemHerzogdupontInstallerScript
 
     public function postflight($type, $parent)
     {
+        // Upgrades do not remove files dropped from the manifest, so delete
+        // the legacy entry file replaced by services/provider.php in 1.9.4
+        $legacyFile = JPATH_PLUGINS . '/system/herzogdupont/herzogdupont.php';
+
+        if (is_file($legacyFile)) {
+            @unlink($legacyFile);
+        }
     }
 
     private function enablePlugin()
@@ -88,7 +96,7 @@ class plgSystemHerzogdupontInstallerScript
         }
         catch (\Exception $e)
         {
-            return;
+            Log::add('Could not enable the Herzog Dupont plugin: ' . $e->getMessage(), Log::WARNING, 'jerror');
         }
     }
 }

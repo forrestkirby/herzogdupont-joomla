@@ -21,9 +21,7 @@ $props['cls'] = ( $props['hidden'] && $props['content2'] || $props['cls'] == '' 
 
 if ($props['toggle_animation_use_advanced']) {
     $props['toggle_animation'] = $props['toggle_animation_advanced'];
-} elseif ($props['toggle_animation'] == 'false') {
-    $props['toggle_animation'] = $props['toggle_animation'];
-} else {
+} elseif ($props['toggle_animation'] != 'false') {
     $props['toggle_animation'] = 'uk-animation-' . $props['toggle_animation'];
 }
 
