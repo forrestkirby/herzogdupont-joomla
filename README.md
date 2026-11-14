@@ -1,5 +1,7 @@
 # Herzog Dupont Elements for YOOtheme Pro Joomla! Plugin
 
+_Source code was moved to a private repo. This repo stays open for issue reporting but might eventually be archived. A replacement for issue reporting will then be communicated._
+
 Herzog Dupont Elements for YOOtheme Pro is an extension for the [YOOtheme Pro page builder](https://yootheme.com/page-builder) which adds more elements to the element library.
 
 Copyright (C) 2021-2026 Thomas Weidlich
